@@ -1,0 +1,6 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'>
+  <rect width='600' height='600' fill='#e8e8e8'/>
+  <rect x='30' y='30' width='540' height='540' fill='none' stroke='#2a2a2a' stroke-width='4'/>
+  <path d='M220 230c0-32 24-58 54-58s54 26 54 58c0 31-24 57-54 57s-54-26-54-57zm-82 61c0-24 18-43 39-43s39 19 39 43-18 43-39 43-39-19-39-43zm285 0c0-24 18-43 39-43s39 19 39 43-18 43-39 43-39-19-39-43zm-224 104c0-42 34-77 76-77s76 35 76 77-34 77-76 77-76-35-76-77zm153 0c0-42 34-77 76-77s76 35 76 77-34 77-76 77-76-35-76-77z' fill='#cfcfcf'/>
+  <text x='300' y='540' font-size='34' text-anchor='middle' fill='#2a2a2a' font-family='Arial, sans-serif'>Dog Photo Placeholder</text>
+</svg>
