@@ -17,8 +17,12 @@ document.querySelectorAll('.section').forEach((section) => {
 });
 
 const logoField = document.getElementById('logoField');
-window.addEventListener('mousemove', (event) => {
-  const x = (event.clientX / window.innerWidth - 0.5) * 8;
-  const y = (event.clientY / window.innerHeight - 0.5) * 8;
-  logoField.style.transform = `translate(${x * 0.2}px, ${y * -0.22}px)`;
-});
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (logoField && !reducedMotion) {
+  window.addEventListener('mousemove', (event) => {
+    const x = (event.clientX / window.innerWidth - 0.5) * 8;
+    const y = (event.clientY / window.innerHeight - 0.5) * 8;
+    logoField.style.transform = `translate(${x * 0.2}px, ${y * -0.22}px)`;
+  });
+}
