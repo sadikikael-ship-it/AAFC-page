@@ -93,6 +93,19 @@ body {
   font-size: 0.86rem;
   font-weight: 900;
   letter-spacing: 0.12em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.header-logo {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+}
+
+.brand span {
+  display: inline-block;
 }
 
 nav ul {
@@ -111,7 +124,6 @@ nav a {
   font-weight: 700;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .section {
@@ -132,7 +144,6 @@ nav a {
 
 .hero-kicker {
   font-size: 0.78rem;
-  text-transform: uppercase;
   letter-spacing: 0.22em;
   font-weight: 700;
 }
@@ -203,7 +214,6 @@ nav a {
   padding: 0.9rem 1.3rem;
   border: 2px solid var(--charcoal);
   display: inline-block;
-  text-transform: uppercase;
   letter-spacing: 0.07em;
   font-weight: 800;
   font-size: 0.82rem;
@@ -485,7 +495,6 @@ footer {
   text-align: center;
   font-size: 0.8rem;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .reveal {
