@@ -238,6 +238,25 @@ nav a {
   line-height: 0.9;
 }
 
+
+.symbol-ticker {
+  width: 100%;
+  overflow: hidden;
+  border-block: 2px solid var(--charcoal);
+  background: rgba(246, 235, 207, 0.74);
+  margin-top: -1rem;
+}
+
+.ticker-track {
+  white-space: nowrap;
+  display: inline-block;
+  padding: 0.7rem 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  animation: ticker 24s linear infinite;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1.35fr 1fr 0.85fr;
@@ -367,23 +386,49 @@ nav a {
   font-weight: 700;
 }
 
-.badge-row {
+
+.social-icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 0.8rem;
 }
 
-.badge-row a {
-  text-decoration: none;
-  color: var(--charcoal);
+.social-icons a {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid var(--charcoal);
-  padding: 0.45rem 0.8rem;
-  font-weight: 700;
   background: var(--white);
+  color: var(--charcoal);
+  transition: transform 220ms ease, background-color 220ms ease;
 }
 
-.badge-row a:hover {
+.social-icons a:hover {
+  transform: translateY(-4px) rotate(-2deg);
   background: var(--chartreuse);
+}
+
+.social-icons svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.sticker {
+  display: inline-block;
+  position: absolute;
+  top: 2.1rem;
+  right: 0;
+  transform: rotate(10deg);
+  background: var(--orange);
+  color: var(--cream);
+  border: 2px solid var(--charcoal);
+  padding: 0.35rem 0.75rem;
+  font-weight: 900;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
 }
 
 .contact {
@@ -506,6 +551,11 @@ footer {
   }
 }
 
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 @media (max-width: 880px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -527,6 +577,12 @@ footer {
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .sticker {
+    position: static;
+    margin-bottom: 1rem;
+    transform: rotate(0deg);
   }
 }
 
