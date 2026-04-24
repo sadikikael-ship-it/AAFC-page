@@ -22,7 +22,8 @@ export default function HomePage() {
 
       <section className="hero section">
         <p className="eyebrow">Global Cultural Platform</p>
-        <h1>Enter the world of FMLY BZNS</h1>
+        <h1>Enter the world
+          <br />of FMLY BZNS</h1>
         <p>
           Curating the evolution of global dance music culture through events, media, art, and
           community-first experiences.
@@ -42,8 +43,7 @@ export default function HomePage() {
 
       <section className="section manifesto">
         <p>
-          We build rooms where rhythm becomes language, culture becomes infrastructure, and people
-          become the movement.
+          We build rooms where rhythm becomes language, mural color becomes memory, and people become the movement.
         </p>
       </section>
 
