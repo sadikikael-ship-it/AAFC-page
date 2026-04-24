@@ -85,9 +85,7 @@ main::after {
   color: #1d1510;
   background: rgba(255, 250, 235, 0.55);
 }
-.iconRow svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; }
-.iconRow svg rect, .iconRow svg circle, .iconRow svg path { stroke: currentColor; fill: none; }
-.iconRow svg path[fill], .iconRow svg rect[fill], .iconRow svg circle[fill] { fill: currentColor; }
+.iconRow svg { width: 1rem; height: 1rem; display: block; }
 .headerTicket {
   padding: .45rem .7rem;
   background: #ff651f;
