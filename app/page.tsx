@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { SiteHeader } from '@/components/SiteHeader';
 import { SiteFooter } from '@/components/SiteFooter';
-import { destinationLinks, events, socialLinks } from '@/lib/siteData';
+import { destinationLinks, events, shopItems, socialLinks } from '@/lib/siteData';
 import { SocialIcon } from '@/components/SocialIcon';
 
 const offerings = [
@@ -18,8 +18,6 @@ const featured = [
   ['Festival Takeovers', 'Large-scale appearances, stage programming, and culture-first experiences.']
 ] as const;
 
-const collaborators = ['Afro Nation', 'Everyday People', 'Boiler Room Community', 'Global Bass Network', 'Diaspora Arts Labs', 'Independent Festival Partners'];
-
 export default function HomePage() {
   return (
     <main>
@@ -29,11 +27,10 @@ export default function HomePage() {
         <p className="eyebrow">FMLY BZNS</p>
         <h1>Curating the evolution of Global Dance Music Culture</h1>
         <p>
-          FMLY BZNS is a collective experience rooted in Afro-diaspora sound, movement, style, and immersive cultural
-          curation. From festival takeovers and original music to intentional nightlife and healing-centered spaces, we
-          build worlds that move people.
+          FMLY BZNS blends Afro-diaspora club sounds, immersive event experiences, healing energy, and
+          forward-thinking visual culture into one global movement.
         </p>
-        <div className="buttonRow">
+        <div className="buttonRow heroButtons">
           <a href={destinationLinks.tickets} target="_blank" rel="noreferrer" className="ctaBtn">
             See Upcoming Events
           </a>
@@ -97,16 +94,26 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section className="section patternBand">
-        <h2>Social Proof / Collaborators</h2>
-        <div className="collabList">
-          {collaborators.map((name) => (
-            <span key={name}>{name}</span>
-          ))}
+      <section className="section shopEditorial patternBand" aria-labelledby="merch-title">
+        <div className="featureProduct imagePanel shopImage" />
+        <div>
+          <p className="eyebrow">Merch / Drops</p>
+          <h2 id="merch-title">Wear the movement</h2>
+          <div className="productGrid">
+            {shopItems.map(([title, price]) => (
+              <article key={title} className="productCard">
+                <h3>{title}</h3>
+                <p>{price}</p>
+                <a href={destinationLinks.shop} target="_blank" rel="noreferrer" className="inlineLink">
+                  Shop now
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="section eventsBand">
+      <section className="section eventsBand finalCtaBand">
         <h2>Enter the world of FMLY BZNS</h2>
         <div className="buttonRow">
           <a href={socialLinks[0][1]} target="_blank" rel="noreferrer" className="smallBtn">
@@ -123,10 +130,10 @@ export default function HomePage() {
           <input type="email" placeholder="Email address" name="email" aria-label="Email" required />
           <button type="submit">Join the mailing list</button>
         </form>
-        <div className="musicLinks" aria-label="social links">
+        <div className="socialIconOnlyRow" aria-label="social links">
           {socialLinks.map(([label, href]) => (
-            <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label}>
-              <SocialIcon name={label} /> {label}
+            <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} title={label}>
+              <SocialIcon name={label} />
             </a>
           ))}
         </div>
