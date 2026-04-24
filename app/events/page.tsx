@@ -1,7 +1,7 @@
 import { PageHero } from '@/components/PageHero';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
-import { events } from '@/lib/siteData';
+import { destinationLinks, events } from '@/lib/siteData';
 
 export default function EventsPage() {
   return (
@@ -23,7 +23,7 @@ export default function EventsPage() {
               {event.date} · {event.time}
             </p>
             <div className="buttonRow">
-              <a href={event.ticketUrl} target="_blank" rel="noreferrer" className="smallBtn">
+              <a href={event.ticketUrl || destinationLinks.tickets} target="_blank" rel="noreferrer" className="smallBtn">
                 Buy Tickets
               </a>
               <a href={event.detailsUrl} className="smallBtn ghost">

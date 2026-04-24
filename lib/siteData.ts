@@ -98,3 +98,11 @@ export const lineupDays = [
 ] as const;
 
 export const primaryTicketUrl = 'https://ra.co/events';
+
+
+export const destinationLinks = {
+  shop: 'https://shop.fmlybzns.com',
+  tickets: 'https://ra.co/events',
+  contact: '/partnerships',
+  community: '/community'
+} as const;

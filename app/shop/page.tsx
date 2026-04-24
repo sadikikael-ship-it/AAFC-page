@@ -1,6 +1,7 @@
 import { PageHero } from '@/components/PageHero';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
+import { destinationLinks } from '@/lib/siteData';
 
 const products = [
   ['Limited Canvas Print', 'Edition of 50 · Signed'],
@@ -19,7 +20,7 @@ export default function ShopPage() {
             <p className="eyebrow">Limited Release</p>
             <h3>{title}</h3>
             <p>{meta}</p>
-            <a href="https://shop.fmlybzns.com" target="_blank" rel="noreferrer" className="btn secondary">View Drop</a>
+            <a href={destinationLinks.shop} target="_blank" rel="noreferrer" className="btn secondary">View Drop</a>
           </article>
         ))}
       </section>

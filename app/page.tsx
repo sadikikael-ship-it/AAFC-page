@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { SiteHeader } from '@/components/SiteHeader';
 import { SiteFooter } from '@/components/SiteFooter';
-import { crew, events, lineupDays, media, primaryTicketUrl, shopItems } from '@/lib/siteData';
+import { crew, destinationLinks, events, lineupDays, media, primaryTicketUrl, shopItems } from '@/lib/siteData';
 
 export default function HomePage() {
   return (
@@ -108,7 +108,7 @@ export default function HomePage() {
               <article key={title} className="productCard">
                 <h3>{title}</h3>
                 <p>{price}</p>
-                <a href="https://shop.fmlybzns.com" target="_blank" rel="noreferrer" className="inlineLink">
+                <a href={destinationLinks.shop} target="_blank" rel="noreferrer" className="inlineLink">
                   Shop now
                 </a>
               </article>
