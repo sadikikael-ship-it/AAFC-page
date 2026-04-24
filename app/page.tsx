@@ -1,46 +1,43 @@
 import Link from 'next/link';
 import { SiteHeader } from '@/components/SiteHeader';
 import { SiteFooter } from '@/components/SiteFooter';
-import { crew, destinationLinks, events, lineupDays, media, primaryTicketUrl, shopItems } from '@/lib/siteData';
+import { crew, destinationLinks, events, media, socialLinks, shopItems } from '@/lib/siteData';
+import { SocialIcon } from '@/components/SocialIcon';
 
 export default function HomePage() {
   return (
     <main>
       <SiteHeader />
 
-      <section className="hero section afroHero">
-        <p className="eyebrow">FMLY BZNS · GLOBAL CULTURE FESTIVAL SERIES</p>
-        <h1>PROUDLY CELEBRATING CULTURE THROUGH SOUND, ART & MOVEMENT</h1>
-        <p>Summer Signal Circuit 2026 · New York · Paris · Lagos</p>
+      <section className="hero section openHero" id="top">
+        <p className="eyebrow">FMLY BZNS · CULTURE MOVES IN CIRCLES</p>
+        <h1>A GLOBAL COLLECTIVE FOR SOUND, STYLE, AND GATHERING.</h1>
+        <p>
+          FMLY BZNS connects nightlife, art, community, and premium drops across cities. This is the digital home for
+          our movement.
+        </p>
         <div className="buttonRow">
-          <a href={primaryTicketUrl} target="_blank" rel="noreferrer" className="ctaBtn">
-            Book Now
+          <a href={destinationLinks.tickets} target="_blank" rel="noreferrer" className="ctaBtn">
+            Explore Events
           </a>
-          <Link href="/events" className="linkBtn">
-            Full Schedule
+          <Link href="/media" className="linkBtn">
+            Listen to Mixes
           </Link>
         </div>
       </section>
 
-      <section className="section lineupBand">
-        <p className="eyebrow">Meet Your 2026 Line-Up</p>
-        <div className="lineupGrid">
-          {lineupDays.map(([day, desc], idx) => (
-            <article key={day} className="lineupItem">
-              <span>{String(idx + 1).padStart(2, '0')}/03</span>
-              <h3>{day}</h3>
-              <p>{desc}</p>
-              <a href={primaryTicketUrl} target="_blank" rel="noreferrer" className="smallBtn">
-                Book Now
-              </a>
-            </article>
-          ))}
-        </div>
+      <section className="section introBand patternBand" aria-labelledby="intro-title">
+        <p className="eyebrow">What is FMLY BZNS</p>
+        <h2 id="intro-title">Creative collective. Music platform. Event ecosystem.</h2>
+        <p>
+          We build experiences that center diaspora rhythm, visual culture, and real community energy. From club nights
+          and city takeovers to curated mixes and limited art drops, FMLY BZNS is where people, sound, and style meet.
+        </p>
       </section>
 
-      <section className="section eventsBand">
+      <section className="section eventsBand" aria-labelledby="events-title">
         <p className="eyebrow">Upcoming Events</p>
-        <h2>Tickets Live</h2>
+        <h2 id="events-title">City dates live now</h2>
         <div className="eventGrid">
           {events.map((event) => (
             <article key={event.title} className="eventItem">
@@ -52,7 +49,7 @@ export default function HomePage() {
               <p>
                 {event.date} · {event.time}
               </p>
-              <div className="buttonRow">
+              <div className="buttonRow tightButtons">
                 <a href={event.ticketUrl} target="_blank" rel="noreferrer" className="smallBtn">
                   Buy Tickets
                 </a>
@@ -65,29 +62,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section imageSplit reverse patternBandAlt">
+      <section className="section imageSplit reverse patternBandAlt" aria-labelledby="music-title">
         <div className="imagePanel mediaImage" />
         <div>
           <p className="eyebrow">Music / Media</p>
-          <h2>Curated mixes from the collective</h2>
+          <h2 id="music-title">Featured mixes, live sets, and visual moments</h2>
           {media.map((item) => (
             <article key={item.title} className="listItem">
               <h3>{item.title}</h3>
               <p>{item.kind}</p>
-              <a href={item.url} target="_blank" rel="noreferrer">
+              <a href={item.url} target="_blank" rel="noreferrer" className="inlineLink">
                 {item.cta}
               </a>
             </article>
           ))}
-          <Link href="/media" className="inlineLink">
-            Explore all music
-          </Link>
+          <div className="musicLinks" aria-label="social listening links">
+            {socialLinks.map(([label, href]) => (
+              <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label}>
+                <SocialIcon name={label} /> {label}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="section crewBand">
-        <p className="eyebrow">Crew</p>
-        <h2>Collective builders behind FMLY BZNS</h2>
+      <section className="section crewBand" aria-labelledby="crew-title">
+        <p className="eyebrow">Crew / Collective</p>
+        <h2 id="crew-title">Humans behind the movement</h2>
         <div className="crewList">
           {crew.map(([name, role]) => (
             <article key={name}>
@@ -98,11 +99,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section shopEditorial patternBand">
+      <section className="section shopEditorial patternBand" aria-labelledby="shop-title">
         <div className="featureProduct imagePanel shopImage" />
         <div>
-          <p className="eyebrow">Merch / Art Drops</p>
-          <h2>Festival editions and visual capsules</h2>
+          <p className="eyebrow">Shop / Drops</p>
+          <h2 id="shop-title">Limited capsules built from sound and style</h2>
           <div className="productGrid">
             {shopItems.map(([title, price]) => (
               <article key={title} className="productCard">
@@ -117,12 +118,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section signupLight">
-        <p className="eyebrow">Sign up for updates</p>
-        <h2>Get ticket alerts, lineup drops, and city announcements.</h2>
-        <form className="signalForm simpleSignup" action="/join" method="get">
+      <section className="section signupLight" aria-labelledby="join-title">
+        <p className="eyebrow">Join the community</p>
+        <h2 id="join-title">Get city alerts, ticket drops, and mix updates.</h2>
+        <form className="signalForm simpleSignup" action={destinationLinks.newsletter} method="get">
           <input type="email" placeholder="Email address" name="email" aria-label="Email" required />
-          <button type="submit">Keep me updated</button>
+          <button type="submit">Join FMLY BZNS</button>
         </form>
       </section>
 

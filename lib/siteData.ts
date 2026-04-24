@@ -2,20 +2,15 @@ export const navItems = [
   ['Events', '/events'],
   ['Music', '/media'],
   ['Crew', '/crew'],
-  ['Contact', '/partnerships'],
   ['Shop', '/shop'],
-  ['Community', '/community'],
-  ['AndreasOne', '/andreasone']
+  ['Contact', '/partnerships']
 ] as const;
 
 export const socialLinks = [
-  ['Instagram', 'https://www.instagram.com/fmlybzns'],
+  ['Instagram', 'https://www.instagram.com/fmlybzns_/'],
   ['TikTok', 'https://www.tiktok.com/@fmlybzns'],
-  ['YouTube', 'https://www.youtube.com/@fmlybzns'],
-  ['Spotify', 'https://open.spotify.com/search/fmly%20bzns'],
-  ['SoundCloud', 'https://soundcloud.com/fmlybzns'],
-  ['Apple Music', 'https://music.apple.com/us/search?term=fmly%20bzns'],
-  ['Email', 'mailto:hello@fmlybzns.com']
+  ['YouTube', 'https://www.youtube.com/@FMLYBZNS'],
+  ['SoundCloud', 'https://soundcloud.com/fmlybzns']
 ] as const;
 
 export const events = [
@@ -25,7 +20,7 @@ export const events = [
     city: 'New York',
     venue: 'The Foundry Hall',
     time: '10:00 PM',
-    ticketUrl: 'https://ra.co/events',
+    ticketUrl: 'https://ra.co/events/2090508',
     detailsUrl: '/events',
     image:
       'url(https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80) center/cover'
@@ -36,7 +31,7 @@ export const events = [
     city: 'Paris',
     venue: 'Palais Electrique',
     time: '11:00 PM',
-    ticketUrl: 'https://ra.co/events',
+    ticketUrl: 'https://ra.co/events/2090511',
     detailsUrl: '/events',
     image:
       'url(https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80) center/cover'
@@ -47,7 +42,7 @@ export const events = [
     city: 'Lagos',
     venue: 'Skyline Yard',
     time: '9:30 PM',
-    ticketUrl: 'https://ra.co/events',
+    ticketUrl: 'https://ra.co/events/2090516',
     detailsUrl: '/events',
     image:
       'url(https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1200&q=80) center/cover'
@@ -59,19 +54,19 @@ export const media = [
     title: 'FMLY Frequencies Vol. 04',
     kind: 'Featured Mix',
     cta: 'Listen on SoundCloud',
-    url: 'https://soundcloud.com'
+    url: 'https://soundcloud.com/fmlybzns'
   },
   {
-    title: 'Movement Radio: Summer Edit',
-    kind: 'Playlist',
-    cta: 'Open on Spotify',
-    url: 'https://open.spotify.com'
-  },
-  {
-    title: 'Signal Recap: Mexico City',
-    kind: 'Film',
+    title: 'Movement Broadcast: Studio Session',
+    kind: 'Live Set Film',
     cta: 'Watch on YouTube',
-    url: 'https://www.youtube.com'
+    url: 'https://www.youtube.com/@FMLYBZNS'
+  },
+  {
+    title: 'Sunset Circle Radio',
+    kind: 'Community Playlist',
+    cta: 'Open SoundCloud Collection',
+    url: 'https://soundcloud.com/fmlybzns'
   }
 ];
 
@@ -80,7 +75,8 @@ export const crew = [
   ['Nia Rhythm', 'Resident DJ / Host'],
   ['Malik Wave', 'Producer / Sound Curation'],
   ['Sade Sol', 'Visual Worldbuilding / Art'],
-  ['Tariq Motion', 'Community + Event Ops']
+  ['Tariq Motion', 'Community + Event Ops'],
+  ['Ama Vessel', 'Partnerships / Programming']
 ] as const;
 
 export const shopItems = [
@@ -90,19 +86,10 @@ export const shopItems = [
   ['Sunset Movement Tote', '$45 · Studio Release']
 ] as const;
 
-
-export const lineupDays = [
-  ['Friday', 'Afro-house / Amapiano / Guest Headliners'],
-  ['Saturday', 'Global Dancehall / Hip-Hop / Live Band Set'],
-  ['Sunday', 'Sunset Ritual / Diaspora All-Stars / Closing Circle']
-] as const;
-
-export const primaryTicketUrl = 'https://ra.co/events';
-
-
 export const destinationLinks = {
   shop: 'https://shop.fmlybzns.com',
   tickets: 'https://ra.co/events',
   contact: '/partnerships',
-  community: '/community'
+  community: '/community',
+  newsletter: '/join'
 } as const;

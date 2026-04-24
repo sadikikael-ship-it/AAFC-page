@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { navItems, primaryTicketUrl, socialLinks } from '@/lib/siteData';
+import { destinationLinks, navItems, socialLinks } from '@/lib/siteData';
 import { SocialIcon } from './SocialIcon';
 
 export function SiteHeader() {
@@ -16,13 +16,15 @@ export function SiteHeader() {
         ))}
       </nav>
       <div className="iconRow" aria-label="music and social links">
-        {socialLinks.slice(0, 5).map(([label, href]) => (
-          <a key={label} href={href} target={href.startsWith('mailto:') ? undefined : '_blank'} rel="noreferrer" aria-label={label} title={label}>
+        {socialLinks.map(([label, href]) => (
+          <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} title={label}>
             <SocialIcon name={label} />
           </a>
         ))}
       </div>
-      <a href={primaryTicketUrl} target="_blank" rel="noreferrer" className="headerTicket">Buy Tickets</a>
+      <a href={destinationLinks.tickets} target="_blank" rel="noreferrer" className="headerTicket">
+        Buy Tickets
+      </a>
     </header>
   );
 }
