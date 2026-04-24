@@ -9,12 +9,12 @@ export const navItems = [
 ] as const;
 
 export const socialLinks = [
-  ['Instagram', 'https://www.instagram.com'],
-  ['TikTok', 'https://www.tiktok.com'],
-  ['YouTube', 'https://www.youtube.com'],
-  ['Spotify', 'https://open.spotify.com'],
-  ['SoundCloud', 'https://soundcloud.com'],
-  ['Apple Music', 'https://music.apple.com'],
+  ['Instagram', 'https://www.instagram.com/fmlybzns'],
+  ['TikTok', 'https://www.tiktok.com/@fmlybzns'],
+  ['YouTube', 'https://www.youtube.com/@fmlybzns'],
+  ['Spotify', 'https://open.spotify.com/search/fmly%20bzns'],
+  ['SoundCloud', 'https://soundcloud.com/fmlybzns'],
+  ['Apple Music', 'https://music.apple.com/us/search?term=fmly%20bzns'],
   ['Email', 'mailto:hello@fmlybzns.com']
 ] as const;
 

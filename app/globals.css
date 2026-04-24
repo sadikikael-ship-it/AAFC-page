@@ -216,9 +216,27 @@ p { line-height: 1.6; }
 .simpleSignup { display: flex; gap: .7rem; max-width: 560px; }
 button { border: 1px solid #1d1510; background: #1d1510; color: #f8eacc; padding: .55rem .85rem; text-transform: uppercase; font-size: .74rem; font-weight: 700; cursor: pointer; }
 
-.footer { padding: 1.1rem 1rem .9rem; border-top: 2px solid #1d1510; display: grid; gap: .65rem; margin-bottom: .6rem; background: rgba(255,244,219,.55); }
-.footerTop { display: flex; gap: 1rem; justify-content: space-between; align-items: center; flex-wrap: wrap; padding-bottom: .25rem; }
-.footerTop p { margin: 0; font-size: .78rem; }
+.footer { padding: 1.25rem 1.2rem 1rem; border-top: 2px solid #1d1510; display: grid; gap: .7rem; margin-bottom: .6rem; background: rgba(255,244,219,.65); }
+.footerTop {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding-bottom: .25rem;
+}
+.footerTop .iconRow { justify-self: end; }
+.footerTop .footerLinks { justify-self: center; }
+
+
+.footerLogo {
+  display: grid;
+  line-height: .85;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: .03em;
+}
+.footerLogo .fm { font-size: 1.45rem; color: #7a7a4f; text-shadow: 1px 1px 0 #1d1510; }
+.footerLogo .bz { font-size: 1.45rem; color: #ef8e12; text-shadow: 1px 1px 0 #1d1510; }
+
 .footerLinks { display: flex; gap: .65rem; flex-wrap: wrap; font-size: .72rem; text-transform: uppercase; }
 .footerSignup { display: flex; gap: .55rem; max-width: 420px; }
 .footerSignup input { flex: 1; padding: .45rem .5rem; }
@@ -243,6 +261,8 @@ button { border: 1px solid #1d1510; background: #1d1510; color: #f8eacc; padding
     grid-template-columns: 1fr;
   }
   .simpleSignup, .footerSignup { flex-direction: column; }
+  .footerTop { grid-template-columns: 1fr; }
+  .footerTop .footerLinks, .footerTop .iconRow { justify-self: start; }
   .imagePanel { min-height: 320px; }
   main::before { inset: .3rem; border-width: 4px; }
   main::after { inset: .9rem; }

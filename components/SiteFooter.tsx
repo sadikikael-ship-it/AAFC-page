@@ -6,7 +6,10 @@ export function SiteFooter() {
   return (
     <footer className="footer section">
       <div className="footerTop">
-        <p>FMLY BZNS · Global sound collective</p>
+        <div className="footerLogo" aria-label="FMLY BZNS logo wordmark">
+          <span className="fm">FMLY</span>
+          <span className="bz">BZNS</span>
+        </div>
         <div className="footerLinks">
           {navItems.slice(0, 5).map(([label, href]) => (
             <Link key={href} href={href}>
@@ -16,7 +19,14 @@ export function SiteFooter() {
         </div>
         <div className="iconRow compact" aria-label="all social and music links">
           {socialLinks.map(([label, href]) => (
-            <a key={label} href={href} target={href.startsWith('mailto:') ? undefined : '_blank'} rel="noreferrer" aria-label={label} title={label}>
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith('mailto:') ? undefined : '_blank'}
+              rel="noreferrer"
+              aria-label={label}
+              title={label}
+            >
               <SocialIcon name={label} />
             </a>
           ))}
