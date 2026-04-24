@@ -18,69 +18,35 @@ html, body {
   padding: 0;
   color: var(--ink);
   font-family: Inter, system-ui, sans-serif;
-  background:
-    linear-gradient(180deg, #f1e2c5 0%, #edcf9f 38%, #e8bb7f 100%);
+  background: #e7c895;
 }
 a { color: inherit; text-decoration: none; }
-main { min-height: 100vh; padding: .95rem .9rem; position: relative; }
-
-main::before {
-  content: "";
-  position: fixed;
-  inset: .2rem;
-  pointer-events: none;
-  z-index: 30;
-  background:
-    repeating-linear-gradient(
-      180deg,
-      #1f1611 0 8px,
-      #f1d164 8px 16px,
-      #1f1611 16px 22px,
-      #f89200 22px 30px,
-      #1f1611 30px 36px,
-      #9ea57a 36px 44px,
-      #1f1611 44px 50px,
-      #d9b39f 50px 58px
-    ) left top / 24px 100% repeat-y,
-    repeating-linear-gradient(
-      180deg,
-      #1f1611 0 8px,
-      #f1d164 8px 16px,
-      #1f1611 16px 22px,
-      #f89200 22px 30px,
-      #1f1611 30px 36px,
-      #9ea57a 36px 44px,
-      #1f1611 44px 50px,
-      #d9b39f 50px 58px
-    ) right top / 24px 100% repeat-y;
+body { padding: 0; }
+.siteShell {
+  width: min(1500px, 100vw);
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr) 26px;
+  gap: 0;
 }
-
-main::after {
-  content: "";
-  position: fixed;
-  inset: .2rem 1.35rem;
-  pointer-events: none;
-  z-index: 29;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      #1f1611 0 10px,
-      #f1d164 10px 22px,
-      #1f1611 22px 28px,
-      #cc9274 28px 40px,
-      #1f1611 40px 46px,
-      #7a7a4f 46px 58px
-    ) top center / 100% 16px no-repeat,
-    repeating-linear-gradient(
-      90deg,
-      #1f1611 0 10px,
-      #f1d164 10px 22px,
-      #1f1611 22px 28px,
-      #cc9274 28px 40px,
-      #1f1611 40px 46px,
-      #7a7a4f 46px 58px
-    ) bottom center / 100% 16px no-repeat;
+.frameRail {
+  background: repeating-linear-gradient(
+    180deg,
+    #1f1611 0 8px,
+    #f1d164 8px 16px,
+    #1f1611 16px 22px,
+    #f89200 22px 30px,
+    #1f1611 30px 36px,
+    #9ea57a 36px 44px,
+    #1f1611 44px 50px,
+    #d9b39f 50px 58px
+  );
 }
+.siteContent {
+  background: linear-gradient(180deg, #f1e2c5 0%, #edcf9f 38%, #e8bb7f 100%);
+}
+main { min-height: 100vh; padding: .35rem .45rem; position: relative; }
 
 
 .siteHeader {
@@ -92,7 +58,7 @@ main::after {
   align-items: center;
   gap: 1rem;
   padding: .65rem .85rem;
-  width: min(1240px, 100% - 2rem);
+  width: 100%;
   margin: 0 auto;
   border-bottom: 3px solid #1f1611;
   background: linear-gradient(90deg, #f1d164, #efb072, #c9cf87);
@@ -121,7 +87,7 @@ main::after {
   font-weight: 800;
 }
 
-.section { width: min(1240px, 100% - 2rem); margin: 0 auto; padding: 3.4rem .85rem; position: relative; }
+.section { width: 100%; margin: 0 auto; padding: 3rem .55rem; position: relative; }
 .section::before,
 .section::after {
   content: "";
@@ -238,6 +204,8 @@ p { line-height: 1.6; }
 
 .musicLinks { display: flex; flex-wrap: wrap; gap: .7rem; font-size: .76rem; text-transform: uppercase; }
 .musicLinks a { border-bottom: 1px solid rgba(29,21,16,.5); }
+.collabList { display: flex; flex-wrap: wrap; gap: .7rem; }
+.collabList span { padding: .45rem .65rem; border: 1px solid rgba(29,21,16,.5); background: rgba(255, 246, 225, .58); font-size: .78rem; text-transform: uppercase; }
 
 .crewBand { background: #f4d9ad; border-top: 3px solid #1d1510; }
 .crewList { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
@@ -288,10 +256,11 @@ button { border: 1px solid #1d1510; background: #1d1510; color: #f8eacc; padding
 .gridForm textarea, .gridForm button { grid-column: 1 / -1; }
 
 @media (max-width: 980px) {
-  main { padding: .55rem; }
-  .siteHeader { grid-template-columns: 1fr; position: static; width: min(1240px, 100% - 1.1rem); }
+  .siteShell { grid-template-columns: 16px minmax(0, 1fr) 16px; }
+  main { padding: .2rem .25rem; }
+  .siteHeader { grid-template-columns: 1fr; position: static; width: 100%; }
   .headerTicket { justify-self: start; }
-  .section { width: min(1240px, 100% - 1.1rem); padding: 2.5rem .6rem; }
+  .section { width: 100%; padding: 2.3rem .4rem; }
   .hero { padding: 2.7rem .9rem 2.4rem; }
   .imageSplit, .imageSplit.reverse, .crewList, .eventGrid, .shopEditorial, .productGrid, .lineupGrid, .gridTwo, .cards3, .gridForm {
     grid-template-columns: 1fr;
@@ -302,8 +271,6 @@ button { border: 1px solid #1d1510; background: #1d1510; color: #f8eacc; padding
   .imagePanel { min-height: 320px; }
   .section::before,
   .section::after { height: 10px; }
-  main::before { inset: .1rem; }
-  main::after { inset: .1rem .65rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
