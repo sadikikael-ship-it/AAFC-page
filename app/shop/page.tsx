@@ -19,7 +19,7 @@ export default function ShopPage() {
             <p className="eyebrow">Limited Release</p>
             <h3>{title}</h3>
             <p>{meta}</p>
-            <a href="#" className="btn secondary">View Drop</a>
+            <a href="https://shop.fmlybzns.com" target="_blank" rel="noreferrer" className="btn secondary">View Drop</a>
           </article>
         ))}
       </section>

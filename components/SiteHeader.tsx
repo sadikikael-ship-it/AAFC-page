@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { navItems, socialLinks } from '@/lib/siteData';
+import { SocialIcon } from './SocialIcon';
 
 export function SiteHeader() {
   return (
@@ -14,10 +15,10 @@ export function SiteHeader() {
           </Link>
         ))}
       </nav>
-      <div className="socialMini" aria-label="music and social links">
-        {socialLinks.slice(0, 3).map(([label, href]) => (
-          <a key={label} href={href} target="_blank" rel="noreferrer">
-            {label}
+      <div className="iconRow" aria-label="music and social links">
+        {socialLinks.slice(0, 5).map(([label, href]) => (
+          <a key={label} href={href} target={href.startsWith('mailto:') ? undefined : '_blank'} rel="noreferrer" aria-label={label} title={label}>
+            <SocialIcon name={label} />
           </a>
         ))}
       </div>

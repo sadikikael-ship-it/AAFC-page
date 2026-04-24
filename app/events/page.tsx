@@ -9,18 +9,26 @@ export default function EventsPage() {
       <SiteHeader />
       <PageHero
         title="Events"
-        subtitle="Discover upcoming cities, reserve tickets, and revisit recaps from the movement."
+        subtitle="Discover upcoming cities, buy tickets directly, and revisit recaps from the movement."
       />
-      <section className="section cards3">
+      <section className="section eventGrid">
         {events.map((event) => (
-          <article key={event.title} className="card eventCard">
-            <div className="eventArt" style={{ background: event.image }} />
+          <article key={event.title} className="eventItem">
+            <div className="eventThumb" style={{ background: event.image }} />
             <h3>{event.title}</h3>
-            <p>{event.date}</p>
-            <p>{event.city} · {event.venue} · {event.time}</p>
-            <div className="buttonRow compact">
-              <a href="#" className="btn secondary">RSVP / Tickets</a>
-              <a href="#" className="btn tertiary">Event Details</a>
+            <p>
+              {event.city} · {event.venue}
+            </p>
+            <p>
+              {event.date} · {event.time}
+            </p>
+            <div className="buttonRow">
+              <a href={event.ticketUrl} target="_blank" rel="noreferrer" className="smallBtn">
+                Buy Tickets
+              </a>
+              <a href={event.detailsUrl} className="smallBtn ghost">
+                Details
+              </a>
             </div>
           </article>
         ))}

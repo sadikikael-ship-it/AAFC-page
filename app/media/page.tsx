@@ -14,7 +14,7 @@ export default function MediaPage() {
             <p className="eyebrow">{item.kind}</p>
             <h3>{item.title}</h3>
             <p>Embed-ready card for Spotify, SoundCloud, YouTube, and platform-native releases.</p>
-            <a href="#" className="inlineLink">{item.cta}</a>
+            <a href={item.url} target="_blank" rel="noreferrer" className="inlineLink">{item.cta}</a>
           </article>
         ))}
       </section>
