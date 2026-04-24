@@ -89,3 +89,12 @@ export const shopItems = [
   ['FMLY Ritual Poster Set', '$70 · Collector Edition'],
   ['Sunset Movement Tote', '$45 · Studio Release']
 ] as const;
+
+
+export const lineupDays = [
+  ['Friday', 'Afro-house / Amapiano / Guest Headliners'],
+  ['Saturday', 'Global Dancehall / Hip-Hop / Live Band Set'],
+  ['Sunday', 'Sunset Ritual / Diaspora All-Stars / Closing Circle']
+] as const;
+
+export const primaryTicketUrl = 'https://ra.co/events';

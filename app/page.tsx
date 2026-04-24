@@ -1,47 +1,46 @@
 import Link from 'next/link';
 import { SiteHeader } from '@/components/SiteHeader';
 import { SiteFooter } from '@/components/SiteFooter';
-import { crew, events, media, socialLinks, shopItems } from '@/lib/siteData';
+import { crew, events, lineupDays, media, primaryTicketUrl, shopItems } from '@/lib/siteData';
 
 export default function HomePage() {
   return (
     <main>
       <SiteHeader />
 
-      <section className="hero section openHero">
-        <p className="eyebrow">Global Sound Collective</p>
-        <h1>
-          Enter the world
-          <br />
-          of FMLY BZNS
-        </h1>
-        <p>
-          A DJ and creative collective building dance floors, sound journeys, and cultural gatherings
-          across cities.
-        </p>
+      <section className="hero section afroHero">
+        <p className="eyebrow">FMLY BZNS · GLOBAL CULTURE FESTIVAL SERIES</p>
+        <h1>PROUDLY CELEBRATING CULTURE THROUGH SOUND, ART & MOVEMENT</h1>
+        <p>Summer Signal Circuit 2026 · New York · Paris · Lagos</p>
         <div className="buttonRow">
+          <a href={primaryTicketUrl} target="_blank" rel="noreferrer" className="ctaBtn">
+            Book Now
+          </a>
           <Link href="/events" className="linkBtn">
-            View events
-          </Link>
-          <Link href="/media" className="linkBtn">
-            Listen to mixes
-          </Link>
-          <Link href="/crew" className="linkBtn">
-            Meet the crew
+            Full Schedule
           </Link>
         </div>
       </section>
 
-      <section className="section introBand patternBand">
-        <p>
-          FMLY BZNS is a movement-led ecosystem: events, music releases, artist collaborations,
-          visual storytelling, and limited drops rooted in Black global rhythm culture.
-        </p>
+      <section className="section lineupBand">
+        <p className="eyebrow">Meet Your 2026 Line-Up</p>
+        <div className="lineupGrid">
+          {lineupDays.map(([day, desc], idx) => (
+            <article key={day} className="lineupItem">
+              <span>{String(idx + 1).padStart(2, '0')}/03</span>
+              <h3>{day}</h3>
+              <p>{desc}</p>
+              <a href={primaryTicketUrl} target="_blank" rel="noreferrer" className="smallBtn">
+                Book Now
+              </a>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section eventsBand">
         <p className="eyebrow">Upcoming Events</p>
-        <h2>Next cities on the signal</h2>
+        <h2>Tickets Live</h2>
         <div className="eventGrid">
           {events.map((event) => (
             <article key={event.title} className="eventItem">
@@ -70,7 +69,7 @@ export default function HomePage() {
         <div className="imagePanel mediaImage" />
         <div>
           <p className="eyebrow">Music / Media</p>
-          <h2>Soundtrack for the movement</h2>
+          <h2>Curated mixes from the collective</h2>
           {media.map((item) => (
             <article key={item.title} className="listItem">
               <h3>{item.title}</h3>
@@ -80,19 +79,15 @@ export default function HomePage() {
               </a>
             </article>
           ))}
-          <div className="musicLinks inlineMusic">
-            {socialLinks.slice(0, 6).map(([label, href]) => (
-              <a key={label} href={href} target={href.startsWith('mailto:') ? undefined : '_blank'} rel="noreferrer">
-                {label}
-              </a>
-            ))}
-          </div>
+          <Link href="/media" className="inlineLink">
+            Explore all music
+          </Link>
         </div>
       </section>
 
       <section className="section crewBand">
         <p className="eyebrow">Crew</p>
-        <h2>People behind the movement</h2>
+        <h2>Collective builders behind FMLY BZNS</h2>
         <div className="crewList">
           {crew.map(([name, role]) => (
             <article key={name}>
@@ -101,24 +96,21 @@ export default function HomePage() {
             </article>
           ))}
         </div>
-        <Link href="/crew" className="inlineLink">
-          Meet the full crew
-        </Link>
       </section>
 
       <section className="section shopEditorial patternBand">
         <div className="featureProduct imagePanel shopImage" />
         <div>
-          <p className="eyebrow">Shop / Drops</p>
-          <h2>Collectible editions and capsule releases</h2>
+          <p className="eyebrow">Merch / Art Drops</p>
+          <h2>Festival editions and visual capsules</h2>
           <div className="productGrid">
             {shopItems.map(([title, price]) => (
               <article key={title} className="productCard">
                 <h3>{title}</h3>
                 <p>{price}</p>
-                <Link href="/shop" className="inlineLink">
+                <a href="https://shop.fmlybzns.com" target="_blank" rel="noreferrer" className="inlineLink">
                   Shop now
-                </Link>
+                </a>
               </article>
             ))}
           </div>
@@ -126,11 +118,11 @@ export default function HomePage() {
       </section>
 
       <section className="section signupLight">
-        <p className="eyebrow">Stay close</p>
-        <h2>Get early access to events, music, and drops.</h2>
+        <p className="eyebrow">Sign up for updates</p>
+        <h2>Get ticket alerts, lineup drops, and city announcements.</h2>
         <form className="signalForm simpleSignup" action="/join" method="get">
           <input type="email" placeholder="Email address" name="email" aria-label="Email" required />
-          <button type="submit">Sign up</button>
+          <button type="submit">Keep me updated</button>
         </form>
       </section>
 

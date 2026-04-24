@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { navItems, socialLinks } from '@/lib/siteData';
+import { navItems, primaryTicketUrl, socialLinks } from '@/lib/siteData';
 import { SocialIcon } from './SocialIcon';
 
 export function SiteHeader() {
@@ -22,6 +22,7 @@ export function SiteHeader() {
           </a>
         ))}
       </div>
+      <a href={primaryTicketUrl} target="_blank" rel="noreferrer" className="headerTicket">Buy Tickets</a>
     </header>
   );
 }
