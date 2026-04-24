@@ -1,12 +1,19 @@
 export const navItems = [
-  ['About', '/about'],
   ['Events', '/events'],
-  ['Music / Media', '/media'],
+  ['Music', '/media'],
+  ['Crew', '/crew'],
+  ['Contact', '/partnerships'],
+  ['Shop', '/shop'],
   ['Community', '/community'],
-  ['Shop / Drops', '/shop'],
-  ['Partnerships', '/partnerships'],
-  ['Join', '/join'],
   ['AndreasOne', '/andreasone']
+] as const;
+
+export const socialLinks = [
+  ['Instagram', 'https://www.instagram.com'],
+  ['Spotify', 'https://open.spotify.com'],
+  ['SoundCloud', 'https://soundcloud.com'],
+  ['Bandcamp', 'https://bandcamp.com'],
+  ['YouTube', 'https://www.youtube.com']
 ] as const;
 
 export const events = [
@@ -16,9 +23,8 @@ export const events = [
     city: 'New York',
     venue: 'The Foundry Hall',
     time: '10:00 PM',
-    image: 'linear-gradient(145deg,#231f20,#a85b26)',
-    ticket: '#',
-    details: '/events'
+    image:
+      'url(https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80) center/cover'
   },
   {
     title: 'Bass Ritual: Paris Session',
@@ -26,9 +32,8 @@ export const events = [
     city: 'Paris',
     venue: 'Palais Electrique',
     time: '11:00 PM',
-    image: 'linear-gradient(145deg,#1a1f35,#c8af4d)',
-    ticket: '#',
-    details: '/events'
+    image:
+      'url(https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80) center/cover'
   },
   {
     title: 'FMLY x Lagos Rooftop',
@@ -36,9 +41,8 @@ export const events = [
     city: 'Lagos',
     venue: 'Skyline Yard',
     time: '9:30 PM',
-    image: 'linear-gradient(145deg,#1f2a21,#f5a000)',
-    ticket: '#',
-    details: '/events'
+    image:
+      'url(https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1200&q=80) center/cover'
   }
 ];
 
@@ -59,3 +63,11 @@ export const media = [
     cta: 'Watch on YouTube'
   }
 ];
+
+export const crew = [
+  ['Andreas', 'Founder / Creative Direction'],
+  ['Nia Rhythm', 'Resident DJ / Host'],
+  ['Malik Wave', 'Producer / Sound Curation'],
+  ['Sade Sol', 'Visual Worldbuilding / Art'],
+  ['Tariq Motion', 'Community + Event Ops']
+] as const;
