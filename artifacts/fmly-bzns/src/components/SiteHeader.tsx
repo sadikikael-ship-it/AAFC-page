@@ -1,33 +1,78 @@
-import { Link } from 'wouter';
-import { destinationLinks, navItems, socialLinks } from '@/lib/siteData';
-import { SocialIcon } from './SocialIcon';
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "wouter";
+import { navItems, socialList, siteLinks } from "@/data/siteLinks";
+import { SocialIcon } from "./SocialIcon";
+import { Logo } from "./Logo";
 
 export function SiteHeader() {
+  const [location] = useLocation();
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
+
   return (
     <header className="siteHeader">
       <div className="headerLeft">
-        <Link href="/" className="brand">
-          FMLY BZNS
+        <Link href="/" className="brandLink" aria-label="FMLY BZNS — Home">
+          <Logo size={48} />
+          <span className="brandWordmark">FMLY BZNS</span>
         </Link>
       </div>
-      <nav>
-        {navItems.map(([label, href]) => (
-          <Link key={href} href={href}>
-            {label}
-          </Link>
-        ))}
+
+      <nav className={`primaryNav ${open ? "primaryNav--open" : ""}`}>
+        {navItems.map((item) => {
+          const active =
+            item.href === "/"
+              ? location === "/"
+              : location.startsWith(item.href);
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={active ? "navLink navLink--active" : "navLink"}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
       </nav>
+
       <div className="headerRight">
-        <div className="iconRow" aria-label="music and social links">
-          {socialLinks.map(([label, href]) => (
-            <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} title={label}>
-              <SocialIcon name={label} />
+        <div className="iconRow" aria-label="social and music links">
+          {socialList.map((s) => (
+            <a
+              key={s.name}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={s.name}
+              title={s.name}
+            >
+              <SocialIcon name={s.name} />
             </a>
           ))}
         </div>
-        <a href={destinationLinks.tickets} target="_blank" rel="noreferrer" className="headerTicket">
+        <a
+          href={siteLinks.shop}
+          target="_blank"
+          rel="noreferrer"
+          className="headerTicket"
+        >
           Buy Tickets
         </a>
+        <button
+          type="button"
+          className="navToggle"
+          aria-label="Toggle navigation"
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
     </header>
   );

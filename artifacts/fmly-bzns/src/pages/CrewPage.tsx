@@ -1,24 +1,26 @@
-import { PageHero } from '@/components/PageHero';
-import { SiteFooter } from '@/components/SiteFooter';
-import { SiteHeader } from '@/components/SiteHeader';
-import { crew } from '@/lib/siteData';
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { PageHero } from "@/components/PageHero";
+import { CrewCard } from "@/components/CrewCard";
+import { crew } from "@/data/crew";
 
 export default function CrewPage() {
   return (
     <main>
       <SiteHeader />
       <PageHero
-        title="Crew"
-        subtitle="DJs, producers, hosts, designers, and builders shaping the FMLY BZNS movement."
+        title="The Crew"
+        subtitle="DJs, producers, hosts, designers, photographers and community leads — the people building FMLY BZNS across cities."
       />
-      <section className="section crewList">
-        {crew.map(([name, role]) => (
-          <article key={name}>
-            <h3>{name}</h3>
-            <p>{role}</p>
-          </article>
-        ))}
+
+      <section className="section">
+        <div className="crewGrid">
+          {crew.map((member) => (
+            <CrewCard key={member.name} member={member} />
+          ))}
+        </div>
       </section>
+
       <SiteFooter />
     </main>
   );

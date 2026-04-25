@@ -1,18 +1,27 @@
-import { FaInstagram, FaSoundcloud, FaTiktok, FaYoutube } from 'react-icons/fa';
+import type { ReactElement } from "react";
+import {
+  FaInstagram,
+  FaSoundcloud,
+  FaTiktok,
+  FaYoutube,
+  FaEnvelope,
+} from "react-icons/fa";
 
-type SocialName = 'Instagram' | 'TikTok' | 'YouTube' | 'SoundCloud';
+export type SocialName =
+  | "Instagram"
+  | "TikTok"
+  | "YouTube"
+  | "SoundCloud"
+  | "Email";
+
+const map: Record<SocialName, ReactElement> = {
+  Instagram: <FaInstagram aria-hidden focusable="false" />,
+  TikTok: <FaTiktok aria-hidden focusable="false" />,
+  YouTube: <FaYoutube aria-hidden focusable="false" />,
+  SoundCloud: <FaSoundcloud aria-hidden focusable="false" />,
+  Email: <FaEnvelope aria-hidden focusable="false" />,
+};
 
 export function SocialIcon({ name }: { name: SocialName | string }) {
-  switch (name) {
-    case 'Instagram':
-      return <FaInstagram aria-hidden="true" focusable="false" />;
-    case 'TikTok':
-      return <FaTiktok aria-hidden="true" focusable="false" />;
-    case 'YouTube':
-      return <FaYoutube aria-hidden="true" focusable="false" />;
-    case 'SoundCloud':
-      return <FaSoundcloud aria-hidden="true" focusable="false" />;
-    default:
-      return null;
-  }
+  return map[name as SocialName] ?? null;
 }

@@ -1,42 +1,64 @@
-import { PageHero } from '@/components/PageHero';
-import { SiteFooter } from '@/components/SiteFooter';
-import { SiteHeader } from '@/components/SiteHeader';
-import { destinationLinks, events } from '@/lib/siteData';
+import { useMemo, useState } from "react";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { PageHero } from "@/components/PageHero";
+import { EventCard } from "@/components/EventCard";
+import { events, type EventType } from "@/data/events";
+
+const filters: ("All" | EventType)[] = [
+  "All",
+  "Festival Takeover",
+  "Festival",
+  "Party",
+  "Activation",
+  "Community",
+];
 
 export default function EventsPage() {
+  const [filter, setFilter] = useState<(typeof filters)[number]>("All");
+
+  const visible = useMemo(() => {
+    if (filter === "All") return events;
+    return events.filter((e) => e.type === filter);
+  }, [filter]);
+
   return (
     <main>
       <SiteHeader />
       <PageHero
-        title="Events"
-        subtitle="Discover upcoming cities, buy tickets directly, and revisit recaps from the movement."
+        title="Events & Takeovers"
+        subtitle="Festivals, festival takeovers, parties, and FMLY BZNS community activations."
+        background="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=2200&q=80"
       />
-      <section className="section eventGrid">
-        {events.map((event) => (
-          <article key={event.title} className="eventItem">
-            <div className="eventThumb" style={{ background: event.image }} />
-            <h3>{event.title}</h3>
-            <p>
-              {event.city} · {event.venue}
-            </p>
-            <p>
-              {event.date} · {event.time}
-            </p>
-            <div className="buttonRow">
-              <a href={event.ticketUrl || destinationLinks.tickets} target="_blank" rel="noreferrer" className="smallBtn">
-                Buy Tickets
-              </a>
-              <a href={event.detailsUrl} className="smallBtn ghost">
-                Details
-              </a>
-            </div>
-          </article>
-        ))}
+
+      <section className="section">
+        <div className="filterRow" role="tablist" aria-label="Filter events">
+          {filters.map((f) => (
+            <button
+              key={f}
+              type="button"
+              role="tab"
+              aria-selected={filter === f}
+              className={`filterChip ${filter === f ? "filterChip--on" : ""}`}
+              onClick={() => setFilter(f)}
+            >
+              {f}
+            </button>
+          ))}
+        </div>
+
+        <div className="eventGrid">
+          {visible.map((e) => (
+            <EventCard key={e.id} event={e} />
+          ))}
+        </div>
+        {visible.length === 0 ? (
+          <p className="emptyMsg">
+            No events of this type right now — check back soon.
+          </p>
+        ) : null}
       </section>
-      <section className="section card">
-        <h2>Past Events / Recaps</h2>
-        <p>Gallery-ready content area for photo sets, short films, and post-event storytelling.</p>
-      </section>
+
       <SiteFooter />
     </main>
   );

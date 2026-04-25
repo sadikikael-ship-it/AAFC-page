@@ -1,42 +1,75 @@
-import { Link } from 'wouter';
-import { navItems, socialLinks } from '@/lib/siteData';
-import { SocialIcon } from './SocialIcon';
+import { useState } from "react";
+import { Link } from "wouter";
+import { navItems, socialList } from "@/data/siteLinks";
+import { SocialIcon } from "./SocialIcon";
+import { Logo } from "./Logo";
 
 export function SiteFooter() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
   return (
-    <footer className="footer section">
+    <footer className="footer">
       <div className="footerTop">
-        <div className="footerLogo" aria-label="FMLY BZNS logo wordmark">
-          <span className="fm">FMLY</span>
-          <span className="bz">BZNS</span>
-        </div>
-        <div className="footerLinks">
-          {navItems.slice(0, 5).map(([label, href]) => (
-            <Link key={href} href={href}>
-              {label}
+        <Link href="/" className="footerBrand" aria-label="FMLY BZNS — Home">
+          <Logo size={56} />
+        </Link>
+        <nav className="footerLinks" aria-label="Footer">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href}>
+              {item.label}
             </Link>
           ))}
-        </div>
-        <div className="iconRow compact" aria-label="all social and music links">
-          {socialLinks.map(([label, href]) => (
+        </nav>
+        <div
+          className="iconRow compact"
+          aria-label="all social and music links"
+        >
+          {socialList.map((s) => (
             <a
-              key={label}
-              href={href}
-              target={href.startsWith('mailto:') ? undefined : '_blank'}
+              key={s.name}
+              href={s.href}
+              target="_blank"
               rel="noreferrer"
-              aria-label={label}
-              title={label}
+              aria-label={s.name}
+              title={s.name}
             >
-              <SocialIcon name={label} />
+              <SocialIcon name={s.name} />
             </a>
           ))}
         </div>
       </div>
-      <form className="signalForm footerSignup" action="/join" method="get">
-        <input id="footer-email" type="email" name="email" placeholder="Email for early access" required />
-        <button type="submit">Join</button>
+
+      <form
+        className="footerSignup"
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (email.trim()) setSubmitted(true);
+        }}
+      >
+        {submitted ? (
+          <p className="footerSignupOk">
+            You're on the signal — see you on the floor.
+          </p>
+        ) : (
+          <>
+            <label className="srOnly" htmlFor="footer-email">
+              Email
+            </label>
+            <input
+              id="footer-email"
+              type="email"
+              placeholder="Email for mixes, tickets and drops"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button type="submit">Get the signal</button>
+          </>
+        )}
       </form>
-      <small>© {new Date().getFullYear()} FMLY BZNS</small>
+
+      <small>© {new Date().getFullYear()} FMLY BZNS — global movement.</small>
     </footer>
   );
 }
