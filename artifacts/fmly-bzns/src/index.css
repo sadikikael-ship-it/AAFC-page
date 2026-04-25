@@ -86,7 +86,7 @@ main {
    ---------------------------------------------------------- */
 
 h1, h2, h3, h4 {
-  font-family: Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif;
+  font-family: "Fungus", Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif;
   text-transform: uppercase;
   letter-spacing: .01em;
   margin: 0;
@@ -204,10 +204,26 @@ button[type="submit"]:hover { background: var(--orange); }
   color: var(--black);
 }
 .brandWordmark {
-  font-family: Impact, sans-serif;
-  font-size: 1.15rem;
-  letter-spacing: .14em;
+  font-family: "Fungus", Impact, sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: .08em;
   text-transform: uppercase;
+  line-height: 1;
+  color: var(--black);
+}
+.brandWordmark--hero {
+  display: inline-block;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  background: var(--paper);
+  border: 2px solid var(--black);
+  padding: .5rem 1rem .35rem;
+  box-shadow: 6px 6px 0 var(--black);
+  letter-spacing: .06em;
+}
+.brandWordmark--footer {
+  font-size: 2rem;
+  color: var(--paper);
+  letter-spacing: .08em;
 }
 
 .primaryNav {
@@ -337,14 +353,6 @@ button[type="submit"]:hover { background: var(--orange); }
   display: grid;
   gap: 1rem;
   max-width: 1100px;
-}
-.heroLogo {
-  background: var(--paper);
-  border: 2px solid var(--black);
-  padding: .6rem .8rem;
-  display: inline-flex;
-  width: max-content;
-  box-shadow: 6px 6px 0 var(--black);
 }
 .heroLead {
   max-width: 62ch;
@@ -692,7 +700,7 @@ button[type="submit"]:hover { background: var(--orange); }
   width: max-content;
 }
 .marqueeItem {
-  font-family: Impact, sans-serif;
+  font-family: "Fungus", Impact, sans-serif;
   font-size: clamp(1.4rem, 3.2vw, 2.4rem);
   text-transform: uppercase;
   letter-spacing: .04em;
@@ -729,7 +737,7 @@ button[type="submit"]:hover { background: var(--orange); }
 }
 .platformCard:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0 var(--black); }
 .platformCard svg { width: 1.6rem; height: 1.6rem; }
-.platformCard span { font-family: Impact, sans-serif; font-size: 1.4rem; text-transform: uppercase; letter-spacing: .04em; }
+.platformCard span { font-family: "Fungus", Impact, sans-serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: .04em; }
 .platformCard em { font-style: normal; font-size: .8rem; color: var(--ink); opacity: .75; }
 .platformCard--sc { background: linear-gradient(135deg, #ff651f, #f89200); color: #fff6e1; }
 .platformCard--yt { background: linear-gradient(135deg, #f1d164, #c7a10d); }
@@ -978,12 +986,10 @@ button[type="submit"]:hover { background: var(--orange); }
   .iconRow { display: none; }
   .headerTicket { display: none; }
 
-  .brandWordmark { display: none; }
-  .brandLink img { height: 40px !important; }
+  .brandWordmark { font-size: 1.25rem; }
 
   .section { padding: 2.4rem clamp(.85rem, 4vw, 1.5rem); }
   .hero { padding: 2.4rem clamp(.9rem, 4vw, 1.5rem) 3rem; }
-  .heroLogo img { height: 80px !important; }
 
   .footerTop { grid-template-columns: 1fr; justify-items: start; gap: .9rem; }
   .footer .iconRow { justify-self: start; display: flex; }

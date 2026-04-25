@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { navItems, socialList, siteLinks } from "@/data/siteLinks";
 import { SocialIcon } from "./SocialIcon";
-import { Logo } from "./Logo";
 
 export function SiteHeader() {
   const [location] = useLocation();
@@ -16,7 +15,6 @@ export function SiteHeader() {
     <header className="siteHeader">
       <div className="headerLeft">
         <Link href="/" className="brandLink" aria-label="FMLY BZNS — Home">
-          <Logo size={48} />
           <span className="brandWordmark">FMLY BZNS</span>
         </Link>
       </div>

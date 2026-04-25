@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { navItems, socialList } from "@/data/siteLinks";
 import { SocialIcon } from "./SocialIcon";
-import { Logo } from "./Logo";
 
 export function SiteFooter() {
   const [email, setEmail] = useState("");
@@ -12,7 +11,7 @@ export function SiteFooter() {
     <footer className="footer">
       <div className="footerTop">
         <Link href="/" className="footerBrand" aria-label="FMLY BZNS — Home">
-          <Logo size={56} />
+          <span className="brandWordmark brandWordmark--footer">FMLY BZNS</span>
         </Link>
         <nav className="footerLinks" aria-label="Footer">
           {navItems.map((item) => (

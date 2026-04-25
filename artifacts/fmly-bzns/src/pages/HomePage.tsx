@@ -9,7 +9,6 @@ import { CrewCard } from "@/components/CrewCard";
 import { MerchCard } from "@/components/MerchCard";
 import { MailingListForm } from "@/components/MailingListForm";
 import { SocialIcon } from "@/components/SocialIcon";
-import { Logo } from "@/components/Logo";
 import { siteLinks, socialList } from "@/data/siteLinks";
 import { events } from "@/data/events";
 import { weeklyMix, mixes } from "@/data/mixes";
@@ -33,9 +32,12 @@ export default function HomePage() {
       {/* HERO */}
       <section className="section hero" id="top">
         <div className="heroInner">
-          <div className="heroLogo">
-            <Logo size={120} />
-          </div>
+          <span
+            className="brandWordmark brandWordmark--hero"
+            aria-label="FMLY BZNS"
+          >
+            FMLY BZNS
+          </span>
           <p className="eyebrow">Global movement · est. since the dancefloor</p>
           <h1>
             A global music + culture collective
