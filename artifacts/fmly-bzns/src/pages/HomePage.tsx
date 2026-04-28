@@ -40,7 +40,7 @@ export default function HomePage() {
           </span>
           <p className="eyebrow">Global movement · est. since the dancefloor</p>
           <h1>
-            A global music + culture collective
+            A global music & culture collective
             <br />
             built for the dancefloor.
           </h1>
