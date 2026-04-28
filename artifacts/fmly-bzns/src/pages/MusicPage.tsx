@@ -56,11 +56,8 @@ export default function MusicPage() {
 
       <section className="section mediaBand">
         <p className="eyebrow">FMLY BZNS · YouTube</p>
-        <h2>Watch the FMLY BZNS channel</h2>
-        <p className="weeklyDesc">
-          Festival recaps, FMLY MXTP visuals, original releases, and a growing
-          archive of sets — all on YouTube.
-        </p>
+        <h2>Featured on the channel</h2>
+        <YouTubeEmbed videoId="Cx3zvYcfh5Q" title="FMLY BZNS featured video" />
         <div className="buttonRow">
           <a
             href={youtubeChannelUrl}
@@ -68,7 +65,7 @@ export default function MusicPage() {
             rel="noreferrer"
             className="ctaBtn"
           >
-            Watch on YouTube
+            Watch More on YouTube
           </a>
         </div>
       </section>

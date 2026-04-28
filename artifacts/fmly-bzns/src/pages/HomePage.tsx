@@ -107,11 +107,8 @@ export default function HomePage() {
       {/* FEATURED VIDEO */}
       <section className="section mediaBand" aria-labelledby="media-title">
         <p className="eyebrow">FMLY BZNS · YouTube</p>
-        <h2 id="media-title">Watch the FMLY BZNS channel</h2>
-        <p className="heroLead">
-          Festival recaps, FMLY MXTP visuals, original releases, and a growing
-          archive of sets — all on YouTube.
-        </p>
+        <h2 id="media-title">Featured on the channel</h2>
+        <YouTubeEmbed videoId="Cx3zvYcfh5Q" title="FMLY BZNS featured video" />
         <div className="buttonRow">
           <a
             href={youtubeChannelUrl}
@@ -119,7 +116,7 @@ export default function HomePage() {
             rel="noreferrer"
             className="ctaBtn"
           >
-            Watch on YouTube
+            Watch More on YouTube
           </a>
         </div>
       </section>
