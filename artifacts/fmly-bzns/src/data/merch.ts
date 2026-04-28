@@ -2,7 +2,10 @@ export interface MerchItem {
   id: string;
   name: string;
   collection: string;
+  /** Display price string (e.g. "$220"). */
   price: string;
+  /** Price in cents — used for cart math. */
+  priceCents: number;
   image: string;
   productUrl: string;
   featured?: boolean;
@@ -15,6 +18,7 @@ export const merch: MerchItem[] = [
     name: "Signal Workwear Jacket",
     collection: "Drop 02 · Outerwear",
     price: "$220",
+    priceCents: 22000,
     image:
       "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1200&q=80",
     productUrl: "https://shop.fmlybzns.com/jacket",
@@ -25,6 +29,7 @@ export const merch: MerchItem[] = [
     name: "Ritual Movement Tee",
     collection: "Core · Cream",
     price: "$55",
+    priceCents: 5500,
     image:
       "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80",
     productUrl: "https://shop.fmlybzns.com/ritual-tee",
@@ -34,6 +39,7 @@ export const merch: MerchItem[] = [
     name: "Night Circuit Jersey",
     collection: "Drop 01 · Sport",
     price: "$95",
+    priceCents: 9500,
     image:
       "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=80",
     productUrl: "https://shop.fmlybzns.com/jersey",
@@ -43,6 +49,7 @@ export const merch: MerchItem[] = [
     name: "FMLY MXTP Poster Set",
     collection: "Editorial · Print",
     price: "$70",
+    priceCents: 7000,
     image:
       "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1200&q=80",
     productUrl: "https://shop.fmlybzns.com/posters",
@@ -52,6 +59,7 @@ export const merch: MerchItem[] = [
     name: "Sunset Movement Tote",
     collection: "Studio Release",
     price: "$45",
+    priceCents: 4500,
     image:
       "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1200&q=80",
     productUrl: "https://shop.fmlybzns.com/tote",
@@ -61,6 +69,7 @@ export const merch: MerchItem[] = [
     name: "Frequency 5-Panel Cap",
     collection: "Core · Headwear",
     price: "$48",
+    priceCents: 4800,
     image:
       "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=1200&q=80",
     productUrl: "https://shop.fmlybzns.com/cap",
@@ -70,6 +79,7 @@ export const merch: MerchItem[] = [
     name: "Studio Heavyweight Hoodie",
     collection: "Drop 02 · Cream",
     price: "$165",
+    priceCents: 16500,
     image:
       "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1200&q=80",
     productUrl: "https://shop.fmlybzns.com/hoodie",
@@ -80,6 +90,7 @@ export const merch: MerchItem[] = [
     name: "FMLY Vinyl Bundle 01",
     collection: "Music · Limited 200",
     price: "$60",
+    priceCents: 6000,
     image:
       "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80",
     productUrl: "https://shop.fmlybzns.com/vinyl",

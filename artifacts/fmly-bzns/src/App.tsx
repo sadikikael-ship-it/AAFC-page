@@ -2,6 +2,7 @@ import { Switch, Route, Router as WouterRouter, Redirect } from "wouter";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 import { SiteShell } from "@/components/SiteShell";
+import { CartProvider } from "@/lib/cart";
 import HomePage from "@/pages/HomePage";
 import EventsPage from "@/pages/EventsPage";
 import MusicPage from "@/pages/MusicPage";
@@ -10,6 +11,7 @@ import MerchPage from "@/pages/MerchPage";
 import CollaborationsPage from "@/pages/CollaborationsPage";
 import ContactPage from "@/pages/ContactPage";
 import CartPage from "@/pages/CartPage";
+import CartSuccessPage from "@/pages/CartSuccessPage";
 import NotFoundPage from "@/pages/NotFoundPage";
 
 function ScrollToTop() {
@@ -31,6 +33,7 @@ function Router() {
       <Route path="/collaborations" component={CollaborationsPage} />
       <Route path="/contact" component={ContactPage} />
       <Route path="/cart" component={CartPage} />
+      <Route path="/cart/success" component={CartSuccessPage} />
       <Route path="/checkout">{() => <Redirect to="/cart" />}</Route>
       {/* Legacy aliases from earlier site structure */}
       <Route path="/media">{() => <Redirect to="/music" />}</Route>
@@ -45,10 +48,12 @@ function Router() {
 function App() {
   return (
     <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-      <SiteShell>
-        <ScrollToTop />
-        <Router />
-      </SiteShell>
+      <CartProvider>
+        <SiteShell>
+          <ScrollToTop />
+          <Router />
+        </SiteShell>
+      </CartProvider>
     </WouterRouter>
   );
 }

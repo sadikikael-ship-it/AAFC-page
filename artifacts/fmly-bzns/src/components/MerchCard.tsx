@@ -1,7 +1,25 @@
-import { Link } from "wouter";
+import { useState } from "react";
 import type { MerchItem } from "@/data/merch";
+import { useCart } from "@/lib/cart";
 
 export function MerchCard({ item }: { item: MerchItem }) {
+  const { add } = useCart();
+  const [added, setAdded] = useState(false);
+
+  const handleAdd = () => {
+    add({
+      id: `merch:${item.id}`,
+      kind: "merch",
+      name: item.name,
+      subtitle: item.collection,
+      priceCents: item.priceCents,
+      image: item.image,
+      metadata: { merchId: item.id },
+    });
+    setAdded(true);
+    window.setTimeout(() => setAdded(false), 1800);
+  };
+
   return (
     <article className="merchCard">
       <a
@@ -9,7 +27,7 @@ export function MerchCard({ item }: { item: MerchItem }) {
         target="_blank"
         rel="noreferrer"
         className="merchCardImageLink"
-        aria-label={`Shop ${item.name}`}
+        aria-label={`View ${item.name}`}
       >
         <div
           className="merchCardImage"
@@ -31,9 +49,13 @@ export function MerchCard({ item }: { item: MerchItem }) {
             View Product
           </a>
         ) : (
-          <Link href="/cart" className="smallBtn">
-            Add to Cart
-          </Link>
+          <button
+            type="button"
+            className={added ? "smallBtn added" : "smallBtn"}
+            onClick={handleAdd}
+          >
+            {added ? "Added ✓" : "Add to Cart"}
+          </button>
         )}
       </div>
     </article>

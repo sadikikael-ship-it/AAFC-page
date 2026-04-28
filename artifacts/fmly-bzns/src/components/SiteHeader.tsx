@@ -3,10 +3,12 @@ import { Link, useLocation } from "wouter";
 import { FaShoppingCart } from "react-icons/fa";
 import { navItems, socialList } from "@/data/siteLinks";
 import { SocialIcon } from "./SocialIcon";
+import { useCart } from "@/lib/cart";
 
 export function SiteHeader() {
   const [location] = useLocation();
   const [open, setOpen] = useState(false);
+  const { count } = useCart();
 
   useEffect(() => {
     setOpen(false);
@@ -56,10 +58,11 @@ export function SiteHeader() {
         <Link
           href="/cart"
           className="cartBtn"
-          aria-label="Cart"
+          aria-label={count > 0 ? `Cart (${count} items)` : "Cart"}
           title="Cart"
         >
           <FaShoppingCart aria-hidden focusable="false" />
+          {count > 0 ? <span className="cartBadge">{count}</span> : null}
         </Link>
         <button
           type="button"
