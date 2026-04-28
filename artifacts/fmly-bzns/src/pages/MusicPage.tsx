@@ -15,7 +15,7 @@ export default function MusicPage() {
     <main>
       <SiteHeader />
       <PageHero
-        title="FMLY BZNS — Music & Mixes"
+        title="Music & Mixes"
         subtitle="The weekly mix, the FMLY MXTP series, original releases, and live recordings — all in one place."
         actions={
           <>
@@ -56,11 +56,11 @@ export default function MusicPage() {
 
       <section className="section mediaBand">
         <p className="eyebrow">FMLY BZNS · YouTube</p>
-        <h2>{featuredVideo.title}</h2>
-        <YouTubeEmbed
-          videoId={featuredVideo.youtubeId}
-          title={featuredVideo.title}
-        />
+        <h2>Watch the FMLY BZNS channel</h2>
+        <p className="weeklyDesc">
+          Festival recaps, FMLY MXTP visuals, original releases, and a growing
+          archive of sets — all on YouTube.
+        </p>
         <div className="buttonRow">
           <a
             href={youtubeChannelUrl}
@@ -68,7 +68,7 @@ export default function MusicPage() {
             rel="noreferrer"
             className="ctaBtn"
           >
-            Watch More on YouTube
+            Watch on YouTube
           </a>
         </div>
       </section>

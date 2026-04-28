@@ -12,7 +12,7 @@ import { SocialIcon } from "@/components/SocialIcon";
 import { siteLinks, socialList } from "@/data/siteLinks";
 import { events, featuredEventVideo } from "@/data/events";
 import { weeklyMix, mixes } from "@/data/mixes";
-import { featuredVideo, youtubeChannelUrl } from "@/data/media";
+import { youtubeChannelUrl } from "@/data/media";
 import { crew } from "@/data/crew";
 import { merch, featuredMerch } from "@/data/merch";
 import { collaborators, marqueeItems } from "@/data/collaborators";
@@ -107,11 +107,11 @@ export default function HomePage() {
       {/* FEATURED VIDEO */}
       <section className="section mediaBand" aria-labelledby="media-title">
         <p className="eyebrow">FMLY BZNS · YouTube</p>
-        <h2 id="media-title">{featuredVideo.title}</h2>
-        <YouTubeEmbed
-          videoId={featuredVideo.youtubeId}
-          title={featuredVideo.title}
-        />
+        <h2 id="media-title">Watch the FMLY BZNS channel</h2>
+        <p className="heroLead">
+          Festival recaps, FMLY MXTP visuals, original releases, and a growing
+          archive of sets — all on YouTube.
+        </p>
         <div className="buttonRow">
           <a
             href={youtubeChannelUrl}
@@ -119,7 +119,7 @@ export default function HomePage() {
             rel="noreferrer"
             className="ctaBtn"
           >
-            Watch More on YouTube
+            Watch on YouTube
           </a>
         </div>
       </section>
