@@ -1,3 +1,23 @@
+export interface EventVideo {
+  id: string;
+  title: string;
+  youtubeId: string;
+  youtubeUrl: string;
+  embedUrl: string;
+}
+
+export const eventVideos: EventVideo[] = [
+  {
+    id: "festival-takeover-preview",
+    title: "Upcoming Event Preview",
+    youtubeId: "qMm-fpsLi7w",
+    youtubeUrl: "https://www.youtube.com/watch?v=qMm-fpsLi7w",
+    embedUrl: "https://www.youtube.com/embed/qMm-fpsLi7w",
+  },
+];
+
+export const featuredEventVideo = eventVideos[0];
+
 export type EventType =
   | "Festival Takeover"
   | "Party"

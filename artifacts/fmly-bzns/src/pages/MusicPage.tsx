@@ -26,6 +26,14 @@ export default function MusicPage() {
               SoundCloud
             </a>
             <a
+              href={siteLinks.social.spotify}
+              target="_blank"
+              rel="noreferrer"
+              className="smallBtn"
+            >
+              Spotify
+            </a>
+            <a
               href={siteLinks.social.youtube}
               target="_blank"
               rel="noreferrer"
@@ -112,6 +120,15 @@ export default function MusicPage() {
           >
             <SocialIcon name="SoundCloud" />
             <span>SoundCloud</span>
+          </a>
+          <a
+            href={siteLinks.social.spotify}
+            target="_blank"
+            rel="noreferrer"
+            className="platformCard platformCard--sp"
+          >
+            <SocialIcon name="Spotify" />
+            <span>Spotify</span>
           </a>
           <a
             href={siteLinks.social.youtube}

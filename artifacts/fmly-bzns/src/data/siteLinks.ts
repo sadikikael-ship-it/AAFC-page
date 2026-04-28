@@ -1,6 +1,8 @@
 export const siteLinks = {
   social: {
     soundcloud: "https://soundcloud.com/fmlybzns",
+    spotify:
+      "https://open.spotify.com/artist/75qZLpg3af3d4P0Yo5oy3J?si=_x82IyYPRMWKgA0CoXikOg",
     tiktok: "https://www.tiktok.com/@fmlybzns",
     youtube: "https://www.youtube.com/@FMLYBZNS",
     instagram: "https://www.instagram.com/fmlybzns_/",
@@ -20,6 +22,7 @@ export const socialList: { name: string; key: SocialKey; href: string }[] = [
   { name: "TikTok", key: "tiktok", href: siteLinks.social.tiktok },
   { name: "YouTube", key: "youtube", href: siteLinks.social.youtube },
   { name: "SoundCloud", key: "soundcloud", href: siteLinks.social.soundcloud },
+  { name: "Spotify", key: "spotify", href: siteLinks.social.spotify },
 ];
 
 export const navItems = [

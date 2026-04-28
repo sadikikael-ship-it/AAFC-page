@@ -10,7 +10,7 @@ import { MerchCard } from "@/components/MerchCard";
 import { MailingListForm } from "@/components/MailingListForm";
 import { SocialIcon } from "@/components/SocialIcon";
 import { siteLinks, socialList } from "@/data/siteLinks";
-import { events } from "@/data/events";
+import { events, featuredEventVideo } from "@/data/events";
 import { weeklyMix, mixes } from "@/data/mixes";
 import { videos, featuredVideo } from "@/data/media";
 import { crew } from "@/data/crew";
@@ -170,6 +170,14 @@ export default function HomePage() {
             View all events
           </Link>
         </div>
+        <article className="eventVideoCard" aria-labelledby="home-event-video">
+          <p className="eyebrow">Festival Takeover Preview</p>
+          <h3 id="home-event-video">{featuredEventVideo.title}</h3>
+          <YouTubeEmbed
+            videoId={featuredEventVideo.youtubeId}
+            title={featuredEventVideo.title}
+          />
+        </article>
         <div className="eventGrid">
           {events.slice(0, 3).map((e) => (
             <EventCard key={e.id} event={e} />
@@ -284,6 +292,16 @@ export default function HomePage() {
             <SocialIcon name="SoundCloud" />
             <span>SoundCloud</span>
             <em>All FMLY MXTP releases</em>
+          </a>
+          <a
+            href={siteLinks.social.spotify}
+            target="_blank"
+            rel="noreferrer"
+            className="platformCard platformCard--sp"
+          >
+            <SocialIcon name="Spotify" />
+            <span>Spotify</span>
+            <em>Streaming releases</em>
           </a>
           <a
             href={siteLinks.social.youtube}

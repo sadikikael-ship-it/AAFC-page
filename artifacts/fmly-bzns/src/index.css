@@ -175,9 +175,9 @@ button[type="submit"]:hover { background: var(--orange); }
 .buttonRow {
   display: flex;
   flex-wrap: wrap;
-  gap: .65rem;
+  gap: .9rem;
   align-items: center;
-  margin-top: .8rem;
+  margin-top: 1rem;
 }
 
 /* ----------------------------------------------------------
@@ -189,13 +189,15 @@ button[type="submit"]:hover { background: var(--orange); }
   top: 0;
   z-index: 30;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 1.4rem;
-  padding: .75rem 1.25rem;
+  gap: 1.5rem;
+  padding: .9rem 1.5rem;
   background: linear-gradient(90deg, #f1d164 0%, #f0b770 45%, #cdcb8a 100%);
   border-bottom: 2px solid var(--black);
 }
+.headerLeft { justify-self: start; display: flex; align-items: center; }
+.headerRight { justify-self: end; }
 
 .brandLink {
   display: inline-flex;
@@ -229,7 +231,8 @@ button[type="submit"]:hover { background: var(--orange); }
 .primaryNav {
   display: flex;
   justify-content: center;
-  gap: 1.1rem;
+  align-items: center;
+  gap: 1.4rem;
   flex-wrap: wrap;
   font-size: .82rem;
   text-transform: uppercase;
@@ -254,12 +257,14 @@ button[type="submit"]:hover { background: var(--orange); }
 .headerRight {
   display: flex;
   align-items: center;
-  gap: .65rem;
+  gap: .85rem;
+  flex-wrap: wrap;
 }
 
 .iconRow {
   display: flex;
-  gap: .4rem;
+  gap: .5rem;
+  flex-wrap: wrap;
 }
 .iconRow a {
   width: 2rem;
@@ -310,7 +315,7 @@ button[type="submit"]:hover { background: var(--orange); }
    ---------------------------------------------------------- */
 
 .section {
-  padding: 3.4rem clamp(1rem, 4vw, 3rem);
+  padding: 4.2rem clamp(1.25rem, 4vw, 3.25rem);
   position: relative;
 }
 
@@ -318,8 +323,8 @@ button[type="submit"]:hover { background: var(--orange); }
   display: flex;
   justify-content: space-between;
   align-items: end;
-  gap: 1rem;
-  margin-bottom: 1.4rem;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
@@ -351,9 +356,10 @@ button[type="submit"]:hover { background: var(--orange); }
 .heroInner {
   position: relative;
   display: grid;
-  gap: 1rem;
+  gap: 1.4rem;
   max-width: 1100px;
 }
+.heroButtons { margin-top: .75rem; gap: .9rem; }
 .heroLead {
   max-width: 62ch;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
@@ -744,6 +750,8 @@ button[type="submit"]:hover { background: var(--orange); }
 .platformCard--ig { background: linear-gradient(135deg, #cc9274, #d9b39f); }
 .platformCard--tk { background: linear-gradient(135deg, #1d1510, #2a1f16); color: var(--gold); }
 .platformCard--tk em { color: #f7e8c5; opacity: .8; }
+.platformCard--sp { background: linear-gradient(135deg, #1ed760, #128a3f); color: #0d1f12; }
+.platformCard--sp em { color: #0d1f12; opacity: .75; }
 
 .latestMixes {
   display: grid;
@@ -792,9 +800,9 @@ button[type="submit"]:hover { background: var(--orange); }
 
 .mailingForm {
   display: grid;
-  gap: .55rem;
-  max-width: 460px;
-  margin-top: 1rem;
+  gap: .85rem;
+  max-width: 480px;
+  margin-top: 1.6rem;
 }
 .mailingForm--inline { grid-template-columns: 1fr auto; }
 .mailingForm input {
@@ -894,22 +902,22 @@ button[type="submit"]:hover { background: var(--orange); }
    ---------------------------------------------------------- */
 
 .footer {
-  padding: 1.6rem clamp(1rem, 4vw, 3rem) 1.2rem;
+  padding: 2.4rem clamp(1.25rem, 4vw, 3rem) 1.6rem;
   background: var(--black);
   color: var(--paper);
   display: grid;
-  gap: .9rem;
+  gap: 1.6rem;
   border-top: 4px solid var(--orange);
 }
 .footerTop {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 1.1rem;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.6rem;
   align-items: center;
 }
-.footerBrand { display: inline-flex; }
+.footerBrand { display: inline-flex; justify-self: start; }
 .footerLinks {
-  display: flex; flex-wrap: wrap; gap: .9rem;
+  display: flex; flex-wrap: wrap; gap: 1.1rem;
   font-size: .78rem; text-transform: uppercase;
   letter-spacing: .08em; font-weight: 700;
   justify-self: center;

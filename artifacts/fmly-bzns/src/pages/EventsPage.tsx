@@ -3,7 +3,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { PageHero } from "@/components/PageHero";
 import { EventCard } from "@/components/EventCard";
-import { events, type EventType } from "@/data/events";
+import { YouTubeEmbed } from "@/components/YouTubeEmbed";
+import { events, featuredEventVideo, type EventType } from "@/data/events";
 
 const filters: ("All" | EventType)[] = [
   "All",
@@ -32,6 +33,15 @@ export default function EventsPage() {
       />
 
       <section className="section">
+        <article className="eventVideoCard" aria-labelledby="event-video-title">
+          <p className="eyebrow">Festival Takeover Preview</p>
+          <h3 id="event-video-title">{featuredEventVideo.title}</h3>
+          <YouTubeEmbed
+            videoId={featuredEventVideo.youtubeId}
+            title={featuredEventVideo.title}
+          />
+        </article>
+
         <div className="filterRow" role="tablist" aria-label="Filter events">
           {filters.map((f) => (
             <button

@@ -2,6 +2,7 @@ import type { ReactElement } from "react";
 import {
   FaInstagram,
   FaSoundcloud,
+  FaSpotify,
   FaTiktok,
   FaYoutube,
   FaEnvelope,
@@ -12,6 +13,7 @@ export type SocialName =
   | "TikTok"
   | "YouTube"
   | "SoundCloud"
+  | "Spotify"
   | "Email";
 
 const map: Record<SocialName, ReactElement> = {
@@ -19,6 +21,7 @@ const map: Record<SocialName, ReactElement> = {
   TikTok: <FaTiktok aria-hidden focusable="false" />,
   YouTube: <FaYoutube aria-hidden focusable="false" />,
   SoundCloud: <FaSoundcloud aria-hidden focusable="false" />,
+  Spotify: <FaSpotify aria-hidden focusable="false" />,
   Email: <FaEnvelope aria-hidden focusable="false" />,
 };
 
