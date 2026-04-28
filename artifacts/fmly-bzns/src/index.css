@@ -257,18 +257,18 @@ button[type="submit"]:hover { background: var(--orange); }
 .headerRight {
   display: flex;
   align-items: center;
-  gap: .85rem;
-  flex-wrap: wrap;
+  gap: .65rem;
+  flex-wrap: nowrap;
 }
 
 .iconRow {
   display: flex;
-  gap: .5rem;
-  flex-wrap: wrap;
+  gap: .4rem;
+  flex-wrap: nowrap;
 }
 .iconRow a {
-  width: 2rem;
-  height: 2rem;
+  width: 1.85rem;
+  height: 1.85rem;
   display: grid;
   place-items: center;
   border: 1.5px solid var(--black);
@@ -280,18 +280,20 @@ button[type="submit"]:hover { background: var(--orange); }
 .iconRow a:hover { background: var(--orange); color: #fff; transform: translateY(-2px); }
 .iconRow svg { width: 1rem; height: 1rem; display: block; }
 
-.headerTicket {
-  padding: .55rem .85rem;
-  background: var(--orange);
+.cartBtn {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: grid;
+  place-items: center;
   border: 1.5px solid var(--black);
-  color: #fff6e1;
-  text-transform: uppercase;
-  font-size: .74rem;
-  font-weight: 800;
-  letter-spacing: .06em;
+  border-radius: 50%;
+  color: var(--black);
+  background: var(--orange);
   box-shadow: 3px 3px 0 var(--black);
+  transition: transform .12s, box-shadow .12s;
 }
-.headerTicket:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--black); }
+.cartBtn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--black); }
+.cartBtn svg { width: 1.05rem; height: 1.05rem; display: block; color: #fff6e1; }
 
 .navToggle {
   display: none;
@@ -333,7 +335,7 @@ button[type="submit"]:hover { background: var(--orange); }
    ---------------------------------------------------------- */
 
 .hero {
-  padding: 3.4rem clamp(1rem, 4vw, 3rem) 4rem;
+  padding: 1.6rem clamp(1rem, 4vw, 3rem) 3.2rem;
   background:
     linear-gradient(180deg, rgba(241, 209, 100, 0.92) 0%, rgba(255, 175, 90, 0.85) 35%, rgba(204, 146, 116, 0.78) 100%),
     url("https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?auto=format&fit=crop&w=2000&q=80") center/cover;
@@ -721,6 +723,33 @@ button[type="submit"]:hover { background: var(--orange); }
 }
 
 /* ----------------------------------------------------------
+   EVENT VIDEO PREVIEW + CART CALLOUT
+   ---------------------------------------------------------- */
+
+.eventVideoCard {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  background: rgba(255, 246, 225, .85);
+  border: 2px solid var(--black);
+  box-shadow: 8px 8px 0 var(--black);
+}
+.eventVideoCard h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+
+.cartCallout {
+  display: grid;
+  gap: 1rem;
+  padding: 1.8rem;
+  background: var(--paper);
+  border: 2px solid var(--black);
+  box-shadow: 8px 8px 0 var(--black);
+  max-width: 760px;
+}
+.cartCallout h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+.cartCalloutNote { font-size: .9rem; color: var(--ink); opacity: .8; }
+
+/* ----------------------------------------------------------
    MUSIC PAGE / PLATFORM CARDS
    ---------------------------------------------------------- */
 
@@ -990,9 +1019,8 @@ button[type="submit"]:hover { background: var(--orange); }
   }
   .primaryNav .navLink:last-child { border-bottom: none; }
 
-  .headerRight { justify-self: end; gap: .45rem; }
+  .headerRight { justify-self: end; gap: .55rem; }
   .iconRow { display: none; }
-  .headerTicket { display: none; }
 
   .brandWordmark { font-size: 1.25rem; }
 

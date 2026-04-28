@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import type { MerchItem } from "@/data/merch";
 
 export function MerchCard({ item }: { item: MerchItem }) {
@@ -20,14 +21,20 @@ export function MerchCard({ item }: { item: MerchItem }) {
         <p className="eyebrow">{item.collection}</p>
         <h3 className="merchCardName">{item.name}</h3>
         <p className="merchCardPrice">{item.price}</p>
-        <a
-          href={item.productUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="smallBtn"
-        >
-          {item.soldOut ? "View Product" : "Shop Now"}
-        </a>
+        {item.soldOut ? (
+          <a
+            href={item.productUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="smallBtn ghost"
+          >
+            View Product
+          </a>
+        ) : (
+          <Link href="/cart" className="smallBtn">
+            Add to Cart
+          </Link>
+        )}
       </div>
     </article>
   );

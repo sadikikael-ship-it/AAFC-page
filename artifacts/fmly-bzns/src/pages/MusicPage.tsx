@@ -5,15 +5,17 @@ import { SoundCloudEmbed } from "@/components/SoundCloudEmbed";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { SocialIcon } from "@/components/SocialIcon";
 import { mixes, weeklyMix } from "@/data/mixes";
-import { videos, featuredVideo } from "@/data/media";
+import { videos, featuredVideo, youtubeChannelUrl } from "@/data/media";
 import { siteLinks } from "@/data/siteLinks";
 
 export default function MusicPage() {
+  const otherVideos = videos.filter((v) => v.id !== featuredVideo.id);
+
   return (
     <main>
       <SiteHeader />
       <PageHero
-        title="Music / Mixes"
+        title="FMLY BZNS — Music & Mixes"
         subtitle="The weekly mix, the FMLY MXTP series, original releases, and live recordings — all in one place."
         actions={
           <>
@@ -34,7 +36,7 @@ export default function MusicPage() {
               Spotify
             </a>
             <a
-              href={siteLinks.social.youtube}
+              href={youtubeChannelUrl}
               target="_blank"
               rel="noreferrer"
               className="smallBtn"
@@ -53,12 +55,22 @@ export default function MusicPage() {
       </section>
 
       <section className="section mediaBand">
-        <p className="eyebrow">Featured film</p>
+        <p className="eyebrow">FMLY BZNS · YouTube</p>
         <h2>{featuredVideo.title}</h2>
         <YouTubeEmbed
           videoId={featuredVideo.youtubeId}
           title={featuredVideo.title}
         />
+        <div className="buttonRow">
+          <a
+            href={youtubeChannelUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="ctaBtn"
+          >
+            Watch More on YouTube
+          </a>
+        </div>
       </section>
 
       <section className="section">
@@ -93,21 +105,23 @@ export default function MusicPage() {
         </div>
       </section>
 
-      <section className="section mediaBand">
-        <p className="eyebrow">All videos</p>
-        <h2>Sets, recaps and films</h2>
-        <div className="videoGrid">
-          {videos.map((v) => (
-            <article key={v.id} className="videoCard">
-              <YouTubeEmbed videoId={v.youtubeId} title={v.title} />
-              <div className="videoCardBody">
-                <span className="eyebrow">{v.kind}</span>
-                <h3>{v.title}</h3>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      {otherVideos.length > 0 ? (
+        <section className="section mediaBand">
+          <p className="eyebrow">More FMLY BZNS videos</p>
+          <h2>Sets, recaps, and films</h2>
+          <div className="videoGrid">
+            {otherVideos.map((v) => (
+              <article key={v.id} className="videoCard">
+                <YouTubeEmbed videoId={v.youtubeId} title={v.title} />
+                <div className="videoCardBody">
+                  <span className="eyebrow">{v.kind}</span>
+                  <h3>{v.title}</h3>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="section musicPreview">
         <h2>Follow the music</h2>
@@ -131,7 +145,7 @@ export default function MusicPage() {
             <span>Spotify</span>
           </a>
           <a
-            href={siteLinks.social.youtube}
+            href={youtubeChannelUrl}
             target="_blank"
             rel="noreferrer"
             className="platformCard platformCard--yt"

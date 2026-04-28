@@ -12,7 +12,7 @@ import { SocialIcon } from "@/components/SocialIcon";
 import { siteLinks, socialList } from "@/data/siteLinks";
 import { events, featuredEventVideo } from "@/data/events";
 import { weeklyMix, mixes } from "@/data/mixes";
-import { videos, featuredVideo } from "@/data/media";
+import { featuredVideo, youtubeChannelUrl } from "@/data/media";
 import { crew } from "@/data/crew";
 import { merch, featuredMerch } from "@/data/merch";
 import { collaborators, marqueeItems } from "@/data/collaborators";
@@ -104,44 +104,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FEATURED VIDEO + GRID */}
+      {/* FEATURED VIDEO */}
       <section className="section mediaBand" aria-labelledby="media-title">
-        <p className="eyebrow">Featured media</p>
+        <p className="eyebrow">FMLY BZNS · YouTube</p>
         <h2 id="media-title">{featuredVideo.title}</h2>
-        <div className="mediaSplit">
-          <YouTubeEmbed
-            videoId={featuredVideo.youtubeId}
-            title={featuredVideo.title}
-          />
-          <div className="mediaList">
-            <p className="eyebrow">More from FMLY BZNS</p>
-            {videos
-              .filter((v) => v.id !== featuredVideo.id)
-              .slice(0, 4)
-              .map((v) => (
-                <a
-                  key={v.id}
-                  href={
-                    v.externalUrl ?? `https://www.youtube.com/watch?v=${v.youtubeId}`
-                  }
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mediaListItem"
-                >
-                  <span className="mediaListKind">{v.kind}</span>
-                  <span className="mediaListTitle">{v.title}</span>
-                  <span className="mediaListGo">Watch →</span>
-                </a>
-              ))}
-            <a
-              href={siteLinks.social.youtube}
-              target="_blank"
-              rel="noreferrer"
-              className="smallBtn"
-            >
-              Open YouTube channel
-            </a>
-          </div>
+        <YouTubeEmbed
+          videoId={featuredVideo.youtubeId}
+          title={featuredVideo.title}
+        />
+        <div className="buttonRow">
+          <a
+            href={youtubeChannelUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="ctaBtn"
+          >
+            Watch More on YouTube
+          </a>
         </div>
       </section>
 
@@ -164,10 +143,10 @@ export default function HomePage() {
         <div className="sectionHeading">
           <div>
             <p className="eyebrow">Upcoming</p>
-            <h2 id="events-title">Events & Festival Takeovers</h2>
+            <h2 id="events-title">Upcoming Events & Takeovers</h2>
           </div>
           <Link href="/events" className="smallBtn">
-            View all events
+            All events
           </Link>
         </div>
         <article className="eventVideoCard" aria-labelledby="home-event-video">
@@ -179,7 +158,7 @@ export default function HomePage() {
           />
         </article>
         <div className="eventGrid">
-          {events.slice(0, 3).map((e) => (
+          {events.map((e) => (
             <EventCard key={e.id} event={e} />
           ))}
         </div>

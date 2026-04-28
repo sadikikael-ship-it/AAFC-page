@@ -9,6 +9,7 @@ import CrewPage from "@/pages/CrewPage";
 import MerchPage from "@/pages/MerchPage";
 import CollaborationsPage from "@/pages/CollaborationsPage";
 import ContactPage from "@/pages/ContactPage";
+import CartPage from "@/pages/CartPage";
 import NotFoundPage from "@/pages/NotFoundPage";
 
 function ScrollToTop() {
@@ -29,6 +30,8 @@ function Router() {
       <Route path="/merch" component={MerchPage} />
       <Route path="/collaborations" component={CollaborationsPage} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/cart" component={CartPage} />
+      <Route path="/checkout">{() => <Redirect to="/cart" />}</Route>
       {/* Legacy aliases from earlier site structure */}
       <Route path="/media">{() => <Redirect to="/music" />}</Route>
       <Route path="/shop">{() => <Redirect to="/merch" />}</Route>

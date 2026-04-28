@@ -1,6 +1,14 @@
 import type { SiteEvent } from "@/data/events";
 
 export function EventCard({ event }: { event: SiteEvent }) {
+  const primary = event.ticketUrl
+    ? { href: event.ticketUrl, label: "Buy Tickets" }
+    : event.learnMoreUrl
+      ? { href: event.learnMoreUrl, label: "Learn More" }
+      : event.detailsUrl
+        ? { href: event.detailsUrl, label: "Details" }
+        : null;
+
   return (
     <article className="eventCard">
       <div
@@ -22,24 +30,18 @@ export function EventCard({ event }: { event: SiteEvent }) {
         {event.description ? (
           <p className="eventCardDesc">{event.description}</p>
         ) : null}
-        <div className="eventCardActions">
-          <a
-            href={event.ticketUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="ctaBtn"
-          >
-            Buy Tickets
-          </a>
-          <a
-            href={event.detailsUrl ?? event.ticketUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="smallBtn ghost"
-          >
-            Details
-          </a>
-        </div>
+        {primary ? (
+          <div className="eventCardActions">
+            <a
+              href={primary.href}
+              target="_blank"
+              rel="noreferrer"
+              className="ctaBtn"
+            >
+              {primary.label}
+            </a>
+          </div>
+        ) : null}
       </div>
     </article>
   );

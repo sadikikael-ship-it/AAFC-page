@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { navItems, socialList, siteLinks } from "@/data/siteLinks";
+import { FaShoppingCart } from "react-icons/fa";
+import { navItems, socialList } from "@/data/siteLinks";
 import { SocialIcon } from "./SocialIcon";
 
 export function SiteHeader() {
@@ -52,14 +53,14 @@ export function SiteHeader() {
             </a>
           ))}
         </div>
-        <a
-          href={siteLinks.shop}
-          target="_blank"
-          rel="noreferrer"
-          className="headerTicket"
+        <Link
+          href="/cart"
+          className="cartBtn"
+          aria-label="Cart"
+          title="Cart"
         >
-          Buy Tickets
-        </a>
+          <FaShoppingCart aria-hidden focusable="false" />
+        </Link>
         <button
           type="button"
           className="navToggle"
