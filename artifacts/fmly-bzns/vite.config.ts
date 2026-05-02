@@ -4,15 +4,13 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 const rawPort = process.env.PORT;
-const port = rawPort ? Number(rawPort) : 5173;
-
-if (Number.isNaN(port) || port <= 0) {
-  throw new Error(`Invalid PORT value: "${rawPort}"`);
-}
+const port = rawPort && !Number.isNaN(Number(rawPort)) && Number(rawPort) > 0
+  ? Number(rawPort)
+  : 5173;
 
 const basePath = process.env.BASE_PATH ?? "/";
 
-const isReplit = process.env.REPL_ID !== undefined;
+const isReplit = Boolean(process.env.REPL_ID);
 const isProd = process.env.NODE_ENV === "production";
 
 const replitPlugins = isReplit
