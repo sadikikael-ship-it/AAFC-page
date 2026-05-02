@@ -1,22 +1,23 @@
 import { PageHero } from '@/components/PageHero';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
-import { media } from '@/lib/siteData';
+import { siteLinks, weeklyMix } from '@/lib/siteData';
+import { SocialIcon } from '@/components/SocialIcon';
 
 export default function MediaPage() {
   return (
     <main>
       <SiteHeader />
-      <PageHero title="Music / Mixes / Media" subtitle="A curated archive of mixes, playlists, films, and visual storytelling." />
-      <section className="section cards3">
-        {media.map((item) => (
-          <article className="card" key={item.title}>
-            <p className="eyebrow">{item.kind}</p>
-            <h3>{item.title}</h3>
-            <p>Embed-ready card for Spotify, SoundCloud, YouTube, and platform-native releases.</p>
-            <a href={item.url} target="_blank" rel="noreferrer" className="inlineLink">{item.cta}</a>
-          </article>
-        ))}
+      <PageHero title="Music / Mixes" subtitle="FMLY BZNS mixes, sets, and media channels." />
+      <section className="section eventsBand">
+        <h2>{weeklyMix.title}</h2>
+        <p>{weeklyMix.description}</p>
+        <iframe title="FMLY mix embed" className="mediaEmbed" src={weeklyMix.soundcloudEmbed} />
+        <div className="socialIconOnlyRow" aria-label="music channels">
+          <a href={siteLinks.social.soundcloud} target="_blank" rel="noreferrer" aria-label="SoundCloud"><SocialIcon name="SoundCloud" /></a>
+          <a href={siteLinks.social.spotify} target="_blank" rel="noreferrer" aria-label="Spotify"><SocialIcon name="Spotify" /></a>
+          <a href={siteLinks.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube"><SocialIcon name="YouTube" /></a>
+        </div>
       </section>
       <SiteFooter />
     </main>

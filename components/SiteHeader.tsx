@@ -1,13 +1,15 @@
 import Link from 'next/link';
-import { navItems, primaryTicketUrl, socialLinks } from '@/lib/siteData';
+import { navItems, socialLinks } from '@/lib/siteData';
 import { SocialIcon } from './SocialIcon';
 
 export function SiteHeader() {
   return (
     <header className="siteHeader">
-      <Link href="/" className="brand">
-        FMLY BZNS
-      </Link>
+      <div className="headerLeft">
+        <Link href="/" className="brand" aria-label="FMLY BZNS home">
+          <span className="brandFm">FMLY</span> <span className="brandBz">BZNS</span>
+        </Link>
+      </div>
       <nav>
         {navItems.map(([label, href]) => (
           <Link key={href} href={href}>
@@ -15,14 +17,18 @@ export function SiteHeader() {
           </Link>
         ))}
       </nav>
-      <div className="iconRow" aria-label="music and social links">
-        {socialLinks.slice(0, 5).map(([label, href]) => (
-          <a key={label} href={href} target={href.startsWith('mailto:') ? undefined : '_blank'} rel="noreferrer" aria-label={label} title={label}>
-            <SocialIcon name={label} />
-          </a>
-        ))}
+      <div className="headerRight">
+        <div className="iconRow" aria-label="social links">
+          {socialLinks.map(([label, href]) => (
+            <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} title={label}>
+              <SocialIcon name={label} />
+            </a>
+          ))}
+          <Link href="/cart" aria-label="Cart" title="Cart">
+            <SocialIcon name="Cart" />
+          </Link>
+        </div>
       </div>
-      <a href={primaryTicketUrl} target="_blank" rel="noreferrer" className="headerTicket">Buy Tickets</a>
     </header>
   );
 }
