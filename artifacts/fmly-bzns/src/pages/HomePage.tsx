@@ -268,11 +268,11 @@ export default function HomePage() {
       <section className="section crewBand" aria-labelledby="crew-title">
         <div className="sectionHeading">
           <div>
-            <p className="eyebrow">The crew</p>
-            <h2 id="crew-title">Built by family</h2>
+            <p className="eyebrow">The FMLY</p>
+            <h2 id="crew-title">Meet the FMLY</h2>
           </div>
           <Link href="/crew" className="smallBtn">
-            Meet the full crew
+            Full roster
           </Link>
         </div>
         <div className="crewGrid">

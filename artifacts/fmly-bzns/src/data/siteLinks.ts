@@ -29,7 +29,7 @@ export const navItems = [
   { label: "Home", href: "/" },
   { label: "Events", href: "/events" },
   { label: "Music", href: "/music" },
-  { label: "Crew", href: "/crew" },
+  { label: "FMLY", href: "/crew" },
   { label: "Merch", href: "/merch" },
   { label: "Collaborations", href: "/collaborations" },
   { label: "Contact", href: "/contact" },
