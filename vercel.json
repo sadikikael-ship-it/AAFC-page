@@ -3,7 +3,6 @@
   "outputDirectory": "artifacts/fmly-bzns/dist/public",
   "installCommand": "pnpm install",
   "framework": null,
-  "nodejs": "20.x",
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
