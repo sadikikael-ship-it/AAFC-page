@@ -212,16 +212,17 @@ button[type="submit"]:hover { background: var(--orange); }
   object-fit: contain;
 }
 .brandLogo--hero {
-  height: clamp(120px, 18vw, 200px);
-  width: auto;
+  height: clamp(180px, 28vw, 320px);
+  width: clamp(220px, 38vw, 420px);
   display: block;
   object-fit: contain;
+  object-position: center;
   margin: 0 auto 1.5rem;
-  filter: drop-shadow(0 4px 16px rgba(0,0,0,.35));
+  filter: drop-shadow(0 6px 24px rgba(0,0,0,.4));
 }
 @media (max-width: 640px) {
   .brandLogo { height: 48px; }
-  .brandLogo--hero { height: 100px; }
+  .brandLogo--hero { height: 160px; width: 200px; }
 }
 .brandWordmark {
   font-family: "Fungus", Impact, sans-serif;
