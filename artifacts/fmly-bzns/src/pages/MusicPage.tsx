@@ -47,17 +47,45 @@ export default function MusicPage() {
         }
       />
 
+      {/* WEEKLY MIX */}
       <section className="section weeklyBand">
-        <p className="eyebrow">Weekly Mix</p>
+        <p className="eyebrow">Weekly Mix · Updated Every Friday</p>
         <h2>{weeklyMix.title}</h2>
         <p className="weeklyDesc">{weeklyMix.description}</p>
+        <div className="tagRow">
+          {weeklyMix.tags.map((t) => (
+            <span key={t} className="tag">
+              {t}
+            </span>
+          ))}
+        </div>
         <SoundCloudEmbed url={weeklyMix.soundcloudUrl} title={weeklyMix.title} />
+        <div className="buttonRow">
+          <a
+            href={siteLinks.social.soundcloud}
+            target="_blank"
+            rel="noreferrer"
+            className="ctaBtn"
+          >
+            Listen on SoundCloud
+          </a>
+          <a
+            href={siteLinks.social.spotify}
+            target="_blank"
+            rel="noreferrer"
+            className="smallBtn"
+          >
+            <SocialIcon name="Spotify" />
+            &nbsp;Spotify
+          </a>
+        </div>
       </section>
 
+      {/* FEATURED VIDEO */}
       <section className="section mediaBand">
         <p className="eyebrow">FMLY BZNS · YouTube</p>
-        <h2>Featured on the channel</h2>
-        <YouTubeEmbed videoId="Cx3zvYcfh5Q" title="FMLY BZNS featured video" />
+        <h2>{featuredVideo.title}</h2>
+        <YouTubeEmbed videoId={featuredVideo.youtubeId} title={featuredVideo.title} />
         <div className="buttonRow">
           <a
             href={youtubeChannelUrl}
@@ -70,6 +98,7 @@ export default function MusicPage() {
         </div>
       </section>
 
+      {/* ALL MIXES */}
       <section className="section">
         <p className="eyebrow">All mixes</p>
         <h2>The FMLY catalog</h2>
@@ -120,6 +149,7 @@ export default function MusicPage() {
         </section>
       ) : null}
 
+      {/* PLATFORM LINKS */}
       <section className="section musicPreview">
         <h2>Follow the music</h2>
         <div className="musicPlatformRow">
@@ -131,6 +161,7 @@ export default function MusicPage() {
           >
             <SocialIcon name="SoundCloud" />
             <span>SoundCloud</span>
+            <em>All FMLY MXTP releases</em>
           </a>
           <a
             href={siteLinks.social.spotify}
@@ -140,6 +171,7 @@ export default function MusicPage() {
           >
             <SocialIcon name="Spotify" />
             <span>Spotify</span>
+            <em>Streaming releases</em>
           </a>
           <a
             href={youtubeChannelUrl}
@@ -149,6 +181,7 @@ export default function MusicPage() {
           >
             <SocialIcon name="YouTube" />
             <span>YouTube</span>
+            <em>Sets, recaps, and films</em>
           </a>
           <a
             href={siteLinks.social.instagram}
@@ -158,6 +191,7 @@ export default function MusicPage() {
           >
             <SocialIcon name="Instagram" />
             <span>Instagram</span>
+            <em>Daily clips and reels</em>
           </a>
           <a
             href={siteLinks.social.tiktok}
@@ -167,6 +201,7 @@ export default function MusicPage() {
           >
             <SocialIcon name="TikTok" />
             <span>TikTok</span>
+            <em>From the floor</em>
           </a>
         </div>
       </section>

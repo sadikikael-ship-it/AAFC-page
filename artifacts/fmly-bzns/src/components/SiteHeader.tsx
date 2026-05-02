@@ -18,7 +18,11 @@ export function SiteHeader() {
     <header className="siteHeader">
       <div className="headerLeft">
         <Link href="/" className="brandLink" aria-label="FMLY BZNS — Home">
-          <span className="brandWordmark">FMLY BZNS</span>
+          <img
+            src="/fmly-logo-color.png"
+            alt="FMLY BZNS"
+            className="brandLogo"
+          />
         </Link>
       </div>
 

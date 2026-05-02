@@ -12,16 +12,31 @@ import { SocialIcon } from "@/components/SocialIcon";
 import { siteLinks, socialList } from "@/data/siteLinks";
 import { events, featuredEventVideo } from "@/data/events";
 import { weeklyMix, mixes } from "@/data/mixes";
-import { youtubeChannelUrl } from "@/data/media";
 import { crew } from "@/data/crew";
 import { merch, featuredMerch } from "@/data/merch";
 import { collaborators, marqueeItems } from "@/data/collaborators";
 
-const offerings = [
-  ["Event Experiences", "Curated parties, takeovers, and immersive dancefloors"],
-  ["Music + Mixes", "Original releases, edits, and the FMLY MXTP series"],
-  ["Creative Direction", "Visual identity, projections, fashion and vibe curation"],
-  ["Bookings + Partnerships", "Festivals, brand activations, and custom collabs"],
+const whatWeDo = [
+  {
+    label: "Sound",
+    headline: "Sound",
+    body: "Original music, edits, and the FMLY MXTP series—soundtracks for the global dancefloor.",
+  },
+  {
+    label: "Dancefloor",
+    headline: "Dancefloor",
+    body: "Curated events, takeovers, and immersive spaces built for movement.",
+  },
+  {
+    label: "Visual World",
+    headline: "Visual World",
+    body: "Creative direction, projections, fashion, and full-spectrum vibe curation.",
+  },
+  {
+    label: "Collaborations",
+    headline: "Collaborations",
+    body: "Festivals, brand partnerships, and custom cultural activations.",
+  },
 ] as const;
 
 export default function HomePage() {
@@ -32,23 +47,13 @@ export default function HomePage() {
       {/* HERO */}
       <section className="section hero" id="top">
         <div className="heroInner">
-          <span
-            className="brandWordmark brandWordmark--hero"
-            aria-label="FMLY BZNS"
-          >
-            FMLY BZNS
-          </span>
-          <p className="eyebrow">Global movement · est. since the dancefloor</p>
+          <p className="eyebrow">Global Dance Music Culture</p>
           <h1>
-            A global music & culture collective
+            THIS IS FMLY BZNS.
             <br />
-            built for the dancefloor.
+            A GLOBAL DANCEFLOOR.
           </h1>
-          <p className="heroLead">
-            FMLY BZNS blends Afro-diaspora club sounds, immersive event
-            experiences, healing energy, and forward-thinking visual culture
-            into one global movement.
-          </p>
+          <p className="heroLead">Music. Movement. Energy. Connection.</p>
           <div className="buttonRow heroButtons">
             <Link href="/events" className="ctaBtn">
               View Events
@@ -63,21 +68,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* BRAND STATEMENT */}
+      {/* WHO WE ARE */}
       <section className="section introBand patternBand">
         <p className="eyebrow">Who we are</p>
         <p className="introBandCopy">
-          A collective of DJs, producers, hosts, designers, and culture
-          builders. We program rooms where Amapiano, Dancehall, Afro-House,
-          Afrobeats, Global Bass, Hip-Hop, Soul, and healing arts can coexist —
-          rooted in culture, movement, and freedom.
+          A collective of DJs, producers, curators, and culture builders—curating
+          sound and shaping experience. We create spaces where rhythm leads, energy
+          flows, and movement becomes connection—rooted in Afro-diaspora sound and
+          global dancefloor culture.
         </p>
       </section>
 
       {/* WEEKLY MIX */}
       <section className="section weeklyBand" aria-labelledby="weekly-title">
         <div className="weeklyHeader">
-          <p className="eyebrow">Weekly Mix · updated every Friday</p>
+          <p className="eyebrow">Weekly Mix · Updated Every Friday</p>
           <h2 id="weekly-title">{weeklyMix.title}</h2>
           <p className="weeklyDesc">{weeklyMix.description}</p>
           <div className="tagRow">
@@ -98,38 +103,30 @@ export default function HomePage() {
           >
             Listen on SoundCloud
           </a>
+          <a
+            href={siteLinks.social.spotify}
+            target="_blank"
+            rel="noreferrer"
+            className="smallBtn"
+          >
+            <SocialIcon name="Spotify" />
+            &nbsp;Spotify
+          </a>
           <Link href="/music" className="smallBtn ghost">
             All Mixes
           </Link>
         </div>
       </section>
 
-      {/* FEATURED VIDEO */}
-      <section className="section mediaBand" aria-labelledby="media-title">
-        <p className="eyebrow">FMLY BZNS · YouTube</p>
-        <h2 id="media-title">Featured on the channel</h2>
-        <YouTubeEmbed videoId="Cx3zvYcfh5Q" title="FMLY BZNS featured video" />
-        <div className="buttonRow">
-          <a
-            href={youtubeChannelUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="ctaBtn"
-          >
-            Watch More on YouTube
-          </a>
-        </div>
-      </section>
-
       {/* WHAT WE DO */}
       <section className="section patternBandAlt">
         <p className="eyebrow">What we do</p>
-        <h2>Four worlds, one movement</h2>
+        <h2>Sound. Space. Experience. Culture.</h2>
         <div className="cards4">
-          {offerings.map(([title, description]) => (
-            <article className="offeringCard" key={title}>
-              <h3>{title}</h3>
-              <p>{description}</p>
+          {whatWeDo.map(({ label, headline, body }) => (
+            <article className="offeringCard" key={label}>
+              <h3>{headline}</h3>
+              <p>{body}</p>
             </article>
           ))}
         </div>
@@ -140,7 +137,7 @@ export default function HomePage() {
         <div className="sectionHeading">
           <div>
             <p className="eyebrow">Upcoming</p>
-            <h2 id="events-title">Upcoming Events & Takeovers</h2>
+            <h2 id="events-title">Upcoming Events &amp; Takeovers</h2>
           </div>
           <Link href="/events" className="smallBtn">
             All events
@@ -161,102 +158,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CREW */}
-      <section className="section crewBand" aria-labelledby="crew-title">
-        <div className="sectionHeading">
-          <div>
-            <p className="eyebrow">The crew</p>
-            <h2 id="crew-title">Built by family</h2>
-          </div>
-          <Link href="/crew" className="smallBtn">
-            Meet the full crew
-          </Link>
-        </div>
-        <div className="crewGrid">
-          {crew.slice(0, 6).map((m) => (
-            <CrewCard key={m.name} member={m} />
-          ))}
-        </div>
-      </section>
-
-      {/* MERCH */}
-      <section className="section merchBand" aria-labelledby="merch-title">
-        <div className="sectionHeading">
-          <div>
-            <p className="eyebrow">Merch · drops</p>
-            <h2 id="merch-title">Wear the movement</h2>
-          </div>
-          <a
-            href={siteLinks.shop}
-            target="_blank"
-            rel="noreferrer"
-            className="smallBtn"
-          >
-            Open the shop
-          </a>
-        </div>
-        <div className="merchEditorial">
-          <a
-            href={featuredMerch.productUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="merchFeature"
-            aria-label={`Featured drop: ${featuredMerch.name}`}
-          >
-            <div
-              className="merchFeatureImage"
-              style={{ backgroundImage: `url(${featuredMerch.image})` }}
-            />
-            <div className="merchFeatureBody">
-              <p className="eyebrow">{featuredMerch.collection}</p>
-              <h3>{featuredMerch.name}</h3>
-              <p className="merchFeaturePrice">{featuredMerch.price}</p>
-              <span className="linkBtn">Shop the drop →</span>
-            </div>
-          </a>
-          <div className="merchGrid">
-            {merch
-              .filter((m) => m.id !== featuredMerch.id)
-              .slice(0, 4)
-              .map((m) => (
-                <MerchCard key={m.id} item={m} />
-              ))}
-          </div>
-        </div>
-      </section>
-
-      {/* COLLABORATIONS */}
-      <section
-        className="section collabBand patternBand"
-        aria-labelledby="collab-title"
-      >
-        <div className="sectionHeading">
-          <div>
-            <p className="eyebrow">Collaborations</p>
-            <h2 id="collab-title">Artists, festivals & creative partners</h2>
-          </div>
-          <Link href="/collaborations" className="smallBtn">
-            All collaborators
-          </Link>
-        </div>
-        <div className="collabPills">
-          {collaborators.slice(0, 14).map((c) => (
-            <span key={c.name} className={`pill pill--${c.kind.toLowerCase()}`}>
-              {c.name}
-              <em>{c.kind}</em>
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* MARQUEE */}
-      <section className="section marqueeBand">
-        <Marquee items={marqueeItems} />
-      </section>
-
-      {/* MUSIC PREVIEW */}
+      {/* MUSIC / MIXES PREVIEW */}
       <section className="section musicPreview" aria-labelledby="music-title">
-        <p className="eyebrow">Music & mixes</p>
+        <p className="eyebrow">Music &amp; mixes</p>
         <h2 id="music-title">Open the FMLY catalog</h2>
         <div className="musicPlatformRow">
           <a
@@ -327,6 +231,94 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* CREW */}
+      <section className="section crewBand" aria-labelledby="crew-title">
+        <div className="sectionHeading">
+          <div>
+            <p className="eyebrow">The crew</p>
+            <h2 id="crew-title">Built by family</h2>
+          </div>
+          <Link href="/crew" className="smallBtn">
+            Meet the full crew
+          </Link>
+        </div>
+        <div className="crewGrid">
+          {crew.slice(0, 6).map((m) => (
+            <CrewCard key={m.name} member={m} />
+          ))}
+        </div>
+      </section>
+
+      {/* MERCH */}
+      <section className="section merchBand" aria-labelledby="merch-title">
+        <div className="sectionHeading">
+          <div>
+            <p className="eyebrow">Merch · drops</p>
+            <h2 id="merch-title">Wear the movement</h2>
+          </div>
+          <Link href="/merch" className="smallBtn">
+            Shop all
+          </Link>
+        </div>
+        <div className="merchEditorial">
+          <a
+            href={featuredMerch.productUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="merchFeature"
+            aria-label={`Featured drop: ${featuredMerch.name}`}
+          >
+            <div
+              className="merchFeatureImage"
+              style={{ backgroundImage: `url(${featuredMerch.image})` }}
+            />
+            <div className="merchFeatureBody">
+              <p className="eyebrow">{featuredMerch.collection}</p>
+              <h3>{featuredMerch.name}</h3>
+              <p className="merchFeaturePrice">{featuredMerch.price}</p>
+              <span className="linkBtn">Shop the drop →</span>
+            </div>
+          </a>
+          <div className="merchGrid">
+            {merch
+              .filter((m) => m.id !== featuredMerch.id)
+              .slice(0, 4)
+              .map((m) => (
+                <MerchCard key={m.id} item={m} />
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COLLABORATIONS */}
+      <section
+        className="section collabBand patternBand"
+        aria-labelledby="collab-title"
+      >
+        <div className="sectionHeading">
+          <div>
+            <p className="eyebrow">Collaborations</p>
+            <h2 id="collab-title">Artists, festivals &amp; creative partners</h2>
+          </div>
+          <Link href="/collaborations" className="smallBtn">
+            All collaborators
+          </Link>
+        </div>
+        <div className="collabPills">
+          {collaborators.slice(0, 16).map((c) => (
+            <span key={c.name} className={`pill pill--${c.kind.toLowerCase()}`}>
+              {c.name}
+              <em>{c.kind}</em>
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* MARQUEE */}
+      <section className="section marqueeBand">
+        <Marquee items={marqueeItems} />
+      </section>
+
       {/* MAILING LIST */}
       <section
         className="section mailingBand"
@@ -334,7 +326,7 @@ export default function HomePage() {
       >
         <div className="mailingInner">
           <p className="eyebrow">Get the signal</p>
-          <h2 id="mailing-title">Mixes · tickets · drops</h2>
+          <h2 id="mailing-title">Mixes · Tickets · Drops</h2>
           <p className="mailingLead">
             Join for weekly mixes, event announcements, ticket pre-sales, merch
             drops, festival takeovers, and collaboration news.

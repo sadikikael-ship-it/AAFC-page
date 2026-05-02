@@ -12,26 +12,39 @@ export interface Collaborator {
 }
 
 export const collaborators: Collaborator[] = [
-  { name: "Afro Nation", kind: "Festival", url: "https://www.afronation.com" },
-  { name: "Field Day", kind: "Festival", url: "https://fielddayfestivals.com" },
-  { name: "Boiler Room", kind: "Brand", url: "https://boilerroom.tv" },
-  { name: "Notion Mag", kind: "Brand" },
-  { name: "Säule (Berghain)", kind: "Venue" },
-  { name: "Palais Electrique", kind: "Venue" },
-  { name: "The Foundry Hall", kind: "Venue" },
-  { name: "Kampire", kind: "Artist" },
-  { name: "DBN Gogo", kind: "Artist" },
-  { name: "Uncle Waffles", kind: "Artist" },
-  { name: "Major League DJz", kind: "Artist" },
-  { name: "Moxie", kind: "Artist" },
-  { name: "Skyline Yard", kind: "Venue" },
-  { name: "Brooklyn", kind: "City" },
-  { name: "Lagos", kind: "City" },
-  { name: "Berlin", kind: "City" },
-  { name: "London", kind: "City" },
-  { name: "Paris", kind: "City" },
+  { name: "Lightning in a Bottle", kind: "Festival", url: "https://www.libfestival.org/" },
+  { name: "Coachella", kind: "Festival" },
+  { name: "Same Same But Different", kind: "Festival", url: "https://www.ssbdfest.com/" },
+  { name: "Burning Man", kind: "Festival" },
+  { name: "Reggae on the River", kind: "Festival" },
+  { name: "Northern Nights", kind: "Festival" },
+
+  { name: "1015 Folsom", kind: "Venue" },
+  { name: "Public Works", kind: "Venue" },
+  { name: "Vintage Space", kind: "Venue" },
+  { name: "Continental Club", kind: "Venue" },
+  { name: "New Parish", kind: "Venue" },
+  { name: "Royal Sun Palm Springs", kind: "Venue" },
+
+  { name: "BLVK H3R0", kind: "Artist" },
+  { name: "AMALYN", kind: "Artist" },
+  { name: "Kes Kross", kind: "Artist" },
+  { name: "Jade de Lafleur", kind: "Artist" },
+  { name: "Seun Kuti", kind: "Artist" },
+
+  { name: "Secret Sessions", kind: "Brand" },
+  { name: "Peace Fits", kind: "Brand" },
+  { name: "Hot Ice Cream Boutique", kind: "Brand" },
+
+  { name: "Oakland", kind: "City" },
+  { name: "Bali", kind: "City" },
+  { name: "Mexico City", kind: "City" },
+  { name: "Los Angeles", kind: "City" },
+  { name: "Miami", kind: "City" },
+  { name: "Puerto Rico", kind: "City" },
+  { name: "Colombia", kind: "City" },
+  { name: "Cape Town", kind: "City" },
   { name: "Accra", kind: "City" },
-  { name: "Johannesburg", kind: "City" },
 ];
 
 export const marqueeItems = collaborators.map((c) => c.name);

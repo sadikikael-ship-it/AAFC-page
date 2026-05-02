@@ -205,6 +205,15 @@ button[type="submit"]:hover { background: var(--orange); }
   gap: .65rem;
   color: var(--black);
 }
+.brandLogo {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+@media (max-width: 640px) {
+  .brandLogo { height: 34px; }
+}
 .brandWordmark {
   font-family: "Fungus", Impact, sans-serif;
   font-size: 1.6rem;
