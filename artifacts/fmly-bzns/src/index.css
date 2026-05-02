@@ -407,6 +407,17 @@ button[type="submit"]:hover { background: var(--orange); }
   font-family: Georgia, "Times New Roman", serif;
   max-width: 78ch;
 }
+.soundIntro {
+  background: var(--paper);
+  border-bottom: 2px solid var(--gold);
+}
+.soundIntroCopy {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-family: Georgia, "Times New Roman", serif;
+  max-width: 72ch;
+  color: var(--black);
+  line-height: 1.7;
+}
 
 /* ----------------------------------------------------------
    WEEKLY MIX

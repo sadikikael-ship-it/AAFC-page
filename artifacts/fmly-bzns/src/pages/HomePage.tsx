@@ -84,6 +84,17 @@ export default function HomePage() {
         </p>
       </section>
 
+      {/* WHO WE ARE — above SoundCloud */}
+      <section className="section soundIntro">
+        <p className="eyebrow">The sound</p>
+        <p className="soundIntroCopy">
+          Every Friday, we drop a new mix from the FMLY catalog — Afro-House,
+          Amapiano, Dancehall, Baile Funk, and global club, curated by the
+          collective. Subscribe on SoundCloud or Spotify and never miss a
+          frequency.
+        </p>
+      </section>
+
       {/* WEEKLY MIX */}
       <section className="section weeklyBand" aria-labelledby="weekly-title">
         <div className="weeklyHeader">
