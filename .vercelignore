@@ -1,0 +1,6 @@
+.migration-backup
+artifacts/api-server
+artifacts/mockup-sandbox
+attached_assets
+.local
+node_modules
