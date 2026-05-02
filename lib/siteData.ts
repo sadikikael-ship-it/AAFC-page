@@ -61,7 +61,8 @@ export const events = [
     description:
       'FMLY BZNS takes over The Crossroads at Lightning in a Bottle for a full 8-hour, night-to-dawn session — bringing a global lineup of selectors and artists from Ghana, Zimbabwe, Netherlands, Egypt, Colombia, Jamaica, Venezuela, California, and beyond into one unified frequency. Rooted in Afro-diaspora sound and built for the late-night rave, this is a high-intensity journey through Amapiano, Afro-House, Gqom, Baile Funk, Dancehall, and global club.',
     cta: 'Learn More',
-    url: siteLinks.events.lightningInABottle
+    url: siteLinks.events.lightningInABottle,
+    featuredTicket: false
   },
   {
     title: 'FMLY BZNS: The Felix SF',
@@ -76,7 +77,8 @@ export const events = [
     description:
       'FMLY BZNS takes over The Felix SF for a night rooted in sound, style, and late-night connection — bringing Global Dance Music Culture into one of San Francisco’s most refined dancefloor settings. Expect Afro-diaspora rhythms moving through Amapiano, Afro-House, Dancehall, and global club.',
     cta: 'Details',
-    url: '/events'
+    url: '/events',
+    featuredTicket: false
   },
   {
     title: 'FMLY BZNS x Gateway Mendocino: The Gathering',
@@ -107,7 +109,8 @@ export const events = [
     description:
       'FMLY BZNS lands on Nakey Island at Same Same But Different for a 6-hour takeover — bringing a sun-soaked, beachside journey of Global Dance Music Culture to the water’s edge. Rooted in Afro-diaspora rhythms and shaped by island energy, the sound drifts through Amapiano, Afro-Latin House, Dancehall, Baile Funk, and beyond.',
     cta: 'Learn More',
-    url: siteLinks.events.sameSameButDifferent
+    url: siteLinks.events.sameSameButDifferent,
+    featuredTicket: false
   }
 ] as const;
 
