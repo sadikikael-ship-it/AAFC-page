@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { SoundCloudEmbed } from "@/components/SoundCloudEmbed";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { SocialIcon } from "@/components/SocialIcon";
-import { mixes, weeklyMix } from "@/data/mixes";
+import { weeklyMix, soundcloudProfileUrl } from "@/data/mixes";
 import { videos, featuredVideo, youtubeChannelUrl } from "@/data/media";
 import { siteLinks } from "@/data/siteLinks";
 
@@ -51,6 +51,7 @@ export default function MusicPage() {
       <section className="section weeklyBand">
         <p className="eyebrow">Weekly Mix · Updated Every Friday</p>
         <h2>{weeklyMix.title}</h2>
+        {weeklyMix.subtitle ? <p className="weeklySubtitle">{weeklyMix.subtitle}</p> : null}
         <p className="weeklyDesc">{weeklyMix.description}</p>
         <div className="tagRow">
           {weeklyMix.tags.map((t) => (
@@ -81,6 +82,36 @@ export default function MusicPage() {
         </div>
       </section>
 
+      {/* FULL SOUNDCLOUD CATALOG */}
+      <section className="section scCatalogBand">
+        <p className="eyebrow">The FMLY Catalog</p>
+        <h2>All mixes on SoundCloud</h2>
+        <p className="scCatalogLead">
+          Every FMLY MXTP mix, live set, and recorded session lives on our
+          SoundCloud. Browse the full catalog below or open the channel directly.
+        </p>
+        <div className="scCatalogEmbed">
+          <iframe
+            title="FMLY BZNS on SoundCloud"
+            width="100%"
+            height="450"
+            allow="autoplay"
+            src={`https://w.soundcloud.com/player/?url=${encodeURIComponent(soundcloudProfileUrl)}&color=%23e87c35&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true`}
+            style={{ border: "none", borderRadius: "8px", display: "block" }}
+          />
+        </div>
+        <div className="buttonRow">
+          <a
+            href={siteLinks.social.soundcloud}
+            target="_blank"
+            rel="noreferrer"
+            className="ctaBtn"
+          >
+            Open FMLY BZNS on SoundCloud
+          </a>
+        </div>
+      </section>
+
       {/* FEATURED VIDEO */}
       <section className="section mediaBand">
         <p className="eyebrow">FMLY BZNS · YouTube</p>
@@ -95,39 +126,6 @@ export default function MusicPage() {
           >
             Watch More on YouTube
           </a>
-        </div>
-      </section>
-
-      {/* ALL MIXES */}
-      <section className="section">
-        <p className="eyebrow">All mixes</p>
-        <h2>The FMLY catalog</h2>
-        <div className="mixGrid">
-          {mixes.map((m) => (
-            <article key={m.id} className="mixDeepCard">
-              <SoundCloudEmbed url={m.soundcloudUrl} title={m.title} height={180} visual={false} />
-              <div className="mixDeepBody">
-                <h3>{m.title}</h3>
-                <p className="mixCardArtist">by {m.artist}</p>
-                <p className="mixDeepDesc">{m.description}</p>
-                <div className="tagRow">
-                  {m.tags.map((t) => (
-                    <span key={t} className="tag">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href={m.externalUrl ?? siteLinks.social.soundcloud}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="smallBtn"
-                >
-                  Open on SoundCloud
-                </a>
-              </div>
-            </article>
-          ))}
         </div>
       </section>
 

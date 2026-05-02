@@ -11,7 +11,7 @@ import { MailingListForm } from "@/components/MailingListForm";
 import { SocialIcon } from "@/components/SocialIcon";
 import { siteLinks, socialList } from "@/data/siteLinks";
 import { events, featuredEventVideo } from "@/data/events";
-import { weeklyMix, mixes } from "@/data/mixes";
+import { weeklyMix } from "@/data/mixes";
 import { crew } from "@/data/crew";
 import { merch, featuredMerch } from "@/data/merch";
 import { collaborators, marqueeItems } from "@/data/collaborators";
@@ -231,19 +231,36 @@ export default function HomePage() {
           </a>
         </div>
         <div className="latestMixes">
-          {mixes.slice(0, 3).map((m) => (
-            <a
-              key={m.id}
-              href={siteLinks.social.soundcloud}
-              target="_blank"
-              rel="noreferrer"
-              className="mixCard"
-            >
-              <span className="eyebrow">{m.tags[0]}</span>
-              <strong>{m.title}</strong>
-              <span className="mixCardArtist">by {m.artist}</span>
-            </a>
-          ))}
+          <a
+            href={siteLinks.social.soundcloud}
+            target="_blank"
+            rel="noreferrer"
+            className="mixCard mixCard--cta"
+          >
+            <span className="eyebrow">SoundCloud</span>
+            <strong>FMLY MXTP Series</strong>
+            <span className="mixCardArtist">Browse the full catalog →</span>
+          </a>
+          <a
+            href={siteLinks.social.spotify}
+            target="_blank"
+            rel="noreferrer"
+            className="mixCard mixCard--cta"
+          >
+            <span className="eyebrow">Spotify</span>
+            <strong>FMLY BZNS</strong>
+            <span className="mixCardArtist">Stream on Spotify →</span>
+          </a>
+          <a
+            href={siteLinks.social.youtube}
+            target="_blank"
+            rel="noreferrer"
+            className="mixCard mixCard--cta"
+          >
+            <span className="eyebrow">YouTube</span>
+            <strong>@FMLYBZNS</strong>
+            <span className="mixCardArtist">Sets, recaps &amp; films →</span>
+          </a>
         </div>
       </section>
 

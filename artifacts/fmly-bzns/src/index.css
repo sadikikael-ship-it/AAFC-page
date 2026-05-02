@@ -827,8 +827,36 @@ button[type="submit"]:hover { background: var(--orange); }
   transition: background .15s;
 }
 .mixCard:hover { background: var(--gold); }
+.mixCard--cta { border-color: var(--orange); }
+.mixCard--cta:hover { background: var(--orange); color: var(--paper); }
 .mixCard strong { font-size: 1rem; }
 .mixCardArtist { font-size: .8rem; opacity: .75; }
+
+/* SoundCloud catalog section */
+.scCatalogBand {
+  background: var(--paper);
+  border-top: 3px solid var(--orange);
+}
+.scCatalogLead {
+  max-width: 68ch;
+  margin-bottom: 1.4rem;
+  color: var(--black);
+  opacity: .8;
+}
+.scCatalogEmbed {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 var(--black);
+  border: 1.5px solid var(--black);
+}
+.weeklySubtitle {
+  font-family: "Fungus", Impact, sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: .06em;
+  color: var(--burnt);
+  margin-top: -.4rem;
+  margin-bottom: .6rem;
+}
 
 .mixGrid {
   display: grid;
