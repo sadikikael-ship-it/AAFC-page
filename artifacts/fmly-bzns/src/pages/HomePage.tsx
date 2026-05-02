@@ -47,6 +47,11 @@ export default function HomePage() {
       {/* HERO */}
       <section className="section hero" id="top">
         <div className="heroInner">
+          <img
+            src="/fmly-logo-color.png"
+            alt="FMLY BZNS"
+            className="brandLogo brandLogo--hero"
+          />
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>
             THIS IS FMLY BZNS.
