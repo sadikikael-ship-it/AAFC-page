@@ -101,8 +101,7 @@ export const crew: CrewMember[] = [
   {
     name: "DJ KOBIE",
     role: "Selector · Afrohouse Roots",
-    image:
-      "https://images.unsplash.com/photo-1502767089025-6572583495b9?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-dj-kobie.png",
     bio: "Timeless grooves with deep cultural foundation.",
     tier: "Selectors & Contributors",
   },
