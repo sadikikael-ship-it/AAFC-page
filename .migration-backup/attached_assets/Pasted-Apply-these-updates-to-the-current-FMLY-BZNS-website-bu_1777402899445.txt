@@ -1,0 +1,167 @@
+Apply these updates to the current FMLY BZNS website build. This is an **add-on revision prompt**, not a full rebuild.
+
+## 1. Replace general “Buy Tickets” CTA with a shopping cart icon
+
+Instead of having a generic **Buy Tickets** button in the main header or global CTA area, use a **shopping cart icon**.
+
+The shopping cart should act as the central place where users can access purchases for:
+
+* merch
+* event tickets
+* merch + tickets together
+
+Requirements:
+
+* add a shopping cart icon to the header
+* make it look clean and professional
+* use a real icon from the same icon library as the social icons
+* do not use a drawn/custom cart icon
+* the cart should be visually clear but not oversized
+* the cart should link to the cart/shop/checkout route or placeholder cart page
+* if a cart system is not built yet, create a clean cart placeholder page or modal
+* label it accessibly with `aria-label="Cart"`
+* keep it aligned with the header icons
+
+## 2. Keep a specific Buy Tickets button only for The Gathering event
+
+There should still be a **Buy Tickets** button, but only inside the event card/module for **The Gathering**.
+
+Requirements:
+
+* remove generic Buy Tickets buttons from places where they do not belong
+* keep **Buy Tickets** directly on **The Gathering** event
+* place the button directly under or next to The Gathering event info
+* make the button functional or clearly use a placeholder ticket URL
+* do not make every section feel ticket-focused
+
+## 3. Clean up the Events section
+
+The events section should only focus on:
+
+* **The Gathering**
+* **Lightning in a Bottle Takeover**
+
+Rename the section to either:
+
+* **Upcoming Events**
+
+or
+
+* **Upcoming Events & Takeovers**
+
+Use whichever fits the design best.
+
+Requirements:
+
+* remove unrelated placeholder events
+* remove generic/fake events if they are currently shown
+* keep the section simple and focused
+* include event name, type, location, date/time if available, image/video if available, and clear action
+* The Gathering should have a **Buy Tickets** button
+* Lightning in a Bottle Takeover can have a **Details**, **Learn More**, or placeholder CTA if no ticket link is available yet
+* the section should feel clean, clear, and easy to scan
+
+## 4. Connect YouTube mixes to real FMLY BZNS content
+
+The Music / Mixes section should not show random lofi videos or unrelated placeholder music.
+
+Use the real FMLY BZNS YouTube channel:
+
+```text
+https://www.youtube.com/@FMLYBZNS
+```
+
+Requirements:
+
+* replace unrelated lofi videos with real FMLY BZNS YouTube content
+* make the section link directly to the FMLY BZNS YouTube channel
+* if possible, use the most recent uploads/mixes from the channel
+* if live fetching is not available, create a data structure that can be manually updated with real YouTube video IDs
+* do not show unrelated placeholder music videos
+* label the section clearly as FMLY BZNS mixes/media
+* include a CTA like **Watch More on YouTube**
+* keep SoundCloud and Spotify links available as music platform options
+
+If automatic latest-video fetching is possible, implement it cleanly. If not, set up an editable data file like:
+
+```js
+export const youtubeMixes = [
+  {
+    title: "Latest FMLY BZNS Mix",
+    youtubeUrl: "https://www.youtube.com/@FMLYBZNS",
+    embedUrl: "",
+  },
+];
+```
+
+Use only real FMLY BZNS content or clearly labeled placeholders that can be replaced.
+
+## 5. Reduce excess space under the header
+
+There is too much vertical space between the header and the text/hero content right underneath it.
+
+Requirements:
+
+* reduce the top spacing under the header
+* bring the first hero text/content closer to the header
+* keep it readable, but remove unnecessary vertical dead space
+* make sure the hero still feels balanced and not cramped
+* check both desktop and mobile spacing
+
+## 6. Add a clear way for users to pay
+
+There needs to be a way for users to pay for merch, tickets, or both.
+
+Requirements:
+
+* add cart/checkout flow or placeholder route
+* create a clear shopping/cart experience
+* include a checkout/payment placeholder if real payment integration is not available
+* allow the structure to support both merch and ticket purchases
+* include buttons like **Add to Cart** for merch
+* include ticket purchasing flow for The Gathering
+* make sure users can understand where purchases happen
+
+If full payment integration is not being implemented yet, create a clean placeholder checkout page that says something like:
+
+```text
+Checkout/payment integration coming soon. Merch and ticket purchases will be available here.
+```
+
+Also structure the code so payment can later connect to:
+
+* Stripe
+* Shopify
+* Square
+* another checkout provider
+
+## 7. Make the design cleaner overall
+
+The site should still be colorful, Afro-futuristic, and expressive, but it needs to feel a little cleaner and more polished.
+
+Requirements:
+
+* reduce visual clutter
+* simplify overly busy sections
+* improve spacing and hierarchy
+* make buttons more consistent
+* keep patterns and borders, but do not let them overpower the content
+* keep the layout colorful but easier to read
+* make the events and shop sections clearer
+* improve alignment in the header and hero
+* avoid random placeholder content
+
+## 8. Final check
+
+After making these updates, verify:
+
+* the global header uses a cart icon instead of a generic Buy Tickets button
+* The Gathering still has its own Buy Tickets button
+* the Events section only includes The Gathering and Lightning in a Bottle Takeover
+* the Events section is named **Upcoming Events** or **Upcoming Events & Takeovers**
+* unrelated/fake placeholder events are removed
+* YouTube mixes/media use real FMLY BZNS links/content, not lofi placeholders
+* the top spacing under the header is reduced
+* there is a clear cart/checkout/payment pathway
+* the design feels cleaner while still colorful and on-brand
+* all links, icons, buttons, embeds, and cart/checkout actions work or are clearly labeled placeholders
