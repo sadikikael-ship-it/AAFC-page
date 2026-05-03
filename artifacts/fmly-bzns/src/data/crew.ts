@@ -84,11 +84,11 @@ export const crew: CrewMember[] = [
     tier: "Featured FMLY DJs",
   },
   {
-    name: "DYOPS",
-    role: "Selector · Global Grooves",
+    name: "WEIRDOWITHSOUL",
+    role: "Selector · Culture Carrier",
     image:
-      "https://images.unsplash.com/photo-1496440737103-cd596325d314?auto=format&fit=crop&w=900&q=80",
-    bio: "Sexy, soulful, late-night energy that keeps bodies moving. Founder of LUSH.",
+      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&q=80",
+    bio: "Afro-rooted selector and Event Curator with a forward-thinking edge. Founder of AfroSauce.",
     tier: "Featured FMLY DJs",
   },
   {
@@ -100,20 +100,12 @@ export const crew: CrewMember[] = [
     tier: "Featured FMLY DJs",
   },
   {
-    name: "WEIRDOWITHSOUL",
-    role: "Selector · Culture Carrier",
+    name: "DYOPS",
+    role: "Selector · Global Grooves",
     image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&q=80",
-    bio: "Afro-rooted selector and Event Curator with a forward-thinking edge. Founder of AfroSauce.",
+      "https://images.unsplash.com/photo-1496440737103-cd596325d314?auto=format&fit=crop&w=900&q=80",
+    bio: "Sexy, soulful, late-night energy that keeps bodies moving. Founder of LUSH.",
     tier: "Featured FMLY DJs",
-  },
-  {
-    name: "DANNI G",
-    role: "Selector · Global Club",
-    image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80",
-    bio: "High-energy sets with range, rhythm, and presence.",
-    tier: "Selectors & Contributors",
   },
   {
     name: "DJ KOBIE",
@@ -121,6 +113,14 @@ export const crew: CrewMember[] = [
     image:
       "https://images.unsplash.com/photo-1502767089025-6572583495b9?auto=format&fit=crop&w=900&q=80",
     bio: "Timeless grooves with deep cultural foundation.",
+    tier: "Selectors & Contributors",
+  },
+  {
+    name: "DANNI G",
+    role: "Selector · Global Club",
+    image:
+      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80",
+    bio: "High-energy sets with range, rhythm, and presence.",
     tier: "Selectors & Contributors",
   },
   {
@@ -140,11 +140,27 @@ export const crew: CrewMember[] = [
     tier: "Selectors & Contributors",
   },
   {
+    name: "CANNABA55",
+    role: "Selector · Dancefloor Energy",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
+    bio: "Raw bassie selections built for movement and connection.",
+    tier: "Selectors & Contributors",
+  },
+  {
     name: "KMNI",
     role: "Selector · Afro Tech / Global House",
     image:
       "https://images.unsplash.com/photo-1496440737103-cd596325d314?auto=format&fit=crop&w=900&q=80",
     bio: "Driving, percussive energy with global reach.",
+    tier: "Selectors & Contributors",
+  },
+  {
+    name: "SAGE",
+    role: "Selector · Global Grooves",
+    image:
+      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80",
+    bio: "Intentional sets that move between soulful and high energy.",
     tier: "Selectors & Contributors",
   },
   {
@@ -156,27 +172,11 @@ export const crew: CrewMember[] = [
     tier: "Selectors & Contributors",
   },
   {
-    name: "CANNABA55",
-    role: "Selector · Dancefloor Energy",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
-    bio: "Raw bassie selections built for movement and connection.",
-    tier: "Selectors & Contributors",
-  },
-  {
     name: "DJ ATREAU",
     role: "Selector · Open Format / Afro Dancehall Global",
     image:
       "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&q=80",
     bio: "Versatile, intuitive, and dialed into the room.",
-    tier: "Selectors & Contributors",
-  },
-  {
-    name: "SAGE",
-    role: "Selector · Global Grooves",
-    image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80",
-    bio: "Intentional sets that move between soulful and high energy.",
     tier: "Selectors & Contributors",
   },
 ];
