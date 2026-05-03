@@ -608,9 +608,13 @@ button[type="submit"]:hover { background: var(--orange); }
 .crewBand {
   background: linear-gradient(160deg, #f4d9ad, #efbb7e);
 }
+.crewSection { padding-top: 1.5rem; }
+.crewTier { margin-bottom: 2.5rem; }
+.crewTier:last-child { margin-bottom: 0; }
+.crewTierLabel { margin-bottom: .75rem; }
 .crewGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
 }
 .crewCard {
