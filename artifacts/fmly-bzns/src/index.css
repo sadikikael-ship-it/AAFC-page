@@ -584,8 +584,10 @@ button[type="submit"]:hover { background: var(--orange); }
 .eventCard:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0 var(--black); }
 .eventCardImage {
   height: 200px;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
+  background-color: var(--black);
   border-bottom: 1.5px solid var(--black);
 }
 .eventCardBody { padding: 1rem 1.1rem 1.1rem; display: grid; gap: .35rem; flex: 1; }
@@ -1278,8 +1280,11 @@ button[type="submit"]:hover { background: var(--orange); }
 
   .cards4 { grid-template-columns: 1fr; }
   .merchGrid { grid-template-columns: 1fr; }
-  .videoGrid, .mixGrid, .crewGrid, .eventGrid, .latestMixes, .merchGrid--page {
+  .videoGrid, .mixGrid, .eventGrid, .latestMixes, .merchGrid--page {
     grid-template-columns: 1fr;
+  }
+  .crewGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
   .musicPlatformRow { grid-template-columns: repeat(2, 1fr); }
 }
