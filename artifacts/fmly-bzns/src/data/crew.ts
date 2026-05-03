@@ -21,7 +21,7 @@ export interface CrewMember {
 export const crew: CrewMember[] = [
   {
     name: "ANDREASONE",
-    role: "Founder · Creative Direction · Sound",
+    role: "Founder · Creative Direction · Selector",
     city: "Oakland / Global",
     image: "/crew-andreasone.png",
     bgPosition: "center 10%",
@@ -30,7 +30,7 @@ export const crew: CrewMember[] = [
   },
   {
     name: "ONE LOVELL",
-    role: "Selector · Operations",
+    role: "Selector · Operations · Vibe Curation",
     city: "Bay Area",
     image: "/crew-2.jpg",
     bgPosition: "center top",
@@ -40,7 +40,7 @@ export const crew: CrewMember[] = [
   {
     name: "OBE (INTELLIGENTREBELLION)",
     handle: "INTELLIGENTREBELLION",
-    role: "Fashion · Space · Movement",
+    role: "Fashion · Space · Vibe Curation",
     city: "Oakland",
     image: "/crew-obe.jpg",
     bgPosition: "center 20%",
