@@ -116,15 +116,14 @@ export const crew: CrewMember[] = [
   {
     name: "DJ IJO",
     role: "Selector · Amapiano / 3-Step / Gqom",
-    image: "/crew-dj-ijo.png",
+    image: "https://images.unsplash.com/photo-1492288991661-058aa541ff43?auto=format&fit=crop&w=900&q=80",
     bio: "South African rhythms, deep bounce, and underground heat.",
     tier: "Selectors & Contributors",
   },
   {
     name: "LITTLE DINOSAUR",
     role: "Selector · Techno / Global Grooves · Culture Curator",
-    image:
-      "https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-little-dinosaur.png",
     bio: "Intentional sets that move between soulful and high energy. Founder of HUES the Color of Sound.",
     tier: "Selectors & Contributors",
   },
