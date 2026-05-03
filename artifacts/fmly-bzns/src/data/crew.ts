@@ -152,8 +152,7 @@ export const crew: CrewMember[] = [
   {
     name: "SPEKT1",
     role: "Selector · Global Bass",
-    image:
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-spekt1.png",
     bio: "Heavy rhythms and cross-genre movement.",
     tier: "Selectors & Contributors",
   },
