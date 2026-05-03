@@ -87,15 +87,14 @@ export const crew: CrewMember[] = [
   {
     name: "RAEYA",
     role: "Selector · Afro-Diaspora Sound",
-    image: "/crew-raeya.png",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
     bio: "Smooth blends, deep cuts, and intentional movement.",
     tier: "Featured FMLY DJs and Artists",
   },
   {
     name: "DYOPS",
     role: "Selector · Global Grooves",
-    image:
-      "https://images.unsplash.com/photo-1496440737103-cd596325d314?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-dyops.png",
     bio: "Sexy, soulful, late-night energy that keeps bodies moving. Founder of LUSH.",
     tier: "Featured FMLY DJs and Artists",
   },
