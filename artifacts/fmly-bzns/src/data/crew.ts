@@ -137,8 +137,7 @@ export const crew: CrewMember[] = [
   {
     name: "KMNI",
     role: "Selector · Afro Tech / Global House",
-    image:
-      "https://images.unsplash.com/photo-1496440737103-cd596325d314?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-kmni.png",
     bio: "Driving, percussive energy with global reach.",
     tier: "Selectors & Contributors",
   },
