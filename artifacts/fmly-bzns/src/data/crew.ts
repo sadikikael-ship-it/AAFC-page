@@ -40,8 +40,7 @@ export const crew: CrewMember[] = [
     handle: "INTELLIGENTREBELLION",
     role: "Fashion · Space · Movement",
     city: "Oakland",
-    image:
-      "https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-obe.jpg",
     bio: "Building the look, shaping the energy, and connecting the dots behind the scenes.",
     tier: "Core Frequency",
   },
