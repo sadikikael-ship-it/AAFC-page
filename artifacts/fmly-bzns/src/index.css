@@ -629,7 +629,7 @@ button[type="submit"]:hover { background: var(--orange); }
 .crewCard:nth-child(3n+1) { border-left-color: var(--orange); }
 .crewCard:nth-child(3n+2) { border-left-color: var(--sage); }
 .crewCardImage {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   background-size: cover;
   background-position: center 15%;
   filter: saturate(1.05);
@@ -689,7 +689,7 @@ button[type="submit"]:hover { background: var(--orange); }
   gap: 1rem;
 }
 .merchGrid--page {
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 1rem;
 }
 .merchCard {
