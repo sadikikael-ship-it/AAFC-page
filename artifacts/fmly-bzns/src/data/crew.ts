@@ -132,8 +132,7 @@ export const crew: CrewMember[] = [
   {
     name: "CANNABA55",
     role: "Selector · Dancefloor Energy",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-cannaba55.png",
     bio: "Raw bassie selections built for movement and connection.",
     tier: "Selectors & Contributors",
   },
