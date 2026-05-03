@@ -146,8 +146,7 @@ export const crew: CrewMember[] = [
   {
     name: "SAGE",
     role: "Selector · Global Grooves",
-    image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-sage.png",
     bio: "Intentional sets that move between soulful and high energy.",
     tier: "Selectors & Contributors",
   },
