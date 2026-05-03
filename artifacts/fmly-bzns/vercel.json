@@ -1,6 +1,6 @@
 {
   "outputDirectory": "dist",
-  "buildCommand": "vite build",
+  "buildCommand": "NO_COLOR=1 vite build",
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "vite",
   "rewrites": [
