@@ -29,10 +29,9 @@ export function MerchCard({ item }: { item: MerchItem }) {
         className="merchCardImageLink"
         aria-label={`View ${item.name}`}
       >
-        <div
-          className="merchCardImage"
-          style={{ backgroundImage: `url(${item.image})` }}
-        />
+        <div className="merchCardImage">
+          <img src={item.image} alt={item.name} className="merchCardImg" />
+        </div>
         {item.soldOut ? <span className="merchSold">Sold out</span> : null}
       </a>
       <div className="merchCardBody">

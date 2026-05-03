@@ -664,10 +664,17 @@ button[type="submit"]:hover { background: var(--orange); }
 .merchFeature:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--black); }
 .merchFeature--full { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
 .merchFeatureImage {
-  min-height: 360px;
-  background-size: cover;
-  background-position: center;
+  background-color: #f5efe6;
   border-bottom: 1.5px solid var(--black);
+  height: 520px;
+  overflow: hidden;
+}
+.merchFeatureImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  display: block;
 }
 .merchFeature--full .merchFeatureImage { border-right: 1.5px solid var(--black); border-bottom: none; }
 .merchFeatureBody { padding: 1.2rem 1.4rem 1.4rem; display: grid; gap: .4rem; align-content: center; }
@@ -691,10 +698,17 @@ button[type="submit"]:hover { background: var(--orange); }
 }
 .merchCardImageLink { position: relative; display: block; }
 .merchCardImage {
-  height: 240px;
-  background-size: cover;
-  background-position: center;
+  background: #f5efe6;
   border-bottom: 1.5px solid var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.merchCardImg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 .merchSold {
   position: absolute;

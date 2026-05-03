@@ -31,10 +31,13 @@ export default function MerchPage() {
           rel="noreferrer"
           className="merchFeature merchFeature--full"
         >
-          <div
-            className="merchFeatureImage"
-            style={{ backgroundImage: `url(${featuredMerch.image})` }}
-          />
+          <div className="merchFeatureImage">
+            <img
+              src={featuredMerch.image}
+              alt={featuredMerch.name}
+              className="merchFeatureImg"
+            />
+          </div>
           <div className="merchFeatureBody">
             <p className="eyebrow">{featuredMerch.collection}</p>
             <h2>{featuredMerch.name}</h2>
