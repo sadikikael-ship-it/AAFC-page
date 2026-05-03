@@ -14,6 +14,16 @@ export interface MerchItem {
 
 export const merch: MerchItem[] = [
   {
+    id: "peace-logo-womens-crop",
+    name: "FMLY PEACE Logo Women's Cropped Tee",
+    collection: "Core · Black",
+    price: "$60",
+    priceCents: 6000,
+    image: "/fmly-peace-womens-crop-tee.png",
+    productUrl: "https://shop.fmlybzns.com/peace-logo-womens-crop",
+    featured: true,
+  },
+  {
     id: "peace-logo-tee",
     name: "FMLY PEACE Logo Drop Shoulder Tee",
     collection: "Core · Oatmeal",
@@ -21,7 +31,6 @@ export const merch: MerchItem[] = [
     priceCents: 6500,
     image: "/fmly-peace-tee.png",
     productUrl: "https://shop.fmlybzns.com/peace-logo-tee",
-    featured: true,
   },
   {
     id: "signal-jacket",
