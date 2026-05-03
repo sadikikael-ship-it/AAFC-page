@@ -86,7 +86,10 @@ export default function HomePage() {
 
       {/* WHO WE ARE — above SoundCloud */}
       <section className="section soundIntro">
-        <h2 className="soundIntroTitle">FMLY MXTP</h2>
+        <div className="mxtpTitleRow">
+          <h2 className="soundIntroTitle">FMLY MXTP</h2>
+          <img src="/fmly-mxtp-tape.png" alt="FMLY MXTP tape" className="mxtpTapeImg" />
+        </div>
         <p className="soundIntroTagline">
           A global rotation of selectors shaping the sound of now — one mix at a time.
         </p>
