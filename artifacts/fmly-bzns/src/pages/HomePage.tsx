@@ -117,9 +117,6 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-        <div className="scBannerWrap">
-          <img src="/fmly-logo-color.png" alt="FMLY BZNS" className="scBannerImg" />
-        </div>
         <SoundCloudEmbed url={weeklyMix.soundcloudUrl} title={weeklyMix.title} visual={false} />
         <div className="buttonRow">
           <a
