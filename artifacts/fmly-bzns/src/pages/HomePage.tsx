@@ -106,7 +106,7 @@ export default function HomePage() {
       {/* WEEKLY MIX */}
       <section className="section weeklyBand" aria-labelledby="weekly-title">
         <div className="weeklyHeader">
-          <p className="eyebrow">Weekly Mix · Updated Every Friday</p>
+          <p className="eyebrow">Updated every Monday</p>
           <h2 id="weekly-title">{weeklyMix.title}</h2>
           <p className="weeklyDesc">{weeklyMix.description}</p>
           <div className="tagRow">
@@ -117,7 +117,10 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-        <SoundCloudEmbed url={weeklyMix.soundcloudUrl} title={weeklyMix.title} />
+        <div className="scBannerWrap">
+          <img src="/fmly-logo-color.png" alt="FMLY BZNS" className="scBannerImg" />
+        </div>
+        <SoundCloudEmbed url={weeklyMix.soundcloudUrl} title={weeklyMix.title} visual={false} />
         <div className="buttonRow">
           <a
             href={siteLinks.social.soundcloud}

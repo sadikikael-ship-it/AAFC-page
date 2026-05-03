@@ -49,7 +49,7 @@ export default function MusicPage() {
 
       {/* WEEKLY MIX */}
       <section className="section weeklyBand">
-        <p className="eyebrow">Weekly Mix · Updated Every Friday</p>
+        <p className="eyebrow">Updated every Monday</p>
         <h2>{weeklyMix.title}</h2>
         {weeklyMix.subtitle ? <p className="weeklySubtitle">{weeklyMix.subtitle}</p> : null}
         <p className="weeklyDesc">{weeklyMix.description}</p>

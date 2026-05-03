@@ -17,10 +17,9 @@ export interface Mix {
 // Update this weekly object every Friday to refresh the homepage mix spot.
 export const weeklyMix: Mix = {
   id: "weekly-current",
-  title: "FMLY MXTP VOL. 12",
-  subtitle: "SUNSET CIRCLE",
+  title: "FMLY BZNS SoundCloud",
   description:
-    "This week's selection — slow-burning Afro-house, broken Amapiano, and a finale of dub. Curated by the collective.",
+    "Follow for weekly guest mixes, FMLY BZNS edits, and original tracks.",
   soundcloudUrl: "https://soundcloud.com/fmlybzns",
   externalUrl: "https://soundcloud.com/fmlybzns",
   tags: ["Weekly", "Afro-House", "Amapiano"],
