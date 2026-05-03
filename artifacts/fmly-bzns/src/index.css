@@ -1290,7 +1290,15 @@ button[type="submit"]:hover { background: var(--orange); }
   }
   .crewGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: .6rem;
   }
+  .crewCardImage {
+    aspect-ratio: 1 / 1;
+  }
+  .crewCardBody { padding: .5rem .6rem .7rem; gap: .15rem; }
+  .crewCardName { font-size: .9rem; }
+  .crewCardRole { font-size: .7rem; }
+  .crewCardBio { font-size: .72rem; }
   .musicPlatformRow { grid-template-columns: repeat(2, 1fr); }
 }
 
