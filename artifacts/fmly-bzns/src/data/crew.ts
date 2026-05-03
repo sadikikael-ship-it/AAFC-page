@@ -109,8 +109,7 @@ export const crew: CrewMember[] = [
   {
     name: "DANNI G",
     role: "Selector · Global Club",
-    image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-danni-g.png",
     bio: "High-energy sets with range, rhythm, and presence.",
     tier: "Selectors & Contributors",
   },
