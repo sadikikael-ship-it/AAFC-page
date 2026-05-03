@@ -80,8 +80,7 @@ export const crew: CrewMember[] = [
   {
     name: "WEIRDOWITHSOUL",
     role: "Selector · Culture Carrier",
-    image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-weirdowithsoul.png",
     bio: "Afro-rooted selector and Event Curator with a forward-thinking edge. Founder of AfroSauce.",
     tier: "Featured FMLY DJs and Artists",
   },
