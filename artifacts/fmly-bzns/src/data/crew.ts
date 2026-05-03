@@ -58,8 +58,7 @@ export const crew: CrewMember[] = [
     handle: "GATEWAY MENDOCINO",
     role: "Space Holder · Experience · Operations",
     city: "Mendocino, CA",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-justin.jpg",
     bio: "Co-creating the environment where The Gathering comes to life.",
     tier: "World Builders",
   },
