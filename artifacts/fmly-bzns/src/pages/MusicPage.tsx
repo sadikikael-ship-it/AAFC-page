@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { SoundCloudEmbed } from "@/components/SoundCloudEmbed";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { SocialIcon } from "@/components/SocialIcon";
-import { weeklyMix, soundcloudProfileUrl } from "@/data/mixes";
+import { weeklyMix } from "@/data/mixes";
 import { videos, featuredVideo, youtubeChannelUrl } from "@/data/media";
 import { siteLinks } from "@/data/siteLinks";
 
@@ -78,36 +78,6 @@ export default function MusicPage() {
           >
             <SocialIcon name="Spotify" />
             &nbsp;Spotify
-          </a>
-        </div>
-      </section>
-
-      {/* FULL SOUNDCLOUD CATALOG */}
-      <section className="section scCatalogBand">
-        <p className="eyebrow">The FMLY Catalog</p>
-        <h2>All mixes on SoundCloud</h2>
-        <p className="scCatalogLead">
-          Every FMLY MXTP mix, live set, and recorded session lives on our
-          SoundCloud. Browse the full catalog below or open the channel directly.
-        </p>
-        <div className="scCatalogEmbed">
-          <iframe
-            title="FMLY BZNS on SoundCloud"
-            width="100%"
-            height="450"
-            allow="autoplay"
-            src={`https://w.soundcloud.com/player/?url=${encodeURIComponent(soundcloudProfileUrl)}&color=%23e87c35&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true`}
-            style={{ border: "none", borderRadius: "8px", display: "block" }}
-          />
-        </div>
-        <div className="buttonRow">
-          <a
-            href={siteLinks.social.soundcloud}
-            target="_blank"
-            rel="noreferrer"
-            className="ctaBtn"
-          >
-            Open FMLY BZNS on SoundCloud
           </a>
         </div>
       </section>
