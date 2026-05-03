@@ -469,6 +469,22 @@ button[type="submit"]:hover { background: var(--orange); }
   margin: 1rem 0;
 }
 .embedWrap iframe { display: block; width: 100%; }
+.scBannerWrap {
+  width: 100%;
+  border: 2px solid var(--gold);
+  border-bottom: none;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+}
+.scBannerImg {
+  max-height: 120px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
 
 /* ----------------------------------------------------------
    MEDIA / VIDEO
