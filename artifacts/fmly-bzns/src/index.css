@@ -358,7 +358,7 @@ button[type="submit"]:hover { background: var(--orange); }
   padding: 1.6rem clamp(1rem, 4vw, 3rem) 3.2rem;
   background:
     linear-gradient(180deg, rgba(241, 209, 100, 0.92) 0%, rgba(255, 175, 90, 0.85) 35%, rgba(204, 146, 116, 0.78) 100%),
-    url("https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?auto=format&fit=crop&w=2000&q=80") center/cover;
+    url("/hero-festival-bg.png") center/cover;
   border-bottom: 4px solid var(--black);
   position: relative;
   overflow: hidden;
