@@ -81,7 +81,7 @@ export const crew: CrewMember[] = [
     name: "AMALYN",
     role: "Vocalist · Live Energy",
     image: "/crew-amalyn.png",
-    bgPosition: "center 20%",
+    bgPosition: "center 45%",
     bio: "Soulful presence and melodic energy woven into the dancefloor.",
     tier: "Featured FMLY DJs and Artists",
   },
