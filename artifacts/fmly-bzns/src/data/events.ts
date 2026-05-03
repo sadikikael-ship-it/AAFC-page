@@ -177,8 +177,7 @@ export const events: SiteEvent[] = [
     city: "TBA",
     venue: "Same Same But Different Festival",
     date: "TBA 2026",
-    image:
-      "https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?auto=format&fit=crop&w=1600&q=80",
+    image: "/ssbd-lineup-2026.png",
     highlights: [
       "6-hour takeover on Nakey Island",
       "Sun-soaked, beachside journey of Global Dance Music Culture",
