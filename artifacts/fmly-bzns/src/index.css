@@ -1279,8 +1279,9 @@ button[type="submit"]:hover { background: var(--orange); }
   .mailingForm--inline { grid-template-columns: 1fr; }
 
   .cards4 { grid-template-columns: 1fr; }
-  .merchGrid { grid-template-columns: 1fr; }
-  .videoGrid, .mixGrid, .eventGrid, .latestMixes, .merchGrid--page {
+  .merchGrid { grid-template-columns: repeat(2, 1fr); }
+  .merchGrid--page { grid-template-columns: repeat(2, 1fr); }
+  .videoGrid, .mixGrid, .eventGrid, .latestMixes {
     grid-template-columns: 1fr;
   }
   .crewGrid {
