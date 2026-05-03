@@ -219,7 +219,7 @@ button[type="submit"]:hover { background: var(--orange); }
   object-fit: contain;
   object-position: center;
   margin: 0 auto 1.5rem;
-  mix-blend-mode: normal;
+  mix-blend-mode: multiply;
   filter: drop-shadow(0 8px 32px rgba(0,0,0,.5));
 }
 @media (max-width: 640px) {
