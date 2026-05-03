@@ -67,8 +67,7 @@ export const crew: CrewMember[] = [
     handle: "GATEWAY MENDOCINO",
     role: "Visionary · Benefactor",
     city: "Mendocino, CA",
-    image:
-      "https://images.unsplash.com/photo-1502767089025-6572583495b9?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-ned.png",
     bio: "Holding the foundation for immersive, nature-rooted experiences. From cannabis to plant medicine culture and beyond.",
     tier: "World Builders",
   },
