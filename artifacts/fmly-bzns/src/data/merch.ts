@@ -14,6 +14,15 @@ export interface MerchItem {
 
 export const merch: MerchItem[] = [
   {
+    id: "peace-logo-max-heavyweight-mustard",
+    name: "FMLY PEACE Logo Max Heavyweight Tee",
+    collection: "Core · Mustard",
+    price: "$70",
+    priceCents: 7000,
+    image: "/fmly-peace-max-heavyweight-mustard.png",
+    productUrl: "https://shop.fmlybzns.com/peace-logo-max-heavyweight",
+  },
+  {
     id: "peace-logo-womens-crop",
     name: "FMLY PEACE Logo Women's Cropped Tee",
     collection: "Core · Black",
