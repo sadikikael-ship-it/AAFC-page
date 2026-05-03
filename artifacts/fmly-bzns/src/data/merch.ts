@@ -16,7 +16,7 @@ export const merch: MerchItem[] = [
   {
     id: "peace-logo-max-heavyweight-black",
     name: "FMLY PEACE Logo Max Heavyweight Tee",
-    collection: "Core · Black",
+    collection: "Color · Black",
     price: "$44",
     priceCents: 4400,
     image: "/fmly-peace-max-heavyweight-black.png",
@@ -26,7 +26,7 @@ export const merch: MerchItem[] = [
   {
     id: "peace-logo-max-heavyweight-mustard",
     name: "FMLY PEACE Logo Max Heavyweight Tee",
-    collection: "Core · Mustard",
+    collection: "Color · Mustard",
     price: "$44",
     priceCents: 4400,
     image: "/fmly-peace-max-heavyweight-mustard.png",
@@ -36,7 +36,7 @@ export const merch: MerchItem[] = [
   {
     id: "peace-logo-womens-crop",
     name: "FMLY PEACE Logo Women's Cropped Tee",
-    collection: "Core · Black",
+    collection: "Color · Black",
     price: "$40",
     priceCents: 4000,
     image: "/fmly-peace-womens-crop-tee.png",
@@ -46,7 +46,7 @@ export const merch: MerchItem[] = [
   {
     id: "peace-logo-tee",
     name: "FMLY PEACE Logo Drop Shoulder Tee",
-    collection: "Core · Oatmeal",
+    collection: "Color · Oatmeal",
     price: "$50",
     priceCents: 5000,
     image: "/fmly-peace-tee.png",
