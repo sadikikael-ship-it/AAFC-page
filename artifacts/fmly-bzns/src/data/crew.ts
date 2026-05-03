@@ -87,7 +87,7 @@ export const crew: CrewMember[] = [
   {
     name: "RAEYA",
     role: "Selector · Afro-Diaspora Sound",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-raeya.png",
     bio: "Smooth blends, deep cuts, and intentional movement.",
     tier: "Featured FMLY DJs and Artists",
   },
