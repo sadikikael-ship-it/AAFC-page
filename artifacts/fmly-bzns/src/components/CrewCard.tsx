@@ -5,7 +5,10 @@ export function CrewCard({ member }: { member: CrewMember }) {
     <article className="crewCard">
       <div
         className="crewCardImage"
-        style={{ backgroundImage: `url(${member.image})` }}
+        style={{
+          backgroundImage: `url(${member.image})`,
+          backgroundPosition: member.bgPosition ?? "center 15%",
+        }}
         role="img"
         aria-label={member.name}
       />
