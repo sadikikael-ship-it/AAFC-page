@@ -2,7 +2,7 @@ export type CrewTier =
   | "Core Frequency"
   | "Sound & Vision"
   | "World Builders"
-  | "Featured FMLY DJs"
+  | "Featured FMLY DJs and Artists"
   | "Selectors & Contributors";
 
 export interface CrewMember {
@@ -76,7 +76,7 @@ export const crew: CrewMember[] = [
     image:
       "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
     bio: "Soulful presence and melodic energy woven into the dancefloor.",
-    tier: "Featured FMLY DJs",
+    tier: "Featured FMLY DJs and Artists",
   },
   {
     name: "WEIRDOWITHSOUL",
@@ -84,7 +84,7 @@ export const crew: CrewMember[] = [
     image:
       "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&q=80",
     bio: "Afro-rooted selector and Event Curator with a forward-thinking edge. Founder of AfroSauce.",
-    tier: "Featured FMLY DJs",
+    tier: "Featured FMLY DJs and Artists",
   },
   {
     name: "RAEYA",
@@ -92,7 +92,7 @@ export const crew: CrewMember[] = [
     image:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
     bio: "Smooth blends, deep cuts, and intentional movement.",
-    tier: "Featured FMLY DJs",
+    tier: "Featured FMLY DJs and Artists",
   },
   {
     name: "DYOPS",
@@ -100,7 +100,7 @@ export const crew: CrewMember[] = [
     image:
       "https://images.unsplash.com/photo-1496440737103-cd596325d314?auto=format&fit=crop&w=900&q=80",
     bio: "Sexy, soulful, late-night energy that keeps bodies moving. Founder of LUSH.",
-    tier: "Featured FMLY DJs",
+    tier: "Featured FMLY DJs and Artists",
   },
   {
     name: "DJ KOBIE",
@@ -180,6 +180,6 @@ export const tierOrder: CrewTier[] = [
   "Core Frequency",
   "Sound & Vision",
   "World Builders",
-  "Featured FMLY DJs",
+  "Featured FMLY DJs and Artists",
   "Selectors & Contributors",
 ];
