@@ -16,7 +16,7 @@ export default function MerchPage() {
 
       <section className="section">
         <p className="eyebrow">All products</p>
-        <h2>The full collection</h2>
+        <h2>Pre-order now</h2>
         <div className="merchGrid merchGrid--page">
           {merch.map((m) => (
             <MerchCard key={m.id} item={m} />
