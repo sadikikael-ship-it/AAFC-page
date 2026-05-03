@@ -95,8 +95,7 @@ export const events: SiteEvent[] = [
     time: "Gates open Thursday noon · Music until late Sunday",
     address: "Gateway Mendocino, Northern California",
     ageRestriction: "21+ (with valid ID)",
-    image:
-      "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1600&q=80",
+    image: "/the-gathering-2026.jpeg",
     gallery: [
       "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80",
       "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80",
