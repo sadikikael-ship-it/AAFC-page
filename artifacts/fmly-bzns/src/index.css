@@ -685,7 +685,7 @@ button[type="submit"]:hover { background: var(--orange); }
   gap: 1rem;
 }
 .merchGrid--page {
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   margin-top: 1rem;
 }
 .merchCard {
@@ -699,14 +699,14 @@ button[type="submit"]:hover { background: var(--orange); }
 .merchCardImage {
   background: #f5efe6;
   border-bottom: 1.5px solid var(--black);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 380px;
   overflow: hidden;
 }
 .merchCardImg {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
   display: block;
 }
 .merchSold {
