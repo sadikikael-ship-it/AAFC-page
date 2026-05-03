@@ -14,6 +14,16 @@ export interface MerchItem {
 
 export const merch: MerchItem[] = [
   {
+    id: "peace-logo-tee",
+    name: "FMLY PEACE Logo Drop Shoulder Tee",
+    collection: "Core · Oatmeal",
+    price: "$65",
+    priceCents: 6500,
+    image: "/fmly-peace-tee.png",
+    productUrl: "https://shop.fmlybzns.com/peace-logo-tee",
+    featured: true,
+  },
+  {
     id: "signal-jacket",
     name: "Signal Workwear Jacket",
     collection: "Drop 02 · Outerwear",
