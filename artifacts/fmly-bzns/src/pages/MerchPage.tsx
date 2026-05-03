@@ -25,29 +25,6 @@ export default function MerchPage() {
       />
 
       <section className="section">
-        <a
-          href={featuredMerch.productUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="merchFeature merchFeature--full"
-        >
-          <div className="merchFeatureImage">
-            <img
-              src={featuredMerch.image}
-              alt={featuredMerch.name}
-              className="merchFeatureImg"
-            />
-          </div>
-          <div className="merchFeatureBody">
-            <p className="eyebrow">{featuredMerch.collection}</p>
-            <h2>{featuredMerch.name}</h2>
-            <p className="merchFeaturePrice">{featuredMerch.price}</p>
-            <span className="ctaBtn">Shop the drop →</span>
-          </div>
-        </a>
-      </section>
-
-      <section className="section">
         <p className="eyebrow">All products</p>
         <h2>The full collection</h2>
         <div className="merchGrid merchGrid--page">
