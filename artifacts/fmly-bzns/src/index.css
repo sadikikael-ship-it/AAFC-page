@@ -337,7 +337,7 @@ button[type="submit"]:hover { background: var(--orange); }
    ---------------------------------------------------------- */
 
 .section {
-  padding: 4.2rem clamp(1.25rem, 4vw, 3.25rem);
+  padding: 2.5rem clamp(1.25rem, 4vw, 3.25rem);
   position: relative;
 }
 
@@ -345,8 +345,8 @@ button[type="submit"]:hover { background: var(--orange); }
   display: flex;
   justify-content: space-between;
   align-items: end;
-  gap: 1.25rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
   flex-wrap: wrap;
 }
 
@@ -1138,8 +1138,8 @@ button[type="submit"]:hover { background: var(--orange); }
    ---------------------------------------------------------- */
 
 .pageHero {
-  padding-top: 3.4rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 1.75rem;
 }
 .pageHero--image {
   color: var(--paper);
