@@ -68,8 +68,7 @@ export const events: SiteEvent[] = [
     time: "8PM – 4AM",
     address: "Buena Vista Aquatic Recreation Area, Kern County, CA",
     ageRestriction: "All ages (18+ for camping without guardian)",
-    image:
-      "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80",
+    image: "/lightning-in-a-bottle.png",
     lineup: [
       "FMLY BZNS resident DJs",
       "Global selectors from Ghana, Zimbabwe, Netherlands, Egypt, Colombia, Jamaica, Venezuela, California, and beyond",
