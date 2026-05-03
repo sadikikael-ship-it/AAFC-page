@@ -31,8 +31,7 @@ export const crew: CrewMember[] = [
     name: "ONE LOVELL",
     role: "Selector · Operations",
     city: "Bay Area",
-    image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-2.jpg",
     bio: "Mashups, edits, and deep cuts—blending Dancehall, Afro R&B, and global rhythm with precision.",
     tier: "Core Frequency",
   },
