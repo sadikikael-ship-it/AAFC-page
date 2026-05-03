@@ -625,9 +625,9 @@ button[type="submit"]:hover { background: var(--orange); }
 .crewCard:nth-child(3n+1) { border-left-color: var(--orange); }
 .crewCard:nth-child(3n+2) { border-left-color: var(--sage); }
 .crewCardImage {
-  height: 240px;
+  height: 300px;
   background-size: cover;
-  background-position: center;
+  background-position: center 15%;
   filter: saturate(1.05);
 }
 .crewCardBody { padding: .9rem 1rem 1rem; display: grid; gap: .25rem; }
