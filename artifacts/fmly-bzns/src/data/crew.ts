@@ -116,8 +116,7 @@ export const crew: CrewMember[] = [
   {
     name: "DJ IJO",
     role: "Selector · Amapiano / 3-Step / Gqom",
-    image:
-      "https://images.unsplash.com/photo-1492288991661-058aa541ff43?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-dj-ijo.png",
     bio: "South African rhythms, deep bounce, and underground heat.",
     tier: "Selectors & Contributors",
   },
