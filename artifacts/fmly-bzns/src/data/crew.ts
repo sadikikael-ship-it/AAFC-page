@@ -49,8 +49,7 @@ export const crew: CrewMember[] = [
     handle: "DOJO IN THE SKY",
     role: "Live Sound · Production",
     city: "Bay Area",
-    image:
-      "https://images.unsplash.com/photo-1492288991661-058aa541ff43?auto=format&fit=crop&w=900&q=80",
+    image: "/crew-davix.jpg",
     bio: "Bringing live energy, instrumentation, and studio depth into the FMLY frequency. Founder of Dojo in the Sky and Secret Sessions.",
     tier: "Sound & Vision",
   },
