@@ -367,7 +367,6 @@ button[type="submit"]:hover { background: var(--orange); }
   content: "";
   position: absolute; inset: 0;
   background:
-    repeating-linear-gradient(135deg, rgba(29,21,16,.04) 0 14px, transparent 14px 28px),
     radial-gradient(circle at 85% 20%, rgba(255, 101, 31, .35), transparent 55%);
   pointer-events: none;
 }
