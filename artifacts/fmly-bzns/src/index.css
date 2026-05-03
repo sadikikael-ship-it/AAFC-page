@@ -414,12 +414,26 @@ button[type="submit"]:hover { background: var(--orange); }
   background: var(--paper);
   border-bottom: 2px solid var(--gold);
 }
+.soundIntroTitle {
+  font-family: "Fungus", Impact, sans-serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  letter-spacing: .06em;
+  color: var(--black);
+  margin-bottom: .4rem;
+}
+.soundIntroTagline {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 700;
+  color: var(--rust, #c0440a);
+  margin-bottom: 1.2rem;
+  max-width: 60ch;
+}
 .soundIntroCopy {
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
   font-family: Georgia, "Times New Roman", serif;
   max-width: 72ch;
   color: var(--black);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 /* ----------------------------------------------------------

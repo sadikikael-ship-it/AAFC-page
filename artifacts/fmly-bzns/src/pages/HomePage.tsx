@@ -86,12 +86,20 @@ export default function HomePage() {
 
       {/* WHO WE ARE — above SoundCloud */}
       <section className="section soundIntro">
-        <p className="eyebrow">The sound</p>
+        <h2 className="soundIntroTitle">FMLY MXTP</h2>
+        <p className="soundIntroTagline">
+          A global rotation of selectors shaping the sound of now — one mix at a time.
+        </p>
         <p className="soundIntroCopy">
-          Every Friday, we drop a new mix from the FMLY catalog — Afro-House,
-          Amapiano, Dancehall, Baile Funk, and global club, curated by the
-          collective. Subscribe on SoundCloud or Spotify and never miss a
-          frequency.
+          Dropping every Monday on YouTube and SoundCloud, FMLY MXTP is an
+          ongoing mix series spotlighting DJs and artists curating the evolution
+          of Global Dance Music Culture. Each volume taps into the pulse of the
+          diaspora — blending Amapiano, Dancehall, Afro-House, Baile Funk, R&B,
+          Hip-Hop, and beyond — delivered through distinct voices with a deep
+          sense of rhythm, intention, and movement. From rising selectors to
+          established tastemakers, every mix is a journey designed for real
+          dance floors, late nights, and global connection. Full mixes drop
+          weekly — tap in.
         </p>
       </section>
 
