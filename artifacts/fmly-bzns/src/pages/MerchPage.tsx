@@ -12,16 +12,6 @@ export default function MerchPage() {
       <PageHero
         title="Merch · Drops"
         subtitle="Clothing, accessories, prints and music. Editorial drops connected to the dancefloor and the diaspora."
-        actions={
-          <a
-            href={siteLinks.shop}
-            target="_blank"
-            rel="noreferrer"
-            className="ctaBtn"
-          >
-            Open the shop
-          </a>
-        }
       />
 
       <section className="section">
