@@ -1281,6 +1281,10 @@ button[type="submit"]:hover { background: var(--orange); }
   .cards4 { grid-template-columns: 1fr; }
   .merchGrid { grid-template-columns: repeat(2, 1fr); }
   .merchGrid--page { grid-template-columns: repeat(2, 1fr); }
+  .merchCardImage { height: 180px; }
+  .merchCardBody { padding: .5rem .6rem .7rem; }
+  .merchCardName { font-size: .8rem; }
+  .merchCard { box-shadow: 2px 2px 0 var(--black); }
   .videoGrid, .mixGrid, .eventGrid, .latestMixes {
     grid-template-columns: 1fr;
   }
