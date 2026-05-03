@@ -114,7 +114,7 @@ export const crew: CrewMember[] = [
     role: "Selector · Afrohouse Roots",
     image: "/crew-dj-kobie.png",
     bgPosition: "center 30%",
-    bio: "Timeless grooves with deep cultural foundation.",
+    bio: "Timeless grooves with deep cultural foundation. Repping Trinidad to Norcal and the Globe.",
     tier: "Selectors & Contributors",
   },
   {
@@ -143,10 +143,10 @@ export const crew: CrewMember[] = [
   },
   {
     name: "CANNABA55",
-    role: "Selector · Dancefloor Energy",
+    role: "Selector · Dancefloor Energy · Global Bass",
     image: "/crew-cannaba55.png",
     bgPosition: "center 20%",
-    bio: "Raw bassie selections built for movement and connection.",
+    bio: "Raw selections built for movement and connection. Global Bangers.",
     tier: "Selectors & Contributors",
   },
   {
@@ -154,7 +154,7 @@ export const crew: CrewMember[] = [
     role: "Selector · Afro Tech / Global House",
     image: "/crew-kmni.png",
     bgPosition: "center 20%",
-    bio: "Driving, percussive energy with global reach.",
+    bio: "Driving, percussive energy with global reach. Deep roots in a current global format hailing from Cameroon.",
     tier: "Selectors & Contributors",
   },
   {
@@ -167,10 +167,10 @@ export const crew: CrewMember[] = [
   },
   {
     name: "SPEKT1",
-    role: "Selector · Global Bass",
+    role: "Selector · Global Bass · Polyrhythmic Vibe Setter",
     image: "/crew-spekt1.png",
     bgPosition: "center top",
-    bio: "Heavy rhythms and cross-genre movement.",
+    bio: "Heavy rhythms and cross-genre movement. Founder of We Got This.",
     tier: "Selectors & Contributors",
   },
   {
