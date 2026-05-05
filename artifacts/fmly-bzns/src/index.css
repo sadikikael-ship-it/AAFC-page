@@ -54,9 +54,20 @@ input, textarea, select { font-family: inherit; font-size: 1rem; }
 .siteShell {
   width: 100vw;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) 36px;
+  background: var(--rail-bg);
 }
+
+.frameRail {
+  background-color: var(--rail-bg);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='200' viewBox='0 0 36 200'><rect width='36' height='200' fill='%231d1510'/><rect x='0' y='0' width='36' height='8' fill='%23f1d164'/><rect x='0' y='10' width='36' height='3' fill='%23ff651f'/><rect x='0' y='15' width='36' height='3' fill='%239ea57a'/><polygon points='18,24 32,42 18,60 4,42' fill='%23ff651f' stroke='%231d1510' stroke-width='1'/><polygon points='18,28 28,42 18,56 8,42' fill='%23f1d164'/><circle cx='18' cy='42' r='3' fill='%231d1510'/><polygon points='4,68 18,80 32,68 32,76 18,88 4,76' fill='%239ea57a'/><polygon points='4,94 18,106 32,94 32,102 18,114 4,102' fill='%23d9b39f'/><rect x='0' y='120' width='36' height='3' fill='%23f89200'/><rect x='0' y='125' width='36' height='3' fill='%23f1d164'/><rect x='0' y='130' width='36' height='3' fill='%239ea57a'/><polygon points='18,140 32,158 18,176 4,158' fill='%23cc9274' stroke='%231d1510' stroke-width='1'/><polygon points='18,144 28,158 18,172 8,158' fill='%23f7efde'/><circle cx='18' cy='158' r='3' fill='%231d1510'/><rect x='0' y='184' width='36' height='3' fill='%23f1d164'/><rect x='0' y='189' width='36' height='3' fill='%23ff651f'/><rect x='0' y='194' width='36' height='3' fill='%239ea57a'/></svg>");
+  background-repeat: repeat-y;
+  background-size: 36px auto;
+  background-position: top center;
+}
+
+.frameRail--right { transform: scaleX(-1); }
 
 .siteContent {
   background: linear-gradient(180deg, #f4e4c0 0%, #efcf9c 38%, #ead0a0 100%);
@@ -201,12 +212,12 @@ button[type="submit"]:hover { background: var(--orange); }
   object-fit: contain;
 }
 .brandLogo--hero {
-  height: clamp(110px, 14vw, 170px);
-  width: clamp(140px, 18vw, 210px);
+  height: clamp(180px, 28vw, 320px);
+  width: clamp(220px, 38vw, 420px);
   display: block;
   object-fit: contain;
   object-position: center;
-  margin: 0 auto 0.5rem;
+  margin: 0 auto 1.5rem;
   justify-self: center;
   filter: drop-shadow(0 6px 24px rgba(0,0,0,.4));
 }
@@ -344,7 +355,7 @@ button[type="submit"]:hover { background: var(--orange); }
    ---------------------------------------------------------- */
 
 .hero {
-  padding: 1rem clamp(1rem, 4vw, 3rem) 1.5rem;
+  padding: 1.6rem clamp(1rem, 4vw, 3rem) 3.2rem;
   background:
     linear-gradient(180deg, rgba(241, 209, 100, 0.92) 0%, rgba(255, 175, 90, 0.85) 35%, rgba(204, 146, 116, 0.78) 100%),
     url("/hero-festival-bg.png") center/cover;
@@ -360,13 +371,13 @@ button[type="submit"]:hover { background: var(--orange); }
   pointer-events: none;
 }
 .hero h1, .hero .heroLead, .hero .eyebrow { position: relative; }
-.hero h1 { color: var(--black); font-size: clamp(2.2rem, 5vw, 4.4rem); }
+.hero h1 { color: var(--black); }
 .hero .heroLead { color: var(--ink); font-weight: 500; }
 .hero .eyebrow { color: var(--black); font-weight: 800; }
 .heroInner {
   position: relative;
   display: grid;
-  gap: 0.75rem;
+  gap: 1.4rem;
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
@@ -1300,6 +1311,8 @@ button[type="submit"]:hover { background: var(--orange); }
 }
 
 @media (max-width: 820px) {
+  .siteShell { grid-template-columns: 22px minmax(0, 1fr) 22px; }
+  .frameRail { background-size: 22px auto; }
 
   .siteHeader {
     grid-template-columns: 1fr auto;

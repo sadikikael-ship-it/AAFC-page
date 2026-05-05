@@ -17,6 +17,7 @@ import { merch } from "@/data/merch";
 import { collaborators, marqueeItems } from "@/data/collaborators";
 import {
   CrownSvg,
+  LogoFlankArrows,
   ScallopBand,
   SteppedPyramidDivider,
   DecorativeTileStrip,
@@ -51,18 +52,19 @@ export default function HomePage() {
       <SiteHeader />
 
       {/* HERO */}
-      <SteppedPyramidDivider color="#ff651f" bg="#1d1510" bandH={32} steps={4} stepSize={18} flip />
       <section className="section hero" id="top">
         <div className="heroInner">
           <div className="heroCrownWrap">
             <CrownSvg color="#f1d164" width={100} />
           </div>
           <div className="heroLogoWrap">
+            <LogoFlankArrows direction="right" color="#f1d164" size={38} />
             <img
               src="/fmly-logo-color.png"
               alt="FMLY BZNS"
               className="brandLogo brandLogo--hero"
             />
+            <LogoFlankArrows direction="left" color="#f1d164" size={38} />
           </div>
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>
@@ -96,7 +98,7 @@ export default function HomePage() {
           global dancefloor culture.
         </p>
       </section>
-      <SteppedPyramidDivider color="#ff651f" bg="#f1dca8" bandH={28} steps={3} stepSize={16} />
+      <ScallopBand direction="up" color="#1d1510" height={58} archW={72} />
 
       {/* WHO WE ARE — above SoundCloud */}
       <section className="section soundIntro">
