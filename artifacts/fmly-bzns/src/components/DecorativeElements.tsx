@@ -632,24 +632,41 @@ export function ThickRule({
 // Tiles the exact rail motif (stripes → diamond+gem+dot → stripes) across
 // the full page width to act as a section border.
 export function AdinkraDivider({
-  height = 28,
+  variant = "full",
   className = "",
 }: {
-  height?: number;
+  /** "full" = pyramids + stripes · "slim" = stripes only · "line" = single accent */
+  variant?: "full" | "slim" | "line";
   className?: string;
 }) {
+  if (variant === "line") {
+    return (
+      <div className={`adinkraDivider ${className}`} aria-hidden="true" role="presentation">
+        <div style={{ height: 2, background: "#f1d164", opacity: 0.45 }} />
+        <div style={{ height: 1, background: "#ff651f", opacity: 0.35 }} />
+      </div>
+    );
+  }
+
+  if (variant === "slim") {
+    return (
+      <div className={`adinkraDivider ${className}`} aria-hidden="true" role="presentation">
+        <div style={{ height: 3, background: "#f1d164", opacity: 0.55 }} />
+        <div style={{ height: 2, background: "#ff651f", opacity: 0.45 }} />
+        <div style={{ height: 2, background: "#9ea57a", opacity: 0.4 }} />
+        <div style={{ height: 3, background: "#f1d164", opacity: 0.55 }} />
+      </div>
+    );
+  }
+
+  // "full" — pyramids + stripes
   return (
     <div className={`adinkraDivider ${className}`} aria-hidden="true" role="presentation">
-      {/* top stripe */}
       <div style={{ height: 3, background: "#f1d164", opacity: 0.6 }} />
       <div style={{ height: 2, background: "#ff651f", opacity: 0.5 }} />
-      {/* pyramids pointing down */}
       <SteppedPyramidDivider color="#ff651f" bg="transparent" bandH={4} steps={2} stepSize={6} numTeeth={52} />
-      {/* centre accent stripe */}
       <div style={{ height: 2, background: "#9ea57a", opacity: 0.5 }} />
-      {/* pyramids pointing up */}
       <SteppedPyramidDivider color="#f1d164" bg="transparent" bandH={4} steps={2} stepSize={6} numTeeth={52} flip />
-      {/* bottom stripe */}
       <div style={{ height: 2, background: "#ff651f", opacity: 0.5 }} />
       <div style={{ height: 3, background: "#f1d164", opacity: 0.6 }} />
     </div>
