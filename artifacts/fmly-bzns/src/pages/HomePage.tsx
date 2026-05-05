@@ -115,12 +115,13 @@ export default function HomePage() {
         </div>
         <div className="heroInner">
           <div className="heroLogoWrap">
-            {/* Left spire group — tall triangle spires framing the logo */}
-            <svg className="heroSpireGroup" viewBox="0 0 130 320" aria-hidden="true">
-              <polygon points="0,320  26,105  52,320" fill="#cc9274" stroke="#1d1510" strokeWidth="3"/>
-              <polygon points="42,320  75,8   108,320" fill="#f1d164" stroke="#1d1510" strokeWidth="3"/>
-              <polygon points="96,320  118,145 130,320" fill="#9ea57a" stroke="#1d1510" strokeWidth="3"/>
-            </svg>
+            {/* Left crown motif */}
+            <img
+              src="/elements/crown-motif.jpg"
+              className="heroSpireGroup heroSpireGroup--L"
+              aria-hidden="true"
+              alt=""
+            />
 
             <img
               src="/fmly-logo-color.png"
@@ -128,12 +129,13 @@ export default function HomePage() {
               className="brandLogo brandLogo--hero"
             />
 
-            {/* Right spire group — reversed colour order */}
-            <svg className="heroSpireGroup" viewBox="0 0 130 320" aria-hidden="true">
-              <polygon points="0,320  12,145  34,320" fill="#9ea57a" stroke="#1d1510" strokeWidth="3"/>
-              <polygon points="22,320  55,8   88,320" fill="#ff651f" stroke="#1d1510" strokeWidth="3"/>
-              <polygon points="78,320  104,105 130,320" fill="#f1d164" stroke="#1d1510" strokeWidth="3"/>
-            </svg>
+            {/* Right crown motif — mirrored */}
+            <img
+              src="/elements/crown-motif.jpg"
+              className="heroSpireGroup heroSpireGroup--R"
+              aria-hidden="true"
+              alt=""
+            />
           </div>
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>
