@@ -391,15 +391,22 @@ button[type="submit"]:hover { background: var(--orange); }
   position: absolute;
   display: block;
 }
-/* positions + sizes — varied intentionally for visual rhythm */
-.hd--tl { top: 5%;    left: 3%;   width: 48px;  }   /* small */
-.hd--tr { top: 4%;    right: 2%;  width: 92px;  }   /* large */
-.hd--lm { top: 50%;   left: 2%;   width: 100px; transform: translateY(-50%); } /* hero sun */
-.hd--rm { top: 50%;   right: 2%;  width: 58px;  transform: translateY(-50%); } /* smaller sun */
-.hd--bl { bottom: 5%; left: 2%;   width: 80px;  }   /* medium-large */
-.hd--br { bottom: 6%; right: 3%;  width: 44px;  }   /* small */
-.hd--dl { top: 25%;   left: 3%;   width: 60px;  }   /* medium star */
-.hd--dr { top: 28%;   right: 3%;  width: 36px;  }   /* tiny star */
+/*
+  3-row system — each row aligns at the same vertical position left & right.
+  Sizes flip diagonally: large-left/small-right at top → small-left/large-right at bottom.
+  Row 1 (top):    TL=large chevron  · TR=small chevron
+  Row 2 (middle): LM=large sunburst · RM=medium sunburst
+  Row 3 (bottom): BL=small star     · BR=large star
+  DL/DR removed — they had no clear logic.
+*/
+.hd--tl { top: 7%;    left: 3%;   width: 86px; }
+.hd--tr { top: 7%;    right: 3%;  width: 44px; }
+.hd--lm { top: 50%;   left: 2%;   width: 96px; transform: translateY(-50%); }
+.hd--rm { top: 50%;   right: 2%;  width: 60px; transform: translateY(-50%); }
+.hd--bl { bottom: 7%; left: 3%;   width: 40px; }
+.hd--br { bottom: 7%; right: 3%;  width: 78px; }
+.hd--dl { display: none; }
+.hd--dr { display: none; }
 /* gentle breathe — scale only, no translate or rotate */
 @keyframes hdBreath {
   0%, 100% { opacity: 1;   scale: 1;    }
