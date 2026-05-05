@@ -50,6 +50,20 @@ export default function HomePage() {
         {/* decorative accents — intentionally placed, no drift */}
         <div className="heroDecor" aria-hidden="true">
 
+          {/* SIDE-L — bold triple-chevron stack alongside the logo */}
+          <svg className="hd hd--sideL" viewBox="0 0 100 165">
+            <polygon points="5,5  50,42 95,5  95,26 50,63 5,26"  fill="#f1d164"/>
+            <polygon points="5,60 50,97 95,60 95,81 50,118 5,81" fill="#ff651f"/>
+            <polygon points="5,115 50,152 95,115 95,136 50,158 5,136" fill="#9ea57a"/>
+          </svg>
+
+          {/* SIDE-R — mirror of left stack */}
+          <svg className="hd hd--sideR" viewBox="0 0 100 165">
+            <polygon points="5,5  50,42 95,5  95,26 50,63 5,26"  fill="#9ea57a"/>
+            <polygon points="5,60 50,97 95,60 95,81 50,118 5,81" fill="#ff651f"/>
+            <polygon points="5,115 50,152 95,115 95,136 50,158 5,136" fill="#f1d164"/>
+          </svg>
+
           {/* TL corner — double chevron, sage / terracotta */}
           <svg className="hd hd--tl" viewBox="0 0 36 44">
             <polygon points="4,4 18,16 32,4 32,12 18,24 4,12"  fill="#9ea57a"/>
