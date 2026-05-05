@@ -383,6 +383,29 @@ button[type="submit"]:hover { background: var(--orange); }
   width: 100%;
 }
 .heroButtons { margin-top: .75rem; gap: .9rem; }
+
+/* ── Decorative element wrappers ─────────────────────────────────────────── */
+.decorDivider {
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.heroCrownWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -.4rem;
+}
+.heroLogoWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.heroLogoWrap .brandLogo--hero {
+  margin-bottom: 0;
+}
 .heroLead {
   max-width: 62ch;
   font-size: clamp(1rem, 1.5vw, 1.2rem);

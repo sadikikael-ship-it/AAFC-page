@@ -15,6 +15,15 @@ import { weeklyMix } from "@/data/mixes";
 import { crew } from "@/data/crew";
 import { merch, featuredMerch } from "@/data/merch";
 import { collaborators, marqueeItems } from "@/data/collaborators";
+import {
+  ArrowsBand,
+  ZigzagBand,
+  ZigzagBandDown,
+  EyesBand,
+  CrownSvg,
+  LogoFlankArrows,
+  ThickRule,
+} from "@/components/DecorativeElements";
 
 const whatWeDo = [
   {
@@ -47,11 +56,18 @@ export default function HomePage() {
       {/* HERO */}
       <section className="section hero" id="top">
         <div className="heroInner">
-          <img
-            src="/fmly-logo-color.png"
-            alt="FMLY BZNS"
-            className="brandLogo brandLogo--hero"
-          />
+          <div className="heroCrownWrap">
+            <CrownSvg color="#f1d164" width={56} />
+          </div>
+          <div className="heroLogoWrap">
+            <LogoFlankArrows direction="right" color="#f1d164" size={18} />
+            <img
+              src="/fmly-logo-color.png"
+              alt="FMLY BZNS"
+              className="brandLogo brandLogo--hero"
+            />
+            <LogoFlankArrows direction="left" color="#f1d164" size={18} />
+          </div>
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>
             THIS IS FMLY BZNS.
@@ -72,6 +88,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <ArrowsBand direction="right" color="#f1d164" height={20} />
 
       {/* WHO WE ARE */}
       <section className="section introBand patternBand">
@@ -83,6 +100,7 @@ export default function HomePage() {
           global dancefloor culture.
         </p>
       </section>
+      <ZigzagBand color="#1d1510" height={18} toothW={32} />
 
       {/* WHO WE ARE — above SoundCloud */}
       <section className="section soundIntro">
@@ -144,6 +162,7 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+      <ThickRule color="#ff651f" height={5} />
 
       {/* WHAT WE DO */}
       <section className="section patternBandAlt">
@@ -158,6 +177,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <EyesBand bg="#1d1510" stroke="#f1d164" height={42} />
 
       {/* UPCOMING EVENTS */}
       <section className="section eventsBand" aria-labelledby="events-title">
@@ -274,6 +294,7 @@ export default function HomePage() {
           </a>
         </div>
       </section>
+      <ArrowsBand direction="left" color="#1d1510" bg="#f1d164" height={22} />
 
       {/* CREW */}
       <section className="section crewBand" aria-labelledby="crew-title">
