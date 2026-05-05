@@ -28,7 +28,7 @@ export function ContactForm() {
         <p>
           The FMLY BZNS team will reply within 3 business days. For urgent
           bookings, email{" "}
-          <a href="mailto:bookings@fmlybzns.com">bookings@fmlybzns.com</a>.
+          <a href="mailto:Fmlybzns.booking@gmail.com">Fmlybzns.booking@gmail.com</a>.
         </p>
       </div>
     );

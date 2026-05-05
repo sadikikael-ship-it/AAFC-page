@@ -27,7 +27,7 @@ export default function ContactPage() {
             <ul className="contactList">
               <li>
                 <strong>Bookings</strong>
-                <a href={siteLinks.contact.booking}>bookings@fmlybzns.com</a>
+                <a href={siteLinks.contact.booking}>Fmlybzns.booking@gmail.com</a>
               </li>
               <li>
                 <strong>Press</strong>
@@ -35,7 +35,7 @@ export default function ContactPage() {
               </li>
               <li>
                 <strong>General</strong>
-                <a href={siteLinks.contact.general}>hello@fmlybzns.com</a>
+                <a href={siteLinks.contact.general}>Fmlybzns.booking@gmail.com</a>
               </li>
             </ul>
           </div>

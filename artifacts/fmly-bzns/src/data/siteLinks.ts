@@ -8,9 +8,9 @@ export const siteLinks = {
     instagram: "https://www.instagram.com/fmlybzns_/",
   },
   contact: {
-    booking: "mailto:bookings@fmlybzns.com",
+    booking: "mailto:Fmlybzns.booking@gmail.com",
     press: "mailto:press@fmlybzns.com",
-    general: "mailto:hello@fmlybzns.com",
+    general: "mailto:Fmlybzns.booking@gmail.com",
   },
   shop: "https://shop.fmlybzns.com",
 } as const;
