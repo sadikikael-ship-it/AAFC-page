@@ -434,6 +434,180 @@ export function BattlementBandDown({
   );
 }
 
+// ── Stepped Pyramid / Mayan temple divider ─────────────────────────────────
+export function SteppedPyramidDivider({
+  color = "#ff651f",
+  bg = "transparent",
+  bandH = 22,
+  steps = 3,
+  stepSize = 12,
+}: {
+  color?: string;
+  bg?: string;
+  bandH?: number;
+  steps?: number;
+  stepSize?: number;
+}) {
+  const uid = useId().replace(/:/g, "x");
+  const tileW = steps * 2 * stepSize + stepSize;
+  const tileH = bandH + steps * stepSize;
+  // Build path: flat band across top, then stepped pyramid tooth pointing DOWN
+  let d = `M0,0 H${tileW} V${bandH}`;
+  for (let i = 0; i < steps; i++) {
+    d += ` H${tileW - (i + 1) * stepSize} V${bandH + (i + 1) * stepSize}`;
+  }
+  d += ` H${steps * stepSize}`;
+  for (let i = steps - 1; i >= 0; i--) {
+    d += ` V${bandH + i * stepSize} H${i * stepSize}`;
+  }
+  d += " Z";
+  return (
+    <div className="decorDivider" aria-hidden="true" role="presentation">
+      <svg
+        width="100%"
+        height={tileH}
+        viewBox={`0 0 ${tileW} ${tileH}`}
+        preserveAspectRatio="xMinYMid slice"
+        style={{ display: "block" }}
+      >
+        <defs>
+          <pattern
+            id={`pyr${uid}`}
+            x="0" y="0"
+            width={tileW}
+            height={tileH}
+            patternUnits="userSpaceOnUse"
+          >
+            {bg !== "transparent" && <rect width={tileW} height={tileH} fill={bg} />}
+            <path d={d} fill={color} />
+          </pattern>
+        </defs>
+        <rect width="100%" height={tileH} fill={`url(#pyr${uid})`} />
+      </svg>
+    </div>
+  );
+}
+
+// ── Decorative festival tile strip ─────────────────────────────────────────
+type TileShape =
+  | "tri-up" | "starburst" | "circle" | "diagonal" | "zigzag"
+  | "arch" | "cross" | "diamond" | "stripes" | "tri-down"
+  | "sunburst" | "halfcircle";
+
+interface TileDef { bg: string; shape: TileShape; fg: string }
+
+const TILE_DEFS: TileDef[] = [
+  { bg: "#ff651f", shape: "tri-up",      fg: "#fff6e1" },
+  { bg: "#f1d164", shape: "starburst",   fg: "#1d1510" },
+  { bg: "#1a4a1a", shape: "circle",      fg: "#f1d164" },
+  { bg: "#cc2200", shape: "diagonal",    fg: "#fff6e1" },
+  { bg: "#1d1510", shape: "zigzag",      fg: "#ff651f" },
+  { bg: "#fff6e1", shape: "arch",        fg: "#1d1510" },
+  { bg: "#f1d164", shape: "cross",       fg: "#ff651f" },
+  { bg: "#1d1510", shape: "diamond",     fg: "#f1d164" },
+  { bg: "#ff651f", shape: "stripes",     fg: "#1d1510" },
+  { bg: "#cc2200", shape: "tri-down",    fg: "#f1d164" },
+  { bg: "#1a4a1a", shape: "sunburst",    fg: "#fff6e1" },
+  { bg: "#fff6e1", shape: "halfcircle",  fg: "#ff651f" },
+];
+
+function TileInner({ shape, fg }: { shape: TileShape; fg: string }) {
+  switch (shape) {
+    case "tri-up":
+      return <polygon points="40,10 70,70 10,70" fill={fg} />;
+    case "starburst": {
+      const pts = "40,12 46,34 68,40 46,46 40,68 34,46 12,40 34,34";
+      return (
+        <>
+          <polygon points={pts} fill={fg} />
+          <circle cx="40" cy="40" r="9" fill={fg} />
+        </>
+      );
+    }
+    case "circle":
+      return <circle cx="40" cy="40" r="28" fill={fg} />;
+    case "diagonal":
+      return (
+        <>
+          <line x1="0" y1="0" x2="80" y2="80" stroke={fg} strokeWidth="14" strokeLinecap="square" />
+          <line x1="24" y1="0" x2="80" y2="56" stroke={fg} strokeWidth="6" strokeLinecap="square" opacity="0.5" />
+        </>
+      );
+    case "zigzag": {
+      const pts = "0,58 14,22 27,58 40,22 53,58 66,22 80,58";
+      return <polyline points={pts} fill="none" stroke={fg} strokeWidth="8" strokeLinejoin="round" strokeLinecap="round" />;
+    }
+    case "arch":
+      return <path d="M12,72 L12,44 Q40,8 68,44 L68,72 Z" fill={fg} />;
+    case "cross":
+      return (
+        <>
+          <rect x="33" y="8"  width="14" height="64" fill={fg} />
+          <rect x="8"  y="33" width="64" height="14" fill={fg} />
+        </>
+      );
+    case "diamond":
+      return <polygon points="40,8 72,40 40,72 8,40" fill={fg} />;
+    case "stripes":
+      return (
+        <>
+          <rect x="8"  y="0" width="16" height="80" fill={fg} />
+          <rect x="32" y="0" width="16" height="80" fill={fg} opacity="0.65" />
+          <rect x="56" y="0" width="16" height="80" fill={fg} opacity="0.35" />
+        </>
+      );
+    case "tri-down":
+      return <polygon points="8,10 72,10 40,70" fill={fg} />;
+    case "sunburst": {
+      const rays = Array.from({ length: 12 }, (_, i) => {
+        const a = (i * 30 * Math.PI) / 180;
+        return (
+          <line
+            key={i}
+            x1={40 + Math.cos(a) * 19}
+            y1={40 + Math.sin(a) * 19}
+            x2={40 + Math.cos(a) * 36}
+            y2={40 + Math.sin(a) * 36}
+            stroke={fg}
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+        );
+      });
+      return <>{rays}<circle cx="40" cy="40" r="14" fill={fg} /></>;
+    }
+    case "halfcircle":
+      return <path d="M8,72 A32,32 0 0,1 72,72 Z" fill={fg} />;
+    default:
+      return null;
+  }
+}
+
+export function DecorativeTileStrip({ tileSize = 80 }: { tileSize?: number }) {
+  const count = Math.ceil(2080 / tileSize) + 2;
+  return (
+    <div
+      aria-hidden="true"
+      role="presentation"
+      style={{ display: "flex", overflow: "hidden", flexShrink: 0, height: tileSize, width: "100%" }}
+    >
+      {Array.from({ length: count }, (_, i) => {
+        const tile = TILE_DEFS[i % TILE_DEFS.length];
+        return (
+          <div
+            key={i}
+            style={{ width: tileSize, height: tileSize, flexShrink: 0, background: tile.bg }}
+          >
+            <svg viewBox="0 0 80 80" width={tileSize} height={tileSize} style={{ display: "block" }}>
+              <TileInner shape={tile.shape} fg={tile.fg} />
+            </svg>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 // ── Thick color rule (CSS-based, used as a styled div) ────────────────────
 export function ThickRule({
   color = "#f1d164",

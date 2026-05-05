@@ -16,13 +16,11 @@ import { crew } from "@/data/crew";
 import { merch } from "@/data/merch";
 import { collaborators, marqueeItems } from "@/data/collaborators";
 import {
-  ArrowsBand,
-  ZigzagBand,
-  EyesBand,
   CrownSvg,
   LogoFlankArrows,
-  ThickRule,
   ScallopBand,
+  SteppedPyramidDivider,
+  DecorativeTileStrip,
 } from "@/components/DecorativeElements";
 
 const whatWeDo = [
@@ -88,7 +86,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <ScallopBand direction="down" color="#f1d164" bg="#1d1510" height={60} archW={72} />
+      <SteppedPyramidDivider color="#ff651f" bg="#1d1510" bandH={24} steps={3} stepSize={14} />
 
       {/* WHO WE ARE */}
       <section className="section introBand patternBand">
@@ -412,6 +410,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <DecorativeTileStrip tileSize={80} />
       <SiteFooter />
     </main>
   );
