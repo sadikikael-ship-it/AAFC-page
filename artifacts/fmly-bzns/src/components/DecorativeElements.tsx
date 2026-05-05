@@ -638,22 +638,20 @@ export function AdinkraDivider({
   height?: number;
   className?: string;
 }) {
-  const uid = useId().replace(/:/g, "x");
   return (
     <div className={`adinkraDivider ${className}`} aria-hidden="true" role="presentation">
-      <svg
-        width="100%"
-        height={height}
-        viewBox={`0 0 1 ${height}`}
-        preserveAspectRatio="none"
-        style={{ display: "block" }}
-      >
-        {/* just three thin stripe lines — no background, blends with section colours */}
-        <rect y="0"                    width="1" height={height * 0.28} fill="#f1d164" opacity="0.55"/>
-        <rect y={height * 0.33}        width="1" height={height * 0.18} fill="#ff651f" opacity="0.5"/>
-        <rect y={height * 0.56}        width="1" height={height * 0.14} fill="#9ea57a" opacity="0.45"/>
-        <rect y={height * 0.75}        width="1" height={height * 0.25} fill="#f1d164" opacity="0.4"/>
-      </svg>
+      {/* top stripe */}
+      <div style={{ height: 3, background: "#f1d164", opacity: 0.6 }} />
+      <div style={{ height: 2, background: "#ff651f", opacity: 0.5 }} />
+      {/* pyramids pointing down */}
+      <SteppedPyramidDivider color="#ff651f" bg="transparent" bandH={4} steps={2} stepSize={6} numTeeth={52} />
+      {/* centre accent stripe */}
+      <div style={{ height: 2, background: "#9ea57a", opacity: 0.5 }} />
+      {/* pyramids pointing up */}
+      <SteppedPyramidDivider color="#f1d164" bg="transparent" bandH={4} steps={2} stepSize={6} numTeeth={52} flip />
+      {/* bottom stripe */}
+      <div style={{ height: 2, background: "#ff651f", opacity: 0.5 }} />
+      <div style={{ height: 3, background: "#f1d164", opacity: 0.6 }} />
     </div>
   );
 }
