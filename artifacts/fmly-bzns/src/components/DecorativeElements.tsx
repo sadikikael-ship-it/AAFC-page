@@ -284,6 +284,104 @@ export function LogoFlankArrows({
   );
 }
 
+// ── Castle battlement / crenellation divider (thick stepped teeth) ─────────
+export function BattlementBand({
+  color = "#1d1510",
+  bg = "transparent",
+  height = 56,
+  toothW = 44,
+  className = "",
+}: {
+  color?: string;
+  bg?: string;
+  height?: number;
+  toothW?: number;
+  className?: string;
+}) {
+  const uid = useId().replace(/:/g, "x");
+  const W = toothW * 2;   // tile width: one tooth + one gap
+  const H = height;
+  const mid = H / 2;      // gap drops to mid-height
+  return (
+    <div className={`decorDivider ${className}`} aria-hidden="true" role="presentation">
+      <svg
+        width="100%"
+        height={H}
+        viewBox={`0 0 ${W} ${H}`}
+        preserveAspectRatio="xMinYMid slice"
+        style={{ display: "block" }}
+      >
+        <defs>
+          <pattern
+            id={`btl${uid}`}
+            x="0" y="0"
+            width={W}
+            height={H}
+            patternUnits="userSpaceOnUse"
+          >
+            {bg !== "transparent" && <rect width={W} height={H} fill={bg} />}
+            {/* Full-height tooth on the left, step-down gap on right */}
+            <polygon
+              points={`0,0 ${toothW},0 ${toothW},${mid} ${W},${mid} ${W},${H} 0,${H}`}
+              fill={color}
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height={H} fill={`url(#btl${uid})`} />
+      </svg>
+    </div>
+  );
+}
+
+// ── Battlement pointing DOWN (teeth hang from top) ─────────────────────────
+export function BattlementBandDown({
+  color = "#1d1510",
+  bg = "transparent",
+  height = 56,
+  toothW = 44,
+  className = "",
+}: {
+  color?: string;
+  bg?: string;
+  height?: number;
+  toothW?: number;
+  className?: string;
+}) {
+  const uid = useId().replace(/:/g, "x");
+  const W = toothW * 2;
+  const H = height;
+  const mid = H / 2;
+  return (
+    <div className={`decorDivider ${className}`} aria-hidden="true" role="presentation">
+      <svg
+        width="100%"
+        height={H}
+        viewBox={`0 0 ${W} ${H}`}
+        preserveAspectRatio="xMinYMid slice"
+        style={{ display: "block" }}
+      >
+        <defs>
+          <pattern
+            id={`btld${uid}`}
+            x="0" y="0"
+            width={W}
+            height={H}
+            patternUnits="userSpaceOnUse"
+          >
+            {bg !== "transparent" && <rect width={W} height={H} fill={bg} />}
+            {/* Full-height tooth on left hanging down, step-up gap on right */}
+            <polygon
+              points={`0,0 ${W},0 ${W},${mid} ${toothW},${mid} ${toothW},${H} 0,${H}`}
+              fill={color}
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height={H} fill={`url(#btld${uid})`} />
+      </svg>
+    </div>
+  );
+}
+
 // ── Thick color rule (CSS-based, used as a styled div) ────────────────────
 export function ThickRule({
   color = "#f1d164",

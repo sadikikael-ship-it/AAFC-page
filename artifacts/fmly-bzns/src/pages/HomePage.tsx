@@ -18,11 +18,12 @@ import { collaborators, marqueeItems } from "@/data/collaborators";
 import {
   ArrowsBand,
   ZigzagBand,
-  ZigzagBandDown,
   EyesBand,
   CrownSvg,
   LogoFlankArrows,
   ThickRule,
+  BattlementBand,
+  BattlementBandDown,
 } from "@/components/DecorativeElements";
 
 const whatWeDo = [
@@ -88,7 +89,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <ArrowsBand direction="right" color="#f1d164" height={20} />
+      <ArrowsBand direction="right" color="#f1d164" height={44} />
 
       {/* WHO WE ARE */}
       <section className="section introBand patternBand">
@@ -100,7 +101,7 @@ export default function HomePage() {
           global dancefloor culture.
         </p>
       </section>
-      <ZigzagBand color="#1d1510" height={18} toothW={32} />
+      <BattlementBand color="#1d1510" height={64} toothW={48} />
 
       {/* WHO WE ARE — above SoundCloud */}
       <section className="section soundIntro">
@@ -162,7 +163,7 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-      <ThickRule color="#ff651f" height={5} />
+      <ThickRule color="#ff651f" height={10} />
 
       {/* WHAT WE DO */}
       <section className="section patternBandAlt">
@@ -177,7 +178,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <EyesBand bg="#1d1510" stroke="#f1d164" height={42} />
+      <EyesBand bg="#1d1510" stroke="#f1d164" height={72} />
 
       {/* UPCOMING EVENTS */}
       <section className="section eventsBand" aria-labelledby="events-title">
@@ -294,7 +295,7 @@ export default function HomePage() {
           </a>
         </div>
       </section>
-      <ArrowsBand direction="left" color="#1d1510" bg="#f1d164" height={22} />
+      <BattlementBandDown color="#f1d164" bg="#1d1510" height={64} toothW={48} />
 
       {/* CREW */}
       <section className="section crewBand" aria-labelledby="crew-title">
