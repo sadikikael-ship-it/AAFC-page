@@ -419,8 +419,8 @@ button[type="submit"]:hover { background: var(--orange); }
   background:
     repeating-linear-gradient(45deg, rgba(214, 138, 80, 0.22) 0 14px, rgba(219, 177, 98, 0.22) 14px 28px),
     var(--sand);
-  border-top: 2px dashed rgba(29,21,16,.4);
-  border-bottom: 2px dashed rgba(29,21,16,.4);
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
 }
 .patternBandAlt {
   background:
@@ -736,7 +736,8 @@ button[type="submit"]:hover { background: var(--orange); }
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
-.merchGrid--page {
+.merchGrid--page,
+.merchGrid--home {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 1rem;
 }

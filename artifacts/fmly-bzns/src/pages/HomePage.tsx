@@ -13,7 +13,7 @@ import { siteLinks, socialList } from "@/data/siteLinks";
 import { events, featuredEventVideo } from "@/data/events";
 import { weeklyMix } from "@/data/mixes";
 import { crew } from "@/data/crew";
-import { merch, featuredMerch } from "@/data/merch";
+import { merch } from "@/data/merch";
 import { collaborators, marqueeItems } from "@/data/collaborators";
 import {
   ArrowsBand,
@@ -325,33 +325,10 @@ export default function HomePage() {
             Shop all
           </Link>
         </div>
-        <div className="merchEditorial">
-          <a
-            href={featuredMerch.productUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="merchFeature"
-            aria-label={`Featured drop: ${featuredMerch.name}`}
-          >
-            <div
-              className="merchFeatureImage"
-              style={{ backgroundImage: `url(${featuredMerch.image})` }}
-            />
-            <div className="merchFeatureBody">
-              <p className="eyebrow">{featuredMerch.collection}</p>
-              <h3>{featuredMerch.name}</h3>
-              <p className="merchFeaturePrice">{featuredMerch.price}</p>
-              <span className="linkBtn">Shop the drop →</span>
-            </div>
-          </a>
-          <div className="merchGrid">
-            {merch
-              .filter((m) => m.id !== featuredMerch.id)
-              .slice(0, 4)
-              .map((m) => (
-                <MerchCard key={m.id} item={m} />
-              ))}
-          </div>
+        <div className="merchGrid merchGrid--home">
+          {merch.slice(0, 4).map((m) => (
+            <MerchCard key={m.id} item={m} />
+          ))}
         </div>
       </section>
 
