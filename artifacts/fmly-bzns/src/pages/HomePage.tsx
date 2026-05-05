@@ -17,7 +17,6 @@ import { merch } from "@/data/merch";
 import { collaborators, marqueeItems } from "@/data/collaborators";
 import {
   CrownSvg,
-  LogoFlankArrows,
 } from "@/components/DecorativeElements";
 
 const whatWeDo = [
@@ -55,13 +54,11 @@ export default function HomePage() {
             <CrownSvg color="#f1d164" width={100} />
           </div>
           <div className="heroLogoWrap">
-            <LogoFlankArrows direction="right" color="#f1d164" size={38} />
             <img
               src="/fmly-logo-color.png"
               alt="FMLY BZNS"
               className="brandLogo brandLogo--hero"
             />
-            <LogoFlankArrows direction="left" color="#f1d164" size={38} />
           </div>
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>
