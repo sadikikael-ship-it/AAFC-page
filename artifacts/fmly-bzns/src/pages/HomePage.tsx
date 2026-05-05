@@ -15,9 +15,6 @@ import { weeklyMix } from "@/data/mixes";
 import { crew } from "@/data/crew";
 import { merch } from "@/data/merch";
 import { collaborators, marqueeItems } from "@/data/collaborators";
-import {
-  CrownSvg,
-} from "@/components/DecorativeElements";
 
 const whatWeDo = [
   {
@@ -50,9 +47,6 @@ export default function HomePage() {
       {/* HERO */}
       <section className="section hero" id="top">
         <div className="heroInner">
-          <div className="heroCrownWrap">
-            <CrownSvg color="#f1d164" width={100} />
-          </div>
           <div className="heroLogoWrap">
             <img
               src="/fmly-logo-color.png"
