@@ -86,7 +86,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <SteppedPyramidDivider color="#ff651f" bg="#1d1510" bandH={24} steps={3} stepSize={14} />
+      <SteppedPyramidDivider color="#ff651f" bg="#1d1510" bandH={32} steps={4} stepSize={18} />
 
       {/* WHO WE ARE */}
       <section className="section introBand patternBand">
@@ -98,7 +98,7 @@ export default function HomePage() {
           global dancefloor culture.
         </p>
       </section>
-      <ScallopBand direction="up" color="#1d1510" height={58} archW={72} />
+      <SteppedPyramidDivider color="#ff651f" bg="#f1dca8" bandH={28} steps={3} stepSize={16} />
 
       {/* WHO WE ARE — above SoundCloud */}
       <section className="section soundIntro">

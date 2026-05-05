@@ -441,50 +441,48 @@ export function SteppedPyramidDivider({
   bandH = 22,
   steps = 3,
   stepSize = 12,
+  numTeeth = 32,
 }: {
   color?: string;
   bg?: string;
   bandH?: number;
   steps?: number;
   stepSize?: number;
+  numTeeth?: number;
 }) {
-  const uid = useId().replace(/:/g, "x");
   const tileW = steps * 2 * stepSize + stepSize;
   const tileH = bandH + steps * stepSize;
-  // Build path: flat band across top, then stepped pyramid tooth pointing DOWN
-  let d = `M0,0 H${tileW} V${bandH}`;
-  for (let i = 0; i < steps; i++) {
-    d += ` H${tileW - (i + 1) * stepSize} V${bandH + (i + 1) * stepSize}`;
+  const totalW = tileW * numTeeth;
+
+  // Build one combined path for all teeth — drawn directly into the SVG
+  const parts: string[] = [];
+  for (let n = 0; n < numTeeth; n++) {
+    const ox = n * tileW;
+    let d = `M${ox},0 H${ox + tileW} V${bandH}`;
+    for (let i = 0; i < steps; i++) {
+      d += ` H${ox + tileW - (i + 1) * stepSize} V${bandH + (i + 1) * stepSize}`;
+    }
+    d += ` H${ox + steps * stepSize}`;
+    for (let i = steps - 1; i >= 0; i--) {
+      d += ` V${bandH + i * stepSize} H${ox + i * stepSize}`;
+    }
+    d += " Z";
+    parts.push(d);
   }
-  d += ` H${steps * stepSize}`;
-  for (let i = steps - 1; i >= 0; i--) {
-    d += ` V${bandH + i * stepSize} H${i * stepSize}`;
-  }
-  d += " Z";
+
   return (
-    <div className="decorDivider" aria-hidden="true" role="presentation">
-      <svg
-        width="100%"
-        height={tileH}
-        viewBox={`0 0 ${tileW} ${tileH}`}
-        preserveAspectRatio="xMinYMid slice"
-        style={{ display: "block" }}
-      >
-        <defs>
-          <pattern
-            id={`pyr${uid}`}
-            x="0" y="0"
-            width={tileW}
-            height={tileH}
-            patternUnits="userSpaceOnUse"
-          >
-            {bg !== "transparent" && <rect width={tileW} height={tileH} fill={bg} />}
-            <path d={d} fill={color} />
-          </pattern>
-        </defs>
-        <rect width="100%" height={tileH} fill={`url(#pyr${uid})`} />
-      </svg>
-    </div>
+    <svg
+      width="100%"
+      height={tileH}
+      viewBox={`0 0 ${totalW} ${tileH}`}
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      role="presentation"
+      style={{ display: "block", flexShrink: 0 }}
+    >
+      {bg !== "transparent" && <rect width={totalW} height={tileH} fill={bg} />}
+      {parts.map((d, i) => <path key={i} d={d} fill={color} />)}
+    </svg>
   );
 }
 
