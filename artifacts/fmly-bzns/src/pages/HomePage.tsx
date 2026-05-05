@@ -296,7 +296,7 @@ export default function HomePage() {
           </a>
         </div>
       </section>
-      <ScallopBand direction="down" color="#1d1510" bg="#f1d164" height={58} archW={72} />
+      <div className="crownDivider" aria-hidden="true" role="presentation" />
 
       {/* CREW */}
       <section className="section crewBand" aria-labelledby="crew-title">

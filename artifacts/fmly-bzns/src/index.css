@@ -392,6 +392,18 @@ button[type="submit"]:hover { background: var(--orange); }
   flex-shrink: 0;
 }
 
+/* Crown repeating horizontal divider */
+.crownDivider {
+  display: block;
+  width: 100%;
+  height: 80px;
+  background-image: url('/crown-divider.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center bottom;
+  flex-shrink: 0;
+}
+
 /* Image-based section divider */
 .imgDivider {
   display: block;
