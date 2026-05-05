@@ -47,79 +47,71 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="section hero" id="top">
-        {/* decorative floating accents — rail-motif language */}
+        {/* decorative accents — intentionally placed, no drift */}
         <div className="heroDecor" aria-hidden="true">
 
-          {/* TL — large Adinkra diamond (orange shell, gold inner, black dot) */}
-          <svg className="hd hd--tl" viewBox="0 0 36 72">
-            <rect width="36" height="8"  fill="#f1d164"/>
-            <rect y="10"   width="36" height="3" fill="#ff651f"/>
-            <rect y="15"   width="36" height="3" fill="#9ea57a"/>
-            <polygon points="18,24 32,42 18,60 4,42" fill="#ff651f" stroke="#1d1510" strokeWidth="1"/>
-            <polygon points="18,28 28,42 18,56 8,42" fill="#f1d164"/>
-            <circle cx="18" cy="42" r="3" fill="#1d1510"/>
-          </svg>
-
-          {/* TR — double chevrons (sage) */}
-          <svg className="hd hd--tr" viewBox="0 0 36 44">
+          {/* TL corner — double chevron, sage / terracotta */}
+          <svg className="hd hd--tl" viewBox="0 0 36 44">
             <polygon points="4,4 18,16 32,4 32,12 18,24 4,12"  fill="#9ea57a"/>
             <polygon points="4,24 18,36 32,24 32,32 18,44 4,32" fill="#cc9274"/>
           </svg>
 
-          {/* RM — small starburst, gold */}
-          <svg className="hd hd--rm" viewBox="0 0 80 80">
-            <polygon points="40,12 46,34 68,40 46,46 40,68 34,46 12,40 34,34" fill="#f1d164"/>
-            <circle cx="40" cy="40" r="9" fill="#f1d164"/>
-            <circle cx="40" cy="40" r="4" fill="#1d1510"/>
-          </svg>
-
-          {/* LM — stripe band segment */}
-          <svg className="hd hd--lm" viewBox="0 0 36 20">
-            <rect width="36" height="20" fill="#1d1510"/>
-            <rect y="2"  width="36" height="4" fill="#f1d164"/>
-            <rect y="8"  width="36" height="4" fill="#ff651f"/>
-            <rect y="14" width="36" height="4" fill="#9ea57a"/>
-          </svg>
-
-          {/* BL — Adinkra diamond, terracotta shell, cream inner */}
-          <svg className="hd hd--bl" viewBox="0 0 36 72">
-            <polygon points="18,10 32,28 18,46 4,28" fill="#cc9274" stroke="#1d1510" strokeWidth="1"/>
-            <polygon points="18,14 28,28 18,42 8,28" fill="#f7efde"/>
-            <circle cx="18" cy="28" r="3" fill="#1d1510"/>
-            <rect y="52"   width="36" height="3" fill="#f1d164"/>
-            <rect y="57"   width="36" height="3" fill="#ff651f"/>
-            <rect y="62"   width="36" height="3" fill="#9ea57a"/>
-          </svg>
-
-          {/* BR — double chevrons mirrored (gold) */}
-          <svg className="hd hd--br" viewBox="0 0 36 44">
+          {/* TR corner — double chevron, gold / orange */}
+          <svg className="hd hd--tr" viewBox="0 0 36 44">
             <polygon points="4,4 18,16 32,4 32,12 18,24 4,12"  fill="#f1d164"/>
             <polygon points="4,24 18,36 32,24 32,32 18,44 4,32" fill="#ff651f"/>
           </svg>
 
-          {/* DL — small cross */}
-          <svg className="hd hd--dl" viewBox="0 0 80 80">
-            <rect x="33" y="8"  width="14" height="64" fill="#ff651f" opacity="0.7"/>
-            <rect x="8"  y="33" width="64" height="14" fill="#ff651f" opacity="0.7"/>
-          </svg>
-
-          {/* DR — small sunburst */}
-          <svg className="hd hd--dr" viewBox="0 0 80 80">
-            {Array.from({length:12},(_,i)=>{
-              const a=(i*30*Math.PI)/180;
+          {/* LM side — sunburst */}
+          <svg className="hd hd--lm" viewBox="0 0 80 80">
+            {Array.from({length:16},(_,i)=>{
+              const a=(i*22.5*Math.PI)/180;
               return <line key={i}
-                x1={40+Math.cos(a)*19} y1={40+Math.sin(a)*19}
+                x1={40+Math.cos(a)*20} y1={40+Math.sin(a)*20}
                 x2={40+Math.cos(a)*36} y2={40+Math.sin(a)*36}
-                stroke="#f1d164" strokeWidth="4" strokeLinecap="round"/>;
+                stroke="#f1d164" strokeWidth="3.5" strokeLinecap="round"/>;
             })}
-            <circle cx="40" cy="40" r="13" fill="#f1d164"/>
-            <circle cx="40" cy="40" r="5"  fill="#1d1510"/>
+            <circle cx="40" cy="40" r="16" fill="#f1d164"/>
+            <circle cx="40" cy="40" r="6"  fill="#1d1510"/>
           </svg>
 
-          {/* Brand element overlays — crown flanks + moon accent */}
-          <img src="/elements/crown.png"     className="heroElem heroElem--crownL" alt="" aria-hidden="true" />
-          <img src="/elements/crown.png"     className="heroElem heroElem--crownR" alt="" aria-hidden="true" />
-          <img src="/elements/moon-star.png" className="heroElem heroElem--moon"   alt="" aria-hidden="true" />
+          {/* RM side — sunburst (mirrored position) */}
+          <svg className="hd hd--rm" viewBox="0 0 80 80">
+            {Array.from({length:16},(_,i)=>{
+              const a=(i*22.5*Math.PI)/180;
+              return <line key={i}
+                x1={40+Math.cos(a)*20} y1={40+Math.sin(a)*20}
+                x2={40+Math.cos(a)*36} y2={40+Math.sin(a)*36}
+                stroke="#ff651f" strokeWidth="3.5" strokeLinecap="round"/>;
+            })}
+            <circle cx="40" cy="40" r="16" fill="#ff651f"/>
+            <circle cx="40" cy="40" r="6"  fill="#1d1510"/>
+          </svg>
+
+          {/* BL corner — double chevron, gold / sage */}
+          <svg className="hd hd--bl" viewBox="0 0 36 44">
+            <polygon points="4,4 18,16 32,4 32,12 18,24 4,12"  fill="#f1d164"/>
+            <polygon points="4,24 18,36 32,24 32,32 18,44 4,32" fill="#9ea57a"/>
+          </svg>
+
+          {/* BR corner — double chevron, orange / terracotta */}
+          <svg className="hd hd--br" viewBox="0 0 36 44">
+            <polygon points="4,4 18,16 32,4 32,12 18,24 4,12"  fill="#ff651f"/>
+            <polygon points="4,24 18,36 32,24 32,32 18,44 4,32" fill="#cc9274"/>
+          </svg>
+
+          {/* DL — 8-pt star, gold */}
+          <svg className="hd hd--dl" viewBox="0 0 80 80">
+            <polygon points="40,8 46,32 68,40 46,48 40,72 34,48 12,40 34,32" fill="#f1d164"/>
+            <circle cx="40" cy="40" r="7" fill="#1d1510"/>
+          </svg>
+
+          {/* DR — 8-pt star, orange */}
+          <svg className="hd hd--dr" viewBox="0 0 80 80">
+            <polygon points="40,8 46,32 68,40 46,48 40,72 34,48 12,40 34,32" fill="#ff651f"/>
+            <circle cx="40" cy="40" r="7" fill="#1d1510"/>
+          </svg>
+
         </div>
         <div className="heroInner">
           <div className="heroLogoWrap">
