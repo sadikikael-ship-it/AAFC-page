@@ -46,6 +46,45 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="section hero" id="top">
+        {/* decorative floating accents */}
+        <div className="heroDecor" aria-hidden="true">
+          {/* top-left 4-point burst */}
+          <svg className="hd hd--burst hd--tl" viewBox="0 0 48 48" fill="none">
+            <path d="M24 0 L27 21 L48 24 L27 27 L24 48 L21 27 L0 24 L21 21 Z" fill="#f1d164"/>
+          </svg>
+          {/* top-right diamond */}
+          <svg className="hd hd--diamond hd--tr" viewBox="0 0 28 28">
+            <polygon points="14,0 28,14 14,28 0,14" fill="#ff651f"/>
+          </svg>
+          {/* right side small burst */}
+          <svg className="hd hd--burst hd--rm" viewBox="0 0 36 36" fill="none">
+            <path d="M18 0 L20 16 L36 18 L20 20 L18 36 L16 20 L0 18 L16 16 Z" fill="#ff651f" opacity="0.8"/>
+          </svg>
+          {/* bottom-left diamond */}
+          <svg className="hd hd--diamond hd--bl" viewBox="0 0 22 22">
+            <polygon points="11,0 22,11 11,22 0,11" fill="#f1d164"/>
+          </svg>
+          {/* left mid small diamond */}
+          <svg className="hd hd--diamond hd--lm" viewBox="0 0 16 16">
+            <polygon points="8,0 16,8 8,16 0,8" fill="#1d1510" opacity="0.35"/>
+          </svg>
+          {/* bottom-right tiny burst */}
+          <svg className="hd hd--burst hd--br" viewBox="0 0 30 30" fill="none">
+            <path d="M15 0 L17 13 L30 15 L17 17 L15 30 L13 17 L0 15 L13 13 Z" fill="#f1d164" opacity="0.9"/>
+          </svg>
+          {/* dot trio left */}
+          <svg className="hd hd--dots hd--dl" viewBox="0 0 52 14">
+            <circle cx="7" cy="7" r="4" fill="#1d1510" opacity="0.25"/>
+            <circle cx="26" cy="7" r="4" fill="#ff651f" opacity="0.35"/>
+            <circle cx="45" cy="7" r="4" fill="#1d1510" opacity="0.25"/>
+          </svg>
+          {/* dot trio right */}
+          <svg className="hd hd--dots hd--dr" viewBox="0 0 52 14">
+            <circle cx="7" cy="7" r="4" fill="#1d1510" opacity="0.25"/>
+            <circle cx="26" cy="7" r="4" fill="#f1d164" opacity="0.5"/>
+            <circle cx="45" cy="7" r="4" fill="#1d1510" opacity="0.25"/>
+          </svg>
+        </div>
         <div className="heroInner">
           <div className="heroLogoWrap">
             <img
