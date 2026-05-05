@@ -177,7 +177,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <ScallopBand direction="up" color="#ff651f" bg="#1d1510" height={58} archW={72} />
+      <div className="imgDivider" aria-hidden="true" role="presentation">
+        <img src="/eyes-divider.png" alt="" className="imgDividerImg" />
+      </div>
 
       {/* UPCOMING EVENTS */}
       <section className="section eventsBand" aria-labelledby="events-title">
