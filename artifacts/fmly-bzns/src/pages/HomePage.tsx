@@ -9,6 +9,7 @@ import { CrewCard } from "@/components/CrewCard";
 import { MerchCard } from "@/components/MerchCard";
 import { MailingListForm } from "@/components/MailingListForm";
 import { SocialIcon } from "@/components/SocialIcon";
+import { AdinkraDivider } from "@/components/DecorativeElements";
 import { siteLinks, socialList } from "@/data/siteLinks";
 import { events, featuredEventVideo } from "@/data/events";
 import { weeklyMix } from "@/data/mixes";
@@ -144,6 +145,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <AdinkraDivider />
 
       {/* WHO WE ARE */}
       <section className="section introBand patternBand">
@@ -155,6 +157,7 @@ export default function HomePage() {
           global dancefloor culture.
         </p>
       </section>
+      <AdinkraDivider />
 
       {/* WHO WE ARE — above SoundCloud */}
       <section className="section soundIntro">
@@ -177,6 +180,7 @@ export default function HomePage() {
           weekly — tap in.
         </p>
       </section>
+      <AdinkraDivider />
 
       {/* WEEKLY MIX */}
       <section className="section weeklyBand" aria-labelledby="weekly-title">
@@ -216,6 +220,7 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+      <AdinkraDivider />
 
       {/* WHAT WE DO */}
       <section className="section patternBandAlt">
@@ -230,6 +235,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <AdinkraDivider />
 
       {/* UPCOMING EVENTS */}
       <section className="section eventsBand" aria-labelledby="events-title">
@@ -256,6 +262,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <AdinkraDivider />
 
       {/* MUSIC / MIXES PREVIEW */}
       <section className="section musicPreview" aria-labelledby="music-title">
@@ -346,6 +353,7 @@ export default function HomePage() {
           </a>
         </div>
       </section>
+      <AdinkraDivider />
 
       {/* CREW */}
       <section className="section crewBand" aria-labelledby="crew-title">
@@ -364,6 +372,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <AdinkraDivider />
 
       {/* MERCH */}
       <section className="section merchBand" aria-labelledby="merch-title">
@@ -382,6 +391,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <AdinkraDivider />
 
       {/* COLLABORATIONS */}
       <section

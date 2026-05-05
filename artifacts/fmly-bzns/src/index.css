@@ -374,6 +374,13 @@ button[type="submit"]:hover { background: var(--orange); }
   pointer-events: none;
 }
 /* hero decorative accents */
+.adinkraDivider {
+  display: block;
+  width: 100%;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
 .heroDecor {
   position: absolute;
   inset: 0;
