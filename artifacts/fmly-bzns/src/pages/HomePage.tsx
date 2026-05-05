@@ -116,10 +116,10 @@ export default function HomePage() {
             <circle cx="40" cy="40" r="5"  fill="#1d1510"/>
           </svg>
 
-          {/* Brand element overlays */}
-          <img src="/elements/crown.png"    className="heroElem heroElem--crown"  alt="" aria-hidden="true" />
-          <img src="/elements/moon-star.png" className="heroElem heroElem--moon"  alt="" aria-hidden="true" />
-          <img src="/elements/crown.png"    className="heroElem heroElem--crown2" alt="" aria-hidden="true" />
+          {/* Brand element overlays — crown flanks + moon accent */}
+          <img src="/elements/crown.png"     className="heroElem heroElem--crownL" alt="" aria-hidden="true" />
+          <img src="/elements/crown.png"     className="heroElem heroElem--crownR" alt="" aria-hidden="true" />
+          <img src="/elements/moon-star.png" className="heroElem heroElem--moon"   alt="" aria-hidden="true" />
         </div>
         <div className="heroInner">
           <div className="heroLogoWrap">
