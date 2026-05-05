@@ -46,44 +46,75 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="section hero" id="top">
-        {/* decorative floating accents */}
+        {/* decorative floating accents — rail-motif language */}
         <div className="heroDecor" aria-hidden="true">
-          {/* top-left 4-point burst */}
-          <svg className="hd hd--burst hd--tl" viewBox="0 0 48 48" fill="none">
-            <path d="M24 0 L27 21 L48 24 L27 27 L24 48 L21 27 L0 24 L21 21 Z" fill="#f1d164"/>
+
+          {/* TL — large Adinkra diamond (orange shell, gold inner, black dot) */}
+          <svg className="hd hd--tl" viewBox="0 0 36 72">
+            <rect width="36" height="8"  fill="#f1d164"/>
+            <rect y="10"   width="36" height="3" fill="#ff651f"/>
+            <rect y="15"   width="36" height="3" fill="#9ea57a"/>
+            <polygon points="18,24 32,42 18,60 4,42" fill="#ff651f" stroke="#1d1510" strokeWidth="1"/>
+            <polygon points="18,28 28,42 18,56 8,42" fill="#f1d164"/>
+            <circle cx="18" cy="42" r="3" fill="#1d1510"/>
           </svg>
-          {/* top-right diamond */}
-          <svg className="hd hd--diamond hd--tr" viewBox="0 0 28 28">
-            <polygon points="14,0 28,14 14,28 0,14" fill="#ff651f"/>
+
+          {/* TR — double chevrons (sage) */}
+          <svg className="hd hd--tr" viewBox="0 0 36 44">
+            <polygon points="4,4 18,16 32,4 32,12 18,24 4,12"  fill="#9ea57a"/>
+            <polygon points="4,24 18,36 32,24 32,32 18,44 4,32" fill="#cc9274"/>
           </svg>
-          {/* right side small burst */}
-          <svg className="hd hd--burst hd--rm" viewBox="0 0 36 36" fill="none">
-            <path d="M18 0 L20 16 L36 18 L20 20 L18 36 L16 20 L0 18 L16 16 Z" fill="#ff651f" opacity="0.8"/>
+
+          {/* RM — small starburst, gold */}
+          <svg className="hd hd--rm" viewBox="0 0 80 80">
+            <polygon points="40,12 46,34 68,40 46,46 40,68 34,46 12,40 34,34" fill="#f1d164"/>
+            <circle cx="40" cy="40" r="9" fill="#f1d164"/>
+            <circle cx="40" cy="40" r="4" fill="#1d1510"/>
           </svg>
-          {/* bottom-left diamond */}
-          <svg className="hd hd--diamond hd--bl" viewBox="0 0 22 22">
-            <polygon points="11,0 22,11 11,22 0,11" fill="#f1d164"/>
+
+          {/* LM — stripe band segment */}
+          <svg className="hd hd--lm" viewBox="0 0 36 20">
+            <rect width="36" height="20" fill="#1d1510"/>
+            <rect y="2"  width="36" height="4" fill="#f1d164"/>
+            <rect y="8"  width="36" height="4" fill="#ff651f"/>
+            <rect y="14" width="36" height="4" fill="#9ea57a"/>
           </svg>
-          {/* left mid small diamond */}
-          <svg className="hd hd--diamond hd--lm" viewBox="0 0 16 16">
-            <polygon points="8,0 16,8 8,16 0,8" fill="#1d1510" opacity="0.35"/>
+
+          {/* BL — Adinkra diamond, terracotta shell, cream inner */}
+          <svg className="hd hd--bl" viewBox="0 0 36 72">
+            <polygon points="18,10 32,28 18,46 4,28" fill="#cc9274" stroke="#1d1510" strokeWidth="1"/>
+            <polygon points="18,14 28,28 18,42 8,28" fill="#f7efde"/>
+            <circle cx="18" cy="28" r="3" fill="#1d1510"/>
+            <rect y="52"   width="36" height="3" fill="#f1d164"/>
+            <rect y="57"   width="36" height="3" fill="#ff651f"/>
+            <rect y="62"   width="36" height="3" fill="#9ea57a"/>
           </svg>
-          {/* bottom-right tiny burst */}
-          <svg className="hd hd--burst hd--br" viewBox="0 0 30 30" fill="none">
-            <path d="M15 0 L17 13 L30 15 L17 17 L15 30 L13 17 L0 15 L13 13 Z" fill="#f1d164" opacity="0.9"/>
+
+          {/* BR — double chevrons mirrored (gold) */}
+          <svg className="hd hd--br" viewBox="0 0 36 44">
+            <polygon points="4,4 18,16 32,4 32,12 18,24 4,12"  fill="#f1d164"/>
+            <polygon points="4,24 18,36 32,24 32,32 18,44 4,32" fill="#ff651f"/>
           </svg>
-          {/* dot trio left */}
-          <svg className="hd hd--dots hd--dl" viewBox="0 0 52 14">
-            <circle cx="7" cy="7" r="4" fill="#1d1510" opacity="0.25"/>
-            <circle cx="26" cy="7" r="4" fill="#ff651f" opacity="0.35"/>
-            <circle cx="45" cy="7" r="4" fill="#1d1510" opacity="0.25"/>
+
+          {/* DL — small cross */}
+          <svg className="hd hd--dl" viewBox="0 0 80 80">
+            <rect x="33" y="8"  width="14" height="64" fill="#ff651f" opacity="0.7"/>
+            <rect x="8"  y="33" width="64" height="14" fill="#ff651f" opacity="0.7"/>
           </svg>
-          {/* dot trio right */}
-          <svg className="hd hd--dots hd--dr" viewBox="0 0 52 14">
-            <circle cx="7" cy="7" r="4" fill="#1d1510" opacity="0.25"/>
-            <circle cx="26" cy="7" r="4" fill="#f1d164" opacity="0.5"/>
-            <circle cx="45" cy="7" r="4" fill="#1d1510" opacity="0.25"/>
+
+          {/* DR — small sunburst */}
+          <svg className="hd hd--dr" viewBox="0 0 80 80">
+            {Array.from({length:12},(_,i)=>{
+              const a=(i*30*Math.PI)/180;
+              return <line key={i}
+                x1={40+Math.cos(a)*19} y1={40+Math.sin(a)*19}
+                x2={40+Math.cos(a)*36} y2={40+Math.sin(a)*36}
+                stroke="#f1d164" strokeWidth="4" strokeLinecap="round"/>;
+            })}
+            <circle cx="40" cy="40" r="13" fill="#f1d164"/>
+            <circle cx="40" cy="40" r="5"  fill="#1d1510"/>
           </svg>
+
         </div>
         <div className="heroInner">
           <div className="heroLogoWrap">
