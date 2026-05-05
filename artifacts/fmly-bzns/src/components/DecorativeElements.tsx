@@ -284,6 +284,58 @@ export function LogoFlankArrows({
   );
 }
 
+// ── Scallop / arch band (mosque-dome shaped teeth) ─────────────────────────
+export function ScallopBand({
+  color = "#ff651f",
+  bg = "transparent",
+  height = 56,
+  archW = 68,
+  direction = "down",
+  className = "",
+}: {
+  color?: string;
+  bg?: string;
+  height?: number;
+  archW?: number;
+  direction?: "down" | "up";
+  className?: string;
+}) {
+  const uid = useId().replace(/:/g, "x");
+  const W = archW;
+  const H = height;
+  // "down": flat top band, arch hangs down — like Afro Nation top border
+  // "up":   flat bottom band, arch points up — like Afro Nation bottom border
+  const d =
+    direction === "down"
+      ? `M 0,0 L ${W},0 L ${W},${H * 0.38} Q ${W / 2},${H} 0,${H * 0.38} Z`
+      : `M 0,${H} L ${W},${H} L ${W},${H * 0.62} Q ${W / 2},0 0,${H * 0.62} Z`;
+  return (
+    <div className={`decorDivider ${className}`} aria-hidden="true" role="presentation">
+      <svg
+        width="100%"
+        height={H}
+        viewBox={`0 0 ${W} ${H}`}
+        preserveAspectRatio="xMinYMid slice"
+        style={{ display: "block" }}
+      >
+        <defs>
+          <pattern
+            id={`scl${uid}`}
+            x="0" y="0"
+            width={W}
+            height={H}
+            patternUnits="userSpaceOnUse"
+          >
+            {bg !== "transparent" && <rect width={W} height={H} fill={bg} />}
+            <path d={d} fill={color} />
+          </pattern>
+        </defs>
+        <rect width="100%" height={H} fill={`url(#scl${uid})`} />
+      </svg>
+    </div>
+  );
+}
+
 // ── Castle battlement / crenellation divider (thick stepped teeth) ─────────
 export function BattlementBand({
   color = "#1d1510",

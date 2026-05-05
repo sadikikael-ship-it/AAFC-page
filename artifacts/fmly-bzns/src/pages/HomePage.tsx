@@ -22,6 +22,7 @@ import {
   CrownSvg,
   LogoFlankArrows,
   ThickRule,
+  ScallopBand,
 } from "@/components/DecorativeElements";
 
 const whatWeDo = [
@@ -54,7 +55,6 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="section hero" id="top">
-        <ZigzagBand color="rgba(29,21,16,0.45)" height={30} toothW={22} className="heroDecorFull heroDecorTop" />
         <div className="heroInner">
           <div className="heroCrownWrap">
             <CrownSvg color="#f1d164" width={100} />
@@ -87,10 +87,8 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <ArrowsBand direction="right" color="rgba(29,21,16,0.4)" height={38} className="heroDecorFull" />
-        <EyesBand bg="rgba(29,21,16,0.78)" stroke="#f1d164" height={46} className="heroDecorFull" />
       </section>
-      <ArrowsBand direction="right" color="#f1d164" height={20} />
+      <ScallopBand direction="down" color="#f1d164" bg="#1d1510" height={60} archW={72} />
 
       {/* WHO WE ARE */}
       <section className="section introBand patternBand">
@@ -102,7 +100,7 @@ export default function HomePage() {
           global dancefloor culture.
         </p>
       </section>
-      <ZigzagBand color="#1d1510" height={18} toothW={32} />
+      <ScallopBand direction="up" color="#1d1510" height={58} archW={72} />
 
       {/* WHO WE ARE — above SoundCloud */}
       <section className="section soundIntro">
@@ -164,7 +162,7 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-      <ThickRule color="#ff651f" height={5} />
+      <ScallopBand direction="down" color="#ff651f" bg="#1d1510" height={58} archW={72} />
 
       {/* WHAT WE DO */}
       <section className="section patternBandAlt">
@@ -179,7 +177,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <EyesBand bg="#1d1510" stroke="#f1d164" height={42} />
+      <ScallopBand direction="up" color="#ff651f" bg="#1d1510" height={58} archW={72} />
 
       {/* UPCOMING EVENTS */}
       <section className="section eventsBand" aria-labelledby="events-title">
@@ -296,7 +294,7 @@ export default function HomePage() {
           </a>
         </div>
       </section>
-      <ArrowsBand direction="left" color="#1d1510" bg="#f1d164" height={22} />
+      <ScallopBand direction="down" color="#1d1510" bg="#f1d164" height={58} archW={72} />
 
       {/* CREW */}
       <section className="section crewBand" aria-labelledby="crew-title">
