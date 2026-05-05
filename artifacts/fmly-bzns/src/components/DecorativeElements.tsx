@@ -442,6 +442,7 @@ export function SteppedPyramidDivider({
   steps = 3,
   stepSize = 12,
   numTeeth = 32,
+  flip = false,
 }: {
   color?: string;
   bg?: string;
@@ -449,6 +450,7 @@ export function SteppedPyramidDivider({
   steps?: number;
   stepSize?: number;
   numTeeth?: number;
+  flip?: boolean;
 }) {
   const tileW = steps * 2 * stepSize + stepSize;
   const tileH = bandH + steps * stepSize;
@@ -478,7 +480,7 @@ export function SteppedPyramidDivider({
       preserveAspectRatio="none"
       aria-hidden="true"
       role="presentation"
-      style={{ display: "block", flexShrink: 0 }}
+      style={{ display: "block", flexShrink: 0, transform: flip ? "scaleY(-1)" : undefined }}
     >
       {bg !== "transparent" && <rect width={totalW} height={tileH} fill={bg} />}
       {parts.map((d, i) => <path key={i} d={d} fill={color} />)}
