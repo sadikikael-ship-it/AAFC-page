@@ -407,15 +407,18 @@ button[type="submit"]:hover { background: var(--orange); }
 /* Image-based section divider */
 .imgDivider {
   display: block;
-  line-height: 0;
+  height: 68px;
   overflow: hidden;
   flex-shrink: 0;
+  position: relative;
 }
 .imgDividerImg {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .heroCrownWrap {
   display: flex;
