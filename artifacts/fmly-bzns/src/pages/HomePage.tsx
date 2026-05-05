@@ -50,20 +50,6 @@ export default function HomePage() {
         {/* decorative accents — intentionally placed, no drift */}
         <div className="heroDecor" aria-hidden="true">
 
-          {/* SIDE-L — bold triple-chevron stack alongside the logo */}
-          <svg className="hd hd--sideL" viewBox="0 0 100 165">
-            <polygon points="5,5  50,42 95,5  95,26 50,63 5,26"  fill="#f1d164"/>
-            <polygon points="5,60 50,97 95,60 95,81 50,118 5,81" fill="#ff651f"/>
-            <polygon points="5,115 50,152 95,115 95,136 50,158 5,136" fill="#9ea57a"/>
-          </svg>
-
-          {/* SIDE-R — mirror of left stack */}
-          <svg className="hd hd--sideR" viewBox="0 0 100 165">
-            <polygon points="5,5  50,42 95,5  95,26 50,63 5,26"  fill="#9ea57a"/>
-            <polygon points="5,60 50,97 95,60 95,81 50,118 5,81" fill="#ff651f"/>
-            <polygon points="5,115 50,152 95,115 95,136 50,158 5,136" fill="#f1d164"/>
-          </svg>
-
           {/* TL corner — double chevron, sage / terracotta */}
           <svg className="hd hd--tl" viewBox="0 0 36 44">
             <polygon points="4,4 18,16 32,4 32,12 18,24 4,12"  fill="#9ea57a"/>
@@ -129,11 +115,25 @@ export default function HomePage() {
         </div>
         <div className="heroInner">
           <div className="heroLogoWrap">
+            {/* Left spire group — tall triangle spires framing the logo */}
+            <svg className="heroSpireGroup" viewBox="0 0 130 320" aria-hidden="true">
+              <polygon points="0,320  26,105  52,320" fill="#cc9274" stroke="#1d1510" strokeWidth="3"/>
+              <polygon points="42,320  75,8   108,320" fill="#f1d164" stroke="#1d1510" strokeWidth="3"/>
+              <polygon points="96,320  118,145 130,320" fill="#9ea57a" stroke="#1d1510" strokeWidth="3"/>
+            </svg>
+
             <img
               src="/fmly-logo-color.png"
               alt="FMLY BZNS"
               className="brandLogo brandLogo--hero"
             />
+
+            {/* Right spire group — reversed colour order */}
+            <svg className="heroSpireGroup" viewBox="0 0 130 320" aria-hidden="true">
+              <polygon points="0,320  12,145  34,320" fill="#9ea57a" stroke="#1d1510" strokeWidth="3"/>
+              <polygon points="22,320  55,8   88,320" fill="#ff651f" stroke="#1d1510" strokeWidth="3"/>
+              <polygon points="78,320  104,105 130,320" fill="#f1d164" stroke="#1d1510" strokeWidth="3"/>
+            </svg>
           </div>
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>
