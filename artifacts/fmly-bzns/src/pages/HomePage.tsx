@@ -177,9 +177,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <div className="imgDivider" aria-hidden="true" role="presentation">
-        <img src="/eyes-divider.png" alt="" className="imgDividerImg" />
-      </div>
+      <ScallopBand direction="up" color="#ff651f" bg="#1d1510" height={58} archW={72} />
 
       {/* UPCOMING EVENTS */}
       <section className="section eventsBand" aria-labelledby="events-title">
@@ -296,7 +294,7 @@ export default function HomePage() {
           </a>
         </div>
       </section>
-      <div className="crownDivider" aria-hidden="true" role="presentation" />
+      <ScallopBand direction="down" color="#1d1510" bg="#f1d164" height={58} archW={72} />
 
       {/* CREW */}
       <section className="section crewBand" aria-labelledby="crew-title">
