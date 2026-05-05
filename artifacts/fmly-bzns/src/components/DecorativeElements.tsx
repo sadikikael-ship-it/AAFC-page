@@ -639,34 +639,20 @@ export function AdinkraDivider({
   className?: string;
 }) {
   const uid = useId().replace(/:/g, "x");
-  const cy = height / 2;
   return (
     <div className={`adinkraDivider ${className}`} aria-hidden="true" role="presentation">
       <svg
         width="100%"
         height={height}
-        viewBox={`0 0 60 ${height}`}
-        preserveAspectRatio="xMinYMid slice"
+        viewBox={`0 0 1 ${height}`}
+        preserveAspectRatio="none"
         style={{ display: "block" }}
       >
-        <defs>
-          <pattern id={`adk${uid}`} x="0" y="0" width="60" height={height} patternUnits="userSpaceOnUse">
-            <rect width="60" height={height} fill="#1d1510"/>
-            {/* top stripes */}
-            <rect y="0" width="60" height="4" fill="#f1d164"/>
-            <rect y="5" width="60" height="2" fill="#ff651f"/>
-            <rect y="8" width="60" height="2" fill="#9ea57a"/>
-            {/* Adinkra diamond */}
-            <polygon points={`30,${cy-17} 44,${cy} 30,${cy+17} 16,${cy}`} fill="#ff651f" stroke="#1d1510" strokeWidth="1"/>
-            <polygon points={`30,${cy-13} 40,${cy} 30,${cy+13} 20,${cy}`} fill="#f1d164"/>
-            <circle cx="30" cy={cy} r="3" fill="#1d1510"/>
-            {/* bottom stripes */}
-            <rect y={height-10} width="60" height="2" fill="#9ea57a"/>
-            <rect y={height-7}  width="60" height="2" fill="#ff651f"/>
-            <rect y={height-4}  width="60" height="4" fill="#f1d164"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height={height} fill={`url(#adk${uid})`}/>
+        {/* just three thin stripe lines — no background, blends with section colours */}
+        <rect y="0"                    width="1" height={height * 0.28} fill="#f1d164" opacity="0.55"/>
+        <rect y={height * 0.33}        width="1" height={height * 0.18} fill="#ff651f" opacity="0.5"/>
+        <rect y={height * 0.56}        width="1" height={height * 0.14} fill="#9ea57a" opacity="0.45"/>
+        <rect y={height * 0.75}        width="1" height={height * 0.25} fill="#f1d164" opacity="0.4"/>
       </svg>
     </div>
   );
