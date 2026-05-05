@@ -18,9 +18,6 @@ import { collaborators, marqueeItems } from "@/data/collaborators";
 import {
   CrownSvg,
   LogoFlankArrows,
-  ScallopBand,
-  SteppedPyramidDivider,
-  DecorativeTileStrip,
 } from "@/components/DecorativeElements";
 
 const whatWeDo = [
@@ -86,7 +83,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <SteppedPyramidDivider color="#ff651f" bg="#1d1510" bandH={32} steps={4} stepSize={18} />
 
       {/* WHO WE ARE */}
       <section className="section introBand patternBand">
@@ -98,7 +94,6 @@ export default function HomePage() {
           global dancefloor culture.
         </p>
       </section>
-      <ScallopBand direction="up" color="#1d1510" height={58} archW={72} />
 
       {/* WHO WE ARE — above SoundCloud */}
       <section className="section soundIntro">
@@ -160,7 +155,6 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-      <ScallopBand direction="down" color="#ff651f" bg="#1d1510" height={58} archW={72} />
 
       {/* WHAT WE DO */}
       <section className="section patternBandAlt">
@@ -175,7 +169,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <ScallopBand direction="up" color="#ff651f" bg="#1d1510" height={58} archW={72} />
 
       {/* UPCOMING EVENTS */}
       <section className="section eventsBand" aria-labelledby="events-title">
@@ -292,7 +285,6 @@ export default function HomePage() {
           </a>
         </div>
       </section>
-      <ScallopBand direction="down" color="#1d1510" bg="#f1d164" height={58} archW={72} />
 
       {/* CREW */}
       <section className="section crewBand" aria-labelledby="crew-title">
@@ -410,7 +402,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <DecorativeTileStrip tileSize={80} />
       <SiteFooter />
     </main>
   );
