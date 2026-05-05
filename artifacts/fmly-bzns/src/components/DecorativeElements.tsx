@@ -632,7 +632,7 @@ export function ThickRule({
 // Tiles the exact rail motif (stripes → diamond+gem+dot → stripes) across
 // the full page width to act as a section border.
 export function AdinkraDivider({
-  height = 60,
+  height = 28,
   className = "",
 }: {
   height?: number;
