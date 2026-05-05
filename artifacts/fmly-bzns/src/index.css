@@ -411,6 +411,17 @@ button[type="submit"]:hover { background: var(--orange); }
   font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
+/* Full-bleed decorative strips inside the padded hero section */
+.heroDecorFull {
+  margin-left: calc(-1 * clamp(1rem, 4vw, 3rem));
+  margin-right: calc(-1 * clamp(1rem, 4vw, 3rem));
+  position: relative;
+  z-index: 1;
+}
+.heroDecorTop {
+  margin-bottom: 1.4rem;
+}
+
 /* ----------------------------------------------------------
    PATTERN BANDS / INTRO
    ---------------------------------------------------------- */

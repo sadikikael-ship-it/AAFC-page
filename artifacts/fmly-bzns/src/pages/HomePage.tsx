@@ -54,18 +54,19 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="section hero" id="top">
+        <ZigzagBand color="rgba(29,21,16,0.45)" height={30} toothW={22} className="heroDecorFull heroDecorTop" />
         <div className="heroInner">
           <div className="heroCrownWrap">
-            <CrownSvg color="#f1d164" width={56} />
+            <CrownSvg color="#f1d164" width={100} />
           </div>
           <div className="heroLogoWrap">
-            <LogoFlankArrows direction="right" color="#f1d164" size={18} />
+            <LogoFlankArrows direction="right" color="#f1d164" size={38} />
             <img
               src="/fmly-logo-color.png"
               alt="FMLY BZNS"
               className="brandLogo brandLogo--hero"
             />
-            <LogoFlankArrows direction="left" color="#f1d164" size={18} />
+            <LogoFlankArrows direction="left" color="#f1d164" size={38} />
           </div>
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>
@@ -86,6 +87,8 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+        <ArrowsBand direction="right" color="rgba(29,21,16,0.4)" height={38} className="heroDecorFull" />
+        <EyesBand bg="rgba(29,21,16,0.78)" stroke="#f1d164" height={46} className="heroDecorFull" />
       </section>
       <ArrowsBand direction="right" color="#f1d164" height={20} />
 
