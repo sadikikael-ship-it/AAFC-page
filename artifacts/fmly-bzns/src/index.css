@@ -597,11 +597,9 @@ button[type="submit"]:hover { background: var(--orange); }
    ---------------------------------------------------------- */
 
 .patternBand {
-  background:
-    repeating-linear-gradient(45deg, rgba(214, 138, 80, 0.22) 0 14px, rgba(219, 177, 98, 0.22) 14px 28px),
-    var(--sand);
-  border-top: 2px solid var(--gold);
-  border-bottom: 2px solid var(--gold);
+  background: var(--gold);
+  border-top: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
 }
 .patternBandAlt {
   background:
