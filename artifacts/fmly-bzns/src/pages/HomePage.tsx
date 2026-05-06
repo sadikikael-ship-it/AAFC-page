@@ -52,7 +52,7 @@ export default function HomePage() {
             {/* Left side — motif centred in available space */}
             <div className="heroSpireWrap heroSpireWrap--L">
               <img
-                src="/elements/crown-motif.jpg"
+                src="/elements/crown-motif.png"
                 className="heroSpireGroup heroSpireGroup--L"
                 aria-hidden="true"
                 alt=""
@@ -68,7 +68,7 @@ export default function HomePage() {
             {/* Right side — motif centred in available space, mirrored */}
             <div className="heroSpireWrap heroSpireWrap--R">
               <img
-                src="/elements/crown-motif.jpg"
+                src="/elements/crown-motif.png"
                 className="heroSpireGroup heroSpireGroup--R"
                 aria-hidden="true"
                 alt=""
