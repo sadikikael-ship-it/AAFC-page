@@ -547,6 +547,7 @@ button[type="submit"]:hover { background: var(--orange); }
   justify-content: center;
   gap: 0;
   flex-shrink: 0;
+  margin-top: 80px;
 }
 
 .heroCrown {
