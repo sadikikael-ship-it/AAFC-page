@@ -522,59 +522,50 @@ button[type="submit"]:hover { background: var(--orange); }
   justify-content: center;
   margin-bottom: -.4rem;
 }
-/* ── Crown border frame ── */
-.heroCrownFrame {
+/* ── Hero logo + crown columns ── */
+.heroLogoWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 24px);
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.heroLogoWrap .brandLogo--hero {
+  flex: 0 0 auto;
+  height: clamp(280px, 60vh, 680px);
+  width: auto;
+  max-width: none;
+}
+
+/* 3-crown column on each side */
+.heroCrownCol {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0;
-  margin-bottom: 0.5rem;
-}
-
-/* Middle row: side columns + logo */
-.heroCrownMid {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0;
-}
-
-.heroCrownFrame .brandLogo--hero {
-  height: clamp(240px, 50vh, 540px);
-  width: auto;
-  max-width: none;
   flex-shrink: 0;
 }
 
-/* Edge containers */
-.heroCrownEdge {
-  display: flex;
-  gap: 0;
-}
-.heroCrownEdge--top    { flex-direction: row;    align-items: flex-end;   justify-content: center; }
-.heroCrownEdge--bottom { flex-direction: row;    align-items: flex-start; justify-content: center; }
-.heroCrownEdge--left   { flex-direction: column; align-items: center;     justify-content: center; }
-.heroCrownEdge--right  { flex-direction: column; align-items: center;     justify-content: center; }
-
-/* Individual crowns — forced square so rotation is layout-safe */
 .heroCrown {
   display: block;
-  width:  clamp(60px, 8vw, 110px);
-  height: clamp(60px, 8vw, 110px);
-  object-fit: contain;
+  width: clamp(70px, 10vw, 150px);
+  height: auto;
   mix-blend-mode: multiply;
   flex-shrink: 0;
 }
-.heroCrown--bottom { transform: rotate(180deg); }
-.heroCrown--left   { transform: rotate(-90deg); }
-.heroCrown--right  { transform: rotate(90deg);  }
 
-/* ── Mobile: hide frame edges, centre logo ── */
+/* ── Mobile: hide crowns, centre logo ── */
 @media (max-width: 640px) {
-  .heroCrownFrame { display: block; text-align: center; }
-  .heroCrownEdge  { display: none; }
-  .heroCrownMid   { justify-content: center; }
-  .heroCrownFrame .brandLogo--hero {
+  .heroCrownCol { display: none; }
+  .heroLogoWrap {
+    display: block;
+    text-align: center;
+  }
+  .heroLogoWrap .brandLogo--hero {
+    flex: none;
     height: auto;
     width: 100%;
     max-width: 460px;
