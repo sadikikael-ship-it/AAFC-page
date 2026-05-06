@@ -536,7 +536,7 @@ button[type="submit"]:hover { background: var(--orange); }
   flex: 1 1 0;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 .heroSpireGroup {
   display: block;
