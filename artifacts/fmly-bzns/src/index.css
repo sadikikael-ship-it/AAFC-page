@@ -547,12 +547,12 @@ button[type="submit"]:hover { background: var(--orange); }
   justify-content: center;
   gap: 0;
   flex-shrink: 0;
-  margin-top: 80px;
+  margin-top: 120px;
 }
 
 .heroCrown {
   display: block;
-  width: clamp(70px, 10vw, 150px);
+  width: clamp(60px, 8vw, 110px);
   height: auto;
   mix-blend-mode: multiply;
   flex-shrink: 0;
