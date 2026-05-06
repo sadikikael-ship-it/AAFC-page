@@ -48,26 +48,44 @@ export default function HomePage() {
       {/* HERO */}
       <section className="section hero" id="top">
         <div className="heroInner">
-          <div className="heroLogoWrap">
-            {/* Left — 3 crowns, bottom-aligned */}
-            <div className="heroCrownGroup heroCrownGroup--L" aria-hidden="true">
+          {/* Crown border frame around the logo */}
+          <div className="heroCrownFrame" aria-hidden="true">
+
+            {/* Top row — crowns face up */}
+            <div className="heroCrownEdge heroCrownEdge--top">
               <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
               <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
               <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
             </div>
 
-            <img
-              src="/fmly-logo-color.png"
-              alt="FMLY BZNS"
-              className="brandLogo brandLogo--hero"
-            />
+            {/* Middle row: left column · logo · right column */}
+            <div className="heroCrownMid">
+              <div className="heroCrownEdge heroCrownEdge--left">
+                <img src="/elements/crown-solo.png" className="heroCrown heroCrown--left" alt="" />
+                <img src="/elements/crown-solo.png" className="heroCrown heroCrown--left" alt="" />
+                <img src="/elements/crown-solo.png" className="heroCrown heroCrown--left" alt="" />
+              </div>
 
-            {/* Right — 3 crowns, bottom-aligned */}
-            <div className="heroCrownGroup heroCrownGroup--R" aria-hidden="true">
-              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
-              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
-              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
+              <img
+                src="/fmly-logo-color.png"
+                alt="FMLY BZNS"
+                className="brandLogo brandLogo--hero"
+              />
+
+              <div className="heroCrownEdge heroCrownEdge--right">
+                <img src="/elements/crown-solo.png" className="heroCrown heroCrown--right" alt="" />
+                <img src="/elements/crown-solo.png" className="heroCrown heroCrown--right" alt="" />
+                <img src="/elements/crown-solo.png" className="heroCrown heroCrown--right" alt="" />
+              </div>
             </div>
+
+            {/* Bottom row — crowns face down */}
+            <div className="heroCrownEdge heroCrownEdge--bottom">
+              <img src="/elements/crown-solo.png" className="heroCrown heroCrown--bottom" alt="" />
+              <img src="/elements/crown-solo.png" className="heroCrown heroCrown--bottom" alt="" />
+              <img src="/elements/crown-solo.png" className="heroCrown heroCrown--bottom" alt="" />
+            </div>
+
           </div>
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>
