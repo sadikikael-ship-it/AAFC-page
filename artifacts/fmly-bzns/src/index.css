@@ -527,7 +527,7 @@ button[type="submit"]:hover { background: var(--orange); }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(8px, 2vw, 24px);
+  gap: 0;
   margin-bottom: 0;
   width: 100%;
 }
