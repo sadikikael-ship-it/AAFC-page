@@ -49,13 +49,15 @@ export default function HomePage() {
       <section className="section hero" id="top">
         <div className="heroInner">
           <div className="heroLogoWrap">
-            {/* Left crown motif */}
-            <img
-              src="/elements/crown-motif.jpg"
-              className="heroSpireGroup heroSpireGroup--L"
-              aria-hidden="true"
-              alt=""
-            />
+            {/* Left side — motif centred in available space */}
+            <div className="heroSpireWrap heroSpireWrap--L">
+              <img
+                src="/elements/crown-motif.jpg"
+                className="heroSpireGroup heroSpireGroup--L"
+                aria-hidden="true"
+                alt=""
+              />
+            </div>
 
             <img
               src="/fmly-logo-color.png"
@@ -63,13 +65,15 @@ export default function HomePage() {
               className="brandLogo brandLogo--hero"
             />
 
-            {/* Right crown motif — mirrored */}
-            <img
-              src="/elements/crown-motif.jpg"
-              className="heroSpireGroup heroSpireGroup--R"
-              aria-hidden="true"
-              alt=""
-            />
+            {/* Right side — motif centred in available space, mirrored */}
+            <div className="heroSpireWrap heroSpireWrap--R">
+              <img
+                src="/elements/crown-motif.jpg"
+                className="heroSpireGroup heroSpireGroup--R"
+                aria-hidden="true"
+                alt=""
+              />
+            </div>
           </div>
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>

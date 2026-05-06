@@ -531,15 +531,22 @@ button[type="submit"]:hover { background: var(--orange); }
   width: 100%;
 }
 
-/* ── Desktop: size logo by HEIGHT so the square PNG doesn't blow out the hero ── */
+/* ── Desktop: wrappers fill equal space, motif centred inside each ── */
+.heroSpireWrap {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
 .heroSpireGroup {
-  flex: 0 0 auto;
   display: block;
-  height: clamp(220px, 50vh, 580px);
+  height: clamp(180px, 44vh, 520px);
   width: auto;
-  align-self: flex-end;
   object-fit: contain;
   mix-blend-mode: multiply;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 .heroSpireGroup--R {
   transform: scaleX(-1);
