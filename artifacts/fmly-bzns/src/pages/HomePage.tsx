@@ -49,14 +49,11 @@ export default function HomePage() {
       <section className="section hero" id="top">
         <div className="heroInner">
           <div className="heroLogoWrap">
-            {/* Left side — motif centred in available space */}
-            <div className="heroSpireWrap heroSpireWrap--L">
-              <img
-                src="/elements/crown-motif.png"
-                className="heroSpireGroup heroSpireGroup--L"
-                aria-hidden="true"
-                alt=""
-              />
+            {/* Left — 3 crowns, bottom-aligned */}
+            <div className="heroCrownGroup heroCrownGroup--L" aria-hidden="true">
+              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
+              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
+              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
             </div>
 
             <img
@@ -65,14 +62,11 @@ export default function HomePage() {
               className="brandLogo brandLogo--hero"
             />
 
-            {/* Right side — motif centred in available space, mirrored */}
-            <div className="heroSpireWrap heroSpireWrap--R">
-              <img
-                src="/elements/crown-motif.png"
-                className="heroSpireGroup heroSpireGroup--R"
-                aria-hidden="true"
-                alt=""
-              />
+            {/* Right — 3 crowns, bottom-aligned */}
+            <div className="heroCrownGroup heroCrownGroup--R" aria-hidden="true">
+              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
+              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
+              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
             </div>
           </div>
           <p className="eyebrow">Global Dance Music Culture</p>

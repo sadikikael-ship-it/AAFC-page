@@ -524,33 +524,27 @@ button[type="submit"]:hover { background: var(--orange); }
 }
 .heroLogoWrap {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: center;
-  gap: 0;
+  gap: clamp(8px, 2vw, 24px);
   margin-bottom: 0;
   width: 100%;
 }
 
-/* ── Desktop: wrappers fill equal space, motif centred inside each ── */
-.heroSpireWrap {
+/* ── Three-crown groups flanking the logo ── */
+.heroCrownGroup {
   flex: 1 1 0;
   display: flex;
+  align-items: flex-end;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: clamp(30px, 7vh, 70px);
+  gap: clamp(4px, 1vw, 14px);
 }
-.heroSpireGroup {
+.heroCrown {
   display: block;
-  height: clamp(180px, 44vh, 520px);
+  height: clamp(90px, 22vh, 260px);
   width: auto;
-  object-fit: contain;
   mix-blend-mode: multiply;
-  border: none;
-  outline: none;
-  box-shadow: none;
-}
-.heroSpireGroup--R {
-  transform: scaleX(-1);
+  flex-shrink: 0;
 }
 .heroLogoWrap .brandLogo--hero {
   flex: 0 0 auto;
@@ -560,9 +554,9 @@ button[type="submit"]:hover { background: var(--orange); }
   max-width: none;
 }
 
-/* ── Mobile: drop the flex row, size by WIDTH ── */
+/* ── Mobile: hide crowns, centre logo by width ── */
 @media (max-width: 640px) {
-  .heroSpireGroup { display: none; }
+  .heroCrownGroup { display: none; }
   .heroLogoWrap {
     display: block;
     text-align: center;
