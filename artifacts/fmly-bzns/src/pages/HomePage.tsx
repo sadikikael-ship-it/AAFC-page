@@ -305,25 +305,6 @@ export default function HomePage() {
       </section>
       <AdinkraDivider variant="full" />
 
-      {/* CREW */}
-      <section className="section crewBand" aria-labelledby="crew-title">
-        <div className="sectionHeading">
-          <div>
-            <p className="eyebrow">The FMLY</p>
-            <h2 id="crew-title">Meet the FMLY</h2>
-          </div>
-          <Link href="/crew" className="smallBtn">
-            Full roster
-          </Link>
-        </div>
-        <div className="crewGrid">
-          {crew.slice(0, 6).map((m) => (
-            <CrewCard key={m.name} member={m} />
-          ))}
-        </div>
-      </section>
-      <AdinkraDivider variant="line" />
-
       {/* MERCH */}
       <section className="section merchBand" aria-labelledby="merch-title">
         <div className="sectionHeading">
@@ -342,6 +323,25 @@ export default function HomePage() {
         </div>
       </section>
       <AdinkraDivider variant="slim" />
+
+      {/* CREW */}
+      <section className="section crewBand" aria-labelledby="crew-title">
+        <div className="sectionHeading">
+          <div>
+            <p className="eyebrow">The FMLY</p>
+            <h2 id="crew-title">Meet the FMLY</h2>
+          </div>
+          <Link href="/crew" className="smallBtn">
+            Full roster
+          </Link>
+        </div>
+        <div className="crewGrid">
+          {crew.slice(0, 6).map((m) => (
+            <CrewCard key={m.name} member={m} />
+          ))}
+        </div>
+      </section>
+      <AdinkraDivider variant="line" />
 
       {/* COLLABORATIONS */}
       <section
