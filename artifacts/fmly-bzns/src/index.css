@@ -528,34 +528,35 @@ button[type="submit"]:hover { background: var(--orange); }
   align-items: center;
   justify-content: center;
   gap: 0;
-  margin-bottom: 0;
   width: 100%;
 }
 
 .heroLogoWrap .brandLogo--hero {
-  flex: 0 0 auto;
-  height: clamp(280px, 60vh, 680px);
+  flex: 0 1 auto;
+  height: clamp(240px, 50vh, 560px);
   width: auto;
-  max-width: none;
+  max-width: 45%;
 }
 
-/* 3-crown row on each side */
+/* 3-crown row on each side — flex:1 so they share leftover space */
 .heroCrownCol {
+  flex: 1 1 0;
+  min-width: 0;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
   gap: 0;
-  flex-shrink: 0;
   margin-top: 120px;
 }
 
 .heroCrown {
   display: block;
-  width: clamp(80px, 11vw, 155px);
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: clamp(80px, 11vw, 155px);
   height: auto;
   mix-blend-mode: multiply;
-  flex-shrink: 0;
 }
 
 /* ── Mobile: hide crowns, centre logo ── */
