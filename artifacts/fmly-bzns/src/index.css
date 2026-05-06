@@ -524,7 +524,7 @@ button[type="submit"]:hover { background: var(--orange); }
 }
 .heroLogoWrap {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
   gap: 0;
   margin-bottom: 0;
