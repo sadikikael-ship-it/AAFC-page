@@ -610,7 +610,9 @@ button[type="submit"]:hover { background: var(--orange); }
   font-size: .9rem;
 }
 .soundIntro {
-  background: var(--paper);
+  background:
+    linear-gradient(rgba(255, 246, 225, 0.82), rgba(255, 246, 225, 0.82)),
+    url('/elements/tapes.jpg') center/cover no-repeat;
   border-bottom: 2px solid var(--gold);
 }
 .mxtpTitleRow {
