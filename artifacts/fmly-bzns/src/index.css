@@ -551,7 +551,7 @@ button[type="submit"]:hover { background: var(--orange); }
 
 .heroCrown {
   display: block;
-  width: clamp(44px, 5.5vw, 88px);
+  width: clamp(70px, 10vw, 150px);
   height: auto;
   mix-blend-mode: multiply;
   flex-shrink: 0;
