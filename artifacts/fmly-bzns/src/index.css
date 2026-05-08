@@ -529,6 +529,8 @@ button[type="submit"]:hover { background: var(--orange); }
   justify-content: center;
   gap: 0;
   width: 100%;
+  padding-inline: 44px;
+  box-sizing: border-box;
 }
 
 .heroLogoWrap .brandLogo--hero {
