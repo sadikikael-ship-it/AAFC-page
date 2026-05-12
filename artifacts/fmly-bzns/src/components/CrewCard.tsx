@@ -1,6 +1,9 @@
+import { FaInstagram, FaSoundcloud } from "react-icons/fa";
 import type { CrewMember } from "@/data/crew";
 
 export function CrewCard({ member }: { member: CrewMember }) {
+  const hasSocials = member.instagramUrl || member.soundcloudUrl;
+
   return (
     <article className="crewCard">
       <div
@@ -17,6 +20,32 @@ export function CrewCard({ member }: { member: CrewMember }) {
         <p className="crewCardRole">{member.role}</p>
         {member.city ? <p className="crewCardCity">{member.city}</p> : null}
         {member.bio ? <p className="crewCardBio">{member.bio}</p> : null}
+        {hasSocials && (
+          <div className="crewCardSocials">
+            {member.instagramUrl && (
+              <a
+                href={member.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="crewSocialLink"
+                aria-label={`Follow ${member.name} on Instagram`}
+              >
+                <FaInstagram aria-hidden focusable="false" />
+              </a>
+            )}
+            {member.soundcloudUrl && (
+              <a
+                href={member.soundcloudUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="crewSocialLink"
+                aria-label={`Listen to ${member.name} on SoundCloud`}
+              >
+                <FaSoundcloud aria-hidden focusable="false" />
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </article>
   );

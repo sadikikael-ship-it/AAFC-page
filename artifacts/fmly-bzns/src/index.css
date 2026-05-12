@@ -869,6 +869,29 @@ button[type="submit"]:hover { background: var(--orange); }
 .crewCardRole { font-size: .85rem; font-weight: 700; color: var(--orange); margin: 0; text-transform: uppercase; letter-spacing: .05em; }
 .crewCardCity { font-size: .78rem; color: var(--ink); opacity: .75; margin: 0; }
 .crewCardBio { font-size: .9rem; margin: .35rem 0 0; }
+.crewCardSocials {
+  display: flex;
+  gap: .5rem;
+  margin-top: .6rem;
+}
+.crewSocialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--gold);
+  font-size: 1rem;
+  transition: background .15s, color .15s, transform .15s;
+  text-decoration: none;
+}
+.crewSocialLink:hover {
+  background: var(--orange);
+  color: var(--paper);
+  transform: scale(1.1);
+}
 
 /* ----------------------------------------------------------
    MERCH

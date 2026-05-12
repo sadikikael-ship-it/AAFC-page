@@ -27,6 +27,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center 10%",
     bio: "Sets the vision. Shapes the rooms. Moves the culture.",
     tier: "Core Frequency",
+    instagramUrl: "https://www.instagram.com/andreasone/",
   },
   {
     name: "ONE LOVELL",
@@ -36,6 +37,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center top",
     bio: "Mashups, edits, and deep cuts—blending Dancehall, Afro R&B, and global rhythm with precision.",
     tier: "Core Frequency",
+    instagramUrl: "https://www.instagram.com/onelovell/",
   },
   {
     name: "OBE (INTELLIGENTREBELLION)",
@@ -46,6 +48,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center 20%",
     bio: "Building the look, shaping the energy, and connecting the dots behind the scenes.",
     tier: "Core Frequency",
+    instagramUrl: "https://www.instagram.com/intelligentrebellion/",
   },
   {
     name: "DAVIX (DOJO IN THE SKY)",
@@ -56,6 +59,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center 20%",
     bio: "Bringing live energy, instrumentation, and studio depth into the FMLY frequency. Founder of Dojo in the Sky and Secret Sessions.",
     tier: "Sound & Vision",
+    instagramUrl: "https://www.instagram.com/davixdojointhesky/",
   },
   {
     name: "JUSTIN (GATEWAY MENDOCINO)",
@@ -66,6 +70,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center 15%",
     bio: "Co-creating the environment where The Gathering comes to life.",
     tier: "World Builders",
+    instagramUrl: "https://www.instagram.com/just_in_mendo/",
   },
   {
     name: "NED (GATEWAY MENDOCINO)",
@@ -76,6 +81,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center 15%",
     bio: "Holding the foundation for immersive, nature-rooted experiences. From cannabis to plant medicine culture and beyond.",
     tier: "World Builders",
+    instagramUrl: "https://www.instagram.com/gatewaymendocino/",
   },
   {
     name: "AMALYN",
@@ -84,6 +90,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center 45%",
     bio: "Soulful presence and melodic energy woven into the dancefloor.",
     tier: "Featured FMLY DJs and Artists",
+    instagramUrl: "https://www.instagram.com/amalynoficial/",
   },
   {
     name: "WEIRDOWITHSOUL",
@@ -92,6 +99,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center 25%",
     bio: "Afro-rooted selector and Event Curator with a forward-thinking edge. Founder of AfroSauce.",
     tier: "Featured FMLY DJs and Artists",
+    instagramUrl: "https://www.instagram.com/weirdowithsoul/",
   },
   {
     name: "RAEYA",
@@ -100,6 +108,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center top",
     bio: "Smooth blends, deep cuts, and intentional movement.",
     tier: "Featured FMLY DJs and Artists",
+    instagramUrl: "https://www.instagram.com/purestardust/",
   },
   {
     name: "DYOPS",
@@ -108,6 +117,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center top",
     bio: "Sexy, soulful, late-night energy that keeps bodies moving. Founder of LUSH.",
     tier: "Featured FMLY DJs and Artists",
+    instagramUrl: "https://www.instagram.com/dj.dyops/",
   },
   {
     name: "DJ KOBIE",
@@ -116,6 +126,8 @@ export const crew: CrewMember[] = [
     bgPosition: "center 30%",
     bio: "Timeless grooves with deep cultural foundation. Repping Trinidad to Norcal and the Globe.",
     tier: "Selectors & Contributors",
+    instagramUrl: "https://www.instagram.com/kobie_quashie/",
+    soundcloudUrl: "https://soundcloud.com/kobiequashie",
   },
   {
     name: "DANNI G",
@@ -124,6 +136,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center top",
     bio: "High-energy sets with range, rhythm, and presence.",
     tier: "Selectors & Contributors",
+    instagramUrl: "https://www.instagram.com/dannig/",
   },
   {
     name: "DJ IJO",
@@ -132,6 +145,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center top",
     bio: "South African rhythms, deep bounce, and underground heat.",
     tier: "Selectors & Contributors",
+    instagramUrl: "https://www.instagram.com/djijo17/",
   },
   {
     name: "LITTLE DINOSAUR",
@@ -140,6 +154,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center top",
     bio: "Intentional sets that move between soulful and high energy. Founder of HUES the Color of Sound.",
     tier: "Selectors & Contributors",
+    instagramUrl: "https://www.instagram.com/littledinosaur/",
   },
   {
     name: "CANNABA55",
@@ -148,6 +163,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center 20%",
     bio: "Raw selections built for movement and connection. Global Bangers.",
     tier: "Selectors & Contributors",
+    instagramUrl: "https://www.instagram.com/cannaba55/",
   },
   {
     name: "KMNI",
@@ -156,6 +172,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center 20%",
     bio: "Driving, percussive energy with global reach. Deep roots in a current global format hailing from Cameroon.",
     tier: "Selectors & Contributors",
+    instagramUrl: "https://www.instagram.com/kmnimusic/",
   },
   {
     name: "SAGE",
@@ -164,6 +181,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center top",
     bio: "Intentional sets that move between soulful and high energy.",
     tier: "Selectors & Contributors",
+    instagramUrl: "https://www.instagram.com/thenameis_sage/",
   },
   {
     name: "SPEKT1",
@@ -172,6 +190,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center top",
     bio: "Heavy rhythms and cross-genre movement. Founder of We Got This.",
     tier: "Selectors & Contributors",
+    instagramUrl: "https://www.instagram.com/spekt1/",
   },
   {
     name: "DJ ATREAU",
@@ -180,6 +199,7 @@ export const crew: CrewMember[] = [
     bgPosition: "center 10%",
     bio: "Versatile, intuitive, and dialed into the room.",
     tier: "Selectors & Contributors",
+    instagramUrl: "https://www.instagram.com/djatreau/",
   },
 ];
 
