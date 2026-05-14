@@ -125,41 +125,61 @@ export default function MusicPage() {
           Working with production team Dojo In The Sky and international vocalists including BLVK H3RO, Kes Kross, Seun Kuti, Jade De LaFleur, and Amalyn.
         </p>
         <div className="dojoAlbumGrid">
-          {/* TODO: Replace href="#" with actual Spotify track link */}
-          {/* TODO: Replace albumArt src with actual album art image */}
-          <a href="#" className="dojoAlbumCard" aria-label="BLVK H3RO on Spotify">
-            <div className="dojoAlbumArt dojoAlbumArt--placeholder">
-              <span>BLVK H3RO</span>
+          {/* TODO: Replace href="#" with Spotify link for Shine Ya Light */}
+          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="BLVK H3RO — Shine Ya Light on Spotify">
+            <div className="dojoAlbumArt">
+              <img src="/dojo-shine-ya-light.jpeg" alt="Shine Ya Light — BLVK H3RO" />
             </div>
-            <p className="dojoAlbumName">BLVK H3RO</p>
+            <p className="dojoAlbumTitle">Shine Ya Light</p>
+            <p className="dojoAlbumArtist">BLVK H3RO</p>
           </a>
-          {/* TODO: Replace href="#" with actual Spotify track link */}
-          <a href="#" className="dojoAlbumCard" aria-label="Kes Kross on Spotify">
-            <div className="dojoAlbumArt dojoAlbumArt--placeholder">
-              <span>Kes Kross</span>
+          {/* TODO: Replace href="#" with Spotify link for Scary Hours */}
+          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Kes Kross — Scary Hours on Spotify">
+            <div className="dojoAlbumArt">
+              <img src="/dojo-scary-hours.jpeg" alt="Scary Hours — Kes Kross" />
             </div>
-            <p className="dojoAlbumName">Kes Kross</p>
+            <p className="dojoAlbumTitle">Scary Hours</p>
+            <p className="dojoAlbumArtist">Kes Kross</p>
           </a>
-          {/* TODO: Replace href="#" with actual Spotify track link */}
-          <a href="#" className="dojoAlbumCard" aria-label="Seun Kuti on Spotify">
-            <div className="dojoAlbumArt dojoAlbumArt--placeholder">
-              <span>Seun Kuti</span>
+          {/* TODO: Replace href="#" with Spotify link for Wave Remix */}
+          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Jade de LaFleur & Seun Kuti — Wave Remix on Spotify">
+            <div className="dojoAlbumArt">
+              <img src="/dojo-wave-remix.jpeg" alt="Wave Remix — Jade de LaFleur & Seun Kuti" />
             </div>
-            <p className="dojoAlbumName">Seun Kuti</p>
+            <p className="dojoAlbumTitle">Wave Remix</p>
+            <p className="dojoAlbumArtist">Jade de LaFleur &amp; Seun Kuti</p>
           </a>
-          {/* TODO: Replace href="#" with actual Spotify track link */}
-          <a href="#" className="dojoAlbumCard" aria-label="Jade De LaFleur on Spotify">
-            <div className="dojoAlbumArt dojoAlbumArt--placeholder">
-              <span>Jade De LaFleur</span>
+          {/* TODO: Replace href="#" with Spotify link for Breathe */}
+          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Amalyn — Breathe on Spotify">
+            <div className="dojoAlbumArt">
+              <img src="/dojo-breathe.jpeg" alt="Breathe — Amalyn" />
             </div>
-            <p className="dojoAlbumName">Jade De LaFleur</p>
+            <p className="dojoAlbumTitle">Breathe</p>
+            <p className="dojoAlbumArtist">Amalyn</p>
           </a>
-          {/* TODO: Replace href="#" with actual Spotify track link */}
-          <a href="#" className="dojoAlbumCard" aria-label="Amalyn on Spotify">
-            <div className="dojoAlbumArt dojoAlbumArt--placeholder">
-              <span>Amalyn</span>
+          {/* TODO: Replace href="#" with Spotify link for Pilates */}
+          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Amalyn & BLVK H3RO — Pilates on Spotify">
+            <div className="dojoAlbumArt">
+              <img src="/dojo-pilates.jpeg" alt="Pilates — Amalyn & BLVK H3RO" />
             </div>
-            <p className="dojoAlbumName">Amalyn</p>
+            <p className="dojoAlbumTitle">Pilates</p>
+            <p className="dojoAlbumArtist">Amalyn &amp; BLVK H3RO</p>
+          </a>
+          {/* TODO: Replace href="#" with Spotify link for With the Blue */}
+          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Melon Xion — With the Blue on Spotify">
+            <div className="dojoAlbumArt">
+              <img src="/dojo-with-the-blue.jpeg" alt="With the Blue — Melon Xion" />
+            </div>
+            <p className="dojoAlbumTitle">With the Blue</p>
+            <p className="dojoAlbumArtist">Melon Xion</p>
+          </a>
+          {/* TODO: Replace href="#" with Spotify link for Higher Remix */}
+          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Truthlive & Nina Grae — Higher Remix on Spotify">
+            <div className="dojoAlbumArt">
+              <img src="/dojo-higher-remix.jpeg" alt="Higher Remix — Truthlive & Nina Grae" />
+            </div>
+            <p className="dojoAlbumTitle">Higher Remix</p>
+            <p className="dojoAlbumArtist">Truthlive &amp; Nina Grae</p>
           </a>
         </div>
       </section>
