@@ -1260,6 +1260,59 @@ button[type="submit"]:hover { background: var(--orange); }
 .mixCard strong { font-size: 1rem; }
 .mixCardArtist { font-size: .8rem; opacity: .75; }
 
+/* ── Dojo in the Sky section ── */
+.dojoSection { background: var(--paper); border-top: 3px solid var(--black); }
+.dojoDesc {
+  max-width: 68ch;
+  margin-bottom: 1.8rem;
+  opacity: .85;
+}
+.dojoAlbumGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.2rem;
+}
+.dojoAlbumCard {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  text-decoration: none;
+  color: var(--black);
+  transition: transform .12s;
+}
+.dojoAlbumCard:hover { transform: translateY(-4px); }
+.dojoAlbumArt {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 2px solid var(--black);
+  box-shadow: 4px 4px 0 var(--black);
+  overflow: hidden;
+  border-radius: 2px;
+}
+.dojoAlbumArt--placeholder {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem;
+}
+.dojoAlbumArt--placeholder span {
+  font-family: "Fungus", Impact, sans-serif;
+  font-size: clamp(.75rem, 2vw, 1rem);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: .04em;
+  color: var(--black);
+  line-height: 1.2;
+}
+.dojoAlbumName {
+  font-size: .85rem;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
 /* SoundCloud catalog section */
 .scCatalogBand {
   background: var(--paper);

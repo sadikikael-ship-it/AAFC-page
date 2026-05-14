@@ -26,11 +26,12 @@ export const collaborators: Collaborator[] = [
   { name: "New Parish", kind: "Venue" },
   { name: "Royal Sun Palm Springs", kind: "Venue" },
 
-  { name: "BLVK H3R0", kind: "Artist" },
+  { name: "BLVK H3RO", kind: "Artist" },
   { name: "AMALYN", kind: "Artist" },
   { name: "Kes Kross", kind: "Artist" },
   { name: "Jade de Lafleur", kind: "Artist" },
   { name: "Seun Kuti", kind: "Artist" },
+  { name: "Lionize", kind: "Artist" },
 
   { name: "Secret Sessions", kind: "Brand" },
   { name: "Peace Fits", kind: "Brand" },

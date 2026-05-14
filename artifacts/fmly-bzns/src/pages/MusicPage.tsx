@@ -117,6 +117,53 @@ export default function MusicPage() {
         </section>
       ) : null}
 
+      {/* FMLY BZNS x DOJO IN THE SKY */}
+      <section className="section dojoSection">
+        <p className="eyebrow">Production · Original Releases</p>
+        <h2>FMLY BZNS x Dojo in the Sky</h2>
+        <p className="dojoDesc">
+          Working with production team Dojo In The Sky and international vocalists including BLVK H3RO, Kes Kross, Seun Kuti, Jade De LaFleur, and Amalyn.
+        </p>
+        <div className="dojoAlbumGrid">
+          {/* TODO: Replace href="#" with actual Spotify track link */}
+          {/* TODO: Replace albumArt src with actual album art image */}
+          <a href="#" className="dojoAlbumCard" aria-label="BLVK H3RO on Spotify">
+            <div className="dojoAlbumArt dojoAlbumArt--placeholder">
+              <span>BLVK H3RO</span>
+            </div>
+            <p className="dojoAlbumName">BLVK H3RO</p>
+          </a>
+          {/* TODO: Replace href="#" with actual Spotify track link */}
+          <a href="#" className="dojoAlbumCard" aria-label="Kes Kross on Spotify">
+            <div className="dojoAlbumArt dojoAlbumArt--placeholder">
+              <span>Kes Kross</span>
+            </div>
+            <p className="dojoAlbumName">Kes Kross</p>
+          </a>
+          {/* TODO: Replace href="#" with actual Spotify track link */}
+          <a href="#" className="dojoAlbumCard" aria-label="Seun Kuti on Spotify">
+            <div className="dojoAlbumArt dojoAlbumArt--placeholder">
+              <span>Seun Kuti</span>
+            </div>
+            <p className="dojoAlbumName">Seun Kuti</p>
+          </a>
+          {/* TODO: Replace href="#" with actual Spotify track link */}
+          <a href="#" className="dojoAlbumCard" aria-label="Jade De LaFleur on Spotify">
+            <div className="dojoAlbumArt dojoAlbumArt--placeholder">
+              <span>Jade De LaFleur</span>
+            </div>
+            <p className="dojoAlbumName">Jade De LaFleur</p>
+          </a>
+          {/* TODO: Replace href="#" with actual Spotify track link */}
+          <a href="#" className="dojoAlbumCard" aria-label="Amalyn on Spotify">
+            <div className="dojoAlbumArt dojoAlbumArt--placeholder">
+              <span>Amalyn</span>
+            </div>
+            <p className="dojoAlbumName">Amalyn</p>
+          </a>
+        </div>
+      </section>
+
       {/* PLATFORM LINKS */}
       <section className="section musicPreview">
         <h2>Follow the music</h2>

@@ -1,0 +1,135 @@
+IMPORTANT: Do not redesign, restructure, restyle, rename, remove, or adjust anything that is not explicitly listed below. Preserve the existing website exactly as-is. Only add the requested new content and remove only the specific redundant buttons mentioned.
+
+Please make these limited updates to the FMLY BZNS website.
+
+Do not change:
+- Existing layout
+- Existing colors
+- Existing typography
+- Existing spacing
+- Existing card styles
+- Existing section order unless absolutely necessary to insert the new section
+- Existing images
+- Existing navigation
+- Existing decorative borders or patterns
+- Existing copy, except where specifically requested below
+
+Only make the following changes:
+
+1. Add these new collaborator / artist entries
+
+Add a new card for:
+
+Name:
+Lionize
+
+Role / category line:
+Selector · Open Format
+
+Bio:
+Bay Area legend and founding member of Blessed Coast Sound.
+
+Add a new card for:
+
+Name:
+BLVK H3RO
+
+Role / category line:
+Artist
+
+Bio:
+Grammy-nominated reggae dancehall singer and global warrior for peace.
+
+Use the exact same card styling and grid behavior that already exists. Do not restyle the collaborator section.
+
+2. Add a new “FMLY BZNS x Dojo in the Sky” section
+
+Create a new section titled:
+
+FMLY BZNS x Dojo in the Sky
+
+Use this short description:
+
+Working with production team Dojo In The Sky and international vocalists including BLVK H3RO, Kes Kross, Seun Kuti, Jade De LaFleur, and Amalyn.
+
+Place this new section near the existing music/catalog/collaboration area without changing the rest of the page structure.
+
+Match the existing website styling exactly. Do not introduce a new design system.
+
+3. Add album art with Spotify links inside that new section
+
+Inside the new “FMLY BZNS x Dojo in the Sky” section, add album art cards in a clean row/grid.
+
+Each album art card should link to its corresponding Spotify track.
+
+If exact Spotify links or album art images already exist in the project, use them.
+
+If exact links/assets are not available:
+- Add placeholder album art cards
+- Use href="#"
+- Add clear TODO comments for the Spotify links and image paths
+- Do not guess fake links
+
+Suggested placeholder labels:
+- BLVK H3RO
+- Kes Kross
+- Seun Kuti
+- Jade De LaFleur
+- Amalyn
+
+Links should open in a new tab:
+target="_blank"
+rel="noopener noreferrer"
+
+4. Remove only the redundant buttons in “Open the FMLY Catalog”
+
+In the section titled “Open the FMLY Catalog,” remove only the three buttons underneath the social media links.
+
+Do not remove the section.
+Do not remove the heading.
+Do not remove the social media links.
+Do not remove any other content from that section.
+
+After removing the buttons, only clean up the immediate leftover empty spacing if necessary.
+
+5. Add decorative design elements beside the hero logo
+
+Add small decorative design elements on either side of the main FMLY BZNS logo in the hero section.
+
+Important:
+- Do not move the logo
+- Do not resize the logo
+- Do not change the hero layout
+- Do not add anything above the logo
+- Do not bring back the crown/triangle shape above the logo
+- Do not cover the logo, headline, buttons, or text
+
+The new elements should:
+- Sit to the left and right of the logo
+- Use the existing color palette
+- Match the existing pattern/border language
+- Feel geometric, festival-inspired, and global
+- Be subtle and secondary to the logo
+
+Use CSS/SVG shapes if possible.
+
+Acceptable shapes:
+- Small triangles
+- Diamonds
+- Stepped pyramid marks
+- Short linework
+- Small stacked blocks
+- Tiny sunburst accents
+
+Keep them minimal. They should feel like added accents, not a redesign.
+
+6. Final check
+
+Before finishing, confirm:
+- No existing sections were redesigned
+- No existing content was removed except the three redundant buttons
+- No existing styles were changed except what was required to add the new items
+- The new cards match the existing cards
+- The new section matches the existing site
+- The hero logo area still keeps the same layout, with only side accents added
+- Everything works on desktop, tablet, and mobile
