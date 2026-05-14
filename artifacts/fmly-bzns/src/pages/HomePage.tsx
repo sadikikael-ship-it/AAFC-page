@@ -49,12 +49,7 @@ export default function HomePage() {
       <section className="section hero" id="top">
         <div className="heroInner">
           <div className="heroLogoWrap">
-            {/* Left — 3 crowns stacked */}
-            <div className="heroCrownCol" aria-hidden="true">
-              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
-              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
-              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
-            </div>
+            <img src="/hero-accent-left.png" className="heroAccentPanel" aria-hidden="true" alt="" />
 
             <img
               src="/fmly-logo-color.png"
@@ -62,12 +57,7 @@ export default function HomePage() {
               className="brandLogo brandLogo--hero"
             />
 
-            {/* Right — 3 crowns stacked */}
-            <div className="heroCrownCol" aria-hidden="true">
-              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
-              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
-              <img src="/elements/crown-solo.png" className="heroCrown" alt="" />
-            </div>
+            <img src="/hero-accent-right.png" className="heroAccentPanel" aria-hidden="true" alt="" />
           </div>
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>

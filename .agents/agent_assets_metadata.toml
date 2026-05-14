@@ -6,3 +6,15 @@ id = "FtM6NT-OBTPzoIbfSWjdC"
 uri = "file://artifacts/fmly-bzns/public/hero-festival-bg.png"
 type = "image"
 title = "afro caribbean global festival golden hour"
+
+[[generated]]
+id = "1yEOHsY6n754hc5Iv9VKy"
+uri = "file://artifacts/fmly-bzns/public/hero-accent-left.png"
+type = "image"
+title = "ndebele geometric hero accent panel"
+
+[[generated]]
+id = "KPXX_4rizKsTIgbUz26r9"
+uri = "file://artifacts/fmly-bzns/public/hero-accent-right.png"
+type = "image"
+title = "ndebele geometric hero accent panel right"
