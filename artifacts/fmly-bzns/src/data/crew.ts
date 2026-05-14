@@ -122,7 +122,7 @@ export const crew: CrewMember[] = [
   {
     name: "LIONIZE",
     role: "Selector · Global Sound",
-    image: "/crew-lionize.jpg",
+    image: "/crew-blvkh3ro.png",
     bgPosition: "center 20%",
     bio: "Raw energy and deep roots — moving dancefloors with intention.",
     tier: "Featured FMLY DJs and Artists",
@@ -131,7 +131,7 @@ export const crew: CrewMember[] = [
   {
     name: "BLVK H3RO",
     role: "Selector · Global Bass",
-    image: "/crew-blvkh3ro.png",
+    image: "/crew-lionize.jpg",
     bgPosition: "center 20%",
     bio: "High-energy selections rooted in culture and community.",
     tier: "Featured FMLY DJs and Artists",
