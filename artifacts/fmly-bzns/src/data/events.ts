@@ -55,6 +55,7 @@ export interface SiteEvent {
   description?: string;
   longDescription?: string;
   tiers?: TicketTier[];
+  eventbriteEventId?: string;
 }
 
 export const events: SiteEvent[] = [
@@ -92,7 +93,7 @@ export const events: SiteEvent[] = [
     city: "Northern California",
     venue: "Gateway Mendocino",
     date: "July 30 – August 2, 2026",
-    time: "Gates open Thursday noon · Music until late Sunday",
+    time: "Gates open Thu noon (VIP & Artists) · Fri 10am (Public) · Music until late Sunday",
     address: "Gateway Mendocino, Northern California",
     ageRestriction: "21+ (with valid ID)",
     image: "/the-gathering-2026.jpeg",
@@ -115,9 +116,10 @@ export const events: SiteEvent[] = [
     description:
       "FMLY BZNS returns with Gateway Mendocino for The Gathering 2026, July 30 – August 2—a 3-day, 3-night immersion where Global Dance Music Culture meets nature, community, and intention. Set deep in Northern California's landscape, this boutique microfestival blends Afro-diaspora sound with transformational energy—flowing from sunlit sessions by the water into late-night dancefloors that carry the energy deep into the night.",
     longDescription:
-      "Limited capacity. Bring your people. Tickets available on Eventbrite.",
+      "Limited capacity. Bring your people.\n\nGate schedule: Thursday at noon — VIP & Artists only. Gates open to the public Friday at 10:00am.",
     ticketUrl:
       "https://www.eventbrite.com/e/fmly-bzns-the-gathering-tickets-1986467302175?aff=erelexpmlt",
+    eventbriteEventId: "1986467302175",
     tiers: [
       {
         id: "ga-weekend",

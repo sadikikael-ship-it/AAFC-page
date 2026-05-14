@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { FaTimes, FaMapMarkerAlt, FaCalendarAlt, FaClock } from "react-icons/fa";
 import type { SiteEvent } from "@/data/events";
 import { useCart, formatPrice } from "@/lib/cart";
+import { EventbriteWidget } from "./EventbriteWidget";
 
 interface Props {
   event: SiteEvent;
@@ -100,7 +101,11 @@ export function EventDetailsModal({ event, onClose }: Props) {
           </ul>
 
           {event.longDescription ? (
-            <p className="modalLead">{event.longDescription}</p>
+            <div className="modalLead">
+              {event.longDescription.split("\n\n").map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
           ) : event.description ? (
             <p className="modalLead">{event.description}</p>
           ) : null}
@@ -127,7 +132,12 @@ export function EventDetailsModal({ event, onClose }: Props) {
             </div>
           ) : null}
 
-          {event.tiers && event.tiers.length > 0 ? (
+          {event.eventbriteEventId ? (
+            <div className="modalSection">
+              <h3>Tickets</h3>
+              <EventbriteWidget eventId={event.eventbriteEventId} />
+            </div>
+          ) : event.tiers && event.tiers.length > 0 ? (
             <div className="modalSection">
               <h3>Tickets</h3>
               <div className="tierList">
