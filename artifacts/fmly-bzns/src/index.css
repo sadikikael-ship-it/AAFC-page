@@ -1127,6 +1127,47 @@ button[type="submit"]:hover { background: var(--orange); }
    ---------------------------------------------------------- */
 
 .collabBand { padding-top: 3rem; padding-bottom: 3rem; }
+/* ── Featured collaborator cards ── */
+.featuredCollabBand { background: var(--paper); }
+.featuredCollabGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+.featuredCollabCard {
+  background: var(--paper);
+  border: 2px solid var(--black);
+  box-shadow: 5px 5px 0 var(--black);
+  padding: 1.2rem 1.3rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+.featuredCollabCard--artist { border-left: 6px solid var(--orange); }
+.featuredCollabTop { margin-bottom: .2rem; }
+.featuredCollabName {
+  font-family: "Fungus", Impact, sans-serif;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: 0;
+  line-height: 1;
+}
+.featuredCollabRole {
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  opacity: .6;
+  margin: 0;
+}
+.featuredCollabBio {
+  font-size: .92rem;
+  margin: .2rem 0 0;
+  line-height: 1.5;
+}
+
 .collabPills { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
 .pill {
   background: var(--paper);

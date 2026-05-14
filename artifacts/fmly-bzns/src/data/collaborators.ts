@@ -9,6 +9,8 @@ export interface Collaborator {
   name: string;
   kind: CollaboratorKind;
   url?: string;
+  role?: string;
+  bio?: string;
 }
 
 export const collaborators: Collaborator[] = [
@@ -26,12 +28,22 @@ export const collaborators: Collaborator[] = [
   { name: "New Parish", kind: "Venue" },
   { name: "Royal Sun Palm Springs", kind: "Venue" },
 
-  { name: "BLVK H3RO", kind: "Artist" },
+  {
+    name: "BLVK H3RO",
+    kind: "Artist",
+    role: "Artist",
+    bio: "Grammy-nominated reggae dancehall singer and global warrior for peace.",
+  },
   { name: "AMALYN", kind: "Artist" },
   { name: "Kes Kross", kind: "Artist" },
   { name: "Jade de Lafleur", kind: "Artist" },
   { name: "Seun Kuti", kind: "Artist" },
-  { name: "Lionize", kind: "Artist" },
+  {
+    name: "Lionize",
+    kind: "Artist",
+    role: "Selector · Open Format",
+    bio: "Bay Area legend and founding member of Blessed Coast Sound.",
+  },
 
   { name: "Secret Sessions", kind: "Brand" },
   { name: "Peace Fits", kind: "Brand" },
