@@ -48,14 +48,15 @@ export default function HomePage() {
       {/* HERO */}
       <section className="section hero" id="top">
         <div className="heroBand heroBand--top" aria-hidden="true" />
-        <div className="heroInner">
-          <div className="heroLogoWrap">
-            <img
-              src="/fmly-logo-color.png"
-              alt="FMLY BZNS"
-              className="brandLogo brandLogo--hero"
-            />
-          </div>
+        <div className="heroLogoWrap">
+          <img
+            src="/fmly-logo-color.png"
+            alt="FMLY BZNS"
+            className="brandLogo brandLogo--hero"
+          />
+        </div>
+        <div className="heroBand heroBand--bottom" aria-hidden="true" />
+        <div className="heroInner heroTextBlock">
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>
             THIS IS FMLY BZNS.
@@ -75,7 +76,6 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="heroBand heroBand--bottom" aria-hidden="true" />
       </section>
       <AdinkraDivider variant="full" />
 
