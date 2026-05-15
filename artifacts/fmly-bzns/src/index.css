@@ -546,14 +546,12 @@ button[type="submit"]:hover { background: var(--orange); }
 .heroBand {
   display: block;
   width: 100%;
-  height: clamp(70px, 9vw, 130px);
+  height: clamp(90px, 11vw, 160px);
   background-repeat: repeat-x;
   background-size: auto 100%;
   background-position: left center;
-  mix-blend-mode: multiply;
-  opacity: 0.92;
   position: relative;
-  z-index: 0;
+  z-index: 1;
 }
 .heroBand--top    { background-image: url('/hero-band-top.png');    margin-bottom: .5rem; }
 .heroBand--bottom { background-image: url('/hero-band-bottom.png'); margin-top: .5rem; }
