@@ -122,7 +122,7 @@ export const crew: CrewMember[] = [
   {
     name: "LIONIZE",
     role: "Selector · Open Format",
-    image: "/crew-lionize.jpg",
+    image: "/crew-blvkh3ro.png",
     bgPosition: "center 20%",
     bio: "Bay Area legend and founding member of Blessed Coast Sound.",
     tier: "Featured FMLY DJs and Artists",
@@ -131,7 +131,7 @@ export const crew: CrewMember[] = [
   {
     name: "BLVK H3RO",
     role: "Artist",
-    image: "/crew-blvkh3ro.png",
+    image: "/crew-lionize.jpg",
     bgPosition: "center 20%",
     bio: "Grammy-nominated reggae dancehall singer and global warrior for peace.",
     tier: "Featured FMLY DJs and Artists",
