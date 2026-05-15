@@ -537,9 +537,9 @@ button[type="submit"]:hover { background: var(--orange); }
 }
 
 .heroLogoWrap .brandLogo--hero {
-  height: clamp(220px, 38vh, 480px);
+  height: clamp(260px, 46vh, 560px);
   width: auto;
-  max-width: 70%;
+  max-width: 80%;
   display: block;
 }
 
