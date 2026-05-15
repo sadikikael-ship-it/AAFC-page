@@ -540,30 +540,30 @@ button[type="submit"]:hover { background: var(--orange); }
   max-width: 45%;
 }
 
-/* Geometric accent panels on each side of the hero logo */
-.heroAccentPanel {
-  flex: 1 1 0;
-  min-width: 0;
-  max-width: clamp(80px, 14vw, 200px);
-  height: clamp(200px, 45vh, 500px);
-  object-fit: cover;
-  object-position: center top;
+/* ── Hero horizontal pattern bands ── */
+.heroBand {
   display: block;
+  width: 100%;
+  height: clamp(60px, 8vw, 120px);
+  object-fit: cover;
+  object-position: center center;
   mix-blend-mode: multiply;
-  opacity: 0.78;
+  opacity: 0.88;
   -webkit-mask-image:
-    linear-gradient(to right,  transparent 0%, black 18%, black 82%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+    linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image:
-    linear-gradient(to right,  transparent 0%, black 18%, black 82%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+    linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
   mask-composite: intersect;
 }
+.heroBand--top  { margin-bottom: .5rem; }
+.heroBand--bottom { margin-top: .5rem; }
 
-/* ── Mobile: hide accent panels, centre logo ── */
+/* ── Mobile: thinner bands ── */
 @media (max-width: 640px) {
-  .heroAccentPanel { display: none; }
+  .heroBand { height: clamp(40px, 10vw, 70px); }
   .heroLogoWrap {
     display: block;
     text-align: center;

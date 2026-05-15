@@ -18,3 +18,15 @@ id = "KPXX_4rizKsTIgbUz26r9"
 uri = "file://artifacts/fmly-bzns/public/hero-accent-right.png"
 type = "image"
 title = "ndebele geometric hero accent panel right"
+
+[[generated]]
+id = "EAw-pHngBERfEbyJgGDS4"
+uri = "file://artifacts/fmly-bzns/public/hero-band-top.png"
+type = "image"
+title = "ndebele horizontal band top hero"
+
+[[generated]]
+id = "7oki4G26QFGAY5hpWjt-j"
+uri = "file://artifacts/fmly-bzns/public/hero-band-bottom.png"
+type = "image"
+title = "ndebele horizontal band bottom hero"

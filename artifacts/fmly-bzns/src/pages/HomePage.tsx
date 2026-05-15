@@ -48,17 +48,15 @@ export default function HomePage() {
       {/* HERO */}
       <section className="section hero" id="top">
         <div className="heroInner">
+          <img src="/hero-band-top.png" className="heroBand heroBand--top" aria-hidden="true" alt="" />
           <div className="heroLogoWrap">
-            <img src="/hero-accent-left.png" className="heroAccentPanel" aria-hidden="true" alt="" />
-
             <img
               src="/fmly-logo-color.png"
               alt="FMLY BZNS"
               className="brandLogo brandLogo--hero"
             />
-
-            <img src="/hero-accent-right.png" className="heroAccentPanel" aria-hidden="true" alt="" />
           </div>
+          <img src="/hero-band-bottom.png" className="heroBand heroBand--bottom" aria-hidden="true" alt="" />
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>
             THIS IS FMLY BZNS.
