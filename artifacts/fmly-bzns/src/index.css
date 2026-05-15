@@ -560,7 +560,7 @@ button[type="submit"]:hover { background: var(--orange); }
   position: relative;
   z-index: 1;
 }
-.heroBand--top    { background-image: url('/hero-band-top.png');    margin-bottom: .5rem; }
+.heroBand--top    { background-image: url('/hero-band-top.png');    margin-bottom: .5rem; transform: scaleY(-1); }
 .heroBand--bottom { background-image: url('/hero-band-bottom.png'); margin-top: .5rem; }
 
 /* ── Mobile: thinner bands ── */
