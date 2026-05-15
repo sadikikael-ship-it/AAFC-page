@@ -364,7 +364,7 @@ button[type="submit"]:hover { background: var(--orange); }
 .hero {
   padding: 0 0 1.5rem;
   background:
-    linear-gradient(180deg, rgba(241, 209, 100, 0.92) 0%, rgba(255, 175, 90, 0.85) 35%, rgba(204, 146, 116, 0.78) 100%),
+    linear-gradient(180deg, rgba(241, 209, 100, 0.78) 0%, rgba(255, 175, 90, 0.70) 35%, rgba(204, 146, 116, 0.62) 100%),
     url("/hero-festival-bg.png") center/cover;
   border-bottom: 4px solid var(--black);
   position: relative;
