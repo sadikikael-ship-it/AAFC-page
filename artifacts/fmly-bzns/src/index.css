@@ -1623,6 +1623,7 @@ button[type="submit"]:hover { background: var(--orange); }
 
   .section { padding: 2.4rem clamp(.85rem, 4vw, 1.5rem); }
   .hero { padding: 2.4rem clamp(.9rem, 4vw, 1.5rem) 3rem; }
+  .section.hero { padding-left: 0; padding-right: 0; }
 
   .footerTop { grid-template-columns: 1fr; justify-items: start; gap: .9rem; }
   .footer .iconRow { justify-self: start; display: flex; }
