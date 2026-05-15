@@ -560,16 +560,8 @@ button[type="submit"]:hover { background: var(--orange); }
   position: relative;
   z-index: 1;
 }
-.heroBand--top    {
-  background-image: url('/hero-band-top.png');
-  border-top: 4px solid var(--black);
-  margin-bottom: .5rem;
-}
-.heroBand--bottom {
-  background-image: url('/hero-band-bottom.png');
-  border-bottom: 4px solid var(--black);
-  margin-top: .5rem;
-}
+.heroBand--top    { background-image: url('/hero-band-top.png');    margin-bottom: .5rem; }
+.heroBand--bottom { background-image: url('/hero-band-bottom.png'); margin-top: .5rem; }
 
 /* ── Mobile: thinner bands ── */
 @media (max-width: 640px) {
