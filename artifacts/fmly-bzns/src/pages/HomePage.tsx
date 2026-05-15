@@ -252,6 +252,53 @@ export default function HomePage() {
             <em>From the floor</em>
           </a>
         </div>
+
+        {/* FMLY BZNS x DOJO IN THE SKY */}
+        <div className="dojoHomeBlock">
+          <p className="eyebrow">Production · Original Releases</p>
+          <h3 className="dojoHomeTitle">FMLY BZNS x Dojo in the Sky</h3>
+          <p className="dojoDesc">
+            Working with production team Dojo In The Sky and international vocalists including BLVK H3RO, Kes Kross, Seun Kuti, Jade De LaFleur, and Amalyn.
+          </p>
+          <div className="dojoAlbumGrid">
+            <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="BLVK H3RO — Shine Ya Light on Spotify">
+              <div className="dojoAlbumArt"><img src="/dojo-shine-ya-light.jpeg" alt="Shine Ya Light — BLVK H3RO" /></div>
+              <p className="dojoAlbumTitle">Shine Ya Light</p>
+              <p className="dojoAlbumArtist">BLVK H3RO</p>
+            </a>
+            <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Kes Kross — Scary Hours on Spotify">
+              <div className="dojoAlbumArt"><img src="/dojo-scary-hours.jpeg" alt="Scary Hours — Kes Kross" /></div>
+              <p className="dojoAlbumTitle">Scary Hours</p>
+              <p className="dojoAlbumArtist">Kes Kross</p>
+            </a>
+            <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Jade de LaFleur & Seun Kuti — Wave Remix on Spotify">
+              <div className="dojoAlbumArt"><img src="/dojo-wave-remix.jpeg" alt="Wave Remix — Jade de LaFleur & Seun Kuti" /></div>
+              <p className="dojoAlbumTitle">Wave Remix</p>
+              <p className="dojoAlbumArtist">Jade de LaFleur &amp; Seun Kuti</p>
+            </a>
+            <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Amalyn — Breathe on Spotify">
+              <div className="dojoAlbumArt"><img src="/dojo-breathe.jpeg" alt="Breathe — Amalyn" /></div>
+              <p className="dojoAlbumTitle">Breathe</p>
+              <p className="dojoAlbumArtist">Amalyn</p>
+            </a>
+            <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Amalyn & BLVK H3RO — Pilates on Spotify">
+              <div className="dojoAlbumArt"><img src="/dojo-pilates.jpeg" alt="Pilates — Amalyn & BLVK H3RO" /></div>
+              <p className="dojoAlbumTitle">Pilates</p>
+              <p className="dojoAlbumArtist">Amalyn &amp; BLVK H3RO</p>
+            </a>
+            <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Melon Xion — With the Blue on Spotify">
+              <div className="dojoAlbumArt"><img src="/dojo-with-the-blue.jpeg" alt="With the Blue — Melon Xion" /></div>
+              <p className="dojoAlbumTitle">With the Blue</p>
+              <p className="dojoAlbumArtist">Melon Xion</p>
+            </a>
+            <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Truthlive & Nina Grae — Higher Remix on Spotify">
+              <div className="dojoAlbumArt"><img src="/dojo-higher-remix.jpeg" alt="Higher Remix — Truthlive & Nina Grae" /></div>
+              <p className="dojoAlbumTitle">Higher Remix</p>
+              <p className="dojoAlbumArtist">Truthlive &amp; Nina Grae</p>
+            </a>
+          </div>
+          <Link href="/music" className="smallBtn ghost dojoHomeLink">See all releases</Link>
+        </div>
       </section>
       <AdinkraDivider variant="full" />
 

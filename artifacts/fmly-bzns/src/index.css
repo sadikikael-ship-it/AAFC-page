@@ -1295,6 +1295,23 @@ button[type="submit"]:hover { background: var(--orange); }
 
 /* ── Dojo in the Sky section ── */
 .dojoSection { background: var(--paper); border-top: 3px solid var(--black); }
+.dojoHomeBlock {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 3px solid var(--black);
+}
+.dojoHomeTitle {
+  font-family: "Fungus", Impact, sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: .2rem 0 .8rem;
+  line-height: 1;
+}
+.dojoHomeLink {
+  display: inline-block;
+  margin-top: 1.8rem;
+}
 .dojoDesc {
   max-width: 68ch;
   margin-bottom: 1.8rem;
