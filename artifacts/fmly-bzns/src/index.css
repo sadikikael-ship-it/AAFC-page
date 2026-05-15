@@ -358,6 +358,9 @@ button[type="submit"]:hover { background: var(--orange); }
    HERO
    ---------------------------------------------------------- */
 
+.section.hero {
+  padding-top: 0;
+}
 .hero {
   padding: 0 0 1.5rem;
   background:
