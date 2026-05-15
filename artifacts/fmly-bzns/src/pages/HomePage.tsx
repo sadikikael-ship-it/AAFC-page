@@ -47,8 +47,8 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="section hero" id="top">
+        <div className="heroBand heroBand--top" aria-hidden="true" />
         <div className="heroInner">
-          <img src="/hero-band-top.png" className="heroBand heroBand--top" aria-hidden="true" alt="" />
           <div className="heroLogoWrap">
             <img
               src="/fmly-logo-color.png"
@@ -56,7 +56,6 @@ export default function HomePage() {
               className="brandLogo brandLogo--hero"
             />
           </div>
-          <img src="/hero-band-bottom.png" className="heroBand heroBand--bottom" aria-hidden="true" alt="" />
           <p className="eyebrow">Global Dance Music Culture</p>
           <h1>
             THIS IS FMLY BZNS.
@@ -76,6 +75,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+        <div className="heroBand heroBand--bottom" aria-hidden="true" />
       </section>
       <AdinkraDivider variant="full" />
 
