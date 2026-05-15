@@ -1,0 +1,8 @@
+{
+  "buildCommand": "pnpm --filter @workspace/fmly-bzns run build",
+  "outputDirectory": "artifacts/fmly-bzns/dist/public",
+  "installCommand": "pnpm install",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
