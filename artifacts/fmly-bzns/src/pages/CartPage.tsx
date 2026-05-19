@@ -52,7 +52,12 @@ export default function CartPage() {
         setSubmitting(false);
         return;
       }
-      window.location.href = url;
+      const win = window.open(url, "_blank", "noopener,noreferrer");
+      if (!win) {
+        // Pop-up blocked — fall back to same-window navigation.
+        window.location.href = url;
+      }
+      setSubmitting(false);
       return;
     }
 
