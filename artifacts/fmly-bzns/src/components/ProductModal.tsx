@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { MerchItem } from "@/data/merch";
-import { buildShopifyCartUrl } from "@/data/merch";
+
+const SHOPIFY_URL = "https://fmly-bzns-2.myshopify.com/";
 
 interface Props {
   item: MerchItem;
@@ -24,13 +25,6 @@ export function ProductModal({ item, onClose }: Props) {
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === overlayRef.current) onClose();
   };
-
-  const needsSize = item.sizes && item.sizes.length > 0;
-  const canShop = !needsSize || !!size;
-
-  const shopUrl = item.shopifyVariantId && canShop
-    ? buildShopifyCartUrl(item.shopifyVariantId, size || undefined)
-    : item.productUrl;
 
   return (
     <div
@@ -60,11 +54,11 @@ export function ProductModal({ item, onClose }: Props) {
             <h2 className="productModalName">{item.name}</h2>
             <p className="productModalPrice">{item.price}</p>
 
-            {needsSize && (
+            {item.sizes && item.sizes.length > 0 && (
               <div className="productModalSection">
                 <p className="productModalLabel">Size</p>
                 <div className="productSizeGrid">
-                  {item.sizes!.map((s) => (
+                  {item.sizes.map((s) => (
                     <button
                       key={s}
                       type="button"
@@ -75,9 +69,6 @@ export function ProductModal({ item, onClose }: Props) {
                     </button>
                   ))}
                 </div>
-                {needsSize && !size && (
-                  <p className="productModalHint">Please select a size to continue</p>
-                )}
               </div>
             )}
 
@@ -87,14 +78,12 @@ export function ProductModal({ item, onClose }: Props) {
               </button>
             ) : (
               <a
-                href={canShop ? shopUrl : undefined}
+                href={SHOPIFY_URL}
                 target="_blank"
                 rel="noreferrer"
-                className={`ctaBtn${!canShop ? " ctaBtn--disabled" : ""}`}
-                onClick={(e) => { if (!canShop) e.preventDefault(); }}
-                aria-disabled={!canShop}
+                className="ctaBtn"
               >
-                {canShop ? `Buy Now — ${size || ""}` : "Select a size to continue"}
+                Shop on Shopify →
               </a>
             )}
           </div>
