@@ -197,7 +197,7 @@ async function createComponents(nodePrefix: string) {
           layout: "vertical",
           contents: { img: true, title: true, price: true, button: true, options: false },
           width: "100%",
-          buttonDestination: "cart",
+          buttonDestination: "modal",
           text: { button: "Add to Cart" },
           googleFonts: [],
         },
