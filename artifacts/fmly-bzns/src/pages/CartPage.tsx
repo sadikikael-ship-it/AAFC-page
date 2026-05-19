@@ -4,9 +4,8 @@ import { FaTrashAlt, FaPlus, FaMinus } from "react-icons/fa";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { useCart, formatPrice } from "@/lib/cart";
-import { merch } from "@/data/merch";
 
-const SHOPIFY_DOMAIN = "5cbegm-kb.myshopify.com";
+const SHOPIFY_STORE_URL = "https://fmly-bzns-2.myshopify.com/";
 
 export default function CartPage() {
   const { items, totalCents, count, setQty, remove } = useCart();
@@ -19,43 +18,16 @@ export default function CartPage() {
   const merchItems = items.filter((it) => it.kind === "merch");
   const ticketItems = items.filter((it) => it.kind === "ticket");
 
-  const buildShopifyCheckoutUrl = (): string | null => {
-    const lines: string[] = [];
-    const attrs: string[] = [];
-    for (const it of merchItems) {
-      // cart id format: `merch:<merchId>:<size>` or `merch:<merchId>`
-      const [, merchId] = it.id.split(":");
-      const product = merch.find((m) => m.id === merchId);
-      if (!product?.shopifyVariantId) continue;
-      lines.push(`${product.shopifyVariantId}:${it.qty}`);
-      const size = it.metadata?.size;
-      if (size) {
-        const key = `Size — ${product.name} (${product.collection})`;
-        attrs.push(`attributes[${encodeURIComponent(key)}]=${encodeURIComponent(size)}`);
-      }
-    }
-    if (lines.length === 0) return null;
-    const query = attrs.length ? `?${attrs.join("&")}` : "";
-    return `https://${SHOPIFY_DOMAIN}/cart/${lines.join(",")}${query}`;
-  };
-
   const handleCheckout = async () => {
     if (items.length === 0) return;
     setSubmitting(true);
     setError(null);
 
-    // If there's any merch in the cart, route to Shopify.
+    // If there's any merch in the cart, send the customer to the Shopify store.
     if (merchItems.length > 0) {
-      const url = buildShopifyCheckoutUrl();
-      if (!url) {
-        setError("Could not build Shopify checkout — missing variant info.");
-        setSubmitting(false);
-        return;
-      }
-      const win = window.open(url, "_blank", "noopener,noreferrer");
+      const win = window.open(SHOPIFY_STORE_URL, "_blank", "noopener,noreferrer");
       if (!win) {
-        // Pop-up blocked — fall back to same-window navigation.
-        window.location.href = url;
+        window.location.href = SHOPIFY_STORE_URL;
       }
       setSubmitting(false);
       return;
@@ -232,7 +204,7 @@ export default function CartPage() {
                 </p>
               ) : hasMerch ? (
                 <p className="cartNote">
-                  You'll be redirected to Shopify to complete your merch
+                  You'll be sent to our Shopify store to complete your merch
                   purchase securely.
                 </p>
               ) : (
