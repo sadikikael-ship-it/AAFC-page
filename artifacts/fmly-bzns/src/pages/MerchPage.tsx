@@ -14,7 +14,17 @@ export default function MerchPage() {
 
       <section className="section fmly-shopify-section">
         <p className="eyebrow">All products</p>
-        <h2>Pre-order now</h2>
+        <div className="merchHeadRow">
+          <h2>Pre-order now</h2>
+          <a
+            href="https://fmly-bzns-2.myshopify.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="shopAllBtn"
+          >
+            Shop all →
+          </a>
+        </div>
         <ShopifyBuyButtons />
       </section>
 

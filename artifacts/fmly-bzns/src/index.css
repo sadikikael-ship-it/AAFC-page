@@ -954,6 +954,31 @@ button[type="submit"]:hover { background: var(--orange); }
 .shopify-buy-frame.shopify-buy-frame--toggle { display: none !important; }
 
 .fmly-shopify-section { background: var(--paper); }
+
+.merchHeadRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.merchHeadRow h2 { margin-bottom: 0; }
+
+.shopAllBtn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--black);
+  border: 2px solid var(--black);
+  padding: 0.45rem 1.1rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.shopAllBtn:hover { background: var(--black); color: var(--paper); }
 .fmly-shopify-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
