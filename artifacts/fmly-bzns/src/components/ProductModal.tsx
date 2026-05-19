@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import type { MerchItem } from "@/data/merch";
 
 const SHOPIFY_URL = "https://fmly-bzns-2.myshopify.com/";
@@ -9,7 +9,6 @@ interface Props {
 }
 
 export function ProductModal({ item, onClose }: Props) {
-  const [size, setSize] = useState<string>("");
   const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -53,24 +52,6 @@ export function ProductModal({ item, onClose }: Props) {
             <p className="eyebrow">{item.collection}</p>
             <h2 className="productModalName">{item.name}</h2>
             <p className="productModalPrice">{item.price}</p>
-
-            {item.sizes && item.sizes.length > 0 && (
-              <div className="productModalSection">
-                <p className="productModalLabel">Size</p>
-                <div className="productSizeGrid">
-                  {item.sizes.map((s) => (
-                    <button
-                      key={s}
-                      type="button"
-                      className={`sizeBtn${size === s ? " sizeBtn--active" : ""}`}
-                      onClick={() => setSize(s)}
-                    >
-                      {s}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
 
             {item.soldOut ? (
               <button type="button" className="ctaBtn" disabled>
