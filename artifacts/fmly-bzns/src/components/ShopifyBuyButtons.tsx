@@ -72,7 +72,7 @@ async function createComponents() {
             },
           },
           layout: "vertical",
-          contents: { img: true, title: true, price: true },
+          contents: { img: true, title: true, options: true, price: true },
           width: "100%",
           buttonDestination: "checkout",
           text: { button: "Buy Now" },
