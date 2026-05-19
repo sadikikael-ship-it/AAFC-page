@@ -280,7 +280,24 @@ interface ShopifyBuyButtonsProps {
 
 export function ShopifyBuyButtons({ nodePrefix = "shopify-product" }: ShopifyBuyButtonsProps) {
   useEffect(() => {
-    const run = () => createComponents(nodePrefix).catch(console.error);
+    const shouldOpenCart = new URLSearchParams(window.location.search).has("opencart");
+
+    const run = () =>
+      createComponents(nodePrefix)
+        .then(() => {
+          if (!shouldOpenCart) return;
+          // Strip the flag from the URL without a page reload.
+          const url = new URL(window.location.href);
+          url.searchParams.delete("opencart");
+          window.history.replaceState({}, "", url.toString());
+          // Give the cart component a moment to initialise, then open it.
+          const tryOpen = (attempts = 0) => {
+            if (typeof window.openShopifyCart === "function" && window.openShopifyCart()) return;
+            if (attempts < 10) setTimeout(() => tryOpen(attempts + 1), 300);
+          };
+          tryOpen();
+        })
+        .catch(console.error);
 
     if (window.ShopifyBuy?.UI) {
       run();

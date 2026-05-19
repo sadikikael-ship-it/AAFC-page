@@ -20,8 +20,8 @@ export function SiteHeader() {
     if (typeof window.openShopifyCart === "function" && window.openShopifyCart()) {
       return;
     }
-    // Fallback: internal /cart page (also used for event tickets).
-    navigate("/cart");
+    // Fallback: go to merch so the SDK can load, then auto-open the cart.
+    navigate("/merch?opencart");
   };
 
   return (
