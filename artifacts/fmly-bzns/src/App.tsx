@@ -4,6 +4,49 @@ import { useLocation } from "wouter";
 import { SiteShell } from "@/components/SiteShell";
 import { CartProvider } from "@/lib/cart";
 
+const SHOPIFY_DOMAIN = "5cbegm-kb.myshopify.com";
+const SHOPIFY_TOKEN  = "76283f7ea2ae821d4c6f3120742407e0";
+
+declare global {
+  interface Window {
+    ShopifyBuy: any;
+    __shopifyUI: any;
+    openShopifyCart?: () => boolean | void;
+  }
+}
+
+/**
+ * Registers window.openShopifyCart once the SDK is ready.
+ * Returns true if the cart drawer was opened, false if no cart exists yet
+ * (so the header can fall back to /cart).
+ */
+function registerShopifyCartOpener() {
+  window.openShopifyCart = () => {
+    const cart = window.__shopifyUI?.components?.cart?.[0];
+    if (cart && typeof cart.open === "function") {
+      cart.open();
+      return true;
+    }
+    return false;
+  };
+}
+
+/** Runs at app-level so the header cart icon works on every page. */
+function ShopifyCartInit() {
+  useEffect(() => {
+    if (window.ShopifyBuy?.UI) {
+      registerShopifyCartOpener();
+      return;
+    }
+    const script = document.querySelector<HTMLScriptElement>('script[src*="buy-button-storefront"]');
+    if (script) {
+      script.addEventListener("load", registerShopifyCartOpener);
+      return () => script.removeEventListener("load", registerShopifyCartOpener);
+    }
+  }, []);
+  return null;
+}
+
 const HomePage            = lazy(() => import("@/pages/HomePage"));
 const EventsPage          = lazy(() => import("@/pages/EventsPage"));
 const MusicPage           = lazy(() => import("@/pages/MusicPage"));
@@ -52,6 +95,7 @@ function App() {
     <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
       <CartProvider>
         <SiteShell>
+          <ShopifyCartInit />
           <ScrollToTop />
           <Router />
         </SiteShell>

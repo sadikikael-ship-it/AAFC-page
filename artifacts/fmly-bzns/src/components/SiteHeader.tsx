@@ -15,14 +15,12 @@ export function SiteHeader() {
   }, [location]);
 
   const handleCartClick = (e: React.MouseEvent) => {
-    // If the Shopify Buy SDK is loaded, open its cart drawer.
-    if (typeof window !== "undefined" && typeof window.openShopifyCart === "function") {
-      e.preventDefault();
-      window.openShopifyCart();
+    e.preventDefault();
+    // openShopifyCart returns true if the drawer opened, false/undefined if no cart exists yet.
+    if (typeof window.openShopifyCart === "function" && window.openShopifyCart()) {
       return;
     }
-    // Fallback: internal cart page (used for event tickets).
-    e.preventDefault();
+    // Fallback: internal /cart page (also used for event tickets).
     navigate("/cart");
   };
 
