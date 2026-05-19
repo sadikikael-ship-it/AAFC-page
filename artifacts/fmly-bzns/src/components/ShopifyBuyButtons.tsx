@@ -72,10 +72,10 @@ async function createComponents() {
             },
           },
           layout: "vertical",
-          contents: { img: true, title: true, options: true, price: true },
+          contents: { img: true, title: true, price: true, button: true },
           width: "100%",
-          buttonDestination: "checkout",
-          text: { button: "Buy Now" },
+          buttonDestination: "modal",
+          text: { button: "Select Size" },
           googleFonts: [],
         },
         modalProduct: {
@@ -83,7 +83,16 @@ async function createComponents() {
             img: false,
             imgWithCarousel: true,
             button: false,
-            buttonWithQuantity: true,
+            buttonWithQuantity: false,
+            quantity: false,
+            quantityIncrement: false,
+            quantityDecrement: false,
+            quantityInput: false,
+            title: true,
+            price: true,
+            options: true,
+            description: true,
+            button: true,
           },
           styles: {
             product: {
@@ -93,16 +102,17 @@ async function createComponents() {
                 "margin-bottom": "0px",
               },
             },
-            title: { "font-family": "inherit" },
-            price: { "font-family": "inherit" },
+            title: { "font-family": "inherit", color: "#1d1510", "font-size": "1.25rem", "font-weight": "700" },
+            price: { "font-family": "inherit", color: "#1d1510" },
             button: BTN_STYLE,
           },
-          text: { button: "Add to cart" },
+          buttonDestination: "checkout",
+          text: { button: "Buy Now" },
           googleFonts: [],
         },
         option: {
           styles: {
-            label: { "font-family": "inherit" },
+            label: { "font-family": "inherit", color: "#1d1510", "font-weight": "600" },
             select: { "font-family": "inherit" },
           },
         },
@@ -126,14 +136,6 @@ async function createComponents() {
   });
 
   await Promise.all(promises);
-
-  // Expose the Shopify cart opener globally so the header button can use it
-  if (!window.openShopifyCart) {
-    const carts = window.__shopifyUI?.components?.cart;
-    if (carts?.[0]) {
-      window.openShopifyCart = () => carts[0].open();
-    }
-  }
 }
 
 export function ShopifyBuyButtons() {
