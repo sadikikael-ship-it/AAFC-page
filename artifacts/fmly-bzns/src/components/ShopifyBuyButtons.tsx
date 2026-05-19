@@ -194,7 +194,7 @@ async function createComponents(nodePrefix: string) {
           contents: { img: true, title: true, price: true, button: true },
           width: "100%",
           buttonDestination: "modal",
-          text: { button: "Add to Cart" },
+          text: { button: "View Details" },
           googleFonts: [],
         },
         modalProduct: {
