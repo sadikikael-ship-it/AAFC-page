@@ -1,8 +1,7 @@
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { PageHero } from "@/components/PageHero";
-import { MerchCard } from "@/components/MerchCard";
-import { merch } from "@/data/merch";
+import { ShopifyBuyButtons } from "@/components/ShopifyBuyButtons";
 
 export default function MerchPage() {
   return (
@@ -26,11 +25,7 @@ export default function MerchPage() {
             Shop all on Shopify →
           </a>
         </div>
-        <div className="merchGrid">
-          {merch.map((item) => (
-            <MerchCard key={item.id} item={item} />
-          ))}
-        </div>
+        <ShopifyBuyButtons />
       </section>
 
       <SiteFooter />
