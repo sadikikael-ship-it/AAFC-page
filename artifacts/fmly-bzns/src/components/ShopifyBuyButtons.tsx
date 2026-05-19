@@ -195,10 +195,10 @@ async function createComponents(nodePrefix: string) {
             },
           },
           layout: "vertical",
-          contents: { img: true, title: true, price: true, button: true },
+          contents: { img: true, title: true, price: true, button: true, options: false },
           width: "100%",
-          buttonDestination: "modal",
-          text: { button: "View Details" },
+          buttonDestination: "cart",
+          text: { button: "Add to Cart" },
           googleFonts: [],
         },
         modalProduct: {
