@@ -69,7 +69,7 @@ export const events: SiteEvent[] = [
     time: "8PM – 4AM",
     address: "Buena Vista Aquatic Recreation Area, Kern County, CA",
     ageRestriction: "All ages (18+ for camping without guardian)",
-    image: "/lightning-in-a-bottle.png",
+    image: "/lightning-in-a-bottle.jpg",
     lineup: [
       "AMALYN",
       "AMIRA",
@@ -188,7 +188,7 @@ export const events: SiteEvent[] = [
     city: "TBA",
     venue: "Same Same But Different Festival",
     date: "TBA 2026",
-    image: "/ssbd-lineup-2026.png",
+    image: "/ssbd-lineup-2026.jpg",
     highlights: [
       "6-hour takeover on Nakey Island",
       "Sun-soaked, beachside journey of Global Dance Music Culture",

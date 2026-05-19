@@ -29,7 +29,7 @@ export default function EventsPage() {
       <PageHero
         title="Upcoming Events & Takeovers"
         subtitle="Festival takeovers and FMLY BZNS-curated experiences. Tickets and lineup info land here as they're announced."
-        background="/hero-festival-bg.png"
+        background="/hero-festival-bg.jpg"
       />
 
       <section className="section">

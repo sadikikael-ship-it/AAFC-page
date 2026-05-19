@@ -23,7 +23,7 @@ export const crew: CrewMember[] = [
     name: "ANDREASONE",
     role: "Founder · Creative Direction · Selector",
     city: "Oakland / Global",
-    image: "/crew-andreasone.png",
+    image: "/crew-andreasone.jpg",
     bgPosition: "center 10%",
     bio: "Sets the vision. Shapes the rooms. Moves the culture.",
     tier: "Core Frequency",
@@ -77,7 +77,7 @@ export const crew: CrewMember[] = [
     handle: "GATEWAY MENDOCINO",
     role: "Visionary · Benefactor",
     city: "Mendocino, CA",
-    image: "/crew-ned.png",
+    image: "/crew-ned.jpg",
     bgPosition: "center 15%",
     bio: "Holding the foundation for immersive, nature-rooted experiences. From cannabis to plant medicine culture and beyond.",
     tier: "World Builders",
@@ -86,7 +86,7 @@ export const crew: CrewMember[] = [
   {
     name: "AMALYN",
     role: "Vocalist · Live Energy",
-    image: "/crew-amalyn.png",
+    image: "/crew-amalyn.jpg",
     bgPosition: "center 45%",
     bio: "Soulful presence and melodic energy woven into the dancefloor.",
     tier: "Featured FMLY DJs and Artists",
@@ -95,7 +95,7 @@ export const crew: CrewMember[] = [
   {
     name: "WEIRDOWITHSOUL",
     role: "Selector · Culture Carrier",
-    image: "/crew-weirdowithsoul.png",
+    image: "/crew-weirdowithsoul.jpg",
     bgPosition: "center 25%",
     bio: "Afro-rooted selector and Event Curator with a forward-thinking edge. Founder of AfroSauce.",
     tier: "Featured FMLY DJs and Artists",
@@ -104,7 +104,7 @@ export const crew: CrewMember[] = [
   {
     name: "RAEYA",
     role: "Selector · Afro-Diaspora Sound",
-    image: "/crew-raeya.png",
+    image: "/crew-raeya.jpg",
     bgPosition: "center top",
     bio: "Smooth blends, deep cuts, and intentional movement.",
     tier: "Featured FMLY DJs and Artists",
@@ -113,7 +113,7 @@ export const crew: CrewMember[] = [
   {
     name: "DYOPS",
     role: "Selector · Global Grooves",
-    image: "/crew-dyops.png",
+    image: "/crew-dyops.jpg",
     bgPosition: "center top",
     bio: "Sexy, soulful, late-night energy that keeps bodies moving. Founder of LUSH.",
     tier: "Featured FMLY DJs and Artists",
@@ -122,7 +122,7 @@ export const crew: CrewMember[] = [
   {
     name: "LIONIZE",
     role: "Selector · Open Format",
-    image: "/crew-blvkh3ro.png",
+    image: "/crew-blvkh3ro.jpg",
     bgPosition: "center 20%",
     bio: "Bay Area legend and founding member of Blessed Coast Sound.",
     tier: "Featured FMLY DJs and Artists",
@@ -140,7 +140,7 @@ export const crew: CrewMember[] = [
   {
     name: "DJ KOBIE",
     role: "Selector · Afrohouse Roots",
-    image: "/crew-dj-kobie.png",
+    image: "/crew-dj-kobie.jpg",
     bgPosition: "center 30%",
     bio: "Timeless grooves with deep cultural foundation. Repping Trinidad to Norcal and the Globe.",
     tier: "Selectors & Contributors",
@@ -150,7 +150,7 @@ export const crew: CrewMember[] = [
   {
     name: "DANNI G",
     role: "Selector · Global Club",
-    image: "/crew-danni-g.png",
+    image: "/crew-danni-g.jpg",
     bgPosition: "center top",
     bio: "High-energy sets with range, rhythm, and presence.",
     tier: "Selectors & Contributors",
@@ -159,7 +159,7 @@ export const crew: CrewMember[] = [
   {
     name: "DJ IJO",
     role: "Selector · Amapiano / 3-Step / Gqom",
-    image: "/crew-dj-ijo.png",
+    image: "/crew-dj-ijo.jpg",
     bgPosition: "center top",
     bio: "South African rhythms, deep bounce, and underground heat.",
     tier: "Selectors & Contributors",
@@ -168,7 +168,7 @@ export const crew: CrewMember[] = [
   {
     name: "LITTLE DINOSAUR",
     role: "Selector · Techno / Global Grooves · Culture Curator",
-    image: "/crew-little-dinosaur.png",
+    image: "/crew-little-dinosaur.jpg",
     bgPosition: "center top",
     bio: "Intentional sets that move between soulful and high energy. Founder of HUES the Color of Sound.",
     tier: "Selectors & Contributors",
@@ -177,7 +177,7 @@ export const crew: CrewMember[] = [
   {
     name: "CANNABA55",
     role: "Selector · Dancefloor Energy · Global Bass",
-    image: "/crew-cannaba55.png",
+    image: "/crew-cannaba55.jpg",
     bgPosition: "center 20%",
     bio: "Raw selections built for movement and connection. Global Bangers.",
     tier: "Selectors & Contributors",
@@ -186,7 +186,7 @@ export const crew: CrewMember[] = [
   {
     name: "KMNI",
     role: "Selector · Afro Tech / Global House",
-    image: "/crew-kmni.png",
+    image: "/crew-kmni.jpg",
     bgPosition: "center 20%",
     bio: "Driving, percussive energy with global reach. Deep roots in a current global format hailing from Cameroon.",
     tier: "Selectors & Contributors",
@@ -195,7 +195,7 @@ export const crew: CrewMember[] = [
   {
     name: "SAGE",
     role: "Selector · Global Grooves",
-    image: "/crew-sage.png",
+    image: "/crew-sage.jpg",
     bgPosition: "center top",
     bio: "Intentional sets that move between soulful and high energy.",
     tier: "Selectors & Contributors",
@@ -213,7 +213,7 @@ export const crew: CrewMember[] = [
   {
     name: "DJ ATREAU",
     role: "Selector · Open Format / Afro Dancehall Global",
-    image: "/crew-dj-atreau.png",
+    image: "/crew-dj-atreau.jpg",
     bgPosition: "center 10%",
     bio: "Versatile, intuitive, and dialed into the room.",
     tier: "Selectors & Contributors",
