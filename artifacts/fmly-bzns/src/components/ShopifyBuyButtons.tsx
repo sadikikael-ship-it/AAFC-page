@@ -27,55 +27,88 @@ const BTN_STYLE = {
   ":focus": { "background-color": "#d94f0e" },
 };
 
-/** Injects a branded "Keep Shopping" button that appears when the Shopify cart drawer is open. */
+/**
+ * Injects a "← Keep Shopping" button that appears beside the Shopify cart drawer
+ * when it is open.
+ *
+ * Desktop (≥ 600 px): floats to the LEFT of the ~350 px cart — never overlapping it.
+ * Mobile  (< 600 px): not shown — the cart is full-width/full-height so there is no
+ *   safe position that doesn't block Shopify's own controls. The SDK's own ✕ already
+ *   closes the cart on small screens.
+ *
+ * z-index is 2147483646 — one below the Shopify cart frame — so the cart itself is
+ * always clickable when both are visible.
+ */
 function setupKeepShoppingButton() {
   const OVERLAY_ID = "fmly-keep-shopping-overlay";
   if (document.getElementById(OVERLAY_ID)) return;
 
   const overlay = document.createElement("div");
   overlay.id = OVERLAY_ID;
-  overlay.style.cssText = [
-    "display:none",
-    "position:fixed",
-    "bottom:0",
-    "right:0",
-    "width:350px",
-    "z-index:2147483647",
-    "background:#fff6e1",
-    "border-top:2px solid #1d1510",
-    "padding:12px 16px",
-    "box-sizing:border-box",
-  ].join(";");
+  overlay.setAttribute("aria-label", "Keep Shopping");
+  // Base styles — position is updated dynamically.
+  Object.assign(overlay.style, {
+    display: "none",
+    position: "fixed",
+    zIndex: "2147483646", // one below Shopify so the cart is always on top
+    background: "#fff6e1",
+    border: "2px solid #1d1510",
+    boxShadow: "4px 4px 0 #1d1510",
+    padding: "0",
+    pointerEvents: "auto",
+    touchAction: "auto",
+  });
 
   const btn = document.createElement("button");
   btn.textContent = "← Keep Shopping";
   btn.type = "button";
-  btn.style.cssText = [
-    "display:block",
-    "width:100%",
-    "padding:11px 16px",
-    "background:transparent",
-    "color:#1d1510",
-    "border:2px solid #1d1510",
-    "font-family:inherit",
-    "font-size:0.8125rem",
-    "font-weight:700",
-    "text-transform:uppercase",
-    "letter-spacing:0.08em",
-    "cursor:pointer",
-    "box-sizing:border-box",
-  ].join(";");
-
-  btn.addEventListener("mouseenter", () => { btn.style.background = "#1d1510"; btn.style.color = "#fff6e1"; });
-  btn.addEventListener("mouseleave", () => { btn.style.background = "transparent"; btn.style.color = "#1d1510"; });
-
+  Object.assign(btn.style, {
+    display: "block",
+    padding: "11px 18px",
+    background: "transparent",
+    color: "#1d1510",
+    border: "none",
+    fontFamily: "inherit",
+    fontSize: "0.8125rem",
+    fontWeight: "700",
+    textTransform: "uppercase",
+    letterSpacing: "0.08em",
+    cursor: "pointer",
+    whiteSpace: "nowrap",
+    touchAction: "auto",
+  });
+  btn.addEventListener("mouseenter", () => {
+    btn.style.background = "#1d1510";
+    btn.style.color = "#fff6e1";
+  });
+  btn.addEventListener("mouseleave", () => {
+    btn.style.background = "transparent";
+    btn.style.color = "#1d1510";
+  });
   btn.addEventListener("click", () => {
     const cart = window.__shopifyUI?.components?.cart?.[0];
     if (cart && typeof cart.close === "function") cart.close();
   });
-
   overlay.appendChild(btn);
   document.body.appendChild(overlay);
+
+  /** Position the overlay to the LEFT of the cart frame (desktop only). */
+  function positionOverlay() {
+    const isMobile = window.innerWidth < 600;
+    if (isMobile) {
+      // Hide on mobile — no safe spot outside the full-screen cart.
+      overlay.style.display = "none";
+      return;
+    }
+    const frame = document.querySelector<HTMLElement>(".shopify-buy-frame--cart");
+    const cartWidth = frame ? frame.offsetWidth : 350;
+    const gap = 12;
+    overlay.style.right = `${cartWidth + gap}px`;
+    overlay.style.bottom = "80px";
+    overlay.style.left = "auto";
+    overlay.style.top = "auto";
+    overlay.style.display = "block";
+  }
 
   function patchCart() {
     const cart = window.__shopifyUI?.components?.cart?.[0];
@@ -87,13 +120,10 @@ function setupKeepShoppingButton() {
     if (origOpen) {
       cart.open = function (...args: any[]) {
         const result = origOpen(...args);
-        const frame = document.querySelector<HTMLElement>(".shopify-buy-frame--cart");
-        if (frame) overlay.style.width = frame.offsetWidth + "px";
-        overlay.style.display = "block";
+        positionOverlay();
         return result;
       };
     }
-
     if (origClose) {
       cart.close = function (...args: any[]) {
         const result = origClose(...args);
@@ -101,12 +131,14 @@ function setupKeepShoppingButton() {
         return result;
       };
     }
-
     cart.__fmlyPatched = true;
   }
 
   patchCart();
   [200, 500, 1000, 2000].forEach((ms) => setTimeout(patchCart, ms));
+  window.addEventListener("resize", () => {
+    if (overlay.style.display !== "none") positionOverlay();
+  });
 }
 
 async function createComponents(nodePrefix: string) {
@@ -169,16 +201,12 @@ async function createComponents(nodePrefix: string) {
           contents: {
             img: false,
             imgWithCarousel: true,
-            buttonWithQuantity: false,
-            quantity: false,
-            quantityIncrement: false,
-            quantityDecrement: false,
-            quantityInput: false,
             title: true,
             price: true,
             options: true,
             description: true,
             button: true,
+            buttonWithQuantity: true,
           },
           styles: {
             product: {
@@ -188,7 +216,12 @@ async function createComponents(nodePrefix: string) {
                 "margin-bottom": "0px",
               },
             },
-            title: { "font-family": "inherit", color: "#1d1510", "font-size": "1.25rem", "font-weight": "700" },
+            title: {
+              "font-family": "inherit",
+              color: "#1d1510",
+              "font-size": "1.25rem",
+              "font-weight": "700",
+            },
             price: { "font-family": "inherit", color: "#1d1510" },
             button: BTN_STYLE,
           },
@@ -198,7 +231,11 @@ async function createComponents(nodePrefix: string) {
         },
         option: {
           styles: {
-            label: { "font-family": "inherit", color: "#1d1510", "font-weight": "600" },
+            label: {
+              "font-family": "inherit",
+              color: "#1d1510",
+              "font-weight": "600",
+            },
             select: { "font-family": "inherit" },
           },
         },
@@ -206,7 +243,6 @@ async function createComponents(nodePrefix: string) {
           styles: {
             button: BTN_STYLE,
             title: { "font-family": "inherit", color: "#1d1510" },
-            footer: { "padding-bottom": "60px" },
           },
           text: { total: "Subtotal", button: "Checkout" },
           googleFonts: [],

@@ -29,7 +29,7 @@ html, body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   background: var(--rail-bg);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  /* overflow-x NOT set here — setting it on html/body breaks position:fixed on iOS Safari */
 }
 
 a { color: inherit; text-decoration: none; }
@@ -58,6 +58,7 @@ input, textarea, select { font-family: inherit; font-size: 1rem; }
   display: grid;
   grid-template-columns: 36px minmax(0, 1fr) 36px;
   background: var(--rail-bg);
+  overflow-x: clip; /* clip (not hidden) — does NOT create a scroll container, safe for position:fixed children */
 }
 
 .frameRail {
@@ -952,6 +953,23 @@ button[type="submit"]:hover { background: var(--orange); }
 /* ── Shopify Buy Button grid ─────────────────────────────────────────────── */
 /* Hide the SDK's own floating toggle — the site header cart button is used instead */
 .shopify-buy-frame.shopify-buy-frame--toggle { display: none !important; }
+
+/* Ensure the Shopify cart and modal frames are always on top and fully interactive.
+   - z-index matches Shopify SDK's own value so nothing site-level can cover them.
+   - pointer-events + touch-action ensure taps reach the iframe on mobile.
+   - -webkit-overflow-scrolling lets the cart list scroll smoothly on iOS. */
+.shopify-buy-frame--cart,
+.shopify-buy-frame--modal {
+  z-index: 2147483647 !important;
+  pointer-events: auto !important;
+  touch-action: auto !important;
+}
+.shopify-buy-frame--cart iframe,
+.shopify-buy-frame--modal iframe {
+  pointer-events: auto !important;
+  touch-action: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
 
 .fmly-shopify-section { background: var(--paper); }
 
