@@ -20,7 +20,7 @@ export default function MerchPage() {
       <section className="section fmly-shopify-section">
         <p className="eyebrow">All products</p>
         <div className="merchHeadRow">
-          <h2>Pre-order now</h2>
+          <h2>Shop now</h2>
           <div className="merchHeadActions">
             <Link href="/cart" className="cartIconBtn" aria-label={count > 0 ? `Cart (${count} items)` : "Cart"}>
               <FaShoppingCart aria-hidden focusable="false" />
