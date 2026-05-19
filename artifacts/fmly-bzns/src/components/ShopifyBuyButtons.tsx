@@ -27,6 +27,92 @@ const BTN_STYLE = {
   ":focus": { "background-color": "#d94f0e" },
 };
 
+/** Injects a branded "Keep Shopping" button that appears when the Shopify cart drawer is open. */
+function setupKeepShoppingButton() {
+  const OVERLAY_ID = "fmly-keep-shopping-overlay";
+  if (document.getElementById(OVERLAY_ID)) return;
+
+  const overlay = document.createElement("div");
+  overlay.id = OVERLAY_ID;
+  overlay.style.cssText = [
+    "display:none",
+    "position:fixed",
+    "bottom:0",
+    "right:0",
+    "width:350px",
+    "z-index:2147483647",
+    "background:#fff6e1",
+    "border-top:2px solid #1d1510",
+    "padding:12px 16px",
+    "box-sizing:border-box",
+  ].join(";");
+
+  const btn = document.createElement("button");
+  btn.textContent = "← Keep Shopping";
+  btn.type = "button";
+  btn.style.cssText = [
+    "display:block",
+    "width:100%",
+    "padding:11px 16px",
+    "background:transparent",
+    "color:#1d1510",
+    "border:2px solid #1d1510",
+    "font-family:inherit",
+    "font-size:0.8125rem",
+    "font-weight:700",
+    "text-transform:uppercase",
+    "letter-spacing:0.08em",
+    "cursor:pointer",
+    "box-sizing:border-box",
+  ].join(";");
+
+  btn.addEventListener("mouseenter", () => { btn.style.background = "#1d1510"; btn.style.color = "#fff6e1"; });
+  btn.addEventListener("mouseleave", () => { btn.style.background = "transparent"; btn.style.color = "#1d1510"; });
+
+  btn.addEventListener("click", () => {
+    const cart = window.__shopifyUI?.components?.cart?.[0];
+    if (cart && typeof cart.close === "function") cart.close();
+  });
+
+  overlay.appendChild(btn);
+  document.body.appendChild(overlay);
+
+  // Patch the cart's open/close so we follow its state.
+  function patchCart() {
+    const cart = window.__shopifyUI?.components?.cart?.[0];
+    if (!cart) return;
+
+    const origOpen  = cart.open?.bind(cart);
+    const origClose = cart.close?.bind(cart);
+
+    if (origOpen && !cart.__fmlyPatched) {
+      cart.open = function (...args: any[]) {
+        const result = origOpen(...args);
+        // Match the cart frame width dynamically.
+        const frame = document.querySelector<HTMLElement>(".shopify-buy-frame--cart");
+        if (frame) overlay.style.width = frame.offsetWidth + "px";
+        overlay.style.display = "block";
+        return result;
+      };
+    }
+
+    if (origClose && !cart.__fmlyPatched) {
+      cart.close = function (...args: any[]) {
+        const result = origClose(...args);
+        overlay.style.display = "none";
+        return result;
+      };
+    }
+
+    cart.__fmlyPatched = true;
+  }
+
+  // Try immediately, then retry briefly while SDK initialises.
+  patchCart();
+  const retries = [200, 500, 1000, 2000];
+  retries.forEach((ms) => setTimeout(patchCart, ms));
+}
+
 async function createComponents() {
   if (!window.__shopifyUI) {
     const client = window.ShopifyBuy.buildClient({
@@ -120,6 +206,7 @@ async function createComponents() {
           styles: {
             button: BTN_STYLE,
             title: { "font-family": "inherit", color: "#1d1510" },
+            footer: { "padding-bottom": "60px" },
           },
           text: { total: "Subtotal", button: "Checkout" },
           googleFonts: [],
@@ -137,18 +224,20 @@ async function createComponents() {
 
   await Promise.all(promises);
 
-  // Expose a helper so the site header cart icon can open the Shopify drawer.
+  // Expose cart opener for the site header icon.
   window.openShopifyCart = () => {
     const cart = window.__shopifyUI?.components?.cart?.[0];
     if (cart && typeof cart.open === "function") {
       cart.open();
     }
   };
+
+  // Inject the Keep Shopping button into the cart drawer.
+  setupKeepShoppingButton();
 }
 
 export function ShopifyBuyButtons() {
   useEffect(() => {
-    // SDK is preloaded in index.html — wait for it if not yet ready.
     if (window.ShopifyBuy?.UI) {
       createComponents().catch(console.error);
       return;
