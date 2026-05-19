@@ -961,8 +961,7 @@ button[type="submit"]:hover { background: var(--orange); }
   background: var(--paper);
   border: 1.5px solid var(--black);
   box-shadow: 4px 4px 0 var(--black);
-  padding: 0.75rem;
-  min-height: 320px;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
 }
