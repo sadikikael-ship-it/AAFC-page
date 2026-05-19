@@ -125,32 +125,28 @@ export default function MusicPage() {
           Working with production team Dojo In The Sky and international vocalists including BLVK H3RO, Kes Kross, Seun Kuti, Jade De LaFleur, and Amalyn.
         </p>
         <div className="dojoAlbumGrid">
-          {/* TODO: Replace href="#" with Spotify link for Shine Ya Light */}
-          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="BLVK H3RO — Shine Ya Light on Spotify">
+          <a href="https://open.spotify.com/album/6BWRfReayjSBA8XOeVxgdB" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="BLVK H3RO — Shine Ya Light on Spotify">
             <div className="dojoAlbumArt">
               <img src="/dojo-shine-ya-light.jpeg" alt="Shine Ya Light — BLVK H3RO" />
             </div>
             <p className="dojoAlbumTitle">Shine Ya Light</p>
             <p className="dojoAlbumArtist">BLVK H3RO</p>
           </a>
-          {/* TODO: Replace href="#" with Spotify link for Scary Hours */}
-          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Kes Kross — Scary Hours on Spotify">
+          <a href="https://open.spotify.com/album/1Q9AbTVKxE4u9ujCmYdmK9" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Kes Kross — Scary Hours on Spotify">
             <div className="dojoAlbumArt">
               <img src="/dojo-scary-hours.jpeg" alt="Scary Hours — Kes Kross" />
             </div>
             <p className="dojoAlbumTitle">Scary Hours</p>
             <p className="dojoAlbumArtist">Kes Kross</p>
           </a>
-          {/* TODO: Replace href="#" with Spotify link for Wave Remix */}
-          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Jade de LaFleur & Seun Kuti — Wave Remix on Spotify">
+          <a href="https://open.spotify.com/track/01tr54b7dGAk6KxNCj674u" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Jade de LaFleur & Seun Kuti — Wave Remix on Spotify">
             <div className="dojoAlbumArt">
               <img src="/dojo-wave-remix.jpeg" alt="Wave Remix — Jade de LaFleur & Seun Kuti" />
             </div>
             <p className="dojoAlbumTitle">Wave Remix</p>
             <p className="dojoAlbumArtist">Jade de LaFleur &amp; Seun Kuti</p>
           </a>
-          {/* TODO: Replace href="#" with Spotify link for Breathe */}
-          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Amalyn — Breathe on Spotify">
+          <a href="https://open.spotify.com/track/0eJlKIzBBjRh7rhzeJvAVH" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Amalyn — Breathe on Spotify">
             <div className="dojoAlbumArt">
               <img src="/dojo-breathe.jpeg" alt="Breathe — Amalyn" />
             </div>
@@ -165,16 +161,14 @@ export default function MusicPage() {
             <p className="dojoAlbumTitle">Pilates</p>
             <p className="dojoAlbumArtist">Amalyn &amp; BLVK H3RO</p>
           </a>
-          {/* TODO: Replace href="#" with Spotify link for With the Blue */}
-          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Melon Xion — With the Blue on Spotify">
+          <a href="https://open.spotify.com/track/76T0G63utHs4GzVvwQMHJt" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Melon Xion — With the Blue on Spotify">
             <div className="dojoAlbumArt">
               <img src="/dojo-with-the-blue.jpeg" alt="With the Blue — Melon Xion" />
             </div>
             <p className="dojoAlbumTitle">With the Blue</p>
             <p className="dojoAlbumArtist">Melon Xion</p>
           </a>
-          {/* TODO: Replace href="#" with Spotify link for Higher Remix */}
-          <a href="#" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Truthlive & Nina Grae — Higher Remix on Spotify">
+          <a href="https://open.spotify.com/track/0IegaYV40sNfVhhYljSXUQ" className="dojoAlbumCard" target="_blank" rel="noopener noreferrer" aria-label="Truthlive & Nina Grae — Higher Remix on Spotify">
             <div className="dojoAlbumArt">
               <img src="/dojo-higher-remix.jpeg" alt="Higher Remix — Truthlive & Nina Grae" />
             </div>
