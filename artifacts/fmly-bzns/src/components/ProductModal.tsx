@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { MerchItem } from "@/data/merch";
+import { buildShopifyCartUrl } from "@/data/merch";
 
 interface Props {
   item: MerchItem;
@@ -26,6 +27,10 @@ export function ProductModal({ item, onClose }: Props) {
 
   const needsSize = item.sizes && item.sizes.length > 0;
   const canShop = !needsSize || !!size;
+
+  const shopUrl = item.shopifyVariantId && canShop
+    ? buildShopifyCartUrl(item.shopifyVariantId, size || undefined)
+    : item.productUrl;
 
   return (
     <div
@@ -71,7 +76,7 @@ export function ProductModal({ item, onClose }: Props) {
                   ))}
                 </div>
                 {needsSize && !size && (
-                  <p className="productModalHint">Please select a size</p>
+                  <p className="productModalHint">Please select a size to continue</p>
                 )}
               </div>
             )}
@@ -82,14 +87,14 @@ export function ProductModal({ item, onClose }: Props) {
               </button>
             ) : (
               <a
-                href={item.productUrl}
+                href={canShop ? shopUrl : undefined}
                 target="_blank"
                 rel="noreferrer"
                 className={`ctaBtn${!canShop ? " ctaBtn--disabled" : ""}`}
                 onClick={(e) => { if (!canShop) e.preventDefault(); }}
                 aria-disabled={!canShop}
               >
-                Shop on Shopify →
+                {canShop ? `Buy Now — ${size || ""}` : "Select a size to continue"}
               </a>
             )}
           </div>

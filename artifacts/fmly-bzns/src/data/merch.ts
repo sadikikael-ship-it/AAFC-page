@@ -8,8 +8,21 @@ export interface MerchItem {
   priceCents: number;
   image: string;
   productUrl: string;
+  /** Shopify numeric variant ID for direct cart/checkout URLs. */
+  shopifyVariantId?: string;
   sizes?: string[];
   soldOut?: boolean;
+}
+
+const SHOPIFY_DOMAIN = "5cbegm-kb.myshopify.com";
+
+/** Build a Shopify cart URL that pre-loads the variant and passes size as an order attribute. */
+export function buildShopifyCartUrl(variantId: string, size?: string): string {
+  const base = `https://${SHOPIFY_DOMAIN}/cart/${variantId}:1`;
+  if (size) {
+    return `${base}?attributes[Size]=${encodeURIComponent(size)}`;
+  }
+  return base;
 }
 
 export const merch: MerchItem[] = [
@@ -21,6 +34,7 @@ export const merch: MerchItem[] = [
     priceCents: 4400,
     image: "/fmly-peace-max-heavyweight-black.png",
     productUrl: "https://fmly-bzns-2.myshopify.com/",
+    shopifyVariantId: "48817604329729",
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
   },
   {
@@ -31,6 +45,7 @@ export const merch: MerchItem[] = [
     priceCents: 4400,
     image: "/fmly-peace-max-heavyweight-mustard.png",
     productUrl: "https://fmly-bzns-2.myshopify.com/",
+    shopifyVariantId: "48817620746497",
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
   },
   {
@@ -41,6 +56,7 @@ export const merch: MerchItem[] = [
     priceCents: 4000,
     image: "/fmly-peace-womens-crop-tee.png",
     productUrl: "https://fmly-bzns-2.myshopify.com/",
+    shopifyVariantId: "48817621074177",
     sizes: ["XS", "S", "M", "L", "XL"],
   },
   {
@@ -51,6 +67,7 @@ export const merch: MerchItem[] = [
     priceCents: 5000,
     image: "/fmly-peace-tee.png",
     productUrl: "https://fmly-bzns-2.myshopify.com/",
+    shopifyVariantId: "48817621401857",
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
   },
 ];
