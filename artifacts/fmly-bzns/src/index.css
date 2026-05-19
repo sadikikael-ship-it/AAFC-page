@@ -957,12 +957,50 @@ button[type="submit"]:hover { background: var(--orange); }
 
 .merchHeadRow {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
 .merchHeadRow h2 { margin-bottom: 0; }
+
+.merchHeadActions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.cartIconBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: var(--black);
+  color: var(--paper);
+  border-radius: 50%;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.cartIconBtn svg { width: 1rem; height: 1rem; }
+.cartIconBtn .cartBadge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
 
 .shopAllBtn {
   display: inline-block;
@@ -979,6 +1017,12 @@ button[type="submit"]:hover { background: var(--orange); }
   white-space: nowrap;
 }
 .shopAllBtn:hover { background: var(--black); color: var(--paper); }
+.shopAllBtn--filled {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+.shopAllBtn--filled:hover { background: #d94f0e; border-color: #d94f0e; color: #fff; }
 .fmly-shopify-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
