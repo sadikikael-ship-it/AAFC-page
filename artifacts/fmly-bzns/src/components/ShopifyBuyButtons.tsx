@@ -148,28 +148,21 @@ async function createComponents() {
 
 export function ShopifyBuyButtons() {
   useEffect(() => {
+    // SDK is preloaded in index.html — wait for it if not yet ready.
     if (window.ShopifyBuy?.UI) {
       createComponents().catch(console.error);
       return;
     }
 
-    const scriptId = "shopify-buy-btn-sdk";
-    const existing = document.getElementById(scriptId);
-
     const run = () => createComponents().catch(console.error);
+    const script = document.querySelector<HTMLScriptElement>(
+      'script[src*="buy-button-storefront"]'
+    );
 
-    if (existing) {
-      existing.addEventListener("load", run);
-      return () => existing.removeEventListener("load", run);
+    if (script) {
+      script.addEventListener("load", run);
+      return () => script.removeEventListener("load", run);
     }
-
-    const script = document.createElement("script");
-    script.id = scriptId;
-    script.src =
-      "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
-    script.async = true;
-    script.onload = run;
-    document.head.appendChild(script);
   }, []);
 
   return (
