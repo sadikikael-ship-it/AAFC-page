@@ -4,6 +4,7 @@ declare global {
   interface Window {
     ShopifyBuy: any;
     __shopifyUI: any;
+    openShopifyCart?: () => void;
   }
 }
 
@@ -26,7 +27,7 @@ const BTN_STYLE = {
   ":focus": { "background-color": "#d94f0e" },
 };
 
-function createComponents() {
+async function createComponents() {
   if (!window.__shopifyUI) {
     const client = window.ShopifyBuy.buildClient({
       domain: DOMAIN,
@@ -35,10 +36,10 @@ function createComponents() {
     window.__shopifyUI = window.ShopifyBuy.UI.init(client);
   }
 
-  PRODUCTS.forEach(({ id, node }) => {
+  const promises = PRODUCTS.map(({ id, node }) => {
     const el = document.getElementById(node);
-    if (!el || el.hasChildNodes()) return;
-    window.__shopifyUI.createComponent("product", {
+    if (!el || el.hasChildNodes()) return Promise.resolve(null);
+    return window.__shopifyUI.createComponent("product", {
       id,
       node: el,
       moneyFormat: "%24%7B%7Bamount%7D%7D",
@@ -46,14 +47,23 @@ function createComponents() {
         product: {
           styles: {
             product: { "text-align": "left" },
-            title: { "font-family": "inherit", color: "#1d1510", "font-size": "1rem", "font-weight": "700", "margin-bottom": "6px", "line-height": "1.35" },
-            price: { "font-family": "inherit", color: "#1d1510", "font-size": "1rem", "margin-bottom": "12px" },
+            title: {
+              "font-family": "inherit",
+              color: "#1d1510",
+              "font-size": "1rem",
+              "font-weight": "700",
+              "margin-bottom": "6px",
+              "line-height": "1.35",
+            },
+            price: {
+              "font-family": "inherit",
+              color: "#1d1510",
+              "font-size": "1rem",
+              "margin-bottom": "12px",
+            },
             button: BTN_STYLE,
             compareAt: { color: "#1d1510" },
-            imgWrapper: {
-              height: "240px",
-              overflow: "hidden",
-            },
+            imgWrapper: { height: "240px", overflow: "hidden" },
             img: {
               width: "100%",
               height: "240px",
@@ -113,24 +123,30 @@ function createComponents() {
       },
     });
   });
+
+  await Promise.all(promises);
+
+  // Expose the Shopify cart opener globally so the header button can use it
+  if (!window.openShopifyCart) {
+    const carts = window.__shopifyUI?.components?.cart;
+    if (carts?.[0]) {
+      window.openShopifyCart = () => carts[0].open();
+    }
+  }
 }
 
 export function ShopifyBuyButtons() {
   useEffect(() => {
-    const run = () => {
-      if (window.ShopifyBuy?.UI) {
-        createComponents();
-        return;
-      }
-    };
-
     if (window.ShopifyBuy?.UI) {
-      createComponents();
+      createComponents().catch(console.error);
       return;
     }
 
     const scriptId = "shopify-buy-btn-sdk";
     const existing = document.getElementById(scriptId);
+
+    const run = () => createComponents().catch(console.error);
+
     if (existing) {
       existing.addEventListener("load", run);
       return () => existing.removeEventListener("load", run);
@@ -141,7 +157,7 @@ export function ShopifyBuyButtons() {
     script.src =
       "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
     script.async = true;
-    script.onload = createComponents;
+    script.onload = run;
     document.head.appendChild(script);
   }, []);
 

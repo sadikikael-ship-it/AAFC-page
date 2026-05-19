@@ -950,6 +950,9 @@ button[type="submit"]:hover { background: var(--orange); }
 }
 
 /* ── Shopify Buy Button grid ─────────────────────────────────────────────── */
+/* Hide the SDK's own floating toggle — the site header cart button is used instead */
+.shopify-buy-frame.shopify-buy-frame--toggle { display: none !important; }
+
 .fmly-shopify-section { background: var(--paper); }
 .fmly-shopify-grid {
   display: grid;

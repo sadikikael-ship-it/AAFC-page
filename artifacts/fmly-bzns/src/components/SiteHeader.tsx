@@ -14,6 +14,15 @@ export function SiteHeader() {
     setOpen(false);
   }, [location]);
 
+  function handleCartClick(e: React.MouseEvent) {
+    if (window.openShopifyCart) {
+      e.preventDefault();
+      window.openShopifyCart();
+    }
+    // If openShopifyCart isn't available yet (Shopify not loaded),
+    // the Link navigates to /cart as a fallback.
+  }
+
   return (
     <header className="siteHeader">
       <div className="headerLeft">
@@ -64,6 +73,7 @@ export function SiteHeader() {
           className="cartBtn"
           aria-label={count > 0 ? `Cart (${count} items)` : "Cart"}
           title="Cart"
+          onClick={handleCartClick}
         >
           <FaShoppingCart aria-hidden focusable="false" />
           {count > 0 ? <span className="cartBadge">{count}</span> : null}
