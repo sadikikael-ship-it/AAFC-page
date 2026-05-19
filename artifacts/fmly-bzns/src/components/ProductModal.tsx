@@ -1,7 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { MerchItem } from "@/data/merch";
-
-const SHOPIFY_URL = "https://fmly-bzns-2.myshopify.com/";
+import { useCart } from "@/lib/cart";
 
 interface Props {
   item: MerchItem;
@@ -9,7 +8,10 @@ interface Props {
 }
 
 export function ProductModal({ item, onClose }: Props) {
+  const [size, setSize] = useState<string>("");
+  const [added, setAdded] = useState(false);
   const overlayRef = useRef<HTMLDivElement>(null);
+  const { add } = useCart();
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
@@ -23,6 +25,24 @@ export function ProductModal({ item, onClose }: Props) {
 
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === overlayRef.current) onClose();
+  };
+
+  const needsSize = !!item.sizes && item.sizes.length > 0;
+  const canAdd = !item.soldOut && (!needsSize || !!size);
+
+  const handleAdd = () => {
+    if (!canAdd) return;
+    add({
+      id: size ? `merch:${item.id}:${size}` : `merch:${item.id}`,
+      kind: "merch",
+      name: item.name,
+      subtitle: size ? `${item.collection} · Size ${size}` : item.collection,
+      priceCents: item.priceCents,
+      image: item.image,
+      metadata: size ? { size, collection: item.collection } : { collection: item.collection },
+    });
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
   };
 
   return (
@@ -53,19 +73,41 @@ export function ProductModal({ item, onClose }: Props) {
             <h2 className="productModalName">{item.name}</h2>
             <p className="productModalPrice">{item.price}</p>
 
+            {needsSize && (
+              <div className="productModalSection">
+                <p className="productModalLabel">Size</p>
+                <div className="productSizeGrid">
+                  {item.sizes!.map((s) => (
+                    <button
+                      key={s}
+                      type="button"
+                      className={`sizeBtn${size === s ? " sizeBtn--active" : ""}`}
+                      onClick={() => setSize(s)}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {item.soldOut ? (
               <button type="button" className="ctaBtn" disabled>
                 Sold Out
               </button>
             ) : (
-              <a
-                href={SHOPIFY_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="ctaBtn"
+              <button
+                type="button"
+                className={`ctaBtn${!canAdd ? " ctaBtn--disabled" : ""}`}
+                onClick={handleAdd}
+                disabled={!canAdd}
               >
-                Shop on Shopify →
-              </a>
+                {added
+                  ? "Added to Cart ✓"
+                  : needsSize && !size
+                    ? "Select a size"
+                    : "Add to Cart"}
+              </button>
             )}
           </div>
         </div>

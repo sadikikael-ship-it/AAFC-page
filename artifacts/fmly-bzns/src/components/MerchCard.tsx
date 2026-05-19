@@ -1,28 +1,34 @@
+import { useState } from "react";
 import type { MerchItem } from "@/data/merch";
-
-const SHOPIFY_URL = "https://fmly-bzns-2.myshopify.com/";
+import { ProductModal } from "./ProductModal";
 
 export function MerchCard({ item }: { item: MerchItem }) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <a
-      href={SHOPIFY_URL}
-      target="_blank"
-      rel="noreferrer"
-      className="merchCard"
-      aria-label={`Shop ${item.name} on Shopify`}
-    >
-      <div className="merchCardImageLink">
-        <div className="merchCardImage">
-          <img src={item.image} alt={item.name} className="merchCardImg" />
+    <>
+      <article
+        className="merchCard"
+        onClick={() => setOpen(true)}
+        style={{ cursor: "pointer" }}
+      >
+        <div className="merchCardImageLink" aria-label={`View ${item.name}`}>
+          <div className="merchCardImage">
+            <img src={item.image} alt={item.name} className="merchCardImg" />
+          </div>
+          {item.soldOut ? <span className="merchSold">Sold out</span> : null}
         </div>
-        {item.soldOut ? <span className="merchSold">Sold out</span> : null}
-      </div>
-      <div className="merchCardBody">
-        <p className="eyebrow">{item.collection}</p>
-        <h3 className="merchCardName">{item.name}</h3>
-        <p className="merchCardPrice">{item.price}</p>
-        <span className="smallBtn">Visit Shop</span>
-      </div>
-    </a>
+        <div className="merchCardBody">
+          <p className="eyebrow">{item.collection}</p>
+          <h3 className="merchCardName">{item.name}</h3>
+          <p className="merchCardPrice">{item.price}</p>
+          <span className="smallBtn">
+            {item.soldOut ? "View Product" : "Select Size"}
+          </span>
+        </div>
+      </article>
+
+      {open && <ProductModal item={item} onClose={() => setOpen(false)} />}
+    </>
   );
 }
