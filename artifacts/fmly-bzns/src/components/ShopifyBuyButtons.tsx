@@ -175,6 +175,8 @@ async function createComponents(nodePrefix: string) {
               "font-weight": "700",
               "margin-bottom": "6px",
               "line-height": "1.35",
+              "min-height": "2.7rem",
+              "overflow": "hidden",
             },
             price: {
               "font-family": "inherit",
