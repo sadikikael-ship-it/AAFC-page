@@ -240,6 +240,7 @@ async function createComponents(nodePrefix: string) {
           },
         },
         cart: {
+          popup: false, // redirect checkout in the same tab instead of opening a new window
           styles: {
             button: BTN_STYLE,
             title: { "font-family": "inherit", color: "#1d1510" },
