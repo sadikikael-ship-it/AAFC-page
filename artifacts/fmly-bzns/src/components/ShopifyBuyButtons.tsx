@@ -106,8 +106,8 @@ async function createComponents() {
             price: { "font-family": "inherit", color: "#1d1510" },
             button: BTN_STYLE,
           },
-          buttonDestination: "checkout",
-          text: { button: "Buy Now" },
+          buttonDestination: "cart",
+          text: { button: "Add to Cart" },
           googleFonts: [],
         },
         option: {
@@ -136,6 +136,14 @@ async function createComponents() {
   });
 
   await Promise.all(promises);
+
+  // Expose a helper so the site header cart icon can open the Shopify drawer.
+  window.openShopifyCart = () => {
+    const cart = window.__shopifyUI?.components?.cart?.[0];
+    if (cart && typeof cart.open === "function") {
+      cart.open();
+    }
+  };
 }
 
 export function ShopifyBuyButtons() {

@@ -6,13 +6,25 @@ import { SocialIcon } from "./SocialIcon";
 import { useCart } from "@/lib/cart";
 
 export function SiteHeader() {
-  const [location] = useLocation();
+  const [location, navigate] = useLocation();
   const [open, setOpen] = useState(false);
   const { count } = useCart();
 
   useEffect(() => {
     setOpen(false);
   }, [location]);
+
+  const handleCartClick = (e: React.MouseEvent) => {
+    // If the Shopify Buy SDK is loaded, open its cart drawer.
+    if (typeof window !== "undefined" && typeof window.openShopifyCart === "function") {
+      e.preventDefault();
+      window.openShopifyCart();
+      return;
+    }
+    // Fallback: internal cart page (used for event tickets).
+    e.preventDefault();
+    navigate("/cart");
+  };
 
   return (
     <header className="siteHeader">
@@ -64,6 +76,7 @@ export function SiteHeader() {
           className="cartBtn"
           aria-label={count > 0 ? `Cart (${count} items)` : "Cart"}
           title="Cart"
+          onClick={handleCartClick}
         >
           <FaShoppingCart aria-hidden focusable="false" />
           {count > 0 ? <span className="cartBadge">{count}</span> : null}
