@@ -205,7 +205,7 @@ async function createComponents(nodePrefix: string) {
             price: true,
             options: true,
             description: true,
-            button: true,
+            button: false,
             buttonWithQuantity: true,
           },
           styles: {
