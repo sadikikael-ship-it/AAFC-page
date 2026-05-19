@@ -16,14 +16,6 @@ export default function MerchPage() {
         <p className="eyebrow">All products</p>
         <div className="merchHeadRow">
           <h2>Shop now</h2>
-          <a
-            href="https://fmly-bzns-2.myshopify.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="shopAllBtn shopAllBtn--filled"
-          >
-            Shop all on Shopify →
-          </a>
         </div>
         <ShopifyBuyButtons />
       </section>

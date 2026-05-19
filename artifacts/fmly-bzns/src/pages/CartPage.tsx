@@ -94,11 +94,11 @@ export default function CartPage() {
           <div className="cartEmpty">
             <p>Nothing here yet.</p>
             <div className="buttonRow">
-              <Link href="/events" className="ctaBtn">
-                Browse Events
-              </Link>
-              <Link href="/merch" className="smallBtn">
+              <Link href="/merch" className="ctaBtn">
                 Shop Merch
+              </Link>
+              <Link href="/events" className="smallBtn">
+                Browse Events
               </Link>
             </div>
           </div>
@@ -195,6 +195,9 @@ export default function CartPage() {
                     ? "Checkout on Shopify"
                     : "Checkout"}
               </button>
+              <Link href="/merch" className="smallBtn cartCheckoutBtn" style={{ textAlign: "center", display: "block" }}>
+                ← Keep Shopping
+              </Link>
               {error ? <p className="cartError">{error}</p> : null}
               {mixed ? (
                 <p className="cartNote">

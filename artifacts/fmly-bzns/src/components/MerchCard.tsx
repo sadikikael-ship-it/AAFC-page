@@ -23,7 +23,7 @@ export function MerchCard({ item }: { item: MerchItem }) {
           <h3 className="merchCardName">{item.name}</h3>
           <p className="merchCardPrice">{item.price}</p>
           <span className="smallBtn">
-            {item.soldOut ? "View Product" : "Select Size"}
+            {item.soldOut ? "View Product" : "Add to Cart"}
           </span>
         </div>
       </article>

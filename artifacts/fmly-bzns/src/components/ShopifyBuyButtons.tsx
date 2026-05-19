@@ -75,7 +75,7 @@ async function createComponents() {
           contents: { img: true, title: true, price: true, button: true },
           width: "100%",
           buttonDestination: "modal",
-          text: { button: "Select Size" },
+          text: { button: "Add to Cart" },
           googleFonts: [],
         },
         modalProduct: {
