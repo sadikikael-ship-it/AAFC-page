@@ -948,6 +948,29 @@ button[type="submit"]:hover { background: var(--orange); }
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 1rem;
 }
+
+/* ── Shopify Buy Button grid ─────────────────────────────────────────────── */
+.fmly-shopify-section { background: var(--paper); }
+.fmly-shopify-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+.fmly-shopify-product {
+  background: var(--paper);
+  border: 1.5px solid var(--black);
+  box-shadow: 4px 4px 0 var(--black);
+  padding: 0.75rem;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+.fmly-shopify-product > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 .merchCard {
   background: var(--paper);
   border: 1.5px solid var(--black);
@@ -1633,6 +1656,7 @@ button[type="submit"]:hover { background: var(--orange); }
   .cards4 { grid-template-columns: 1fr; }
   .merchGrid { grid-template-columns: repeat(2, 1fr); }
   .merchGrid--page { grid-template-columns: repeat(2, 1fr); }
+  .fmly-shopify-grid { grid-template-columns: repeat(2, 1fr); }
   .merchCardImage { height: 180px; }
   .merchCardBody { padding: .5rem .6rem .7rem; }
   .merchCardName { font-size: .8rem; }

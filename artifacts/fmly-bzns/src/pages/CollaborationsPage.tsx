@@ -30,31 +30,6 @@ export default function CollaborationsPage() {
         <Marquee items={marqueeItems} speedSeconds={42} />
       </section>
 
-      {/* FEATURED ARTISTS — collaborators with a bio */}
-      {(() => {
-        const featured = collaborators.filter((c) => c.bio);
-        if (!featured.length) return null;
-        return (
-          <section className="section featuredCollabBand">
-            <p className="eyebrow">Featured artists</p>
-            <h2>Featured FMLY DJs &amp; Artists</h2>
-            <div className="featuredCollabGrid">
-              {featured.map((c) => (
-                <article key={c.name} className={`featuredCollabCard featuredCollabCard--${c.kind.toLowerCase()}`}>
-                  <div className="featuredCollabTop">
-                    <span className={`pill pill--${c.kind.toLowerCase()}`}>
-                      {c.kind}
-                    </span>
-                  </div>
-                  <h3 className="featuredCollabName">{c.name}</h3>
-                  {c.role && <p className="featuredCollabRole">{c.role}</p>}
-                  {c.bio && <p className="featuredCollabBio">{c.bio}</p>}
-                </article>
-              ))}
-            </div>
-          </section>
-        );
-      })()}
 
       {grouped.map((group) => {
         const plural = group.kind === "City" ? "Cities" : `${group.kind}s`;

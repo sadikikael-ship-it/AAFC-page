@@ -1,0 +1,173 @@
+Please update the FMLY BZNS website merch/shop section.
+
+Goal:
+Replace the current static merch product cards/buttons with real Shopify Buy Buttons for the matching Shopify products listed below. The Shopify products should be placed where the current matching merch products already appear on the site.
+
+Important:
+- Do not redesign the whole website.
+- Keep the current FMLY BZNS visual style, colors, layout, spacing, and merch section vibe.
+- Only replace the current merch product purchase areas with the matching Shopify Buy Button embeds.
+- Match each Shopify Buy Button to the existing product name on the site.
+- If the current product name is slightly different, match it based on the closest product name and color.
+- Make sure all Shopify buttons load correctly and checkout works.
+- Make sure the Buy Buttons are responsive on desktop, tablet, and mobile.
+
+Shopify store info:
+- Shopify domain: 5cbegm-kb.myshopify.com
+- Storefront access token: 76283f7ea2ae821d4c6f3120742407e0
+
+Products to add:
+
+1. FMLY PEACE Logo Max Heavyweight Tee — Black
+Use this Shopify product ID:
+9160338964737
+
+Embed container:
+<div id="product-component-1779155989235"></div>
+
+2. FMLY PEACE Logo Max Heavyweight Tee — Mustard
+Use this Shopify product ID:
+9160340406529
+
+Embed container:
+<div id="product-component-1779155915499"></div>
+
+3. FMLY PEACE Logo Women's Cropped Tee — Black
+Use this Shopify product ID:
+9160340504833
+
+Embed container:
+<div id="product-component-1779155956310"></div>
+
+4. FMLY PEACE Logo Drop Shoulder Tee — Oatmeal
+Use this Shopify product ID:
+9160340701441
+
+Embed container:
+<div id="product-component-1779155045291"></div>
+
+Implementation instructions:
+
+1. Locate the current merch/shop product section.
+Find the existing product cards for the four current merch items. Replace the existing fake/static product buttons or product card purchase actions with the real Shopify Buy Button components listed above.
+
+2. Do not duplicate products.
+There should only be the 4 real Shopify shirt products in the merch/shop section:
+- FMLY PEACE Logo Max Heavyweight Tee — Black
+- FMLY PEACE Logo Max Heavyweight Tee — Mustard
+- FMLY PEACE Logo Women's Cropped Tee — Black
+- FMLY PEACE Logo Drop Shoulder Tee — Oatmeal
+
+Remove or hide any placeholder merch products that are not one of these four.
+
+3. Load the Shopify Buy Button SDK only once.
+Do not paste the full Shopify script four separate times if it causes duplicate loading issues. Please refactor the Shopify Buy Button setup so the SDK loads one time, then initializes all four product components.
+
+Use this script URL:
+https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js
+
+4. Create all four Shopify components after the SDK loads.
+Use ShopifyBuy.buildClient with this config:
+
+domain: "5cbegm-kb.myshopify.com"
+storefrontAccessToken: "76283f7ea2ae821d4c6f3120742407e0"
+
+Then create these four product components:
+
+- Product ID: 9160338964737
+  Node: product-component-1779155989235
+
+- Product ID: 9160340406529
+  Node: product-component-1779155915499
+
+- Product ID: 9160340504833
+  Node: product-component-1779155956310
+
+- Product ID: 9160340701441
+  Node: product-component-1779155045291
+
+5. Use this Buy Button behavior:
+- Button text: Add to cart
+- Cart total label: Subtotal
+- Cart checkout button text: Checkout
+- Modal product should use image carousel if applicable
+- Modal product should show quantity button
+- Checkout should use Shopify’s cart/checkout flow
+
+6. Styling direction:
+Keep the Shopify embeds visually aligned with the FMLY BZNS merch section.
+
+Use surrounding CSS if needed to make the section feel consistent:
+- Warm cream/off-white background
+- Black or near-black borders/text
+- Burnt orange accents/buttons where possible
+- Minimal, clean product layout
+- Responsive 4-product grid on desktop
+- 2-column grid on tablet
+- 1-column grid on mobile
+- Keep product cards clean and not cluttered
+
+Do not over-style the Shopify iframe-generated content in a way that breaks Shopify functionality.
+
+7. Recommended layout:
+Place the four Shopify containers inside the existing merch grid or a new clean wrapper like:
+
+<div class="fmly-shopify-grid">
+  <div class="fmly-shopify-product">
+    <div id="product-component-1779155989235"></div>
+  </div>
+  <div class="fmly-shopify-product">
+    <div id="product-component-1779155915499"></div>
+  </div>
+  <div class="fmly-shopify-product">
+    <div id="product-component-1779155956310"></div>
+  </div>
+  <div class="fmly-shopify-product">
+    <div id="product-component-1779155045291"></div>
+  </div>
+</div>
+
+Make sure the IDs are unique and exactly match the Shopify component initialization.
+
+8. If this is a React site:
+Create a reusable ShopifyBuyButtons component that:
+- Loads the Shopify Buy Button SDK inside useEffect
+- Prevents duplicate script loading
+- Prevents duplicate component creation on re-renders
+- Initializes all four products after the SDK is ready
+- Cleans up safely if needed
+
+Do not put raw script tags directly inside JSX in a way that React ignores or breaks.
+
+9. If this is a plain HTML/JS site:
+Add the Shopify SDK script and initialization code near the merch section or before the closing body tag. Make sure it only runs after the DOM nodes exist.
+
+10. Remove duplicate homepage artist section:
+Please remove this block from the home page because these people are already listed in the FMLY section:
+
+FEATURED FMLY DJS & ARTISTS
+
+ARTIST
+BLVK HERO
+Grammy-nominated reggae dancehall singer and global warrior for peace.
+
+ARTIST
+LIONIZE
+SELECTOR • OPEN FORMAT
+Bay Area legend and founding member of Blessed Coast Sound.
+
+Remove the full “FEATURED FMLY DJS & ARTISTS” section from the homepage, including the heading, artist labels, names, descriptions, and cards.
+
+Do not remove the full FMLY section where they already appear. Only remove the duplicated homepage feature section.
+
+11. Final QA:
+After updating, please verify:
+- The merch section shows exactly 4 Shopify shirt products.
+- Each Shopify Buy Button appears under the correct matching product.
+- Add to cart works for each product.
+- Cart opens correctly.
+- Checkout button works.
+- Mobile layout looks clean.
+- The Shopify SDK is not loaded multiple times unnecessarily.
+- The duplicate “FEATURED FMLY DJS & ARTISTS” homepage section has been removed.
+- No other homepage sections were accidentally removed.

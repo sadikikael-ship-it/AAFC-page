@@ -1,9 +1,7 @@
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { PageHero } from "@/components/PageHero";
-import { MerchCard } from "@/components/MerchCard";
-import { merch, featuredMerch } from "@/data/merch";
-import { siteLinks } from "@/data/siteLinks";
+import { ShopifyBuyButtons } from "@/components/ShopifyBuyButtons";
 
 export default function MerchPage() {
   return (
@@ -14,14 +12,10 @@ export default function MerchPage() {
         subtitle="Clothing, accessories, prints and music. Editorial drops connected to the dancefloor and the diaspora."
       />
 
-      <section className="section">
+      <section className="section fmly-shopify-section">
         <p className="eyebrow">All products</p>
         <h2>Pre-order now</h2>
-        <div className="merchGrid merchGrid--page">
-          {merch.map((m) => (
-            <MerchCard key={m.id} item={m} />
-          ))}
-        </div>
+        <ShopifyBuyButtons />
       </section>
 
       <SiteFooter />
