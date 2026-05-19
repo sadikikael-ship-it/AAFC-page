@@ -11,11 +11,11 @@ declare global {
 const DOMAIN = "5cbegm-kb.myshopify.com";
 const TOKEN = "76283f7ea2ae821d4c6f3120742407e0";
 
-const PRODUCTS = [
-  { id: "9160338964737", node: "product-component-1779155989235" },
-  { id: "9160340406529", node: "product-component-1779155915499" },
-  { id: "9160340504833", node: "product-component-1779155956310" },
-  { id: "9160340701441", node: "product-component-1779155045291" },
+const PRODUCT_IDS = [
+  { id: "9160338964737", key: "p1" },
+  { id: "9160340406529", key: "p2" },
+  { id: "9160340504833", key: "p3" },
+  { id: "9160340701441", key: "p4" },
 ];
 
 const BTN_STYLE = {
@@ -77,18 +77,16 @@ function setupKeepShoppingButton() {
   overlay.appendChild(btn);
   document.body.appendChild(overlay);
 
-  // Patch the cart's open/close so we follow its state.
   function patchCart() {
     const cart = window.__shopifyUI?.components?.cart?.[0];
-    if (!cart) return;
+    if (!cart || cart.__fmlyPatched) return;
 
     const origOpen  = cart.open?.bind(cart);
     const origClose = cart.close?.bind(cart);
 
-    if (origOpen && !cart.__fmlyPatched) {
+    if (origOpen) {
       cart.open = function (...args: any[]) {
         const result = origOpen(...args);
-        // Match the cart frame width dynamically.
         const frame = document.querySelector<HTMLElement>(".shopify-buy-frame--cart");
         if (frame) overlay.style.width = frame.offsetWidth + "px";
         overlay.style.display = "block";
@@ -96,7 +94,7 @@ function setupKeepShoppingButton() {
       };
     }
 
-    if (origClose && !cart.__fmlyPatched) {
+    if (origClose) {
       cart.close = function (...args: any[]) {
         const result = origClose(...args);
         overlay.style.display = "none";
@@ -107,13 +105,11 @@ function setupKeepShoppingButton() {
     cart.__fmlyPatched = true;
   }
 
-  // Try immediately, then retry briefly while SDK initialises.
   patchCart();
-  const retries = [200, 500, 1000, 2000];
-  retries.forEach((ms) => setTimeout(patchCart, ms));
+  [200, 500, 1000, 2000].forEach((ms) => setTimeout(patchCart, ms));
 }
 
-async function createComponents() {
+async function createComponents(nodePrefix: string) {
   if (!window.__shopifyUI) {
     const client = window.ShopifyBuy.buildClient({
       domain: DOMAIN,
@@ -122,7 +118,12 @@ async function createComponents() {
     window.__shopifyUI = window.ShopifyBuy.UI.init(client);
   }
 
-  const promises = PRODUCTS.map(({ id, node }) => {
+  const products = PRODUCT_IDS.map(({ id, key }) => ({
+    id,
+    node: `${nodePrefix}-${key}`,
+  }));
+
+  const promises = products.map(({ id, node }) => {
     const el = document.getElementById(node);
     if (!el || el.hasChildNodes()) return Promise.resolve(null);
     return window.__shopifyUI.createComponent("product", {
@@ -168,7 +169,6 @@ async function createComponents() {
           contents: {
             img: false,
             imgWithCarousel: true,
-            button: false,
             buttonWithQuantity: false,
             quantity: false,
             quantityIncrement: false,
@@ -224,41 +224,42 @@ async function createComponents() {
 
   await Promise.all(promises);
 
-  // Expose cart opener for the site header icon.
   window.openShopifyCart = () => {
     const cart = window.__shopifyUI?.components?.cart?.[0];
-    if (cart && typeof cart.open === "function") {
-      cart.open();
-    }
+    if (cart && typeof cart.open === "function") cart.open();
   };
 
-  // Inject the Keep Shopping button into the cart drawer.
   setupKeepShoppingButton();
 }
 
-export function ShopifyBuyButtons() {
+interface ShopifyBuyButtonsProps {
+  /** Unique prefix for DOM node IDs — use different values per page to avoid collisions. */
+  nodePrefix?: string;
+}
+
+export function ShopifyBuyButtons({ nodePrefix = "shopify-product" }: ShopifyBuyButtonsProps) {
   useEffect(() => {
+    const run = () => createComponents(nodePrefix).catch(console.error);
+
     if (window.ShopifyBuy?.UI) {
-      createComponents().catch(console.error);
+      run();
       return;
     }
 
-    const run = () => createComponents().catch(console.error);
     const script = document.querySelector<HTMLScriptElement>(
       'script[src*="buy-button-storefront"]'
     );
-
     if (script) {
       script.addEventListener("load", run);
       return () => script.removeEventListener("load", run);
     }
-  }, []);
+  }, [nodePrefix]);
 
   return (
     <div className="fmly-shopify-grid">
-      {PRODUCTS.map(({ node }) => (
-        <div key={node} className="fmly-shopify-product">
-          <div id={node} />
+      {PRODUCT_IDS.map(({ key }) => (
+        <div key={key} className="fmly-shopify-product">
+          <div id={`${nodePrefix}-${key}`} />
         </div>
       ))}
     </div>

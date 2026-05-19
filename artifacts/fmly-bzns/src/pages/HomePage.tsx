@@ -6,7 +6,7 @@ import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { Marquee } from "@/components/Marquee";
 import { EventCard } from "@/components/EventCard";
 import { CrewCard } from "@/components/CrewCard";
-import { MerchCard } from "@/components/MerchCard";
+import { ShopifyBuyButtons } from "@/components/ShopifyBuyButtons";
 import { MailingListForm } from "@/components/MailingListForm";
 import { SocialIcon } from "@/components/SocialIcon";
 import { AdinkraDivider } from "@/components/DecorativeElements";
@@ -14,7 +14,7 @@ import { siteLinks, socialList } from "@/data/siteLinks";
 import { events, featuredEventVideo } from "@/data/events";
 import { weeklyMix } from "@/data/mixes";
 import { crew } from "@/data/crew";
-import { merch } from "@/data/merch";
+
 import { collaborators, marqueeItems } from "@/data/collaborators";
 
 const whatWeDo = [
@@ -313,11 +313,7 @@ export default function HomePage() {
             Shop all
           </Link>
         </div>
-        <div className="merchGrid merchGrid--home">
-          {merch.slice(0, 4).map((m) => (
-            <MerchCard key={m.id} item={m} />
-          ))}
-        </div>
+        <ShopifyBuyButtons nodePrefix="home-product" />
       </section>
       <AdinkraDivider variant="slim" />
 
