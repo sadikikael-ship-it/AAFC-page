@@ -157,7 +157,9 @@ async function createComponents(nodePrefix: string) {
 
   const promises = products.map(({ id, node }) => {
     const el = document.getElementById(node);
-    if (!el || el.hasChildNodes()) return Promise.resolve(null);
+    if (!el) return Promise.resolve(null);
+    // Always clear the node so config changes take effect on remount.
+    el.innerHTML = "";
     return window.__shopifyUI.createComponent("product", {
       id,
       node: el,
