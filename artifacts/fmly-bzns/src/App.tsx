@@ -11,16 +11,24 @@ declare global {
   interface Window {
     ShopifyBuy: any;
     __shopifyUI: any;
+    __shopifyCartGlobalInit?: boolean;
     openShopifyCart?: () => boolean | void;
   }
 }
 
+const BTN_STYLE = {
+  "font-family": "inherit",
+  "background-color": "#ff651f",
+  color: "#fff",
+  "border-radius": "0px",
+  ":hover": { "background-color": "#d94f0e" },
+};
+
 /**
- * Registers window.openShopifyCart once the SDK is ready.
- * Returns true if the cart drawer was opened, false if no cart exists yet
- * (so the header can fall back to /cart).
+ * Registers window.openShopifyCart so the header cart icon works on every page.
+ * Returns true if the drawer opened, false if not ready yet.
  */
-function registerShopifyCartOpener() {
+function registerCartOpener() {
   window.openShopifyCart = () => {
     const cart = window.__shopifyUI?.components?.cart?.[0];
     if (cart && typeof cart.open === "function") {
@@ -31,18 +39,68 @@ function registerShopifyCartOpener() {
   };
 }
 
-/** Runs at app-level so the header cart icon works on every page. */
+/**
+ * Creates a standalone Shopify cart component at the app level so the cart
+ * drawer is available on every page — not just merch/home.
+ */
+async function initGlobalCart() {
+  // Avoid double-init if already done (e.g. ShopifyBuyButtons ran first).
+  if (window.__shopifyCartGlobalInit) return;
+  window.__shopifyCartGlobalInit = true;
+
+  if (!window.__shopifyUI) {
+    const client = window.ShopifyBuy.buildClient({
+      domain: SHOPIFY_DOMAIN,
+      storefrontAccessToken: SHOPIFY_TOKEN,
+    });
+    window.__shopifyUI = window.ShopifyBuy.UI.init(client);
+  }
+
+  // Only create a cart if one doesn't exist yet.
+  const existing = window.__shopifyUI?.components?.cart;
+  if (existing && existing.length > 0) return;
+
+  await window.__shopifyUI.createComponent("cart", {
+    options: {
+      cart: {
+        popup: false,
+        styles: {
+          button: BTN_STYLE,
+          title: { "font-family": "inherit", color: "#1d1510" },
+        },
+        text: { total: "Subtotal", button: "Checkout" },
+        googleFonts: [],
+      },
+      toggle: {
+        styles: {
+          toggle: { "background-color": "#ff651f" },
+          count:  { color: "#fff" },
+        },
+      },
+    },
+  });
+
+  registerCartOpener();
+}
+
+/** Loads the Shopify SDK script if not already present, then calls cb. */
+function withShopifySDK(cb: () => void) {
+  if (window.ShopifyBuy?.UI) { cb(); return; }
+
+  let script = document.querySelector<HTMLScriptElement>('script[src*="buy-button-storefront"]');
+  if (!script) {
+    script = document.createElement("script");
+    script.async = true;
+    script.src = "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
+    document.head.appendChild(script);
+  }
+  script.addEventListener("load", cb, { once: true });
+}
+
+/** Runs at app-level — initialises the global cart drawer on every page. */
 function ShopifyCartInit() {
   useEffect(() => {
-    if (window.ShopifyBuy?.UI) {
-      registerShopifyCartOpener();
-      return;
-    }
-    const script = document.querySelector<HTMLScriptElement>('script[src*="buy-button-storefront"]');
-    if (script) {
-      script.addEventListener("load", registerShopifyCartOpener);
-      return () => script.removeEventListener("load", registerShopifyCartOpener);
-    }
+    withShopifySDK(() => initGlobalCart().catch(console.error));
   }, []);
   return null;
 }

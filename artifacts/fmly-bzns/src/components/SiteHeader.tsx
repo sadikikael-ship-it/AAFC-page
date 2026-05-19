@@ -16,12 +16,13 @@ export function SiteHeader() {
 
   const handleCartClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    // openShopifyCart returns true if the drawer opened, false/undefined if no cart exists yet.
-    if (typeof window.openShopifyCart === "function" && window.openShopifyCart()) {
-      return;
-    }
-    // Fallback: go to merch so the SDK can load, then auto-open the cart.
-    navigate("/merch?opencart");
+    // The SDK is initialized globally so the cart is always available.
+    // Try immediately; if the SDK is still loading (first ~1 s), retry a few times.
+    const tryOpen = (attempts = 0) => {
+      if (typeof window.openShopifyCart === "function" && window.openShopifyCart()) return;
+      if (attempts < 15) setTimeout(() => tryOpen(attempts + 1), 200);
+    };
+    tryOpen();
   };
 
   return (
