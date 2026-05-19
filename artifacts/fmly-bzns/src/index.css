@@ -867,7 +867,7 @@ button[type="submit"]:hover { background: var(--orange); }
   background-position: center 15%;
   filter: saturate(1.05);
 }
-.crewCardBody { padding: .9rem 1rem 1rem; display: grid; gap: .25rem; }
+.crewCardBody { padding: .9rem 1rem 1rem; display: flex; flex-direction: column; gap: .25rem; }
 .crewCardName { font-size: 1.15rem; }
 .crewCardRole { font-size: .85rem; font-weight: 700; color: var(--orange); margin: 0; text-transform: uppercase; letter-spacing: .05em; }
 .crewCardCity { font-size: .78rem; color: var(--ink); opacity: .75; margin: 0; }
@@ -875,7 +875,8 @@ button[type="submit"]:hover { background: var(--orange); }
 .crewCardSocials {
   display: flex;
   gap: .5rem;
-  margin-top: .6rem;
+  margin-top: auto;
+  padding-top: .6rem;
 }
 .crewSocialLink {
   display: inline-flex;
