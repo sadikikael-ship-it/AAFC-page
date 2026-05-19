@@ -20,7 +20,7 @@ export const merch: MerchItem[] = [
     price: "$44",
     priceCents: 4400,
     image: "/fmly-peace-max-heavyweight-black.png",
-    productUrl: "https://shop.fmlybzns.com/peace-logo-max-heavyweight-black",
+    productUrl: "https://fmly-bzns-2.myshopify.com/",
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
   },
   {
@@ -30,7 +30,7 @@ export const merch: MerchItem[] = [
     price: "$44",
     priceCents: 4400,
     image: "/fmly-peace-max-heavyweight-mustard.png",
-    productUrl: "https://shop.fmlybzns.com/peace-logo-max-heavyweight",
+    productUrl: "https://fmly-bzns-2.myshopify.com/",
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
   },
   {
@@ -40,7 +40,7 @@ export const merch: MerchItem[] = [
     price: "$40",
     priceCents: 4000,
     image: "/fmly-peace-womens-crop-tee.png",
-    productUrl: "https://shop.fmlybzns.com/peace-logo-womens-crop",
+    productUrl: "https://fmly-bzns-2.myshopify.com/",
     sizes: ["XS", "S", "M", "L", "XL"],
   },
   {
@@ -50,7 +50,7 @@ export const merch: MerchItem[] = [
     price: "$50",
     priceCents: 5000,
     image: "/fmly-peace-tee.png",
-    productUrl: "https://shop.fmlybzns.com/peace-logo-tee",
+    productUrl: "https://fmly-bzns-2.myshopify.com/",
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
   },
 ];

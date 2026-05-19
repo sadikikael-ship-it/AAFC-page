@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import type { MerchItem } from "@/data/merch";
-import { useCart } from "@/lib/cart";
 
 interface Props {
   item: MerchItem;
@@ -8,10 +7,7 @@ interface Props {
 }
 
 export function ProductModal({ item, onClose }: Props) {
-  const { add } = useCart();
   const [size, setSize] = useState<string>("");
-  const [qty, setQty] = useState(1);
-  const [added, setAdded] = useState(false);
   const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -28,25 +24,8 @@ export function ProductModal({ item, onClose }: Props) {
     if (e.target === overlayRef.current) onClose();
   };
 
-  const handleAdd = () => {
-    if (item.sizes && item.sizes.length > 0 && !size) return;
-    add(
-      {
-        id: `merch:${item.id}:${size || "one-size"}`,
-        kind: "merch",
-        name: item.name,
-        subtitle: size ? `${item.collection} · ${size}` : item.collection,
-        priceCents: item.priceCents,
-        image: item.image,
-        metadata: { merchId: item.id, size: size || "one-size" },
-      },
-      qty,
-    );
-    setAdded(true);
-    window.setTimeout(() => { setAdded(false); onClose(); }, 1400);
-  };
-
   const needsSize = item.sizes && item.sizes.length > 0;
+  const canShop = !needsSize || !!size;
 
   return (
     <div
@@ -97,42 +76,21 @@ export function ProductModal({ item, onClose }: Props) {
               </div>
             )}
 
-            <div className="productModalSection">
-              <p className="productModalLabel">Quantity</p>
-              <div className="qtyControl">
-                <button
-                  type="button"
-                  className="qtyBtn"
-                  onClick={() => setQty((q) => Math.max(1, q - 1))}
-                  aria-label="Decrease quantity"
-                >
-                  −
-                </button>
-                <span className="qtyValue">{qty}</span>
-                <button
-                  type="button"
-                  className="qtyBtn"
-                  onClick={() => setQty((q) => q + 1)}
-                  aria-label="Increase quantity"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-
             {item.soldOut ? (
               <button type="button" className="ctaBtn" disabled>
                 Sold Out
               </button>
             ) : (
-              <button
-                type="button"
-                className={added ? "ctaBtn added" : "ctaBtn"}
-                onClick={handleAdd}
-                disabled={needsSize && !size}
+              <a
+                href={item.productUrl}
+                target="_blank"
+                rel="noreferrer"
+                className={`ctaBtn${!canShop ? " ctaBtn--disabled" : ""}`}
+                onClick={(e) => { if (!canShop) e.preventDefault(); }}
+                aria-disabled={!canShop}
               >
-                {added ? "Added to Cart ✓" : "Add to Cart"}
-              </button>
+                Shop on Shopify →
+              </a>
             )}
           </div>
         </div>

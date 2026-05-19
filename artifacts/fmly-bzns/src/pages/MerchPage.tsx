@@ -1,14 +1,10 @@
-import { Link } from "wouter";
-import { FaShoppingCart } from "react-icons/fa";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { PageHero } from "@/components/PageHero";
-import { ShopifyBuyButtons } from "@/components/ShopifyBuyButtons";
-import { useCart } from "@/lib/cart";
+import { MerchCard } from "@/components/MerchCard";
+import { merch } from "@/data/merch";
 
 export default function MerchPage() {
-  const { count } = useCart();
-
   return (
     <main>
       <SiteHeader />
@@ -21,30 +17,20 @@ export default function MerchPage() {
         <p className="eyebrow">All products</p>
         <div className="merchHeadRow">
           <h2>Shop now</h2>
-          <div className="merchHeadActions">
-            <Link href="/cart" className="cartIconBtn" aria-label={count > 0 ? `Cart (${count} items)` : "Cart"}>
-              <FaShoppingCart aria-hidden focusable="false" />
-              {count > 0 ? <span className="cartBadge">{count}</span> : null}
-            </Link>
-            <a
-              href="https://fmly-bzns-2.myshopify.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="shopAllBtn"
-            >
-              Shop all →
-            </a>
-            <a
-              href="https://fmly-bzns-2.myshopify.com/cart"
-              target="_blank"
-              rel="noreferrer"
-              className="shopAllBtn shopAllBtn--filled"
-            >
-              Checkout
-            </a>
-          </div>
+          <a
+            href="https://fmly-bzns-2.myshopify.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="shopAllBtn shopAllBtn--filled"
+          >
+            Shop all on Shopify →
+          </a>
         </div>
-        <ShopifyBuyButtons />
+        <div className="merchGrid">
+          {merch.map((item) => (
+            <MerchCard key={item.id} item={item} />
+          ))}
+        </div>
       </section>
 
       <SiteFooter />
