@@ -4,6 +4,9 @@ import { FaTrashAlt, FaPlus, FaMinus } from "react-icons/fa";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { useCart, formatPrice } from "@/lib/cart";
+import { merch } from "@/data/merch";
+
+const SHOPIFY_DOMAIN = "5cbegm-kb.myshopify.com";
 
 export default function CartPage() {
   const { items, totalCents, count, setQty, remove } = useCart();
@@ -13,16 +16,53 @@ export default function CartPage() {
 
   const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
 
+  const merchItems = items.filter((it) => it.kind === "merch");
+  const ticketItems = items.filter((it) => it.kind === "ticket");
+
+  const buildShopifyCheckoutUrl = (): string | null => {
+    const lines: string[] = [];
+    const attrs: string[] = [];
+    for (const it of merchItems) {
+      // cart id format: `merch:<merchId>:<size>` or `merch:<merchId>`
+      const [, merchId] = it.id.split(":");
+      const product = merch.find((m) => m.id === merchId);
+      if (!product?.shopifyVariantId) continue;
+      lines.push(`${product.shopifyVariantId}:${it.qty}`);
+      const size = it.metadata?.size;
+      if (size) {
+        const key = `Size — ${product.name} (${product.collection})`;
+        attrs.push(`attributes[${encodeURIComponent(key)}]=${encodeURIComponent(size)}`);
+      }
+    }
+    if (lines.length === 0) return null;
+    const query = attrs.length ? `?${attrs.join("&")}` : "";
+    return `https://${SHOPIFY_DOMAIN}/cart/${lines.join(",")}${query}`;
+  };
+
   const handleCheckout = async () => {
     if (items.length === 0) return;
     setSubmitting(true);
     setError(null);
+
+    // If there's any merch in the cart, route to Shopify.
+    if (merchItems.length > 0) {
+      const url = buildShopifyCheckoutUrl();
+      if (!url) {
+        setError("Could not build Shopify checkout — missing variant info.");
+        setSubmitting(false);
+        return;
+      }
+      window.location.href = url;
+      return;
+    }
+
+    // Tickets-only → existing Stripe flow.
     try {
       const res = await fetch(`/api/checkout/session`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          items: items.map((it) => ({
+          items: ticketItems.map((it) => ({
             id: it.id,
             kind: it.kind,
             name: it.name,
@@ -54,6 +94,10 @@ export default function CartPage() {
       setSubmitting(false);
     }
   };
+
+  const hasMerch = merchItems.length > 0;
+  const hasTickets = ticketItems.length > 0;
+  const mixed = hasMerch && hasTickets;
 
   return (
     <main>
@@ -168,13 +212,31 @@ export default function CartPage() {
                 onClick={handleCheckout}
                 disabled={submitting}
               >
-                {submitting ? "Processing…" : "Checkout"}
+                {submitting
+                  ? "Processing…"
+                  : hasMerch
+                    ? "Checkout on Shopify"
+                    : "Checkout"}
               </button>
               {error ? <p className="cartError">{error}</p> : null}
-              <p className="cartNote">
-                Demo mode: no real payment is captured. Once Stripe keys are added,
-                this button will redirect to a secure Stripe-hosted checkout.
-              </p>
+              {mixed ? (
+                <p className="cartNote">
+                  Tickets and merch use separate checkouts. This button will
+                  send your merch to Shopify — your tickets will stay in the
+                  cart so you can check them out separately.
+                </p>
+              ) : hasMerch ? (
+                <p className="cartNote">
+                  You'll be redirected to Shopify to complete your merch
+                  purchase securely.
+                </p>
+              ) : (
+                <p className="cartNote">
+                  Demo mode: no real payment is captured. Once Stripe keys are
+                  added, this button will redirect to a secure Stripe-hosted
+                  checkout.
+                </p>
+              )}
             </aside>
           </div>
         )}
