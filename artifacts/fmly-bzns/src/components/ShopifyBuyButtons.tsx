@@ -46,8 +46,8 @@ function createComponents() {
         product: {
           styles: {
             product: { "text-align": "left" },
-            title: { "font-family": "inherit", color: "#1d1510", "font-size": "0.9rem" },
-            price: { "font-family": "inherit", color: "#1d1510", "font-size": "0.85rem" },
+            title: { "font-family": "inherit", color: "#1d1510", "font-size": "1rem", "font-weight": "700", "margin-bottom": "6px", "line-height": "1.35" },
+            price: { "font-family": "inherit", color: "#1d1510", "font-size": "1rem", "margin-bottom": "12px" },
             button: BTN_STYLE,
             compareAt: { color: "#1d1510" },
             imgWrapper: {
