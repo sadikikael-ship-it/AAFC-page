@@ -74,6 +74,7 @@ export const collaborators: Collaborator[] = [
   },
 
   { name: "Secret Sessions", kind: "Brand" },
+  { name: "Frequency Exchange", kind: "Brand", url: "https://frequencyexchange.io/" },
   { name: "Peace Fits", kind: "Brand", url: "https://www.peacefits.com/", instagramUrl: "https://www.instagram.com/peacefits/" },
   { name: "Hot Ice Cream Boutique", kind: "Brand", instagramUrl: "https://www.instagram.com/hoticecream_boutique/" },
 
