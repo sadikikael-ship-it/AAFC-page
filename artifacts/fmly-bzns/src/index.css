@@ -1305,6 +1305,16 @@ button[type="submit"]:hover { background: var(--orange); }
 .pill--city { background: #ead6b3; }
 .pill--link { transition: transform .12s; }
 .pill--link:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--black); }
+.pillIgBtn {
+  display: inline-flex;
+  align-items: center;
+  margin-left: .35rem;
+  opacity: .75;
+  transition: opacity .15s;
+  cursor: pointer;
+  font-size: .9em;
+}
+.pillIgBtn:hover { opacity: 1; }
 
 .marqueeBand {
   background: var(--black);

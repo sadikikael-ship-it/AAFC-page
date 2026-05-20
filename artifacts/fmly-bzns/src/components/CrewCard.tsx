@@ -4,8 +4,10 @@ import type { CrewMember } from "@/data/crew";
 export function CrewCard({ member }: { member: CrewMember }) {
   const hasSocials = member.instagramUrl || member.soundcloudUrl;
 
+  const id = member.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
   return (
-    <article className="crewCard">
+    <article className="crewCard" id={id}>
       <div
         className="crewCardImage"
         style={{
