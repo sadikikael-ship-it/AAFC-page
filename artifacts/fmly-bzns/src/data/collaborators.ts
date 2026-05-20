@@ -10,6 +10,8 @@ export interface Collaborator {
   kind: CollaboratorKind;
   url?: string;
   instagramUrl?: string;
+  spotifyUrl?: string;
+  soundcloudUrl?: string;
   role?: string;
   bio?: string;
 }
@@ -33,17 +35,40 @@ export const collaborators: Collaborator[] = [
     name: "BLVK H3RO",
     kind: "Artist",
     url: "/crew#blvk-h3ro",
+    instagramUrl: "https://www.instagram.com/blvkh3ro/",
+    spotifyUrl: "https://open.spotify.com/artist/29v52R5tPpJ0Hrh1VnmZoZ",
     role: "Artist",
     bio: "Grammy-nominated reggae dancehall singer and global warrior for peace.",
   },
-  { name: "AMALYN", kind: "Artist", url: "/crew#amalyn" },
-  { name: "Kes Kross", kind: "Artist" },
-  { name: "Jade de Lafleur", kind: "Artist" },
-  { name: "Seun Kuti", kind: "Artist" },
+  {
+    name: "AMALYN",
+    kind: "Artist",
+    url: "/crew#amalyn",
+    instagramUrl: "https://www.instagram.com/amalynoficial/",
+  },
+  {
+    name: "Kes Kross",
+    kind: "Artist",
+    instagramUrl: "https://www.instagram.com/keskross/",
+  },
+  {
+    name: "Jade de Lafleur",
+    kind: "Artist",
+    url: "https://www.jadedelafleur.com/",
+    instagramUrl: "https://www.instagram.com/jadedelafleur/",
+  },
+  {
+    name: "Seun Kuti",
+    kind: "Artist",
+    url: "https://www.seunkutimusic.com/",
+    instagramUrl: "https://www.instagram.com/bigbirdkuti/",
+  },
   {
     name: "Lionize",
     kind: "Artist",
     url: "/crew#lionize",
+    instagramUrl: "https://www.instagram.com/lionize___/",
+    soundcloudUrl: "https://soundcloud.com/djlionize",
     role: "Selector · Open Format",
     bio: "Bay Area legend and founding member of Blessed Coast Sound.",
   },

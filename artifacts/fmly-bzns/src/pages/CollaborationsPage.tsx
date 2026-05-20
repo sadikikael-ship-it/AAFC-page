@@ -2,11 +2,48 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { PageHero } from "@/components/PageHero";
 import { Marquee } from "@/components/Marquee";
-import { collaborators, marqueeItems } from "@/data/collaborators";
+import { collaborators, marqueeItems, type Collaborator } from "@/data/collaborators";
 import { Link } from "wouter";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaSpotify, FaSoundcloud, FaGlobe } from "react-icons/fa";
 
 const groupOrder = ["Festival", "Venue", "Artist", "Brand", "City"] as const;
+
+function SocialIcons({ c }: { c: Collaborator }) {
+  const links = [
+    { url: c.instagramUrl, icon: <FaInstagram aria-hidden focusable="false" />, label: "Instagram" },
+    { url: c.spotifyUrl, icon: <FaSpotify aria-hidden focusable="false" />, label: "Spotify" },
+    { url: c.soundcloudUrl, icon: <FaSoundcloud aria-hidden focusable="false" />, label: "SoundCloud" },
+    ...(c.url && !c.url.startsWith("/") && c.kind !== "Festival" && c.kind !== "Brand"
+      ? [{ url: c.url, icon: <FaGlobe aria-hidden focusable="false" />, label: "Website" }]
+      : []),
+  ].filter((l) => l.url);
+
+  if (links.length === 0) return null;
+
+  return (
+    <>
+      {links.map(({ url, icon, label }) => (
+        <span
+          key={label}
+          className="pillIgBtn"
+          onClick={(e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            window.open(url, "_blank", "noopener,noreferrer");
+          }}
+          role="link"
+          tabIndex={0}
+          aria-label={`${c.name} on ${label}`}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") window.open(url, "_blank", "noopener,noreferrer");
+          }}
+        >
+          {icon}
+        </span>
+      ))}
+    </>
+  );
+}
 
 export default function CollaborationsPage() {
   const grouped = groupOrder.map((kind) => ({
@@ -40,29 +77,14 @@ export default function CollaborationsPage() {
             <div className="collabPills">
               {group.items.map((c) => {
                 const isInternal = c.url?.startsWith("/");
-                const pillClass = `pill pill--${c.kind.toLowerCase()}${c.url || c.instagramUrl ? " pill--link" : ""}`;
+                const hasSocials = c.instagramUrl || c.spotifyUrl || c.soundcloudUrl;
+                const isClickable = c.url || hasSocials;
+                const pillClass = `pill pill--${c.kind.toLowerCase()}${isClickable ? " pill--link" : ""}`;
                 const inner = (
                   <>
                     {c.name}
                     <em>{c.kind}</em>
-                    {c.instagramUrl && (
-                      <span
-                        className="pillIgBtn"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          e.preventDefault();
-                          window.open(c.instagramUrl, "_blank", "noopener,noreferrer");
-                        }}
-                        role="link"
-                        tabIndex={0}
-                        aria-label={`${c.name} on Instagram`}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter") window.open(c.instagramUrl, "_blank", "noopener,noreferrer");
-                        }}
-                      >
-                        <FaInstagram aria-hidden focusable="false" />
-                      </span>
-                    )}
+                    <SocialIcons c={c} />
                   </>
                 );
 
@@ -81,7 +103,7 @@ export default function CollaborationsPage() {
                   );
                 }
                 return (
-                  <span key={c.name} className={`pill pill--${c.kind.toLowerCase()}${c.instagramUrl ? " pill--link" : ""}`}>
+                  <span key={c.name} className={pillClass}>
                     {inner}
                   </span>
                 );
