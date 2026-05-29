@@ -1700,14 +1700,14 @@ button[type="submit"]:hover { background: var(--orange); }
 .footerMadeBy {
   display: inline-flex;
   align-items: center;
-  gap: .5rem;
+  gap: .75rem;
   margin-top: .75rem;
-  padding: .4rem .75rem .4rem .4rem;
-  border: 1px solid rgba(255, 246, 225, .15);
+  padding: .6rem 1.25rem .6rem .6rem;
+  border: 1px solid rgba(255, 246, 225, .2);
   border-radius: 2rem;
   text-decoration: none;
-  color: rgba(255, 246, 225, .6);
-  font-size: .7rem;
+  color: rgba(255, 246, 225, .75);
+  font-size: .85rem;
   font-weight: 600;
   letter-spacing: .05em;
   text-transform: uppercase;
@@ -1715,8 +1715,8 @@ button[type="submit"]:hover { background: var(--orange); }
 }
 .footerMadeBy:hover { border-color: var(--gold); color: var(--gold); }
 .footerMadeByLogo {
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
 }
 
