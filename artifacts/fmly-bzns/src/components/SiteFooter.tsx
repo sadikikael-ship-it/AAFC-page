@@ -78,7 +78,7 @@ export function SiteFooter() {
         aria-label="Made by AAFC"
       >
         <img src="/aafc-logo.png" alt="AAFC logo" className="footerMadeByLogo" />
-        <span>Made by AAFC</span>
+        <span>Visit the builders →</span>
       </a>
     </footer>
   );
