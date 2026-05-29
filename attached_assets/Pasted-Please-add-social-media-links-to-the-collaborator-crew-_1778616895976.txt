@@ -1,0 +1,83 @@
+Please add social media links to the collaborator / crew cards on the FMLY BZNS crew page.
+
+Add a small Instagram/social icon or “Follow” link to each person’s card. The link should open in a new tab using target="_blank" and rel="noopener noreferrer".
+
+Use these links:
+
+CORE FREQUENCY
+- AndreasOne:
+  Instagram: https://www.instagram.com/andreasone/
+
+- One Lovell:
+  Instagram: https://www.instagram.com/onelovell/
+
+- OBE / IntelligentRebellion:
+  Instagram: https://www.instagram.com/intelligentrebellion/
+
+SOUND & VISION
+- Davix / Dojo in the Sky:
+  Instagram: https://www.instagram.com/davixdojointhesky/
+
+WORLD BUILDERS
+- Justin / Gateway Mendocino:
+  Instagram: https://www.instagram.com/just_in_mendo/
+  Gateway Mendocino: https://www.instagram.com/gatewaymendocino/
+
+- Ner / Gateway Mendocino:
+  Use Gateway Mendocino for now unless there is a separate confirmed personal account:
+  https://www.instagram.com/gatewaymendocino/
+
+FEATURED FMLY DJS AND ARTISTS
+- Amalyn:
+  Instagram option 1: https://www.instagram.com/amalynoficial/
+  Instagram option 2: https://www.instagram.com/amalynr/
+  Please use whichever one best matches the existing artist profile/photo/content.
+
+- WeirdoWithSoul:
+  Instagram: https://www.instagram.com/weirdowithsoul/
+
+- Raeya:
+  Instagram: https://www.instagram.com/purestardust/
+
+SELECTORS & CONTRIBUTORS
+- DJ Kobie:
+  Instagram: https://www.instagram.com/kobie_quashie/
+  Alternate / Ashanti Hi Fi page: https://www.instagram.com/ashanti_hi_fi/
+  SoundCloud: https://soundcloud.com/kobiequashie
+
+- Danni G:
+  Instagram: https://www.instagram.com/dannig/
+
+- DJ IJO:
+  Instagram: https://www.instagram.com/djijo17/
+
+OTHER CREW CARDS SHOWN
+- DYOPS:
+  Instagram: https://www.instagram.com/dj.dyops/
+
+- Little Dinosaur:
+  Instagram: https://www.instagram.com/littledinosaur/
+
+- Cannaba55:
+  Instagram: https://www.instagram.com/cannaba55/
+
+- Sage:
+  Instagram: https://www.instagram.com/thenameis_sage/
+
+- Spekt1:
+  Instagram: https://www.instagram.com/spekt1/
+
+- DJ Atreau:
+  Instagram: https://www.instagram.com/djatreau/
+
+- KMNI:
+  Instagram: https://www.instagram.com/kmnimusic/
+
+Implementation instructions:
+- Add the social link to each card near the name or at the bottom of the card.
+- Keep the design clean and consistent with the current FMLY BZNS style.
+- Use a small Instagram icon, “IG”, or “Follow” button.
+- Do not make the whole card clickable unless it does not interfere with card layout.
+- Make sure links are accessible with aria-labels like “Follow AndreasOne on Instagram.”
+- If a card has multiple links, show small icon links in a row.
+- Do not change the existing card photos, names, or descriptions.

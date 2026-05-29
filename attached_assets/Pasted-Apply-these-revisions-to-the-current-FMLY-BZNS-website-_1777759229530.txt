@@ -1,0 +1,889 @@
+Apply these revisions to the current **FMLY BZNS website** in Replit. This is a comprehensive revision prompt for the existing build, not a full rebuild from scratch.
+
+## Main objective
+
+Update the FMLY BZNS site so it becomes a fully functional, colorful, easy-to-update website for:
+
+* weekly mixes
+* embedded music and videos
+* upcoming events and festival takeovers
+* crew photos and artist profiles
+* merch/clothing drops
+* collaborations
+* mailing list capture
+* shopping cart / checkout pathway
+* real social and music links
+
+The final site should feel like a **colorful global dance music culture platform** with an Afro-futuristic / diaspora-festival visual identity. It should not feel like a dark generic landing page, SaaS site, plain black music site, or generic ecommerce template.
+
+## Core brand copy to use
+
+Use this copy and structure for the front page.
+
+### Hero eyebrow text
+
+```text
+Global Dance Music Culture
+```
+
+### Main hero headline
+
+```text
+THIS IS FMLY BZNS.
+A GLOBAL DANCEFLOOR.
+```
+
+### Hero subtext
+
+```text
+Music. Movement. Energy. Connection.
+```
+
+### Who We Are section
+
+Use this as the foundation, but polish/reword slightly so it feels website-ready:
+
+```text
+A collective of DJs, producers, curators, and culture builders—curating sound and shaping experience. We create spaces where rhythm leads, energy flows, and movement becomes connection—rooted in Afro-diaspora sound and global dancefloor culture.
+```
+
+Make it read naturally above or near the SoundCloud / weekly mix section.
+
+## Logo direction
+
+Use one of the FMLY BZNS logos from the project assets.
+
+Important:
+
+* remove the white logo at the top/header if it is currently there
+* do not use the white logo in the header
+* use the color logo or a styled FMLY BZNS wordmark that fits the current palette
+* make sure the logo/wordmark is clean, readable, and aligned
+* do not leave empty space where the removed logo was
+
+## Visual direction
+
+The site should be colorful, expressive, warm, and Afro-futuristic.
+
+Use the actual FMLY BZNS logo colors and brand palette:
+
+* black
+* warm olive green
+* muted sage / moss
+* golden yellow
+* mustard
+* burnt orange
+* dusty peach
+* clay pink
+* warm sand
+* cream
+
+The site should feel like:
+
+* global dancefloor culture
+* Afro-diaspora sound
+* music and movement
+* festival poster energy
+* cultural world-building
+* nightlife, community, and fashion
+* warm, colorful, expressive, and alive
+
+Avoid:
+
+* plain black backgrounds
+* cold neon sci-fi
+* generic chrome futurism
+* default ecommerce styling
+* overly boxed landing-page sections
+* cluttered layouts
+* dead space
+
+## Side border direction
+
+Keep the Afro-futuristic patterned border on the sides, but revise it so it behaves correctly.
+
+Requirements:
+
+* vertical side borders only
+* no horizontal border bands
+* no top or bottom patterned trim bands
+* no horizontal dividers between sections
+* border should be attached to the main website shell, not the browser/page background
+* no dead space between the border and the website content
+* the content should feel like it sits directly inside a framed poster object
+* the side borders should use brand colors and repeating geometric motifs
+* on mobile, the border should not crush or crowd the content
+
+## Header / navigation
+
+Fix and rebalance the header.
+
+Requirements:
+
+* header should feel centered and visually balanced
+* nav should not feel pushed too far left
+* use a 3-part layout if needed:
+
+  * left: FMLY BZNS wordmark/logo
+  * center: nav links
+  * right: social/music icons + cart icon
+* keep spacing clean
+* remove cramped spacing
+* keep all items vertically aligned
+* make mobile nav collapse cleanly
+
+Header nav items:
+
+* Home
+* Events
+* Music
+* Crew
+* Merch
+* Collaborations
+* Contact
+
+## Header CTA / cart
+
+Replace the global “Buy Tickets” button in the header with a **shopping cart icon**.
+
+The cart should be the place where users can access:
+
+* merch purchases
+* ticket purchases
+* merch + ticket purchases together
+
+Requirements:
+
+* use a real shopping cart icon from the same icon system as the social icons
+* do not use a drawn/custom icon
+* link the cart to a cart/checkout route or clean placeholder page
+* make it accessible with `aria-label="Cart"`
+* if full checkout is not built yet, create a clean placeholder cart/checkout page
+* the placeholder should explain that merch and ticket checkout will live there
+
+Suggested placeholder copy:
+
+```text
+Checkout/payment integration coming soon. Merch and ticket purchases will be available here.
+```
+
+Structure the site so this can later connect to Stripe, Shopify, Square, or another checkout provider.
+
+## Real social/music links
+
+Use real icons only. Do not use hand-drawn placeholder icons.
+
+Wire these links wherever social/music icons appear:
+
+```js
+export const siteLinks = {
+  social: {
+    instagram: "https://www.instagram.com/fmlybzns_/",
+    tiktok: "https://www.tiktok.com/@fmlybzns",
+    youtube: "https://www.youtube.com/@FMLYBZNS",
+    soundcloud: "https://soundcloud.com/fmlybzns",
+    spotify: "https://open.spotify.com/artist/75qZLpg3af3d4P0Yo5oy3J?si=_x82IyYPRMWKgA0CoXikOg"
+  }
+};
+```
+
+Requirements:
+
+* use actual platform icons for Instagram, TikTok, YouTube, SoundCloud, and Spotify
+* icons should appear in header and footer
+* icons should appear in Music / Mixes sections where relevant
+* icon-only is preferred; do not write app names next to icons unless needed
+* all icons must open the correct links
+* use `target="_blank"` and `rel="noreferrer"` for external links
+* include proper `aria-label`s
+
+## Homepage structure
+
+Revise the homepage into this flow:
+
+1. Hero
+2. Who We Are
+3. Weekly Mix / Featured Mix
+4. What We Do
+5. Upcoming Events & Takeovers
+6. Music / Mixes / Media
+7. Crew / The FMLY
+8. Merch
+9. Collaborations / Rolling List
+10. Mailing List
+11. Footer
+
+Make sure spacing is clean, balanced, and readable throughout.
+
+## Hero section
+
+The hero should be colorful, image-led, and well-spaced.
+
+Requirements:
+
+* no cramped text
+* no text too close together
+* no text too close to edges or side borders
+* reduce unnecessary empty space under the header
+* hero text should sit comfortably under the header
+* buttons should have consistent spacing
+* hero should not be squished or cut off
+* preserve a strong music/festival/culture feeling
+
+Hero content:
+
+Eyebrow:
+
+```text
+Global Dance Music Culture
+```
+
+Headline:
+
+```text
+THIS IS FMLY BZNS.
+A GLOBAL DANCEFLOOR.
+```
+
+Subtext:
+
+```text
+Music. Movement. Energy. Connection.
+```
+
+CTA buttons:
+
+* View Events
+* Listen to Mixes
+* Join the Mailing List
+
+## Weekly Mix / Featured Mix section
+
+Add a prominent weekly mix spot on the homepage.
+
+This should be a major featured area, not buried.
+
+Use this structure:
+
+```text
+WEEKLY MIX · UPDATED EVERY FRIDAY
+FMLY MXTP VOL. 12
+SUNSET CIRCLE
+```
+
+Example description:
+
+```text
+This week's selection — slow-burning Afro-house, broken Amapiano, and a finale of dub. Recorded live at the Brooklyn rooftop session.
+```
+
+Tags:
+
+* Weekly
+* Afro-House
+* Amapiano
+
+Requirements:
+
+* embed the SoundCloud player or provide a strong SoundCloud link
+* use the real SoundCloud link: https://soundcloud.com/fmlybzns
+* include a Spotify icon/link too
+* make the weekly mix easy to update in a data file
+* the section should feel branded and visually designed
+* it should be updated every Friday, so the content structure must be reusable
+
+Create/update a data file like:
+
+```js
+export const weeklyMix = {
+  eyebrow: "Weekly Mix · Updated Every Friday",
+  title: "FMLY MXTP VOL. 12",
+  subtitle: "SUNSET CIRCLE",
+  description:
+    "This week's selection — slow-burning Afro-house, broken Amapiano, and a finale of dub. Recorded live at the Brooklyn rooftop session.",
+  tags: ["Weekly", "Afro-House", "Amapiano"],
+  soundcloudUrl: "https://soundcloud.com/fmlybzns",
+  spotifyUrl:
+    "https://open.spotify.com/artist/75qZLpg3af3d4P0Yo5oy3J?si=_x82IyYPRMWKgA0CoXikOg"
+};
+```
+
+## What We Do section
+
+Add a clear “What We Do” section using this content:
+
+```text
+Sound. Space. Experience. Culture.
+```
+
+Create four cards or columns:
+
+### Sound
+
+```text
+Original music, edits, and the FMLY MXTP series—soundtracks for the global dancefloor.
+```
+
+### Dancefloor
+
+```text
+Curated events, takeovers, and immersive spaces built for movement.
+```
+
+### Visual World
+
+```text
+Creative direction, projections, fashion, and full-spectrum vibe curation.
+```
+
+### Collaborations
+
+```text
+Festivals, brand partnerships, and custom cultural activations.
+```
+
+Make this section visual, colorful, and easy to scan.
+
+## Upcoming Events & Takeovers section
+
+Rename the events section to:
+
+```text
+Upcoming Events & Takeovers
+```
+
+Keep the events section focused and clean.
+
+Primary upcoming events to include:
+
+1. FMLY BZNS takeover: The Crossroads at Lightning in a Bottle
+2. FMLY BZNS x Gateway Mendocino: The Gathering
+3. FMLY BZNS: The Felix SF
+4. FMLY BZNS takeover: Nakey Island at Same Same But Different
+
+Do not show random/fake placeholder events.
+
+### Event 1: Lightning in a Bottle Takeover
+
+Title:
+
+```text
+FMLY BZNS takeover: The Crossroads at Lightning in a Bottle
+```
+
+Description:
+
+```text
+FMLY BZNS takes over The Crossroads at Lightning in a Bottle for a full 8-hour, night-to-dawn session—Sunday, May 24 from 8PM–4AM—bringing a global lineup of selectors and artists from Ghana, Zimbabwe, Netherlands, Egypt, Colombia, Jamaica, Venezuela, California, and beyond into one unified frequency. Rooted in Afro-diaspora sound and built for the late-night rave, this is a high-intensity journey through Amapiano, Afro-House, Gqom, Baile Funk, Dancehall, and global club.
+```
+
+Link:
+
+```text
+https://www.libfestival.org/
+```
+
+CTA:
+
+```text
+Learn More
+```
+
+### Event 2: The Gathering
+
+Title:
+
+```text
+FMLY BZNS x Gateway Mendocino: THE GATHERING
+```
+
+Description:
+
+```text
+FMLY BZNS returns with Gateway Mendocino for The Gathering 2026, July 30 – August 2—a 3-day, 3-night immersion where Global Dance Music Culture meets nature, community, and intention. Set deep in Northern California’s landscape, this boutique microfestival blends Afro-diaspora sound with transformational energy—flowing from sunlit sessions by the water into late-night dancefloors that carry the energy deep into the night.
+```
+
+Ticket link:
+
+```text
+https://www.eventbrite.com/e/fmly-bzns-the-gathering-tickets-1986467302175?aff=erelexpmlt
+```
+
+CTA:
+
+```text
+Buy Tickets
+```
+
+Important:
+
+* The Gathering should have the Buy Tickets button.
+* The Buy Tickets button should link to the Eventbrite ticket page.
+* If possible, embed the Eventbrite ticket page or create a clear external ticket link.
+* This should also work with the cart/checkout pathway if possible.
+
+### Event 3: The Felix SF
+
+Title:
+
+```text
+FMLY BZNS: The Felix SF
+```
+
+Date:
+
+```text
+June 6, 2026
+```
+
+Description:
+
+```text
+FMLY BZNS takes over The Felix SF on June 6, 2026 for a night rooted in sound, style, and late-night connection—bringing Global Dance Music Culture into one of San Francisco’s most refined dancefloor settings. Featuring AndreasOne, SAGE, and One Lovell, expect a seamless blend of Afro-diaspora rhythms moving through Amapiano, Afro-House, Dancehall, and global club.
+```
+
+CTA:
+
+```text
+Details
+```
+
+### Event 4: Nakey Island at Same Same But Different
+
+Title:
+
+```text
+FMLY BZNS takeover: Nakey Island at Same Same But Different
+```
+
+Description:
+
+```text
+FMLY BZNS lands on Nakey Island at Same Same But Different for a 6-hour takeover—bringing a sun-soaked, beachside journey of Global Dance Music Culture to the water’s edge. Rooted in Afro-diaspora rhythms and shaped by island energy, the sound drifts through Amapiano, Afro-Latin House, Dancehall, Baile Funk, and beyond.
+```
+
+Link:
+
+```text
+https://www.ssbdfest.com/
+```
+
+CTA:
+
+```text
+Learn More
+```
+
+## Upcoming event video embed
+
+Embed this YouTube video in the upcoming events section:
+
+```text
+https://www.youtube.com/watch?v=qMm-fpsLi7w
+```
+
+Use embed URL:
+
+```text
+https://www.youtube.com/embed/qMm-fpsLi7w
+```
+
+Requirements:
+
+* put it in the events section as a “Festival Takeover Preview” or “Upcoming Event Preview”
+* make it responsive
+* do not let it overflow
+* keep spacing around it clean
+* do not paste the raw URL as plain text only
+* store it in event/media data so it can be changed later
+
+Example:
+
+```js
+export const eventVideos = [
+  {
+    title: "Festival Takeover Preview",
+    youtubeUrl: "https://www.youtube.com/watch?v=qMm-fpsLi7w",
+    embedUrl: "https://www.youtube.com/embed/qMm-fpsLi7w"
+  }
+];
+```
+
+## Music / Mixes / Media section
+
+The Music / Mixes section must link directly to the real FMLY BZNS platforms.
+
+Use:
+
+* SoundCloud: https://soundcloud.com/fmlybzns
+* YouTube: https://www.youtube.com/@FMLYBZNS
+* Spotify: https://open.spotify.com/artist/75qZLpg3af3d4P0Yo5oy3J?si=_x82IyYPRMWKgA0CoXikOg
+
+Requirements:
+
+* remove unrelated lofi videos or random placeholder videos
+* do not show unrelated music/media
+* if possible, connect YouTube to the most recent FMLY BZNS uploads
+* if automatic fetching is not possible, use an editable data file with real YouTube video IDs
+* include a CTA like “Watch More on YouTube”
+* include “Listen on SoundCloud”
+* include Spotify icon/link
+* support embedded YouTube and SoundCloud players
+* make embeds responsive and easy to update
+
+## Crew / The FMLY section
+
+Add a crew section with photos if available. If photos are not available, create clean placeholder image cards.
+
+Use the following hierarchy and names.
+
+### Core Frequency
+
+* ANDREASONE
+  Founder · Creative Direction · Sound
+  Sets the vision. Shapes the rooms. Moves the culture.
+
+* ONE LOVELL
+  Selector · Operations
+  Mashups, edits, and deep cuts—blending Dancehall, Afro R&B, and global rhythm with precision.
+
+* OBE / INTELLIGENTREBELLION
+  Fashion · Space · Movement
+  Building the look, shaping the energy, and connecting the dots behind the scenes.
+
+### Sound & Vision
+
+* DAVIX / DOJO IN THE SKY
+  Live Sound · Production
+  Bringing live energy, instrumentation, and studio depth into the FMLY frequency. Founder of Dojo in the Sky and Secret Sessions.
+
+### World Builders
+
+* JUSTIN / GATEWAY MENDOCINO
+  Space Holder · Experience · Operations
+  Co-creating the environment where The Gathering comes to life.
+
+* NED / GATEWAY MENDOCINO
+  Visionary · Benefactor
+  Holding the foundation for immersive, nature-rooted experiences. From cannabis to plant medicine culture and beyond.
+
+### Featured FMLY Artists
+
+* AMALYN
+  Vocalist · Live Energy
+  Soulful presence and melodic energy woven into the dancefloor.
+
+### Featured FMLY DJs / Selectors & Contributors
+
+* DYOPS
+  Selector · Global Grooves
+  Sexy, soulful, late-night energy that keeps bodies moving. Founder of LUSH.
+
+* RAEYA
+  Selector · Afro-Diaspora Sound
+  Smooth blends, deep cuts, and intentional movement.
+
+* WEIRDOWITHSOUL
+  Selector · Culture Carrier
+  Afro-rooted selections with a forward-thinking edge. Founder of AfroSauce.
+
+* DANNI G
+  Selector · Global Club
+  High-energy sets with range, rhythm, and presence.
+
+* DJ KOBIE
+  Selector · Afrohouse Roots
+  Timeless grooves with deep cultural foundation.
+
+* DJ IJO
+  Selector · Amapiano / 3-Step / Gqom
+  South African rhythms, deep bounce, and underground heat.
+
+* LITTLE DINOSAUR
+  Selector · Techno / Global Grooves · Culture Curator
+  Intentional sets that move between soulful and high energy. Founder of HUES the Color of Sound.
+
+* KMNI
+  Selector · Afro Tech / Global House
+  Driving, percussive energy with global reach.
+
+* SPEKT1
+  Selector · Global Bass
+  Heavy rhythms and cross-genre movement.
+
+* CANNABA55
+  Selector · Dancefloor Energy
+  Raw bass selections built for movement and connection.
+
+* DJ ATREAU
+  Selector · Open Format / Afro Dancehall Global
+  Versatile, intuitive, and dialed into the room.
+
+* SAGE
+  Selector · Global Grooves
+  Intentional sets that move between soulful and high energy.
+
+Requirements:
+
+* organize crew into sections/categories
+* include photos where available
+* use placeholder image cards where photos are missing
+* make this section feel like a living collective, not corporate bios
+* store crew data in an editable data file
+
+## Merch section
+
+Add or improve the dedicated merch section.
+
+Requirements:
+
+* include merch/clothing products
+* include product images or placeholders
+* include product names
+* include prices if available
+* include Add to Cart / Shop Now buttons
+* connect merch purchases to the cart pathway
+* make the section colorful and editorial
+* keep it aligned with music, fashion, nightlife, and culture
+* avoid default boring ecommerce styling
+
+## Collaboration / Rolling List section
+
+Add a collaborations section with a rolling list/marquee and/or grids.
+
+Use this content.
+
+### Festivals
+
+```text
+LIGHTNING IN A BOTTLE, COACHELLA, SAME SAME BUT DIFFERENT, BURNING MAN, REGGAE ON THE RIVER, NORTHERN NIGHTS
+```
+
+### Venues
+
+```text
+1015 FOLSOM, PUBLIC WORKS, VINTAGE SPACE, CONTINENTAL CLUB, NEW PARISH, ROYAL SUN PALM SPRINGS
+```
+
+### Artists
+
+```text
+BLVK H3R0, AMALYN, KES KROSS, JADE DE LAFLEUR, SEUN KUTI
+```
+
+### Brands
+
+```text
+SECRET SESSIONS, PEACE FITS, HOT ICE CREAM BOUTIQUE
+```
+
+### Cities / Global
+
+```text
+OAKLAND, BALI, MEXICO CITY, LOS ANGELES, MIAMI, PUERTO RICO, COLOMBIA, CAPE TOWN, ACCRA
+```
+
+Requirements:
+
+* create a rolling list / marquee of names
+* also create organized categories if possible
+* make it feel dynamic and easy to update
+* this section should add energy but not clutter the page
+* use editable data files for festivals, venues, artists, brands, and cities
+
+## Mailing list section
+
+Add or refine the mailing list section.
+
+It should invite users to join for:
+
+* weekly mixes
+* event announcements
+* ticket drops
+* merch drops
+* festival takeovers
+* collaboration announcements
+
+Fields:
+
+* email
+* optional name
+* optional city
+
+CTA options:
+
+```text
+Join the Mailing List
+Get the Signal
+Stay Connected
+Get Mixes, Tickets, and Drops
+```
+
+Make it colorful, clean, and not cramped.
+
+## Payment / checkout pathway
+
+There needs to be a way for users to pay for merch, tickets, or both.
+
+Requirements:
+
+* add a cart route/page or cart modal
+* add Add to Cart buttons for merch
+* route event ticket purchases through direct ticket links or cart as appropriate
+* The Gathering should link to Eventbrite
+* create a clean placeholder checkout page if payment integration is not ready
+* structure the code so payment can later connect to Stripe, Shopify, Square, or another provider
+
+## Contact / Booking section
+
+Add or refine a simple contact/booking section for:
+
+* event inquiries
+* booking
+* collaborations
+* festival takeovers
+* partnerships
+
+Include a visually functional form or a clear contact CTA.
+
+## Footer
+
+Make the footer compact.
+
+Requirements:
+
+* do not make footer oversized
+* include FMLY BZNS wordmark/logo
+* include simple nav
+* include social/music icons only
+* include mailing list mini signup if it fits
+* do not write app names next to icons
+* maintain clean spacing
+
+## Data/editing requirements
+
+Make the site easy to update.
+
+Use data/config files for:
+
+* site links
+* weekly mix
+* events
+* event videos
+* YouTube embeds
+* SoundCloud embeds
+* Spotify link
+* crew members
+* merch products
+* collaborators
+* festivals
+* venues
+* artists
+* brands
+* cities
+* mailing list copy
+* contact links
+
+Suggested files:
+
+```text
+src/data/siteLinks.js
+src/data/weeklyMix.js
+src/data/events.js
+src/data/eventVideos.js
+src/data/mixes.js
+src/data/crew.js
+src/data/merch.js
+src/data/collaborators.js
+src/data/media.js
+```
+
+Use TypeScript equivalents if the project uses TypeScript.
+
+Do not hardcode everything inside components.
+
+## Spacing and alignment fixes
+
+Fix spacing and alignment across the site.
+
+Requirements:
+
+* header must be centered and balanced
+* reduce excess vertical space under the header
+* no text should be too close together
+* no buttons should be too close together
+* no text should touch side borders
+* no embeds should overflow
+* section headings should have enough breathing room
+* cards should have comfortable padding
+* mobile layout should not feel cramped
+* maintain colorful energy without visual chaos
+
+## Functionality requirements
+
+All buttons and links must work.
+
+Requirements:
+
+* nav links work
+* cart icon works
+* social icons work
+* Spotify link works
+* SoundCloud link works
+* YouTube link works
+* TikTok link works
+* Instagram link works
+* music links work
+* The Gathering Buy Tickets link works
+* LIB and Same Same links work
+* merch buttons connect to cart/placeholder flow
+* mailing list form is visually functional
+* contact form is visually functional
+* page sections route or scroll correctly
+
+Do not leave dead buttons unless clearly marked as placeholders.
+
+## Responsive requirements
+
+The site must work on:
+
+* desktop
+* tablet
+* mobile
+
+On mobile:
+
+* side borders should not crush the content
+* nav should collapse cleanly
+* cards should stack correctly
+* embedded videos/music should scale
+* forms should be easy to use
+* icons should remain tappable
+* no text should be too close together
+* no horizontal scrolling
+
+## Final result
+
+The finished website should include:
+
+* FMLY BZNS logo and colors
+* no white logo in the header
+* hero copy: “THIS IS FMLY BZNS. A GLOBAL DANCEFLOOR.”
+* weekly mix spot updated every Friday
+* SoundCloud and Spotify links
+* real YouTube / SoundCloud / Spotify / TikTok / Instagram links
+* embedded upcoming event video
+* upcoming events and festival takeovers
+* The Gathering Eventbrite Buy Tickets button
+* Lightning in a Bottle takeover
+* Felix SF event
+* Same Same But Different takeover
+* crew photos/profiles
+* merch/clothing section
+* cart/checkout pathway
+* collaboration/rolling list section
+* mailing list signup
+* contact/booking section
+* vertical side Afro-futuristic borders only
+* colorful, clean, readable, expressive design
+* easy-to-update data/config structure

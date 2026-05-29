@@ -1,0 +1,47 @@
+Please add a set of subtle visual design elements to the FMLY BZNS intro/homepage sections to make the site feel more custom, artistic, and aligned with the brand’s global dance music culture aesthetic.
+
+The goal is to create more visual movement and section separation without making the page feel cluttered.
+
+Focus on these updates:
+
+Intro / Hero Logo Area
+Make the main FMLY BZNS logo slightly larger and more visually dominant.
+Add small decorative design elements on the left and right sides of the logo.
+These elements should feel balanced but not perfectly symmetrical.
+They should frame the logo without distracting from it.
+Section Divider Elements
+Add small graphic elements between sections and/or slightly overlapping the top or bottom edges of some sections.
+These should appear somewhat randomly throughout the page, not between every single section.
+The placement should feel intentional, organic, and editorial.
+Design Style Direction
+Use geometric cultural-inspired shapes such as:
+triangles
+stepped pyramid shapes
+angular linework
+small stacked blocks
+simple border motifs
+The design elements should subtly reference global, Afro-diasporic, and ancient architectural patterns without looking overly literal or cliché.
+Avoid making the graphics look too “tribal,” generic, or costume-like.
+Section Border Treatment
+Add a thicker solid color line treatment to help separate some page sections.
+Use warm colors like yellow, orange, gold, ochre, or burnt orange.
+The preferred look is a solid thick line or casing effect, not a dotted line.
+Do not use dotted divider lines unless absolutely necessary.
+The line treatment can sit at the top or bottom of a section, or partially frame a section.
+Visual Feel
+The final look should feel:
+artistic
+warm
+global
+music/festival inspired
+slightly gritty
+handmade but clean
+modern and intentional
+Implementation Notes
+Keep all elements responsive on mobile.
+Do not let decorative elements block text, buttons, images, or calls to action.
+Use CSS/SVG shapes where possible rather than adding heavy image assets.
+Make sure the design elements feel integrated into the existing page style.
+Keep animations minimal or optional, such as a very subtle hover or slow ambient movement if it fits the design.
+
+Overall, the page should feel more alive and branded, with the logo area and section transitions having subtle geometric design details inspired by the reference images.

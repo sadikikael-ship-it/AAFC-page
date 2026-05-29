@@ -1,0 +1,59 @@
+Please update the Shopify/merch shopping experience across the FMLY BZNS website.
+
+Goal:
+Make the product purchase buttons clearer and more consistent, remove the unnecessary “Shop All on Shopify” button, and improve the cart experience so customers can easily return to shopping.
+
+Updates needed:
+
+1. Change “Select Size” buttons to “Add to Cart”
+- Anywhere a product button currently says “Select Size,” change the button text to “Add to Cart.”
+- This should apply to the merch/shop page and the homepage if product cards appear there too.
+- The button language should be consistent everywhere products are shown.
+- Do not leave some buttons saying “Select Size” and others saying “Add to Cart.”
+
+2. Keep size selection functionality
+- Even though the button text should say “Add to Cart,” customers still need to be able to choose a size before adding the product.
+- If Shopify requires size selection first, make sure the flow still works properly.
+- If a size is required and the customer has not selected one, show a clear message like “Please select a size” instead of silently failing.
+- Do not remove size options or variant selectors.
+
+3. Remove “Shop All on Shopify”
+- Remove the button/link that says “Shop All on Shopify.”
+- The goal is to keep customers shopping inside the embedded FMLY BZNS site instead of pushing them to the separate Shopify storefront.
+- Do not remove the actual Shopify checkout flow. Only remove the “Shop All on Shopify” button.
+
+4. Add “Keep Shopping” to the cart
+- In the Shopify cart drawer/modal, add a “Keep Shopping” button or link.
+- This should let customers close the cart and return to the merch section easily.
+- The button text should be exactly: “Keep Shopping”
+- Place it near the checkout button or somewhere obvious inside the cart.
+- It should not replace the Checkout button.
+- Checkout should remain clear and functional.
+
+5. Cart behavior
+- When a customer clicks “Keep Shopping,” the cart should close and the customer should remain on the FMLY BZNS site.
+- If possible, return them to the merch/shop section.
+- The cart should still show added items, subtotal, quantities, remove buttons, and checkout button.
+- Do not break Shopify’s cart or checkout functionality.
+
+6. Styling direction
+- Match the current FMLY BZNS design:
+  - cream/off-white backgrounds
+  - black text and borders
+  - burnt orange buttons or accents
+  - bold uppercase button text
+  - minimal global dance music culture vibe
+- Make “Add to Cart,” “Checkout,” and “Keep Shopping” visually consistent with the site.
+- “Checkout” should remain the strongest call-to-action.
+- “Keep Shopping” can be a secondary button or outlined button.
+
+7. Consistency check
+Please verify after updating:
+- Product buttons on the homepage say “Add to Cart.”
+- Product buttons on the merch/shop page say “Add to Cart.”
+- No product button still says “Select Size” unless Shopify absolutely requires that wording internally.
+- “Shop All on Shopify” is removed.
+- The cart includes “Keep Shopping.”
+- “Keep Shopping” closes the cart or returns users to the shop section.
+- Checkout still works.
+- Mobile layout still looks clean and usable.

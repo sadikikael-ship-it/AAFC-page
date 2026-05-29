@@ -1,0 +1,129 @@
+Paste this into Replit:
+
+```text
+Please troubleshoot and rebuild the Shopify merch integration so the actual Shopify Buy Button / Shopify checkout widget is embedded properly inside the FMLY BZNS website.
+
+Goal:
+The merch products should work like a real embedded Shopify shopping experience directly inside the FMLY BZNS site. Customers should be able to view products, choose variants/sizes, add to cart, adjust quantities, remove items, keep shopping, and checkout through Shopify.
+
+Do not send users to the separate Shopify storefront unless they are completing checkout. The shopping experience should feel integrated into the FMLY BZNS site.
+
+Main issues to fix:
+
+1. Use the actual Shopify Buy Button / checkout widget
+- Embed the real Shopify Buy Button components using the official Shopify Buy Button SDK.
+- Do not use fake buttons or static product cards that only look like Shopify.
+- The cart and checkout should be powered by Shopify.
+- Add to Cart should open or update the Shopify cart drawer/modal.
+- Checkout should use Shopify’s checkout flow.
+
+2. Keep the shop embedded in the site
+- Products should appear inside the existing FMLY BZNS merch/shop section.
+- Do not redirect users to the separate Shopify storefront for browsing.
+- The page should keep the current FMLY BZNS design around the Shopify products.
+- Only the final checkout step should leave the site if Shopify requires it.
+
+3. Mobile must work the same as desktop
+- Please fully test the Shopify cart and product buttons on mobile.
+- The mobile experience should match the desktop/web experience in functionality.
+- Customers should be able to:
+  - select size
+  - add to cart
+  - open cart
+  - increase quantity
+  - decrease quantity
+  - remove item
+  - keep shopping
+  - checkout
+- Nothing should be blocked, hidden, unclickable, or cut off on mobile.
+
+4. Fix cart quantity controls
+- There is currently an issue where quantity controls may not work correctly, especially on mobile.
+- Example problem: if a customer adds two of the same shirt and wants to press the minus button to reduce it to one, the minus button does not work.
+- Please troubleshoot and fix this.
+- The plus and minus buttons in the cart must work on both desktop and mobile.
+- Customers must be able to change item quantity after adding products.
+- Customers must be able to reduce quantity from 2 to 1.
+- Customers must be able to remove an item completely.
+- Make sure touch/click events work properly on mobile devices.
+
+5. Check for layout or overlay conflicts
+- Inspect whether any site CSS, z-index layer, decorative border, overlay, section wrapper, or invisible element is blocking Shopify cart buttons on mobile.
+- Make sure no decorative design elements sit on top of the Shopify cart.
+- Make sure the cart drawer/modal has a high enough z-index to be fully clickable.
+- Make sure the Shopify cart is not trapped behind page overlays.
+- Make sure body scroll locking does not break button tapping on mobile.
+- Make sure pointer-events are not disabled on cart controls.
+
+6. Do not duplicate Shopify scripts
+- Load the Shopify Buy Button SDK only once.
+- Do not paste four full Shopify script blocks if that causes conflicts.
+- Refactor the integration so one script/client initializes all Shopify products.
+- Prevent duplicate initialization on page reloads or React re-renders.
+
+7. Product setup
+Use the existing four Shopify products already added to the merch section.
+Make sure each product has:
+- correct product ID
+- correct container/node ID
+- correct Add to Cart button
+- correct variant/size behavior
+- correct cart integration
+
+Products:
+- FMLY PEACE Logo Max Heavyweight Tee — Black
+- FMLY PEACE Logo Max Heavyweight Tee — Mustard
+- FMLY PEACE Logo Women's Cropped Tee — Black
+- FMLY PEACE Logo Drop Shoulder Tee — Oatmeal
+
+8. Button text and cart text
+- Product buttons should say: Add to Cart
+- Cart checkout button should say: Checkout
+- Add a secondary cart button/link that says: Keep Shopping
+- Keep Shopping should close the cart and return the customer to the merch/shop section.
+- Do not include a “Shop All on Shopify” button.
+
+9. Size and variant behavior
+- Customers must be able to select shirt sizes before adding to cart.
+- If a customer clicks Add to Cart without selecting a required size, show a clear message or use Shopify’s built-in variant selector behavior.
+- Do not remove size selectors.
+- Do not skip variants.
+- Make sure the selected size is the one added to cart.
+
+10. Responsive cart behavior
+- On desktop, the cart drawer/modal should open cleanly and all controls should be clickable.
+- On mobile, the cart drawer/modal should fit the screen.
+- Quantity controls should be large enough to tap.
+- Checkout and Keep Shopping buttons should be visible.
+- Product line items should not overflow or hide the plus/minus controls.
+- Test iPhone-width and Android-width layouts.
+
+11. Styling
+Keep the surrounding merch section visually consistent with FMLY BZNS:
+- warm cream/off-white backgrounds
+- black or near-black text and borders
+- burnt orange buttons/accent lines
+- bold uppercase button labels
+- minimal global dance music culture feel
+
+Do not over-customize the internal Shopify widget if doing so breaks functionality. Functionality is more important than forcing every Shopify control to match perfectly.
+
+12. Final QA checklist
+Please verify all of the following before finishing:
+- Shopify products are embedded directly in the FMLY BZNS site.
+- Products do not redirect to the separate Shopify storefront for browsing.
+- Add to Cart works on desktop.
+- Add to Cart works on mobile.
+- Size selection works.
+- The correct selected size is added to the cart.
+- Cart opens correctly.
+- Cart quantity plus button works.
+- Cart quantity minus button works.
+- Quantity can be reduced from 2 to 1.
+- Items can be removed from the cart.
+- Keep Shopping closes the cart or returns to the merch section.
+- Checkout still goes to Shopify checkout.
+- No decorative overlays or CSS layers block mobile cart controls.
+- Shopify SDK is only loaded once.
+- The mobile version works the same functionally as the web/desktop version.
+```

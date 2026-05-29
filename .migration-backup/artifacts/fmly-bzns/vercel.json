@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "cd ../.. && pnpm install --frozen-lockfile && pnpm --filter @workspace/fmly-bzns run build",
+  "outputDirectory": "dist/public",
+  "installCommand": "echo 'install handled by buildCommand'",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

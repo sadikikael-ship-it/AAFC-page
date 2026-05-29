@@ -1,0 +1,458 @@
+Build a fully functional, responsive website for **FMLY BZNS**.
+
+This should be a colorful, music/culture/event/merch website for a global creative collective. The site should feel like a real brand world, not a generic landing page.
+
+## Overall goal
+
+Create a website that makes FMLY BZNS feel like:
+
+* a global music and culture collective
+* an event and festival takeover brand
+* a home for weekly mixes and music discovery
+* a crew/community platform
+* a merch and clothing drop destination
+* a collaboration hub for artists, festivals, and partners
+
+The website should be easy to update consistently as new mixes, events, videos, photos, merch, collaborators, and announcements are added.
+
+## Visual direction
+
+The site should be colorful, expressive, and Afro-futuristic, but not dark, plain, or corporate.
+
+Use the FMLY BZNS logo and brand colors throughout the site.
+
+The visual style should include:
+
+* colorful section backgrounds
+* warm tones from the logo palette
+* graphic layouts
+* bold typography
+* Afro-futuristic side borders
+* patterned vertical borders on the left and right sides of the website
+* no horizontal border bands
+* no dead space between the side borders and the content
+* strong spacing so content is readable
+* a cultural poster / festival flyer feeling
+* a music collective energy
+* a shop/editorial layout for merch
+
+The site should not feel like:
+
+* a plain black website
+* a generic event template
+* a SaaS landing page
+* a basic artist portfolio
+* a default ecommerce store
+
+## Border requirements
+
+Add cool Afro-futuristic patterned borders on the **left and right sides only**.
+
+Important:
+
+* vertical borders only
+* no horizontal patterned dividers
+* no top/bottom border bands
+* no empty dead space between the border and the website content
+* the side borders should be attached to the main website shell, not the browser background
+* the site should feel like one colorful framed object
+* borders should use brand colors and geometric/patterned motifs
+
+## Header / navigation
+
+Create a clean header with:
+
+* FMLY BZNS logo
+* centered navigation
+* real social media icons
+* clear CTA such as “Buy Tickets” or “Join”
+
+Header nav should include:
+
+* Home
+* Events
+* Music
+* Crew
+* Merch
+* Collaborations
+* Contact
+
+Use real platform icons only. Do not show text labels next to every app icon.
+
+Use real links for:
+
+* SoundCloud: https://soundcloud.com/fmlybzns
+* TikTok: https://www.tiktok.com/@fmlybzns
+* YouTube: https://www.youtube.com/@FMLYBZNS
+* Instagram: https://www.instagram.com/fmlybzns_/
+
+## Homepage sections
+
+Build the homepage with the following sections.
+
+### 1. Hero section
+
+Create a strong, colorful, image-led hero.
+
+It should include:
+
+* FMLY BZNS logo/brand presence
+* bold headline
+* short description of the collective
+* CTA buttons:
+
+  * View Events
+  * Listen to Mixes
+  * Join the Mailing List
+
+The hero should not feel cramped or cut off. Give it strong spacing and readable layout.
+
+### 2. Weekly Mix / Featured Mix section
+
+There must be a **weekly mix spot on the homepage**.
+
+This should be one of the featured parts of the homepage.
+
+Include:
+
+* featured weekly mix title
+* short description
+* embedded SoundCloud player or link
+* CTA: “Listen on SoundCloud”
+* room to update the weekly mix easily
+
+This should be designed as a recurring content module that can be changed every week.
+
+### 3. Featured video / media section
+
+Include an area where FMLY BZNS can embed videos and media.
+
+Requirements:
+
+* support embedded YouTube videos
+* support embedded music players if needed
+* include a featured media block
+* include a grid/list of additional videos or clips
+* easy to replace or update
+
+### 4. Upcoming events section
+
+Add an upcoming events section for:
+
+* festivals
+* festival takeovers
+* parties
+* community events
+* FMLY BZNS activations
+
+Each event card should include:
+
+* event name
+* event type
+* city/location
+* venue or festival name
+* date
+* time if available
+* image
+* button for “Buy Tickets”
+* button for “Details”
+
+Ticket buttons should be directly next to or underneath each event so people can take action easily.
+
+### 5. Crew section
+
+Add a section for photos of the crew.
+
+Requirements:
+
+* include crew photos
+* include names and roles if available
+* allow placeholder cards if final names/photos are not ready
+* layout should feel human, cultural, and collective-led
+* should not feel corporate
+
+Possible roles:
+
+* DJ
+* Producer
+* Host
+* Creative Director
+* Photographer
+* Visual Artist
+* Event Producer
+* Community Lead
+
+### 6. Merch section
+
+Add a dedicated merch section for clothing and drops.
+
+This should feel like a colorful editorial shop section, not a boring store.
+
+Include:
+
+* clothing/products
+* product images
+* product names
+* prices if available
+* “Shop Now” or “View Product” buttons
+* featured merch item
+* product grid
+
+The merch section should feel connected to fashion, music, nightlife, and culture.
+
+### 7. Collaborations section
+
+Add a collaboration section.
+
+This should show:
+
+* artists
+* festivals
+* venues
+* collaborators
+* creative partners
+* past or future brand partnerships
+
+Include either:
+
+* a rolling list / marquee of names
+* or a grid of collaborators
+* or both
+
+The section should feel dynamic and easy to update.
+
+### 8. Rolling list / marquee section
+
+Add a rolling list of:
+
+* artists
+* festivals
+* collaborators
+* cities
+* event partners
+
+This can be a horizontal scrolling marquee or animated list.
+
+It should add motion and energy to the site without being overwhelming.
+
+### 9. Music / mixes preview section
+
+Include a section that links directly to FMLY BZNS music and mixes.
+
+This section should link to actual destinations:
+
+* SoundCloud: https://soundcloud.com/fmlybzns
+* YouTube: https://www.youtube.com/@FMLYBZNS
+
+Include:
+
+* featured mix
+* latest mix cards
+* music platform icons
+* buttons that work
+* embedded music/video when possible
+
+### 10. Mailing list section
+
+Add a clear mailing list signup section.
+
+It should invite users to join for:
+
+* weekly mixes
+* event announcements
+* ticket drops
+* merch drops
+* festival takeovers
+* collaboration announcements
+
+Form fields:
+
+* email
+* optional name
+* optional city
+
+CTA copy ideas:
+
+* Join the Mailing List
+* Get the Signal
+* Stay Connected
+* Get Mixes, Tickets, and Drops
+
+The signup should look branded and colorful.
+
+### 11. Contact / booking section
+
+Add a simple contact section for:
+
+* event inquiries
+* booking
+* collaborations
+* festival takeovers
+* partnerships
+
+Include a form or clear contact CTA.
+
+### 12. Footer
+
+Footer should be compact, not oversized.
+
+Include:
+
+* logo
+* simple nav
+* social icons only
+* mailing list mini signup
+* copyright
+
+Do not make the footer take up too much vertical space.
+
+## Required pages
+
+Create these pages or sections:
+
+* Home
+* Events
+* Music / Mixes
+* Crew
+* Merch
+* Collaborations
+* Contact
+
+The Music / Mixes page should directly link to the real FMLY BZNS links and support embedded music/videos.
+
+## Data/editing requirements
+
+Make the site easy to update.
+
+Use a data/config structure for:
+
+* weekly mix
+* events
+* crew members
+* merch products
+* collaborators
+* embedded videos
+* social links
+* mailing list text
+* contact links
+
+Do not hardcode everything in the markup.
+
+Create data files like:
+
+* `src/data/siteLinks.js`
+* `src/data/events.js`
+* `src/data/mixes.js`
+* `src/data/crew.js`
+* `src/data/merch.js`
+* `src/data/collaborators.js`
+* `src/data/media.js`
+
+Or the TypeScript equivalents if this project uses TypeScript.
+
+## Real social links
+
+Use these links in the data/config file and wire them everywhere:
+
+```js
+export const siteLinks = {
+  social: {
+    soundcloud: "https://soundcloud.com/fmlybzns",
+    tiktok: "https://www.tiktok.com/@fmlybzns",
+    youtube: "https://www.youtube.com/@FMLYBZNS",
+    instagram: "https://www.instagram.com/fmlybzns_/",
+  },
+};
+```
+
+Use icons for these links in the header, footer, and music/media sections.
+
+## Asset handling
+
+Use the site assets from the repo if available.
+
+Organize assets like this:
+
+```txt
+public/assets/logos/
+public/assets/images/
+public/assets/videos/
+```
+
+Use the logo and colors throughout the site.
+
+If an image/video asset is missing, create a clear placeholder block that can be replaced later.
+
+## Embed requirements
+
+The site should be able to embed:
+
+* SoundCloud players
+* YouTube videos
+* music links
+* video links
+
+Use safe embed components and make them responsive.
+
+## Functionality requirements
+
+All buttons and links must work.
+
+Requirements:
+
+* nav links work
+* social icons work
+* music links work
+* event ticket buttons work or clearly show placeholder URLs
+* merch buttons work or clearly show placeholder URLs
+* mailing list form is visually functional
+* contact form is visually functional
+* page sections route or scroll correctly
+
+Do not leave dead buttons.
+
+## Responsive requirements
+
+The site must work well on:
+
+* desktop
+* tablet
+* mobile
+
+On mobile:
+
+* borders should not crush the content
+* navigation should collapse cleanly
+* cards should stack nicely
+* images/videos should remain responsive
+* forms should be easy to use
+
+## Final result
+
+The finished website should feel like:
+
+* colorful
+* musical
+* cultural
+* Afro-futuristic
+* festival-driven
+* community-led
+* easy to update
+* visually alive
+* connected to the real FMLY BZNS social/music ecosystem
+
+It should clearly include:
+
+* weekly mix spot on homepage
+* featured media/video area
+* upcoming festivals and festival takeovers
+* crew photos
+* side Afro-futuristic borders
+* FMLY BZNS logo and colors
+* merch/clothing section
+* collaboration section
+* real social/music links
+* mailing list signup
+* rolling names/list of artists, festivals, and collaborators
+* embeddable music and video sections
+* editable data/config files

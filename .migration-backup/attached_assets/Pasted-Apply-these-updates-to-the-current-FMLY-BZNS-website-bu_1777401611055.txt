@@ -1,0 +1,172 @@
+Apply these updates to the current FMLY BZNS website build. This is an **add-on revision prompt**, not a full rebuild.
+
+## 1. Add Spotify everywhere music/social links appear
+
+Add Spotify as an official music/social platform throughout the site.
+
+Use this Spotify link:
+
+```text
+https://open.spotify.com/artist/75qZLpg3af3d4P0Yo5oy3J?si=_x82IyYPRMWKgA0CoXikOg
+```
+
+Update the site so Spotify appears alongside the existing platform icons:
+
+* SoundCloud
+* TikTok
+* YouTube
+* Instagram
+* Spotify
+
+Requirements:
+
+* use the real Spotify icon, not a drawn/custom placeholder
+* add Spotify to the header icon row if social/music icons are shown there
+* add Spotify to the footer icon row
+* add Spotify to the Music / Mixes section
+* add Spotify to any “Listen” or music platform link groups
+* wire the Spotify icon/button to the real Spotify URL
+* make sure the Spotify link opens correctly
+* keep icon-only presentation where app names are not needed
+
+If the site uses a links/config file, add Spotify there.
+
+Example:
+
+```js
+export const siteLinks = {
+  social: {
+    soundcloud: "https://soundcloud.com/fmlybzns",
+    spotify: "https://open.spotify.com/artist/75qZLpg3af3d4P0Yo5oy3J?si=_x82IyYPRMWKgA0CoXikOg",
+    tiktok: "https://www.tiktok.com/@fmlybzns",
+    youtube: "https://www.youtube.com/@FMLYBZNS",
+    instagram: "https://www.instagram.com/fmlybzns_/",
+  },
+};
+```
+
+## 2. Embed the upcoming event YouTube video in the Events section
+
+Add this YouTube video to the upcoming event section:
+
+```text
+https://www.youtube.com/watch?v=qMm-fpsLi7w
+```
+
+Use this embed URL:
+
+```text
+https://www.youtube.com/embed/qMm-fpsLi7w
+```
+
+Requirements:
+
+* embed the video directly inside the upcoming event section
+* place it inside or near the relevant event card/module
+* make the video responsive on desktop, tablet, and mobile
+* the embed should not overflow its container
+* keep proper spacing around the video
+* include a clear title or label such as “Upcoming Event Preview” or “Festival Takeover Preview”
+* do not just paste the raw YouTube link as text
+* use a real iframe or reusable video embed component
+
+If the site uses data/config files, add the video to event/media data so it can be changed later.
+
+Example:
+
+```js
+export const eventVideos = [
+  {
+    title: "Upcoming Event Preview",
+    youtubeUrl: "https://www.youtube.com/watch?v=qMm-fpsLi7w",
+    embedUrl: "https://www.youtube.com/embed/qMm-fpsLi7w",
+  },
+];
+```
+
+## 3. Remove the white logo at the top
+
+Remove the white logo from the top/header area.
+
+Requirements:
+
+* do not display the white logo in the header
+* if there are multiple logo versions, use the version that fits the FMLY BZNS color palette and current design
+* if the correct color logo is not available, use a styled text wordmark instead of the white logo
+* make sure the header still feels branded after removing it
+* do not leave empty space where the white logo was
+
+## 4. Re-center and rebalance the header
+
+The header needs to fit correctly and feel centered.
+
+Requirements:
+
+* center the navigation visually
+* make the header feel balanced across the full width
+* avoid the nav feeling pushed too far left
+* keep logo/wordmark, nav, social icons, and CTA aligned
+* use a clean 3-part layout if needed:
+
+  * left: logo or wordmark
+  * center: navigation links
+  * right: social icons and/or CTA
+* make sure the center nav is actually visually centered
+* make the spacing between header items consistent
+* make the mobile header collapse cleanly
+
+Do not let the header feel crowded or off-balance.
+
+## 5. Improve spacing everywhere
+
+Make sure no text, buttons, icons, embeds, or sections are too close together.
+
+Apply spacing improvements across the whole site, especially:
+
+* header
+* hero section
+* music/mixes section
+* upcoming events section
+* embedded video area
+* mailing list section
+* footer
+
+Requirements:
+
+* increase space between headlines and body text
+* increase space between buttons
+* add proper padding inside cards and sections
+* make sure text does not touch the side borders
+* make sure embeds do not touch surrounding text or edges
+* keep icons evenly spaced
+* make the design feel breathable but not empty
+* maintain proper spacing on mobile
+
+## 6. Keep everything responsive and contained
+
+After adding Spotify and the YouTube embed, make sure the layout still fits correctly.
+
+Requirements:
+
+* no overflow
+* no horizontal scrolling
+* no cut-off embeds
+* no crushed icons
+* no crowded header
+* no text collision
+* no content touching the side borders
+* videos and music embeds scale properly
+* icon rows wrap or shrink cleanly on smaller screens
+
+## 7. Final check
+
+After making these updates, verify:
+
+* Spotify appears and links correctly
+* the YouTube event video is embedded in the upcoming events section
+* the white logo at the top is removed
+* the header is centered and balanced
+* spacing is improved sitewide
+* no text or UI elements are too close together
+* all added links/buttons/icons work
+* the site remains colorful, Afro-futuristic, responsive, and aligned with the FMLY BZNS visual direction
