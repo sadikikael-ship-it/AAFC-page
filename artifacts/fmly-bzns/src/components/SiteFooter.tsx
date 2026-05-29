@@ -69,6 +69,17 @@ export function SiteFooter() {
       </form>
 
       <small>© {new Date().getFullYear()} FMLY BZNS — global movement.</small>
+
+      <a
+        href="https://www.aafcbuilders.org/"
+        target="_blank"
+        rel="noreferrer"
+        className="footerMadeBy"
+        aria-label="Made by AAFC"
+      >
+        <img src="/aafc-logo.png" alt="AAFC logo" className="footerMadeByLogo" />
+        <span>Made by AAFC</span>
+      </a>
     </footer>
   );
 }
